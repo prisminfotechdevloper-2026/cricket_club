@@ -31,7 +31,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 mb-1">
                 <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
                 <span className="text-xs font-bold uppercase tracking-widest text-brand-red">
-                  Matchday Center
+                  Matchday Center 
                 </span>
               </div>
               <h2 className="font-headline text-3xl sm:text-4xl font-bold text-brand-black tracking-tight leading-none">
@@ -52,7 +52,7 @@ export default function HomePage() {
             {/* Secondary: Next Match Card (4 Cols on Desktop) */}
             <div className="lg:col-span-4 h-full flex flex-col justify-between">
               <UpcomingMatchCard match={upcomingMatch} />
-            </div>
+            </div>  
           </div>
         </Container>
       </section>

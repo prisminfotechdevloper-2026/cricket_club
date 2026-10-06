@@ -23,13 +23,13 @@ export function HomeHero() {
           {/* Left Column: Editorial Headline & Messaging */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Eyebrow Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-border shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-brand-copper" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-border shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-widest text-brand-black">
                 DEVPUR CRICKET CLUB
               </span>
               <span className="text-muted text-xs">•</span>
-              <span className="text-xs font-semibold text-brand-copper">
+              <span className="text-xs font-bold text-brand-copper">
                 Active Season 2026–27
               </span>
             </div>
@@ -39,7 +39,9 @@ export function HomeHero() {
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-black leading-[0.95]">
                 TRAIN WITH PURPOSE.
                 <br />
-                <span className="text-brand-copper">PLAY WITH PRIDE.</span>
+                <span className="bg-gradient-to-r from-brand-orange via-brand-copper to-brand-gold bg-clip-text text-transparent">
+                  PLAY WITH PRIDE.
+                </span>
                 <br />
                 BUILD THE LEGACY.
               </h1>

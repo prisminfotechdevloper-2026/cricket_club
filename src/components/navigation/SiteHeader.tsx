@@ -77,7 +77,7 @@ export function SiteHeader() {
               href="/"
               className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper rounded-lg"
             >
-              <div className="relative w-11 h-11 sm:w-13 sm:h-13 shrink-0 drop-shadow-sm transition-transform duration-200 group-hover:scale-105">
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-sm transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/logo/logo.png"
                   alt="Devpur Cricket Club Emblem"
