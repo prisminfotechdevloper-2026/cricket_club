@@ -164,76 +164,84 @@ export function SiteHeader() {
       {mounted &&
         isOpen &&
         createPortal(
-          <div className="xl:hidden fixed inset-0 top-16 sm:top-20 z-[90] bg-black/60 animate-in fade-in duration-200 flex flex-col justify-start">
-            {/* Click-outside backdrop overlay */}
-            <div
-              className="absolute inset-0 bg-transparent"
-              onClick={() => setIsOpen(false)}
-              aria-hidden="true"
-            />
-
-            {/* Menu Panel */}
-            <div className="relative z-10 bg-surface border-b border-border max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto px-5 py-6 shadow-2xl flex flex-col justify-between">
-              <div className="space-y-4">
-                {/* Live Match Quick Banner */}
-                <Link
-                  href="/matches/dcc-vs-royal-xi"
-                  onClick={() => setIsOpen(false)}
-                  className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-colors"
-                >
-                  <div className="flex items-center justify-between text-xs text-brand-peach mb-2">
-                    <span className="font-semibold uppercase tracking-wider flex items-center gap-1.5">
-                      <Radio className="w-3.5 h-3.5 text-brand-red animate-pulse" />
-                      <span className="text-white">JPL Semi Final • LIVE</span>
-                    </span>
-                    <span className="font-bold text-brand-peach">Over 17.2</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-headline text-xl font-bold text-white">
-                        DCC <span className="text-brand-orange">146/4</span> vs RXI 183/8
-                      </div>
-                      <div className="text-xs text-neutral-300 mt-0.5">
-                        Need 38 runs in 16 balls
-                      </div>
+          <div className="xl:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[90] bg-surface overflow-y-auto overscroll-contain px-5 pt-5 pb-16 flex flex-col justify-between shadow-2xl animate-in fade-in duration-200">
+            <div className="space-y-5">
+              {/* Live Match Quick Banner */}
+              <Link
+                href="/matches/dcc-vs-royal-xi"
+                onClick={() => setIsOpen(false)}
+                className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-all shadow-md group"
+              >
+                <div className="flex items-center justify-between text-xs text-brand-peach mb-2">
+                  <span className="font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                    <Radio className="w-3.5 h-3.5 text-brand-red animate-pulse" />
+                    <span className="text-white font-bold">JPL Semi Final • LIVE</span>
+                  </span>
+                  <span className="font-bold text-brand-peach bg-white/10 px-2 py-0.5 rounded">
+                    Over 17.2
+                  </span>
+                </div>
+                <div className="flex items-center justify-between mt-2">
+                  <div>
+                    <div className="font-headline text-2xl font-bold tracking-tight text-white">
+                      DCC <span className="text-brand-orange">146/4</span>{" "}
+                      <span className="text-stone-400 text-base font-normal">vs</span>{" "}
+                      <span className="text-stone-300">RXI 183/8</span>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-brand-orange" />
+                    <div className="text-xs text-neutral-300 mt-1 font-medium">
+                      Need 38 runs in 16 balls • RR: 8.43
+                    </div>
                   </div>
-                </Link>
+                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-brand-black transition-colors">
+                    <ChevronRight className="w-5 h-5 text-brand-orange group-hover:text-brand-black transition-colors" />
+                  </div>
+                </div>
+              </Link>
 
-                {/* Navigation Links */}
-                <div className="py-2 divide-y divide-border/60">
-                  {NAV_LINKS.map((link) => {
-                    const active = isActive(link.href);
-                    return (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`flex items-center justify-between py-3.5 text-base font-semibold transition-colors ${
-                          active
-                            ? "text-brand-copper font-bold"
-                            : "text-foreground-soft hover:text-brand-black"
-                        }`}
-                      >
-                        <span>{link.name}</span>
-                        <ChevronRight
-                          className={`w-4 h-4 transition-transform ${
-                            active
-                              ? "text-brand-copper translate-x-1"
-                              : "text-neutral-400"
+              {/* Navigation Links */}
+              <div className="space-y-1">
+                {NAV_LINKS.map((link) => {
+                  const active = isActive(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold transition-all ${
+                        active
+                          ? "bg-brand-copper/10 text-brand-copper-dark font-bold"
+                          : "text-foreground-soft hover:text-brand-black hover:bg-black/[0.03]"
+                      }`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            active ? "bg-brand-copper" : "bg-transparent"
                           }`}
                         />
-                      </Link>
-                    );
-                  })}
-                </div>
+                        <span>{link.name}</span>
+                      </span>
+                      <ChevronRight
+                        className={`w-4 h-4 transition-transform ${
+                          active
+                            ? "text-brand-copper translate-x-1"
+                            : "text-neutral-400"
+                        }`}
+                      />
+                    </Link>
+                  );
+                })}
               </div>
+            </div>
 
-              {/* Club Footnote inside Drawer */}
-              <div className="pt-6 border-t border-border mt-6 text-center text-xs text-muted">
-                Devpur Cricket Club • Train. Compete. Remember.
-              </div>
+            {/* Club Footnote inside Drawer */}
+            <div className="pt-6 border-t border-border mt-8 text-center space-y-1">
+              <p className="font-headline font-bold text-sm tracking-wider uppercase text-brand-black">
+                Devpur Cricket Club • Rajasthan
+              </p>
+              <p className="text-xs text-muted">
+                Train. Compete. Remember. • Est. 2020
+              </p>
             </div>
           </div>,
           document.body
