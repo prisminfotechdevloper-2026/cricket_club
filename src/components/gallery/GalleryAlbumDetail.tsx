@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { GalleryAlbum } from "@/lib/types/content";
@@ -20,8 +21,12 @@ interface GalleryAlbumDetailProps {
   album: GalleryAlbum;
 }
 
+const emptySubscribe = () => () => {};
+const useIsMounted = () => React.useSyncExternalStore(emptySubscribe, () => true, () => false);
+
 export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
   const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+  const mounted = useIsMounted();
 
   const handleNext = useCallback(() => {
     if (activePhotoIndex !== null) {
@@ -177,84 +182,102 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
         </div>
 
         {/* Interactive Lightbox Modal */}
-        {activePhotoIndex !== null && (
-          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 animate-in fade-in duration-200">
-            {/* Top Toolbar */}
-            <div className="flex items-center justify-between text-white z-10">
-              <div className="text-xs sm:text-sm font-semibold text-neutral-300">
-                Image {activePhotoIndex + 1} of {album.items.length} • {album.title}
+        {mounted &&
+          activePhotoIndex !== null &&
+          createPortal(
+            <div
+              className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md flex flex-col justify-between p-3 sm:p-6 animate-in fade-in duration-200"
+              onClick={() => setActivePhotoIndex(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Image lightbox viewer"
+            >
+              {/* Top Toolbar */}
+              <div
+                className="flex items-center justify-between text-white z-10 shrink-0 gap-3"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="text-xs sm:text-sm font-semibold text-neutral-300 truncate">
+                  Image {activePhotoIndex + 1} of {album.items.length} • {album.title}
+                </div>
+
+                <button
+                  onClick={() => setActivePhotoIndex(null)}
+                  className="p-2 sm:p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                  aria-label="Close Lightbox"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
-              <button
-                onClick={() => setActivePhotoIndex(null)}
-                className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
-                aria-label="Close Lightbox"
+              {/* Main Image Stage */}
+              <div
+                className="relative flex-1 flex items-center justify-center my-2 sm:my-4 overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
               >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+                <button
+                  onClick={handlePrev}
+                  className="absolute left-1 sm:left-4 z-20 p-2 sm:p-3 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/15 backdrop-blur-sm transition-transform hover:scale-110 active:scale-95"
+                  aria-label="Previous photo"
+                >
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
 
-            {/* Main Image Stage */}
-            <div className="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
-              <button
-                onClick={handlePrev}
-                className="absolute left-2 sm:left-4 z-20 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 backdrop-blur-sm transition-transform hover:scale-110"
-                aria-label="Previous photo"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
+                <div className="relative w-full h-full max-h-[70vh] sm:max-h-[75vh] flex items-center justify-center">
+                  <Image
+                    src={album.items[activePhotoIndex].url}
+                    alt={album.items[activePhotoIndex].caption}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority
+                  />
+                </div>
 
-              <div className="relative w-full h-full max-h-[75vh] flex items-center justify-center">
-                <Image
-                  src={album.items[activePhotoIndex].url}
-                  alt={album.items[activePhotoIndex].caption}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                  priority
-                />
+                <button
+                  onClick={handleNext}
+                  className="absolute right-1 sm:right-4 z-20 p-2 sm:p-3 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/15 backdrop-blur-sm transition-transform hover:scale-110 active:scale-95"
+                  aria-label="Next photo"
+                >
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
               </div>
 
-              <button
-                onClick={handleNext}
-                className="absolute right-2 sm:right-4 z-20 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 backdrop-blur-sm transition-transform hover:scale-110"
-                aria-label="Next photo"
+              {/* Bottom Caption & Thumbnails */}
+              <div
+                className="text-center space-y-2 sm:space-y-3 z-10 shrink-0 pb-1"
+                onClick={(e) => e.stopPropagation()}
               >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+                <p className="text-xs sm:text-base font-semibold text-white max-w-2xl mx-auto px-4 line-clamp-2">
+                  {album.items[activePhotoIndex].caption}
+                </p>
 
-            {/* Bottom Caption & Thumbnails */}
-            <div className="text-center space-y-3 z-10">
-              <p className="text-xs sm:text-base font-semibold text-white max-w-2xl mx-auto">
-                {album.items[activePhotoIndex].caption}
-              </p>
-
-              {/* Thumbnails strip */}
-              <div className="flex items-center justify-center gap-2 overflow-x-auto py-2">
-                {album.items.map((item, i) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setActivePhotoIndex(i)}
-                    className={`relative w-12 h-12 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
-                      activePhotoIndex === i
-                        ? "border-brand-orange scale-105"
-                        : "border-transparent opacity-50 hover:opacity-100"
-                    }`}
-                  >
-                    <Image
-                      src={item.url}
-                      alt={item.caption}
-                      fill
-                      sizes="48px"
-                      className="object-cover"
-                    />
-                  </button>
-                ))}
+                {/* Thumbnails strip */}
+                <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto py-1.5 px-2">
+                  {album.items.map((item, i) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setActivePhotoIndex(i)}
+                      className={`relative w-11 h-11 sm:w-12 sm:h-12 rounded-lg overflow-hidden border-2 shrink-0 transition-transform ${
+                        activePhotoIndex === i
+                          ? "border-brand-orange scale-105"
+                          : "border-transparent opacity-50 hover:opacity-100"
+                      }`}
+                    >
+                      <Image
+                        src={item.url}
+                        alt={item.caption}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </div>,
+            document.body
+          )}
       </Container>
     </div>
   );

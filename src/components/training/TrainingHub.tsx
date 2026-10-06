@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { TrainingSession, TrainingCategory } from "@/lib/types/content";
 import { Coach } from "@/lib/types/cricket";
@@ -12,6 +13,7 @@ import {
   MapPin,
   Play,
   ShieldCheck,
+  X,
 } from "lucide-react";
 
 interface TrainingHubProps {
@@ -29,9 +31,36 @@ const CATEGORIES: { id: TrainingCategory; label: string }[] = [
   { id: "match-prep", label: "Match Scenarios" },
 ];
 
+const emptySubscribe = () => () => {};
+const useIsMounted = () => React.useSyncExternalStore(emptySubscribe, () => true, () => false);
+
 export function TrainingHub({ sessions, coaches }: TrainingHubProps) {
   const [selectedCategory, setSelectedCategory] = useState<TrainingCategory>("all");
   const [selectedVideo, setSelectedVideo] = useState<TrainingSession | null>(null);
+  const mounted = useIsMounted();
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedVideo]);
+
+  // Keyboard navigation: Escape key to close
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedVideo(null);
+    };
+    if (selectedVideo) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedVideo]);
 
   const filteredSessions = sessions.filter((s) => {
     if (selectedCategory === "all") return true;
@@ -171,97 +200,123 @@ export function TrainingHub({ sessions, coaches }: TrainingHubProps) {
         </div>
 
         {/* Video Preview Modal */}
-        {selectedVideo && (
-          <div
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in"
-            onClick={() => setSelectedVideo(null)}
-          >
+        {mounted &&
+          selectedVideo &&
+          createPortal(
             <div
-              className="bg-surface rounded-3xl max-w-3xl w-full p-5 sm:p-7 space-y-5 border border-border shadow-2xl relative max-h-[92vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 animate-in fade-in duration-200"
+              onClick={() => setSelectedVideo(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-label={selectedVideo.title}
             >
-              {/* Header */}
-              <div className="flex items-center justify-between pb-3 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-copper bg-brand-copper/10 px-2.5 py-1 rounded-md">
-                    {selectedVideo.category}
-                  </span>
-                  <span className="text-xs font-semibold text-muted">
-                    Duration: {selectedVideo.duration} • Video: {selectedVideo.videoDuration}
-                  </span>
-                </div>
-                <button
-                  onClick={() => setSelectedVideo(null)}
-                  className="px-3 py-1.5 rounded-xl hover:bg-stone-100 text-muted hover:text-brand-black text-xs font-bold transition-colors"
-                >
-                  ✕ Close
-                </button>
-              </div>
+              <div
+                className="bg-surface rounded-t-[28px] sm:rounded-3xl max-w-3xl w-full border border-border shadow-2xl relative max-h-[92dvh] sm:max-h-[90vh] flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-200"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Mobile Drag Indicator Pill */}
+                <div className="w-12 h-1 rounded-full bg-stone-300 mx-auto mt-2.5 mb-1 sm:hidden shrink-0" />
 
-              {/* YouTube Responsive Video Player */}
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-xl ring-1 ring-black/10">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId || "v3soFH5Jn68"}?autoplay=1&rel=0&modestbranding=1`}
-                  title={selectedVideo.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full border-0 absolute inset-0"
-                />
-              </div>
-
-              {/* Video Info & Drill Syllabus */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-headline text-2xl sm:text-3xl font-bold text-brand-black leading-tight">
-                    {selectedVideo.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-foreground-soft mt-2 leading-relaxed">
-                    {selectedVideo.description}
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-surface-soft border border-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-brand-charcoal text-white flex items-center justify-center font-bold text-sm">
-                      DCC
-                    </div>
-                    <div>
-                      <span className="text-xs font-bold text-brand-black block">
-                        Supervised by {selectedVideo.coachName}
-                      </span>
-                      <span className="text-[11px] text-muted">
-                        {selectedVideo.coachRole} • {selectedVideo.location}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-semibold text-muted">
-                      {selectedVideo.attendeesCount} Registered Athletes
+                {/* Sticky Modal Top Bar */}
+                <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-surface shrink-0">
+                  <div className="flex items-center gap-2 min-w-0 pr-2">
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-brand-copper bg-brand-copper/10 px-2.5 py-1 rounded-md shrink-0">
+                      {selectedVideo.category}
+                    </span>
+                    <span className="text-xs font-medium text-muted truncate">
+                      {selectedVideo.duration} • Video: {selectedVideo.videoDuration}
                     </span>
                   </div>
+
+                  <button
+                    onClick={() => setSelectedVideo(null)}
+                    className="p-2 rounded-full bg-stone-100 hover:bg-stone-200 text-brand-black transition-colors shrink-0 focus:outline-none focus:ring-2 focus:ring-brand-copper"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
                 </div>
 
-                {/* Key Coaching Principles */}
-                <div className="pt-2">
-                  <span className="text-[11px] uppercase font-bold tracking-wider text-muted block mb-2">
-                    Core Technical Focus in this Session
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedVideo.keyFocus.map((focus, i) => (
-                      <span
-                        key={i}
-                        className="text-xs font-medium px-3 py-1 rounded-lg bg-surface text-stone-800 border border-border"
-                      >
-                        ✓ {focus}
+                {/* Scrollable Modal Content */}
+                <div className="overflow-y-auto overscroll-contain p-4 sm:p-6 space-y-4 sm:space-y-5">
+                  {/* YouTube Responsive Video Player */}
+                  <div className="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-black shadow-lg ring-1 ring-black/10 shrink-0">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId || "v3soFH5Jn68"}?autoplay=1&rel=0&modestbranding=1`}
+                      title={selectedVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full border-0 absolute inset-0"
+                    />
+                  </div>
+
+                  {/* Video Info & Drill Syllabus */}
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold text-brand-black leading-tight">
+                        {selectedVideo.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-foreground-soft mt-2 leading-relaxed">
+                        {selectedVideo.description}
+                      </p>
+                    </div>
+
+                    {/* Coach Supervision Card */}
+                    <div className="p-3.5 sm:p-4 rounded-2xl bg-surface-soft border border-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-brand-charcoal text-white flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">
+                          DCC
+                        </div>
+                        <div className="min-w-0">
+                          <span className="text-xs sm:text-sm font-bold text-brand-black block truncate">
+                            Supervised by {selectedVideo.coachName}
+                          </span>
+                          <span className="text-[11px] sm:text-xs text-muted block truncate">
+                            {selectedVideo.coachRole} • {selectedVideo.location}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 shrink-0">
+                        <span className="text-[11px] sm:text-xs font-semibold text-brand-copper bg-brand-copper/10 px-2.5 py-1 rounded-lg">
+                          {selectedVideo.attendeesCount} Registered Athletes
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Key Coaching Principles */}
+                    <div className="pt-1">
+                      <span className="text-[11px] uppercase font-bold tracking-wider text-muted block mb-2">
+                        Core Technical Focus in this Session
                       </span>
-                    ))}
+                      <div className="flex flex-wrap gap-2">
+                        {selectedVideo.keyFocus.map((focus, i) => (
+                          <span
+                            key={i}
+                            className="text-xs font-medium px-3 py-1 rounded-lg bg-surface text-stone-800 border border-border flex items-center gap-1.5"
+                          >
+                            <span className="text-brand-copper font-bold">✓</span>
+                            <span>{focus}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Bottom Action Button for effortless mobile dismissal */}
+                    <div className="pt-2 pb-2 sm:pb-0">
+                      <button
+                        onClick={() => setSelectedVideo(null)}
+                        className="w-full py-3 px-4 rounded-xl bg-brand-charcoal hover:bg-black text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors shadow-sm"
+                      >
+                        Close Video Breakdown
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
+            </div>,
+            document.body
+          )}
 
         {/* Coaches Section Spotlight */}
         <div className="pt-8 border-t border-border">
