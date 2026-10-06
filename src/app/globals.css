@@ -1,26 +1,162 @@
+@import "@fontsource/barlow-condensed/600.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "@fontsource/barlow-condensed/800.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/manrope/800.css";
+
 @import "tailwindcss";
 
+@theme {
+  --color-brand-black: #090A0C;
+  --color-brand-charcoal: #1B1D22;
+  --color-brand-orange: #EFA267;
+  --color-brand-copper: #CF7647;
+  --color-brand-copper-dark: #A85227;
+  --color-brand-peach: #F3CA9F;
+  --color-brand-maroon: #7A201B;
+  --color-brand-red: #A40F1F;
+
+  --color-background: #F6F5F3;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #FBFAF8;
+  --color-surface-muted: #F0EDE8;
+  --color-foreground: #0B0B0D;
+  --color-foreground-soft: #44454B;
+  --color-muted: #74767D;
+  --color-border-subtle: #E8E3DD;
+  --color-border-strong: #D6CEC5;
+
+  --font-headline: "Barlow Condensed", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F6F5F3;
+  --surface: #FFFFFF;
+  --surface-soft: #FBFAF8;
+  --foreground: #0B0B0D;
+  --foreground-soft: #44454B;
+  --muted: #74767D;
+  --border: #E8E3DD;
+  --border-strong: #D6CEC5;
+
+  --brand-black: #090A0C;
+  --brand-charcoal: #1B1D22;
+  --brand-orange: #EFA267;
+  --brand-copper: #CF7647;
+  --brand-peach: #F3CA9F;
+  --brand-maroon: #7A201B;
+  --brand-red: #A40F1F;
+
+  --shadow-sm: 0 2px 8px rgba(9, 10, 12, 0.04);
+  --shadow-md: 0 8px 24px rgba(9, 10, 12, 0.06);
+  --shadow-lg: 0 16px 40px rgba(9, 10, 12, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--brand-black);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--brand-peach);
+  color: var(--brand-black);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0EDE8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D6CEC5;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CF7647;
+}
+
+/* Container Shell */
+.container-shell {
+  width: min(100% - 2rem, 1240px);
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    width: min(100% - 3rem, 1240px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-shell {
+    width: min(100% - 4rem, 1240px);
+  }
+}
+
+/* Card subtle glow and hover styles */
+.sports-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E3DD;
+  box-shadow: 0 2px 10px rgba(9, 10, 12, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sports-card:hover {
+  border-color: #D6CEC5;
+  box-shadow: 0 10px 28px rgba(9, 10, 12, 0.06);
+}
+
+.brand-ring {
+  box-shadow: 0 0 0 1px rgba(207, 118, 71, 0.18), 0 12px 30px rgba(9, 10, 12, 0.06);
+}
+
+/* Numeric cricket display */
+.stat-number {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  line-height: 1;
 }

@@ -1,0 +1,289 @@
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import { TrainingSession, TrainingCategory } from "@/lib/types/content";
+import { Coach } from "@/lib/types/cricket";
+import { Container } from "../common/Container";
+import { SectionHeading } from "../common/SectionHeading";
+import {
+  Clock,
+  User,
+  MapPin,
+  Play,
+  ShieldCheck,
+} from "lucide-react";
+
+interface TrainingHubProps {
+  sessions: TrainingSession[];
+  coaches: Coach[];
+}
+
+const CATEGORIES: { id: TrainingCategory; label: string }[] = [
+  { id: "all", label: "All Sessions" },
+  { id: "net-practice", label: "Net Practice" },
+  { id: "batting", label: "Batting Drills" },
+  { id: "bowling", label: "Pace & Spin" },
+  { id: "fielding", label: "Fielding Reflexes" },
+  { id: "fitness", label: "Fitness & Conditioning" },
+  { id: "match-prep", label: "Match Scenarios" },
+];
+
+export function TrainingHub({ sessions, coaches }: TrainingHubProps) {
+  const [selectedCategory, setSelectedCategory] = useState<TrainingCategory>("all");
+  const [selectedVideo, setSelectedVideo] = useState<TrainingSession | null>(null);
+
+  const filteredSessions = sessions.filter((s) => {
+    if (selectedCategory === "all") return true;
+    return s.category === selectedCategory;
+  });
+
+  return (
+    <div className="py-10 sm:py-16 bg-background min-h-screen">
+      <Container>
+        {/* Page Heading */}
+        <SectionHeading
+          eyebrow="Development Syllabus"
+          title="Training & Player Development"
+          description="Preparation happens long before match day. Devpur Cricket Club provides an accredited coaching syllabus on professional turf pitches, developing technique, mental discipline, and athletic conditioning."
+        />
+
+        {/* Category Filters */}
+        <div className="flex items-center gap-2 mb-10 overflow-x-auto pb-2">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
+                selectedCategory === cat.id
+                  ? "bg-brand-charcoal text-white shadow-xs"
+                  : "bg-surface text-foreground-soft border border-border hover:bg-stone-50 hover:text-brand-black"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Training Sessions Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+          {filteredSessions.map((session) => (
+            <div
+              key={session.id}
+              className="group rounded-3xl bg-surface border border-border overflow-hidden sports-card flex flex-col justify-between"
+            >
+              {/* Thumbnail with interactive Play trigger */}
+              <div
+                role="button"
+                tabIndex={0}
+                aria-label={`Watch video demonstration: ${session.title}`}
+                onClick={() => setSelectedVideo(session)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedVideo(session);
+                  }
+                }}
+                className="relative aspect-video w-full bg-stone-200 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-copper"
+              >
+                <Image
+                  src={session.thumbnail}
+                  alt={session.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+                {/* Play Button Icon */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-white/90 text-brand-black flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                    <Play className="w-5 h-5 ml-0.5 fill-current text-brand-black" />
+                  </div>
+                </div>
+
+                {/* Duration Badge */}
+                {session.videoDuration && (
+                  <div className="absolute bottom-3 right-3 text-[11px] font-bold text-white bg-black/70 backdrop-blur-sm px-2 py-0.5 rounded">
+                    {session.videoDuration}
+                  </div>
+                )}
+
+                {/* Category Tag */}
+                <div className="absolute top-3 left-3 text-[10px] uppercase font-extrabold tracking-wider bg-white/90 text-brand-black backdrop-blur-md px-2.5 py-1 rounded-md">
+                  {session.category}
+                </div>
+              </div>
+
+              {/* Session Body */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
+                    <span className="flex items-center gap-1 font-semibold text-brand-black">
+                      <User className="w-3.5 h-3.5 text-brand-copper" />
+                      {session.coachName}
+                    </span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-brand-copper" />
+                      {session.duration}
+                    </span>
+                  </div>
+
+                  <h3 className="font-headline text-2xl font-bold text-brand-black leading-snug group-hover:text-brand-copper transition-colors">
+                    {session.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed line-clamp-2">
+                    {session.description}
+                  </p>
+
+                  <div className="flex items-center gap-1.5 text-xs text-muted pt-1">
+                    <MapPin className="w-3.5 h-3.5 text-brand-copper shrink-0" />
+                    <span className="truncate">{session.location}</span>
+                  </div>
+                </div>
+
+                {/* Key Focus Tags & Watch Button */}
+                <div className="pt-3 border-t border-border/80 space-y-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {session.keyFocus.map((focus, i) => (
+                      <span
+                        key={i}
+                        className="text-[10px] font-semibold px-2 py-0.5 rounded bg-surface-soft text-stone-700 border border-border"
+                      >
+                        {focus}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedVideo(session)}
+                    className="w-full py-2.5 px-4 rounded-xl bg-surface-soft hover:bg-stone-100 border border-border text-xs font-bold uppercase tracking-wider text-brand-black flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <Play className="w-3.5 h-3.5 text-brand-copper" />
+                    <span>Watch Training Breakdown</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Video Preview Modal */}
+        {selectedVideo && (
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
+            <div className="bg-surface rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-5 border border-border shadow-2xl relative">
+              <div className="flex items-center justify-between pb-3 border-b border-border">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-copper">
+                  {selectedVideo.category} • {selectedVideo.duration}
+                </span>
+                <button
+                  onClick={() => setSelectedVideo(null)}
+                  className="p-1 rounded-lg hover:bg-stone-100 text-muted hover:text-brand-black text-sm font-bold"
+                >
+                  ✕ Close
+                </button>
+              </div>
+
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center text-white">
+                <Image
+                  src={selectedVideo.thumbnail}
+                  alt={selectedVideo.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 672px"
+                  className="object-cover opacity-70"
+                />
+                <div className="relative text-center p-4 z-10 space-y-2">
+                  <div className="w-16 h-16 rounded-full bg-brand-orange text-brand-black mx-auto flex items-center justify-center shadow-lg">
+                    <Play className="w-7 h-7 ml-1 fill-current" />
+                  </div>
+                  <div className="font-headline text-xl font-bold">
+                    Video Session Demonstration
+                  </div>
+                  <div className="text-xs text-neutral-300 max-w-sm mx-auto">
+                    Video streaming module will be integrated with club hosting in future phase.
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-headline text-2xl font-bold text-brand-black">
+                  {selectedVideo.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-foreground-soft mt-1 leading-relaxed">
+                  {selectedVideo.description}
+                </p>
+                <div className="mt-3 flex items-center gap-2 text-xs font-bold text-brand-copper">
+                  <span>Conducted by {selectedVideo.coachName} ({selectedVideo.coachRole})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Coaches Section Spotlight */}
+        <div className="pt-8 border-t border-border">
+          <SectionHeading
+            eyebrow="Mentorship"
+            title="DCC Technical Staff & Specialists"
+            description="Our coaches combine decades of competitive first-class and regional experience to guide player growth at every stage of the season."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {coaches.map((coach) => (
+              <div
+                key={coach.id}
+                className="p-6 sm:p-7 rounded-3xl bg-surface border border-border sports-card flex flex-col justify-between space-y-6"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-18 h-18 rounded-2xl overflow-hidden bg-stone-100 border border-border shrink-0">
+                      <Image
+                        src={coach.photo}
+                        alt={coach.name}
+                        fill
+                        className="object-cover"
+                        sizes="72px"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-headline text-2xl font-bold text-brand-black leading-tight">
+                        {coach.name}
+                      </h3>
+                      <p className="text-xs font-bold text-brand-copper mt-0.5">
+                        {coach.role}
+                      </p>
+                      <span className="text-[11px] text-muted block mt-0.5">
+                        {coach.experience}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed">
+                    {coach.bio}
+                  </p>
+
+                  <div className="pt-3 border-t border-border/80 space-y-1.5">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted block">
+                      Core Coaching Focus
+                    </span>
+                    {coach.coachingFocus.map((focus, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-2 text-xs text-foreground-soft"
+                      >
+                        <ShieldCheck className="w-3.5 h-3.5 text-brand-copper shrink-0" />
+                        <span>{focus}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+}

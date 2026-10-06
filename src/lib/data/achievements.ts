@@ -1,0 +1,105 @@
+import { Achievement } from "../types/content";
+
+export const achievements: Achievement[] = [
+  {
+    id: "ach-1",
+    title: "JPL 2026 Semi-Finalists",
+    year: "2026",
+    season: "2026–27",
+    category: "trophy",
+    recipient: "Devpur Cricket Club",
+    badgeText: "Tournament Knockouts",
+    description:
+      "Advanced to the semi-finals of the prestigious Jhalawar Premier League after topping Group B with clinical bowling and high run-rate victories.",
+    tournamentName: "Jhalawar Premier League 2026",
+    featured: true,
+  },
+  {
+    id: "ach-2",
+    title: "Aarav Mehta: 92* in Quarter-Final",
+    year: "2026",
+    season: "2026–27",
+    category: "player-award",
+    recipient: "Aarav Mehta",
+    badgeText: "Match-Winning Masterclass",
+    description:
+      "In a tense 181-run quarter-final chase against Kota Dynamos, Aarav carried his bat with a sensational 92* off 51 balls (10 fours, 4 sixes).",
+    tournamentName: "JPL 2026",
+    featured: true,
+  },
+  {
+    id: "ach-3",
+    title: "Vikas Rathore: 5-Wicket Haul (5/18)",
+    year: "2026",
+    season: "2026–27",
+    category: "record",
+    recipient: "Vikas Rathore",
+    badgeText: "Five-For Club Record",
+    description:
+      "Ripped through Kota Stars' top order with express seam bowling, finishing with figures of 4.0 - 0 - 18 - 5.",
+    tournamentName: "Kota Cricket League",
+    featured: true,
+  },
+  {
+    id: "ach-4",
+    title: "Winter Cricket Cup Champions",
+    year: "2025",
+    season: "2025–26",
+    category: "trophy",
+    recipient: "Devpur Cricket Club",
+    badgeText: "Champions",
+    description:
+      "Lifted the trophy on home soil after remaining undefeated throughout the tournament and triumphing in the grand final by 34 runs.",
+    tournamentName: "Winter Cricket Cup 2025",
+    featured: true,
+  },
+  {
+    id: "ach-5",
+    title: "Best Batter of the Tournament",
+    year: "2025",
+    season: "2025–26",
+    category: "player-award",
+    recipient: "Aarav Mehta",
+    badgeText: "Golden Bat",
+    description:
+      "Scored 394 runs in 6 matches at an average of 78.8 and a strike rate of 156.4 in the Winter Cricket Cup 2025.",
+    tournamentName: "Winter Cricket Cup 2025",
+    featured: true,
+  },
+  {
+    id: "ach-6",
+    title: "Best Wicketkeeper of the Year",
+    year: "2025",
+    season: "2025–26",
+    category: "player-award",
+    recipient: "Rohan Singh",
+    badgeText: "Golden Glove",
+    description:
+      "Effected 26 dismissals (19 catches, 7 stumpings) across 18 matches, conceding zero byes in the tournament knockouts.",
+    tournamentName: "Rajasthan Club Championship",
+  },
+  {
+    id: "ach-7",
+    title: "Hadoti Trophy Champions",
+    year: "2024",
+    season: "2024–25",
+    category: "trophy",
+    recipient: "Devpur Cricket Club",
+    badgeText: "Champions",
+    description:
+      "Historic inaugural district championship victory following a thrilling last-ball defense defending 145 runs.",
+    tournamentName: "Hadoti District Trophy",
+  },
+  {
+    id: "ach-8",
+    title: "Best Bowler of the Season",
+    year: "2024",
+    season: "2024–25",
+    category: "player-award",
+    recipient: "Vikas Rathore",
+    badgeText: "Purple Cap",
+    description:
+      "Captured 24 wickets at an economy of 6.1, leading the bowling charts across the Hadoti cricket circuit.",
+    tournamentName: "Hadoti District League",
+  },
+];
