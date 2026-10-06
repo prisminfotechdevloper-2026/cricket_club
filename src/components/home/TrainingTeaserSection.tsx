@@ -27,7 +27,11 @@ export function TrainingTeaserSection() {
               className="group rounded-3xl bg-surface-soft border border-border overflow-hidden sports-card flex flex-col justify-between"
             >
               {/* Thumbnail with duration */}
-              <div className="relative aspect-video w-full bg-stone-200 overflow-hidden">
+              <Link
+                href="/training"
+                aria-label={`Watch ${session.title}`}
+                className="relative aspect-video w-full bg-stone-200 overflow-hidden cursor-pointer block"
+              >
                 <Image
                   src={session.thumbnail}
                   alt={session.title}
@@ -39,14 +43,14 @@ export function TrainingTeaserSection() {
 
                 {/* Play Button Icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white/90 text-brand-black flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
-                    <Play className="w-5 h-5 ml-0.5 fill-current text-brand-black" />
+                  <div className="w-12 h-12 rounded-full bg-white/95 text-brand-black flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                    <Play className="w-5 h-5 ml-0.5 fill-current text-brand-copper" />
                   </div>
                 </div>
 
                 {/* Duration Badge */}
                 {session.videoDuration && (
-                  <div className="absolute bottom-3 right-3 text-[11px] font-bold text-white bg-black/70 backdrop-blur-sm px-2 py-0.5 rounded">
+                  <div className="absolute bottom-3 right-3 text-[11px] font-bold text-white bg-black/75 backdrop-blur-sm px-2 py-0.5 rounded">
                     {session.videoDuration}
                   </div>
                 )}
@@ -55,7 +59,7 @@ export function TrainingTeaserSection() {
                 <div className="absolute top-3 left-3 text-[10px] uppercase font-extrabold tracking-wider bg-white/90 text-brand-black backdrop-blur-md px-2.5 py-1 rounded-md">
                   {session.category}
                 </div>
-              </div>
+              </Link>
 
               {/* Card Body */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">

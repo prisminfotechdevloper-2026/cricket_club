@@ -21,8 +21,7 @@ export const tournaments: Tournament[] = [
     },
     summary:
       "The premier white-ball club championship in the Hadoti region. DCC qualified for the knockouts topping Group B with dominant wins against Kota Dynamos and Hadoti Blasters.",
-    coverImage:
-      "https://images.unsplash.com/photo-1531415074868-036b107e775a?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "/images/winning_time_with_group.png",
     featuredMatches: matches.filter(
       (m) => m.tournamentSlug === "jhalawar-premier-league-2026"
     ),
@@ -46,8 +45,7 @@ export const tournaments: Tournament[] = [
     },
     summary:
       "A fast-paced multi-tier league testing squad depth with back-to-back weekend fixtures. DCC demonstrated clinical bowling performances restricting opponents to low scores.",
-    coverImage:
-      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "/images/ground_playing.png",
     featuredMatches: matches.filter(
       (m) => m.tournamentSlug === "kota-cricket-league-2026"
     ),
@@ -71,8 +69,7 @@ export const tournaments: Tournament[] = [
     },
     summary:
       "Statewide championship attracting the top 16 registered cricket clubs from Jaipur, Jodhpur, Udaipur, and Kota divisions.",
-    coverImage:
-      "https://images.unsplash.com/photo-1512719355432-e3e940a2325b?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "/images/train_travel.png",
     featuredMatches: matches.filter(
       (m) => m.tournamentSlug === "rajasthan-club-championship-2026"
     ),
@@ -96,8 +93,7 @@ export const tournaments: Tournament[] = [
     },
     summary:
       "Annual flagship tournament hosted on DCC home turf featuring turf-pitch games under floodlights during peak winter.",
-    coverImage:
-      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "/images/achivement_winning2.png",
     featuredMatches: [],
   },
 ];

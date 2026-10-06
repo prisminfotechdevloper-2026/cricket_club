@@ -220,8 +220,8 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                     </div>
 
                     {match.result && (
-                      <div className="text-xs font-bold text-emerald-700 pt-1 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <div className="text-xs font-bold text-brand-copper pt-1 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-copper" />
                         <span>{match.result}</span>
                       </div>
                     )}
@@ -234,7 +234,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                         href={`/matches/${match.slug}`}
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-charcoal text-white hover:bg-black font-bold text-xs uppercase tracking-wider transition-all shadow-sm group/btn"
                       >
-                        <span>View Live Score</span>
+                        <span className="text-white font-bold">View Live Score</span>
                         <ArrowRight className="w-4 h-4 text-brand-peach transition-transform group-hover/btn:translate-x-1" />
                       </Link>
                     ) : match.status === "completed" ? (

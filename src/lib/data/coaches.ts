@@ -6,9 +6,9 @@ export const coaches: Coach[] = [
     slug: "rahul-sharma",
     name: "Rahul Sharma",
     role: "Head Coach & High Performance Director",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+    photo: "/images/members.png",
     experience: "14+ Years in State & Club Cricket",
-    bio: "Former First-Class domestic cricketer with BCCI Level-2 coaching credentials. Oversees DCC's seasonal syllabus, squad tactical preparation, and mental resilience under match pressure.",
+    bio: "Club mentor and BCCI Level-2 coaching certified director. Guides DCC's seasonal syllabus, tactical match preparation, and athletic fortitude across all age categories.",
     coachingFocus: [
       "Tactical Game Awareness",
       "Death Overs Strategy",
@@ -21,9 +21,9 @@ export const coaches: Coach[] = [
     slug: "amit-verma",
     name: "Amit Verma",
     role: "Senior Batting & Fielding Coach",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+    photo: "/images/training_team.png",
     experience: "10+ Years Specialized Batting Coaching",
-    bio: "Specializes in modern top-order shot execution, boundary finding in powerplays, and athletic ground-fielding fundamentals. Trains both junior prospects and senior club captains.",
+    bio: "Specializes in modern top-order shot execution, power-hitting mechanics, and high-intensity ground fielding drills on turf pitches.",
     coachingFocus: [
       "Head Position & Balance",
       "Power Hitting Mechanics",
@@ -36,7 +36,7 @@ export const coaches: Coach[] = [
     slug: "sandeep-rathore",
     name: "Sandeep Rathore",
     role: "Fast Bowling & Conditioning Specialist",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
+    photo: "/images/exersise.png",
     experience: "8+ Years Pace Bowling Development",
     bio: "Ex-district speedster turned biomechanics coach. Focuses on seam presentation, repeatable run-ups, yorker accuracy under lights, and athletic injury-prevention regimens.",
     coachingFocus: [

@@ -47,7 +47,7 @@ export function ClubIntroSection() {
                   key={i}
                   className="p-4 sm:p-5 rounded-2xl bg-surface border border-border flex items-start gap-3.5 sports-card"
                 >
-                  <div className="p-1 rounded-lg bg-emerald-50 text-emerald-600 shrink-0 mt-0.5">
+                  <div className="p-1 rounded-lg bg-brand-copper/10 text-brand-copper shrink-0 mt-0.5 border border-brand-copper/20">
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <div>

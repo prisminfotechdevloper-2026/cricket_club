@@ -23,6 +23,7 @@ export interface TrainingSession {
   location: string;
   thumbnail: string;
   videoDuration?: string;
+  youtubeId?: string;
   keyFocus: string[];
   attendeesCount: number;
 }

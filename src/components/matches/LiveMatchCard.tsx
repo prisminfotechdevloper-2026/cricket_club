@@ -64,7 +64,7 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
               <div className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-black tracking-tight leading-none">
                 {match.dccScore}
               </div>
-              <span className="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full inline-block mt-1">
+              <span className="text-xs font-semibold text-brand-copper bg-brand-copper/10 px-2 py-0.5 rounded-full inline-block mt-1">
                 CRR: {liveDetails?.currentRunRate || "8.42"}
               </span>
             </div>
@@ -151,7 +151,7 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
                 className="flex items-center justify-between p-2.5 rounded-xl bg-stone-50 border border-stone-200/60"
               >
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="w-2 h-2 rounded-full bg-brand-copper" />
                   <span className="font-bold text-brand-black">
                     {b.name} {b.isStriker && "*"}
                   </span>
@@ -188,7 +188,7 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
             href={`/matches/${match.slug}`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-copper hover:bg-brand-copper-dark text-white font-bold text-sm uppercase tracking-wider transition-all shadow-sm group ml-auto"
           >
-            <span>View Full Live Scorecard</span>
+            <span className="text-white font-bold">View Full Live Scorecard</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

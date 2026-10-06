@@ -85,6 +85,30 @@ export function AboutClubView() {
           </div>
         </div>
 
+        {/* Real Club Squad & Outfield Banner */}
+        <div className="relative rounded-3xl overflow-hidden border border-border shadow-lg mb-16 aspect-[16/8] sm:aspect-[21/9] bg-stone-900 sports-card">
+          <Image
+            src="/images/ground_players_group.png"
+            alt="Devpur Cricket Club full squad and coaches on the ground"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10 flex flex-col justify-end p-6 sm:p-10 text-white">
+            <div className="max-w-2xl space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+                The Devpur Cricket Family
+              </span>
+              <h3 className="font-headline text-2xl sm:text-4xl font-extrabold leading-tight">
+                One Club. One Brotherhood. Relentless Passion.
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-300">
+                Coaches, captains, academy youngsters, and senior mentors united across our home ground in Devpur, Rajasthan.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Philosophy: From Net Practice To Match Day */}
         <div className="rounded-3xl bg-surface border border-border shadow-sm p-8 sm:p-12 mb-16 space-y-6">
           <SectionHeading

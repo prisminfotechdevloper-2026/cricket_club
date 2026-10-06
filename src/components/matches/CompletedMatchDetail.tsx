@@ -43,22 +43,22 @@ export function CompletedMatchDetail({ match }: CompletedMatchDetailProps) {
           </div>
 
           {/* Result Banner */}
-          <div className="my-8 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 flex items-center justify-between">
+          <div className="my-8 p-5 rounded-2xl bg-brand-copper/10 border border-brand-copper/30 text-brand-charcoal flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-brand-copper text-white flex items-center justify-center shrink-0 shadow-xs">
                 <Trophy className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-copper block">
                   Final Result
                 </span>
-                <span className="font-headline text-2xl font-bold text-emerald-950">
+                <span className="font-headline text-2xl font-bold text-brand-charcoal">
                   {match.result}
                 </span>
               </div>
             </div>
 
-            <CheckCircle2 className="w-6 h-6 text-emerald-600 hidden sm:block" />
+            <CheckCircle2 className="w-6 h-6 text-brand-copper hidden sm:block" />
           </div>
 
           {/* Scores Overview */}

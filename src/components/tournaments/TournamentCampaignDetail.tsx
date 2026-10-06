@@ -92,7 +92,7 @@ export function TournamentCampaignDetail({
                 <span className="text-[10px] uppercase font-bold text-muted block">
                   Matches Won
                 </span>
-                <span className="font-headline text-3xl font-bold text-emerald-700">
+                <span className="font-headline text-3xl font-bold text-brand-copper">
                   {tournament.wins}
                 </span>
               </div>
@@ -156,7 +156,7 @@ export function TournamentCampaignDetail({
                           m.status === "live"
                             ? "bg-red-100 text-red-800"
                             : m.status === "completed"
-                            ? "bg-emerald-100 text-emerald-800"
+                            ? "bg-brand-copper/10 text-brand-copper"
                             : "bg-amber-100 text-amber-800"
                         }`}
                       >
@@ -171,8 +171,8 @@ export function TournamentCampaignDetail({
                     </div>
 
                     {m.result && (
-                      <div className="text-xs font-bold text-emerald-700 pt-0.5 flex items-center gap-1">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      <div className="text-xs font-bold text-brand-copper pt-0.5 flex items-center gap-1">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-copper" />
                         <span>{m.result}</span>
                       </div>
                     )}

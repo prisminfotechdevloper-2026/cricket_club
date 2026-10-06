@@ -110,7 +110,7 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
                   Current Season (2026–27)
                 </h3>
               </div>
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-copper/10 text-brand-copper border border-brand-copper/20">
                 Active Campaign
               </span>
             </div>

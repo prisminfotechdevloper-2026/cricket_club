@@ -94,7 +94,7 @@ export function SeasonArchiveDetail({ season }: SeasonArchiveDetailProps) {
               <span className="text-[10px] uppercase font-bold text-muted block">
                 Matches Won
               </span>
-              <span className="font-headline text-3xl font-bold text-emerald-700">
+              <span className="font-headline text-3xl font-bold text-brand-copper">
                 {season.matchesWon}
               </span>
             </div>

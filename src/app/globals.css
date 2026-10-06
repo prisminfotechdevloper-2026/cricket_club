@@ -56,48 +56,49 @@
   --shadow-lg: 0 16px 40px rgba(9, 10, 12, 0.08);
 }
 
-* {
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-  background-color: var(--background);
-}
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+  }
 
-body {
-  margin: 0;
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--brand-black);
-  letter-spacing: -0.01em;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--brand-black);
+    letter-spacing: -0.01em;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+  }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-::selection {
-  background: var(--brand-peach);
-  color: var(--brand-black);
+  ::selection {
+    background: var(--brand-peach);
+    color: var(--brand-black);
+  }
 }
 
 /* Custom Scrollbar */

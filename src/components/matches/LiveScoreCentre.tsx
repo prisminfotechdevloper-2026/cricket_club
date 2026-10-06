@@ -123,7 +123,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
                   <div className="font-headline text-4xl sm:text-6xl font-extrabold text-brand-black tracking-tight leading-none">
                     {match.dccScore}
                   </div>
-                  <span className="text-xs font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full inline-block mt-2">
+                  <span className="text-xs font-bold text-brand-copper bg-brand-copper/10 px-2.5 py-0.5 rounded-full inline-block mt-2">
                     4 Wkts Down
                   </span>
                 </div>
@@ -208,7 +208,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
                   >
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                        <span className="w-2 h-2 rounded-full bg-brand-copper" />
                         <span className="font-bold text-sm text-brand-black">
                           {b.name} {b.isStriker && "*"}
                         </span>
@@ -313,7 +313,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
                     {liveDetails.scorecard.secondInnings.batters.map((b) => (
                       <tr key={b.id} className="hover:bg-surface-soft/60">
                         <td className="py-3 px-3 font-bold text-brand-black">
-                          {b.name} {b.isStriker && <span className="text-emerald-600 font-black">*</span>}
+                          {b.name} {b.isStriker && <span className="text-brand-copper font-black">*</span>}
                         </td>
                         <td className="py-3 px-3 text-xs text-muted">
                           {b.dismissal}

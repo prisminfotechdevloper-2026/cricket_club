@@ -16,9 +16,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Rahul Sharma",
     coachRole: "Head Coach",
     location: "Center Turf Pitch 2, Devpur Ground",
-    thumbnail:
-      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/training_team.png",
     videoDuration: "14:20",
+    youtubeId: "v3soFH5Jn68",
     keyFocus: [
       "Target Calculation",
       "Hitting Against the Wind",
@@ -42,9 +42,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Sandeep Rathore",
     coachRole: "Fast Bowling Specialist",
     location: "Pace Nets A & B",
-    thumbnail:
-      "https://images.unsplash.com/photo-1531415074868-036b107e775a?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/exersise.png",
     videoDuration: "18:45",
+    youtubeId: "qlKfbLKOdBv",
     keyFocus: [
       "Yorker Target Cones",
       "Seam Grip Adjustments",
@@ -68,9 +68,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Amit Verma",
     coachRole: "Batting & Fielding Coach",
     location: "Main Oval Infield",
-    thumbnail:
-      "https://images.unsplash.com/photo-1512719355432-e3e940a2325b?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/ground_players_group.png",
     videoDuration: "11:30",
+    youtubeId: "e_sWl0s81b0",
     keyFocus: [
       "Soft Hand Cradles",
       "Head Stability on Edges",
@@ -94,9 +94,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Amit Verma",
     coachRole: "Batting Coach",
     location: "Spin Turf Nets C & D",
-    thumbnail:
-      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/ground_playing.png",
     videoDuration: "16:10",
+    youtubeId: "F0kQvK4_FhQ",
     keyFocus: [
       "Reading Wrist Releases",
       "Paddle Sweep Angles",
@@ -120,9 +120,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Sandeep Rathore",
     coachRole: "Conditioning Specialist",
     location: "Athletic Track & Gym Complex",
-    thumbnail:
-      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/team_members.png",
     videoDuration: "09:40",
+    youtubeId: "4O6fGLrZF4d",
     keyFocus: [
       "Cricket Shuttle Sprints",
       "Groin & Hamstring Mobility",
@@ -137,7 +137,7 @@ export const trainingSessions: TrainingSession[] = [
     season: "2026–27",
     title: "Full Squad 20-Over Match Simulation Under Lights",
     description:
-      "Comprehensive internal intra-club clash: DCC Whites vs DCC Greens. Full match uniforms, live umpiring, boundary ropes, and real pressure stakes.",
+      "Comprehensive internal intra-club clash: DCC Whites vs DCC Golds. Full match uniforms, live umpiring, boundary ropes, and real pressure stakes.",
     category: "match-prep",
     date: "25 Sep 2026",
     time: "5:30 PM – 9:30 PM",
@@ -146,9 +146,9 @@ export const trainingSessions: TrainingSession[] = [
     coachName: "Rahul Sharma",
     coachRole: "Head Coach",
     location: "Main Ground (Under Floodlights)",
-    thumbnail:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+    thumbnail: "/images/team.png",
     videoDuration: "24:15",
+    youtubeId: "0ZhXvTzVr0s",
     keyFocus: [
       "Live Tactical Communication",
       "Over Rate Discipline",

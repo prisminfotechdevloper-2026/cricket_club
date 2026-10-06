@@ -172,50 +172,91 @@ export function TrainingHub({ sessions, coaches }: TrainingHubProps) {
 
         {/* Video Preview Modal */}
         {selectedVideo && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-            <div className="bg-surface rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-5 border border-border shadow-2xl relative">
+          <div
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <div
+              className="bg-surface rounded-3xl max-w-3xl w-full p-5 sm:p-7 space-y-5 border border-border shadow-2xl relative max-h-[92vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
               <div className="flex items-center justify-between pb-3 border-b border-border">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-copper">
-                  {selectedVideo.category} • {selectedVideo.duration}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-brand-copper bg-brand-copper/10 px-2.5 py-1 rounded-md">
+                    {selectedVideo.category}
+                  </span>
+                  <span className="text-xs font-semibold text-muted">
+                    Duration: {selectedVideo.duration} • Video: {selectedVideo.videoDuration}
+                  </span>
+                </div>
                 <button
                   onClick={() => setSelectedVideo(null)}
-                  className="p-1 rounded-lg hover:bg-stone-100 text-muted hover:text-brand-black text-sm font-bold"
+                  className="px-3 py-1.5 rounded-xl hover:bg-stone-100 text-muted hover:text-brand-black text-xs font-bold transition-colors"
                 >
                   ✕ Close
                 </button>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center text-white">
-                <Image
-                  src={selectedVideo.thumbnail}
-                  alt={selectedVideo.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 672px"
-                  className="object-cover opacity-70"
+              {/* YouTube Responsive Video Player */}
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-xl ring-1 ring-black/10">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId || "v3soFH5Jn68"}?autoplay=1&rel=0&modestbranding=1`}
+                  title={selectedVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full border-0 absolute inset-0"
                 />
-                <div className="relative text-center p-4 z-10 space-y-2">
-                  <div className="w-16 h-16 rounded-full bg-brand-orange text-brand-black mx-auto flex items-center justify-center shadow-lg">
-                    <Play className="w-7 h-7 ml-1 fill-current" />
-                  </div>
-                  <div className="font-headline text-xl font-bold">
-                    Video Session Demonstration
-                  </div>
-                  <div className="text-xs text-neutral-300 max-w-sm mx-auto">
-                    Video streaming module will be integrated with club hosting in future phase.
-                  </div>
-                </div>
               </div>
 
-              <div>
-                <h3 className="font-headline text-2xl font-bold text-brand-black">
-                  {selectedVideo.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-foreground-soft mt-1 leading-relaxed">
-                  {selectedVideo.description}
-                </p>
-                <div className="mt-3 flex items-center gap-2 text-xs font-bold text-brand-copper">
-                  <span>Conducted by {selectedVideo.coachName} ({selectedVideo.coachRole})</span>
+              {/* Video Info & Drill Syllabus */}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-headline text-2xl sm:text-3xl font-bold text-brand-black leading-tight">
+                    {selectedVideo.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-foreground-soft mt-2 leading-relaxed">
+                    {selectedVideo.description}
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-surface-soft border border-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-charcoal text-white flex items-center justify-center font-bold text-sm">
+                      DCC
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-brand-black block">
+                        Supervised by {selectedVideo.coachName}
+                      </span>
+                      <span className="text-[11px] text-muted">
+                        {selectedVideo.coachRole} • {selectedVideo.location}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-semibold text-muted">
+                      {selectedVideo.attendeesCount} Registered Athletes
+                    </span>
+                  </div>
+                </div>
+
+                {/* Key Coaching Principles */}
+                <div className="pt-2">
+                  <span className="text-[11px] uppercase font-bold tracking-wider text-muted block mb-2">
+                    Core Technical Focus in this Session
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedVideo.keyFocus.map((focus, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-medium px-3 py-1 rounded-lg bg-surface text-stone-800 border border-border"
+                      >
+                        ✓ {focus}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
