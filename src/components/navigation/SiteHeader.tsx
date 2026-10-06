@@ -20,14 +20,16 @@ const NAV_LINKS = [
   { name: "Achievements", href: "/achievements" },
 ];
 
+const emptySubscribe = () => () => {};
+const useIsMounted = () => React.useSyncExternalStore(emptySubscribe, () => true, () => false);
+
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsMounted();
   const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -119,7 +121,7 @@ export function SiteHeader() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/matches/dcc-vs-royal-xi"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl bg-brand-charcoal text-white hover:bg-brand-black transition-all shadow-sm border border-brand-charcoal group"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl bg-brand-charcoal text-white hover:bg-brand-black transition-colors shadow-sm border border-brand-charcoal group"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -170,7 +172,7 @@ export function SiteHeader() {
               <Link
                 href="/matches/dcc-vs-royal-xi"
                 onClick={() => setIsOpen(false)}
-                className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-all shadow-md group"
+                className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-colors shadow-md group"
               >
                 <div className="flex items-center justify-between text-xs text-brand-peach mb-2">
                   <span className="font-semibold uppercase tracking-wider flex items-center gap-1.5">
@@ -207,7 +209,7 @@ export function SiteHeader() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold transition-all ${
+                      className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold transition-colors ${
                         active
                           ? "bg-brand-copper/10 text-brand-copper-dark font-bold"
                           : "text-foreground-soft hover:text-brand-black hover:bg-black/[0.03]"
