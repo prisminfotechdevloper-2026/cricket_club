@@ -79,7 +79,7 @@ export function SiteHeader() {
             >
               <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-sm transition-transform duration-200 group-hover:scale-105">
                 <Image
-                  src="/logo/logo.png"
+                  src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Emblem"
                   fill
                   priority

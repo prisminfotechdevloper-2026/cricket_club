@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "Official digital home of Devpur Cricket Club (DCC), Rajasthan. Explore club development, coaching, match schedules, live scores, player profiles, and season memories.",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico?v=2" },
+      { url: "/icon.png?v=2", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/apple-icon.png?v=2",
   },
 };
 

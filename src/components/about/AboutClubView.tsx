@@ -74,7 +74,7 @@ export function AboutClubView() {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 drop-shadow-xl">
               <Image
-                src="/logo/logo.png"
+                src="/logo/dcc-logo.png"
                 alt="Devpur Cricket Club Shield"
                 fill
                 priority

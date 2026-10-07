@@ -106,7 +106,7 @@ export function HomeHero() {
               {/* Outer decorative ring */}
               <div className="relative w-44 h-44 sm:w-56 sm:h-56 mx-auto drop-shadow-xl my-2">
                 <Image
-                  src="/logo/logo.png"
+                  src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Official Crest"
                   fill
                   priority

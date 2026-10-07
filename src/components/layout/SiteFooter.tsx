@@ -20,7 +20,7 @@ export function SiteFooter() {
             <Link href="/" className="inline-flex items-center gap-3 group">
               <div className="relative w-12 h-12 shrink-0">
                 <Image
-                  src="/logo/logo.png"
+                  src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Emblem"
                   fill
                   className="object-contain"
