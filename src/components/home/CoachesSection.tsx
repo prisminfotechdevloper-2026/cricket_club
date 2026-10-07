@@ -3,16 +3,15 @@ import Image from "next/image";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 import { coaches } from "@/lib/data/coaches";
-import { ShieldCheck } from "lucide-react";
 
 export function CoachesSection() {
   return (
     <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
       <Container>
         <SectionHeading
-          eyebrow="Technical Staff"
-          title="Experienced Coaching Mentors"
-          description="Led by accredited coaches with professional playing pedigree, ensuring individualized mentorship across pace, spin, batting mechanics, and mental match sharpness."
+          eyebrow="Club Practice & Development"
+          title="Guided by Experience"
+          description="Led by Head Coach Mr. Aditya Koli (Kanga B Division player), providing structured mentorship and skill refinement during our 3-days-a-week net sessions at Matunga Ground."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -43,8 +42,21 @@ export function CoachesSection() {
                     <span className="text-[11px] text-muted block mt-0.5">
                       {coach.experience}
                     </span>
+                    {coach.appointmentRef && (
+                      <span className="inline-block mt-1 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-copper bg-brand-copper/10 px-2 py-0.5 rounded">
+                        {coach.appointmentRef}
+                      </span>
+                    )}
                   </div>
                 </div>
+
+                {/* Schedule Tag */}
+                {coach.schedule && (
+                  <div className="p-2.5 rounded-xl bg-surface-soft border border-border/80 text-[11px] text-foreground-soft font-medium flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0" />
+                    <span>{coach.schedule}</span>
+                  </div>
+                )}
 
                 {/* Bio */}
                 <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed">
@@ -54,15 +66,15 @@ export function CoachesSection() {
                 {/* Coaching Focus List */}
                 <div className="space-y-2 pt-2 border-t border-border/80">
                   <span className="text-[10px] uppercase font-bold tracking-wider text-muted block">
-                    Specialized Focus Areas
+                    Key Development Domains
                   </span>
                   <div className="space-y-1.5">
-                    {coach.coachingFocus.map((focus, i) => (
+                    {coach.coachingFocus.map((focus) => (
                       <div
-                        key={i}
-                        className="flex items-center gap-2 text-xs text-foreground-soft"
+                        key={focus}
+                        className="flex items-start gap-2 text-xs text-foreground-soft"
                       >
-                        <ShieldCheck className="w-3.5 h-3.5 text-brand-copper shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-copper mt-1 shrink-0" />
                         <span>{focus}</span>
                       </div>
                     ))}

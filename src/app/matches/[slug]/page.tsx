@@ -21,7 +21,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${match.status === "live" ? "🔴 LIVE: " : ""}${match.tournament} — DCC vs ${match.opponent}`,
+    title: `${match.status === "live" ? "LIVE: " : ""}${match.tournament} — DCC vs ${match.opponent}`,
     description: `Match details and live score updates for Devpur Cricket Club vs ${match.opponent} at ${match.venue}.`,
   };
 }

@@ -12,8 +12,7 @@ import {
   MapPin,
   ArrowRight,
   Search,
-  Filter,
-  CheckCircle2,
+  Trophy,
 } from "lucide-react";
 
 interface MatchesDirectoryProps {
@@ -24,6 +23,8 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [tournamentFilter, setTournamentFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const liveMatch = initialMatches.find((m) => m.status === "live") || initialMatches[0];
 
   const filteredMatches = initialMatches.filter((match) => {
     // Status filter
@@ -48,13 +49,115 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
   ).map((str) => JSON.parse(str) as { slug: string; name: string });
 
   return (
-    <div className="py-10 sm:py-16 bg-background min-h-screen">
-      <Container>
-        <SectionHeading
-          eyebrow="Fixtures & Results"
-          title="Matches & Tournament Campaigns"
-          description="Track Devpur Cricket Club's match campaign across regional leagues. View upcoming fixtures, completed scorecards, and live match updates."
-        />
+    <div className="bg-background min-h-screen">
+      {/* =========================================================================
+          HERO BANNER: LIGHT THEME ATHLETIC MATCHDAY ATMOSPHERE
+          ========================================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-white text-stone-900 border-b border-stone-200 py-12 sm:py-16 lg:py-20">
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Matchday Typography & Campaign Info */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-ping" />
+                <span>DCC MATCHDAY // 2026–27 COMPETITIVE CAMPAIGN</span>
+              </div>
+
+              <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
+                Chasing Silverware.
+                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                  On The Cricket Pitch.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
+                25+ competitive leather-ball fixtures across Mumbai and KVO community circuits.
+                From intense last-over run chases to championship knockout matches — follow every ball,
+                upcoming fixture, and historical scorecard.
+              </p>
+
+              {/* Action Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                {[
+                  { icon: <Trophy className="w-3.5 h-3.5 text-[#D45D0E]" />, text: "2× KVO RUNNERS-UP" },
+                  { icon: <span className="w-2 h-2 rounded-full bg-emerald-500" />, text: "RANK #10 KVO CIRCUIT" },
+                  { icon: <Calendar className="w-3.5 h-3.5 text-[#D49A44]" />, text: "25+ FIXTURES / YEAR" },
+                ].map((badge) => (
+                  <div key={badge.text} className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                    {badge.icon}
+                    <span>{badge.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Live Match / Match Spotlight Card */}
+            <div className="lg:col-span-5">
+              {liveMatch && (
+                <div className="rounded-3xl bg-white border border-stone-200/90 p-6 sm:p-7 shadow-lg relative overflow-hidden group">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-red-50 text-red-600 border border-red-200 text-[10px] font-mono font-bold uppercase tracking-wider">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+                      LIVE MATCHDAY ACTION
+                    </span>
+                    <span className="text-[11px] font-mono text-stone-500 font-medium">
+                      {liveMatch.tournament}
+                    </span>
+                  </div>
+
+                  {/* Opponents & Live Scores */}
+                  <div className="space-y-3 pb-4 border-b border-stone-100">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-3 h-3 rounded-full bg-[#E86016]" />
+                        <span className="font-headline font-black text-xl text-stone-900">
+                          Devpur CC
+                        </span>
+                      </div>
+                      <span className="font-mono text-2xl font-black text-[#D45D0E]">
+                        {liveMatch.dccScore || "146/4"}
+                        <span className="text-xs font-normal text-stone-500 ml-1.5">(17.2 ov)</span>
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-stone-600">
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-3 h-3 rounded-full bg-stone-400" />
+                        <span className="font-headline font-bold text-base text-stone-700">
+                          {liveMatch.opponent}
+                        </span>
+                      </div>
+                      <span className="font-mono text-lg font-bold text-stone-700">
+                        {liveMatch.opponentScore || "162/8"}
+                        <span className="text-xs font-normal text-stone-400 ml-1.5">(20 ov)</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Match Situation & CTA */}
+                  <div className="pt-4 flex items-center justify-between gap-3">
+                    <div className="text-xs text-stone-700 font-mono">
+                      <span className="text-emerald-600 font-bold block">Need 17 runs from 16 balls</span>
+                      <span className="text-stone-500 text-[11px]">Venue: {liveMatch.venue}</span>
+                    </div>
+                    <Link
+                      href={`/matches/${liveMatch.slug}`}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#D45D0E] to-[#F0761E] hover:from-[#F0761E] hover:to-[#D49A44] text-white text-xs font-mono font-bold uppercase tracking-wider transition-[background-image,box-shadow] shadow-sm shrink-0"
+                    >
+                      <span>Scorecard</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Main Content Area */}
+      <div className="py-10 sm:py-14">
+        <Container>
 
         {/* Filter Controls Bar */}
         <div className="p-5 sm:p-6 rounded-3xl bg-surface border border-border shadow-sm mb-10 space-y-4">
@@ -138,7 +241,9 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
         {/* Matches Grid / List */}
         {filteredMatches.length === 0 ? (
           <div className="text-center py-16 px-4 rounded-3xl bg-surface border border-border">
-            <Filter className="w-10 h-10 text-muted mx-auto mb-3" />
+            <div className="inline-block px-3 py-1 rounded-md bg-stone-900 text-stone-300 font-mono text-xs font-bold uppercase tracking-wider mb-3">
+              [ NO FIXTURE MATCHED ]
+            </div>
             <h3 className="font-headline text-2xl font-bold text-brand-black">No matches found</h3>
             <p className="text-xs sm:text-sm text-muted mt-1 max-w-sm mx-auto">
               No fixtures match the selected filter criteria. Try resetting your search or tournament selection.
@@ -159,7 +264,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
             {filteredMatches.map((match) => (
               <div
                 key={match.id}
-                className="group rounded-3xl bg-surface border border-border p-6 sm:p-7 shadow-xs hover:shadow-md transition-all sports-card"
+                className="group rounded-3xl bg-surface border border-border p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow sports-card"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                   {/* Left: Tournament & Status */}
@@ -220,8 +325,8 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                     </div>
 
                     {match.result && (
-                      <div className="text-xs font-bold text-brand-copper pt-1 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-copper" />
+                      <div className="text-xs font-mono font-bold text-brand-copper pt-1 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-copper shrink-0" />
                         <span>{match.result}</span>
                       </div>
                     )}
@@ -232,7 +337,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                     {match.status === "live" ? (
                       <Link
                         href={`/matches/${match.slug}`}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-charcoal text-white hover:bg-black font-bold text-xs uppercase tracking-wider transition-all shadow-sm group/btn"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-charcoal text-white hover:bg-black font-bold text-xs uppercase tracking-wider transition-colors shadow-sm group/btn"
                       >
                         <span className="text-white font-bold">View Live Score</span>
                         <ArrowRight className="w-4 h-4 text-brand-peach transition-transform group-hover/btn:translate-x-1" />
@@ -261,6 +366,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
           </div>
         )}
       </Container>
+      </div>
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { TrainingHub } from "@/components/training/TrainingHub";
+import { ClubLifeView } from "@/components/club-life/ClubLifeView";
 import { trainingSessions } from "@/lib/data/training";
 import { coaches } from "@/lib/data/coaches";
 
 export const metadata: Metadata = {
-  title: "Training & Coaching Syllabus",
+  title: "Club Life & Development | Devpur Cricket Club",
   description:
-    "Explore Devpur Cricket Club training sessions, video demonstrations, turf net practice, fitness routines, and certified coaching staff.",
+    "Life inside Devpur Cricket Club — net practice at Matunga Ground, coach-led skill development under Aditya Koli, fitness routines, and community bonding.",
 };
 
 export default function TrainingPage() {
-  return <TrainingHub sessions={trainingSessions} coaches={coaches} />;
+  return <ClubLifeView sessions={trainingSessions} coaches={coaches} />;
 }

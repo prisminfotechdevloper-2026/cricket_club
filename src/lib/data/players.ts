@@ -70,8 +70,8 @@ export const players: Player[] = [
       {
         id: "rp-3",
         matchId: "m-comp-2",
-        opponent: "Mewar Knights",
-        tournament: "Rajasthan Club Cup",
+        opponent: "Metro XI",
+        tournament: "KVO Community Cup",
         date: "28 Sep 2026",
         runs: 54,
         balls: 34,

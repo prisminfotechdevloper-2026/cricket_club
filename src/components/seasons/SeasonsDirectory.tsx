@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Season } from "@/lib/types/content";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Trophy, Calendar, Shield } from "lucide-react";
 
 interface SeasonsDirectoryProps {
   seasons: Season[];
@@ -11,13 +11,79 @@ interface SeasonsDirectoryProps {
 
 export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
   return (
-    <div className="py-10 sm:py-16 bg-background min-h-screen">
-      <Container>
-        <SectionHeading
-          eyebrow="Club Legacy"
-          title="Season Archives & Year-Wise History"
-          description="A year-by-year historical archive of Devpur Cricket Club. Review our annual operating cycles, championship trophies, statistical leaders, and defining milestones."
-        />
+    <div className="bg-background min-h-screen">
+      {/* =========================================================================
+          HERO BANNER: LIGHT THEME SEASON CHRONOLOGY ATMOSPHERE
+          ========================================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-white text-stone-900 border-b border-stone-200 py-12 sm:py-16 lg:py-20">
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Narrative */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-pulse" />
+                <span>HISTORICAL REGISTRY // 2013–2027 CLUB TIMELINE</span>
+              </div>
+
+              <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
+                Season Chronology.
+                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                  Every Milestone &amp; Campaign.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
+                A year-by-year historical archive of Devpur Cricket Club. Review our annual operating cycles,
+                championship trophies, statistical leaders, and defining milestones.
+              </p>
+
+              {/* Action Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Calendar className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <span>OCT – MAR / MAY PEAK CYCLE</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Shield className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <span>EST. 2013 INCEPTION</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Trophy className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>2× SILVERWARE FINALISTS</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Telemetry Cards (Light Theme) */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-3.5 font-mono text-xs">
+                {[
+                  { label: "CYCLE LENGTH", value: "5–6 Mos", sub: "Annual Peak Season", color: "text-[#D45D0E]", valueColor: "text-stone-900" },
+                  { label: "TURF RHYTHM", value: "3 Days/Wk", sub: "Mon • Wed • Fri Nets", color: "text-[#D45D0E]", valueColor: "text-stone-900" },
+                  { label: "LEATHER-BALL", value: "25+ Games", sub: "Competitive Matches", color: "text-[#D45D0E]", valueColor: "text-[#D45D0E]" },
+                  { label: "COMMUNITY", value: "10,000+", sub: "KVO Cricket Network", color: "text-emerald-600", valueColor: "text-stone-900" },
+                ].map((stat) => (
+                  <div key={stat.label} className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">
+                    <span className={`text-[10px] uppercase font-bold ${stat.color} tracking-wider block`}>
+                      {stat.label}
+                    </span>
+                    <span className={`font-headline text-2xl font-black ${stat.valueColor} block`}>
+                      {stat.value}
+                    </span>
+                    <span className="text-[11px] text-stone-500 font-body block">
+                      {stat.sub}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Main Content Area */}
+      <div className="py-10 sm:py-14">
+        <Container>
 
         <div className="space-y-8 mb-12">
           {seasons.map((season) => (
@@ -125,9 +191,9 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
                     Defining Season Moments
                   </span>
                   <ul className="space-y-2 text-xs sm:text-sm text-foreground-soft">
-                    {season.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-brand-copper shrink-0 mt-0.5" />
+                    {season.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0 mt-2" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -153,6 +219,7 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
           ))}
         </div>
       </Container>
+      </div>
     </div>
   );
 }

@@ -13,9 +13,9 @@ export function TournamentParticipationSection() {
     <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
       <Container>
         <SectionHeading
-          eyebrow="Competitive Calendar"
-          title="Tournaments & External Leagues"
-          description="Devpur Cricket Club regularly tests its mettle across Rajasthan's most demanding district and state-level invitational tournaments."
+          eyebrow="Tournament Participation"
+          title="Tournaments & Competitive Leagues"
+          description="Devpur Cricket Club tests its mettle across premier KVO community cups, Village Premier Leagues, and competitive leather-ball tournaments in Mumbai."
           actionText="View Tournament Archives"
           actionHref="/tournaments"
         />

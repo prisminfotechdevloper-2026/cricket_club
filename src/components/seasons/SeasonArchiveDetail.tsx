@@ -5,8 +5,6 @@ import { Container } from "../common/Container";
 import {
   ArrowLeft,
   Calendar,
-  Trophy,
-  CheckCircle2,
 } from "lucide-react";
 
 interface SeasonArchiveDetailProps {
@@ -140,9 +138,9 @@ export function SeasonArchiveDetail({ season }: SeasonArchiveDetailProps) {
           </div>
 
           <div className="space-y-4">
-            {season.timeline.map((step, i) => (
+            {season.timeline.map((step) => (
               <div
-                key={i}
+                key={step.month}
                 className="p-5 rounded-2xl bg-surface-soft border border-border flex flex-col sm:flex-row sm:items-start gap-4"
               >
                 <div className="font-headline text-2xl font-bold text-white bg-brand-charcoal px-3 py-1 rounded-xl text-center shrink-0 w-20">
@@ -163,20 +161,20 @@ export function SeasonArchiveDetail({ season }: SeasonArchiveDetailProps) {
 
         {/* Season Highlights */}
         <div className="rounded-3xl bg-surface border border-border shadow-sm p-6 sm:p-10 space-y-6">
-          <div className="flex items-center gap-2 pb-4 border-b border-border">
-            <Trophy className="w-5 h-5 text-brand-copper" />
-            <h2 className="font-headline text-2xl font-bold text-brand-black">
+          <div className="flex items-center gap-2.5 pb-4 border-b border-border">
+            <span className="w-2 h-2 rounded-full bg-brand-orange" />
+            <h2 className="font-headline text-2xl font-bold text-brand-black uppercase">
               Defining Milestones & Achievements
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {season.highlights.map((h, i) => (
+            {season.highlights.map((h) => (
               <div
-                key={i}
+                key={h}
                 className="p-4 rounded-2xl bg-surface-soft border border-border flex items-start gap-3"
               >
-                <CheckCircle2 className="w-5 h-5 text-brand-copper shrink-0 mt-0.5" />
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-copper shrink-0 mt-2" />
                 <span className="text-xs sm:text-sm font-semibold text-brand-black">
                   {h}
                 </span>

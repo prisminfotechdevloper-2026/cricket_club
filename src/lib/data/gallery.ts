@@ -63,7 +63,7 @@ export const galleryAlbums: GalleryAlbum[] = [
     coverImage: "/images/orange_cap_player.png",
     description:
       "Individual excellence propelling collective greatness. Honoring DCC's highest run-scorer and strike bowler awarded the tournament Orange and Purple Caps.",
-    location: "Hadoti Cricket Arena, Rajasthan",
+    location: "KVO Community Grounds, Mumbai",
     items: [
       {
         id: "g2-1",
@@ -95,8 +95,8 @@ export const galleryAlbums: GalleryAlbum[] = [
     photoCount: 4,
     coverImage: "/images/team_wedding_party.png",
     description:
-      "Beyond boundaries and scorecards lies a family for life. Cherishing teammate wedding celebrations, memorable train tours across Rajasthan, post-match feasts, and lifelong friendships.",
-    location: "Rajasthan Tour Journeys & Celebrations",
+      "Beyond boundaries and scorecards lies a family for life. Cherishing teammate wedding celebrations, memorable train tours to away fixtures, post-match feasts, and lifelong friendships.",
+    location: "Team Tour Journeys & Celebrations",
     items: [
       {
         id: "g3-1",
@@ -120,7 +120,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g3-3",
         url: "/images/train_travel.png",
         caption:
-          "Tour Life on Tracks: Away match journeys across Rajasthan by train — kit bags in the berths, strategic talks, and non-stop banter.",
+          "Tour Life on Tracks: Away match journeys by train — kit bags in the berths, strategic talks, and non-stop banter.",
         category: "team-moments",
         aspect: "landscape",
         date: "05 Dec 2025",
@@ -273,7 +273,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g6-2",
         url: "/images/5year_age_memories.png",
         caption:
-          "5-Year Throwback: Young dreamers and academy beginnings — where passion turned into a lifelong legacy.",
+          "5-Year Throwback: Young dreamers and early club beginnings — where passion turned into a lifelong legacy.",
         category: "tournaments",
         aspect: "landscape",
         date: "5-Year Archive",
@@ -282,7 +282,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g6-3",
         url: "/images/memories_2018.png",
         caption:
-          "Season 2018 Milestone: The dedicated squad that first put Devpur Cricket Club on the state tournament map.",
+          "Season 2018 Milestone: The dedicated squad that established Devpur Cricket Club in the community tournament circuit.",
         category: "tournaments",
         aspect: "landscape",
         date: "Season 2018",

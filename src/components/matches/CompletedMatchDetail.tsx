@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Match } from "@/lib/types/cricket";
 import { Container } from "../common/Container";
-import { Calendar, Clock, MapPin, ArrowLeft, Trophy, CheckCircle2 } from "lucide-react";
+import { Calendar, Clock, MapPin, ArrowLeft } from "lucide-react";
 
 interface CompletedMatchDetailProps {
   match: Match;
@@ -16,49 +16,47 @@ export function CompletedMatchDetail({ match }: CompletedMatchDetailProps) {
         <div className="mb-6">
           <Link
             href="/matches"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-brand-black transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-muted hover:text-brand-black transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Matches</span>
+            <span>BACK TO ALL FIXTURES</span>
           </Link>
         </div>
 
         <div className="rounded-3xl bg-surface border border-border shadow-md overflow-hidden p-6 sm:p-10 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-border">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-copper block mb-1">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-copper block mb-1">
                 {match.tournament} • {match.matchType}
               </span>
-              <h1 className="font-headline text-3xl sm:text-5xl font-bold text-brand-black">
+              <h1 className="font-headline text-3xl sm:text-5xl font-black text-brand-black uppercase">
                 DCC vs {match.opponent}
               </h1>
             </div>
 
             <div className="text-right">
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-stone-100 text-stone-800">
-                Match Completed
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-stone-900 text-stone-200">
+                FINAL SCORECARD
               </span>
-              <div className="text-xs text-muted mt-2">Season {match.season}</div>
+              <div className="text-xs font-mono text-muted mt-2">SEASON {match.season}</div>
             </div>
           </div>
 
           {/* Result Banner */}
-          <div className="my-8 p-5 rounded-2xl bg-brand-copper/10 border border-brand-copper/30 text-brand-charcoal flex items-center justify-between">
+          <div className="my-8 p-5 rounded-2xl bg-stone-900 text-white flex items-center justify-between border border-stone-800">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-copper text-white flex items-center justify-center shrink-0 shadow-xs">
-                <Trophy className="w-5 h-5" />
-              </div>
+              <span className="px-2.5 py-1 rounded bg-brand-copper text-white font-mono text-xs font-bold uppercase tracking-widest">
+                VERDICT
+              </span>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-copper block">
-                  Final Result
+                <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 block">
+                  Official Match Outcome
                 </span>
-                <span className="font-headline text-2xl font-bold text-brand-charcoal">
+                <span className="font-headline text-xl sm:text-2xl font-bold text-white">
                   {match.result}
                 </span>
               </div>
             </div>
-
-            <CheckCircle2 className="w-6 h-6 text-brand-copper hidden sm:block" />
           </div>
 
           {/* Scores Overview */}

@@ -14,7 +14,6 @@ import {
   ChevronRight,
   X,
   Maximize2,
-  Camera,
 } from "lucide-react";
 
 interface GalleryAlbumDetailProps {
@@ -48,16 +47,21 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
 
   // Keyboard navigation for Lightbox
   useEffect(() => {
+    if (activePhotoIndex === null) return;
+    const total = album.items.length;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (activePhotoIndex === null) return;
-      if (e.key === "Escape") setActivePhotoIndex(null);
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "Escape") {
+        setActivePhotoIndex(null);
+      } else if (e.key === "ArrowRight") {
+        setActivePhotoIndex((prev) => (prev !== null ? (prev + 1) % total : null));
+      } else if (e.key === "ArrowLeft") {
+        setActivePhotoIndex((prev) => (prev !== null ? (prev - 1 + total) % total : null));
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activePhotoIndex, handleNext, handlePrev]);
+  }, [activePhotoIndex, album.items.length]);
 
   // Lock body scroll when Lightbox is open
   useEffect(() => {
@@ -118,9 +122,9 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
             {album.description}
           </p>
 
-          <div className="pt-2 text-xs font-bold text-muted flex items-center gap-1.5">
-            <Camera className="w-4 h-4 text-brand-copper" />
-            <span>Click any image to open high-definition Lightbox viewer</span>
+          <div className="pt-2 text-xs font-mono font-bold text-muted flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
+            <span>CLICK ANY FRAME TO LAUNCH LIGHTBOX VIEWER</span>
           </div>
         </div>
 
@@ -185,17 +189,20 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
         {mounted &&
           activePhotoIndex !== null &&
           createPortal(
-            <div
-              className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md flex flex-col justify-between p-3 sm:p-6 animate-in fade-in duration-200"
-              onClick={() => setActivePhotoIndex(null)}
-              role="dialog"
-              aria-modal="true"
+            <dialog
+              open
               aria-label="Image lightbox viewer"
+              className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md flex flex-col justify-between p-3 sm:p-6 animate-in fade-in duration-200 border-0 m-0 max-w-none max-h-none w-screen h-screen"
             >
+              <button
+                type="button"
+                className="absolute inset-0 w-full h-full cursor-default bg-transparent -z-10"
+                onClick={() => setActivePhotoIndex(null)}
+                aria-label="Close dialog backdrop"
+              />
               {/* Top Toolbar */}
               <div
                 className="flex items-center justify-between text-white z-10 shrink-0 gap-3"
-                onClick={(e) => e.stopPropagation()}
               >
                 <div className="text-xs sm:text-sm font-semibold text-neutral-300 truncate">
                   Image {activePhotoIndex + 1} of {album.items.length} • {album.title}
@@ -213,7 +220,6 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
               {/* Main Image Stage */}
               <div
                 className="relative flex-1 flex items-center justify-center my-2 sm:my-4 overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={handlePrev}
@@ -246,7 +252,6 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
               {/* Bottom Caption & Thumbnails */}
               <div
                 className="text-center space-y-2 sm:space-y-3 z-10 shrink-0 pb-1"
-                onClick={(e) => e.stopPropagation()}
               >
                 <p className="text-xs sm:text-base font-semibold text-white max-w-2xl mx-auto px-4 line-clamp-2">
                   {album.items[activePhotoIndex].caption}
@@ -275,7 +280,7 @@ export function GalleryAlbumDetail({ album }: GalleryAlbumDetailProps) {
                   ))}
                 </div>
               </div>
-            </div>,
+            </dialog>,
             document.body
           )}
       </Container>

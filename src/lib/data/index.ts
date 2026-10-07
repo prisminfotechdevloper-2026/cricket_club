@@ -6,3 +6,5 @@ export * from "./training";
 export * from "./seasons";
 export * from "./achievements";
 export * from "./gallery";
+export * from "./sponsors";
+export * from "./blogs";

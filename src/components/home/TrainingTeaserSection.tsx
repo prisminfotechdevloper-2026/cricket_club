@@ -88,9 +88,9 @@ export function TrainingTeaserSection() {
                 {/* Key Focus Tags */}
                 <div className="pt-2 border-t border-border/80">
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {session.keyFocus.slice(0, 3).map((tag, i) => (
+                    {session.keyFocus.slice(0, 3).map((tag) => (
                       <span
-                        key={i}
+                        key={tag}
                         className="text-[10px] font-semibold px-2 py-0.5 rounded bg-white text-stone-700 border border-stone-200"
                       >
                         {tag}

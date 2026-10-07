@@ -3,12 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Player } from "@/lib/types/cricket";
 import { Container } from "../common/Container";
-import {
-  ArrowLeft,
-  Award,
-  Trophy,
-  Flame,
-} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 interface PlayerProfileDetailProps {
   player: Player;
@@ -25,10 +20,10 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
         <div className="mb-6">
           <Link
             href="/players"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-brand-black transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-muted hover:text-brand-black transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Squad Directory</span>
+            <span>BACK TO SQUAD ROSTER</span>
           </Link>
         </div>
 
@@ -37,7 +32,7 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Player Photo */}
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative aspect-[3/4] w-full max-w-xs rounded-2xl overflow-hidden bg-stone-100 border border-border shadow-md">
+              <div className="relative aspect-[3/4] w-full max-w-xs rounded-2xl overflow-hidden bg-stone-900 border border-border shadow-md">
                 <Image
                   src={player.photo}
                   alt={player.name}
@@ -46,8 +41,8 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
                   className="object-cover object-top"
                   sizes="(max-width: 640px) 100vw, 320px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute top-3 right-3 font-headline text-2xl font-black text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-xl border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 font-mono text-sm font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-xl border border-white/10 tracking-widest">
                   #{player.jerseyNumber}
                 </div>
               </div>
@@ -57,19 +52,19 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
             <div className="lg:col-span-8 space-y-5">
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-brand-charcoal text-white">
+                  <span className="px-3 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider bg-brand-charcoal text-white">
                     {player.role}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-brand-copper">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-copper">
                     Devpur Cricket Club • Since {player.joiningYear}
                   </span>
                 </div>
 
-                <h1 className="font-headline text-4xl sm:text-6xl font-extrabold text-brand-black tracking-tight leading-none">
+                <h1 className="font-headline text-4xl sm:text-6xl font-black text-brand-black tracking-tight leading-none uppercase">
                   {player.name}
                 </h1>
 
-                <p className="text-sm font-semibold text-foreground-soft">
+                <p className="text-sm font-mono text-foreground-soft">
                   {player.battingStyle}
                   {player.bowlingStyle ? ` • ${player.bowlingStyle}` : ""}
                 </p>
@@ -81,13 +76,13 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
 
               {/* Season Highlight Box */}
               {player.seasonHighlight && (
-                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-950 flex items-start gap-3">
-                  <div className="p-1 rounded-lg bg-amber-200/60 text-amber-900 shrink-0 mt-0.5">
-                    <Award className="w-5 h-5" />
-                  </div>
+                <div className="p-4 rounded-2xl bg-surface-soft border border-border/80 text-brand-black flex items-start gap-3">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-stone-900 text-brand-orange px-2 py-1 rounded shrink-0 mt-0.5">
+                    HIGHLIGHT
+                  </span>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-900 block">
-                      Season 2026–27 Highlight
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted block">
+                      SEASON 2026–27 MOMENT
                     </span>
                     <p className="text-xs sm:text-sm font-medium mt-0.5">
                       {player.seasonHighlight}
@@ -104,14 +99,14 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
           {/* Current Season (2026–27) */}
           <div className="p-6 sm:p-8 rounded-3xl bg-surface border border-border shadow-sm space-y-6">
             <div className="flex items-center justify-between pb-4 border-b border-border">
-              <div className="flex items-center gap-2">
-                <Flame className="w-5 h-5 text-brand-copper" />
-                <h3 className="font-headline text-2xl font-bold text-brand-black">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
+                <h3 className="font-headline text-2xl font-bold text-brand-black uppercase">
                   Current Season (2026–27)
                 </h3>
               </div>
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-copper/10 text-brand-copper border border-brand-copper/20">
-                Active Campaign
+              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-brand-copper/10 text-brand-copper border border-brand-copper/20">
+                ACTIVE CAMPAIGN
               </span>
             </div>
 
@@ -193,14 +188,14 @@ export function PlayerProfileDetail({ player }: PlayerProfileDetailProps) {
           {/* All-Time Career Stats */}
           <div className="p-6 sm:p-8 rounded-3xl bg-surface border border-border shadow-sm space-y-6">
             <div className="flex items-center justify-between pb-4 border-b border-border">
-              <div className="flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-brand-copper" />
-                <h3 className="font-headline text-2xl font-bold text-brand-black">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-brand-copper" />
+                <h3 className="font-headline text-2xl font-bold text-brand-black uppercase">
                   Club Career Record
                 </h3>
               </div>
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-stone-100 text-stone-700">
-                All Matches
+              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-stone-100 text-stone-700">
+                ALL FIXTURES
               </span>
             </div>
 

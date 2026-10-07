@@ -2,15 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Match } from "@/lib/types/cricket";
 import { Container } from "../common/Container";
 import { LiveBadge } from "../common/LiveBadge";
+import { sponsors } from "@/lib/data/sponsors";
 import {
   Calendar,
   Clock,
   MapPin,
   ArrowLeft,
   Share2,
+  ExternalLink,
 } from "lucide-react";
 
 interface LiveScoreCentreProps {
@@ -54,6 +57,16 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
           </Link>
 
           <div className="flex items-center gap-2">
+            <a
+              href="https://cricclubs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-surface text-xs font-semibold text-foreground-soft hover:bg-stone-50 transition-colors"
+            >
+              <span>External Cric Club Scorecard</span>
+              <ExternalLink className="w-3.5 h-3.5 text-muted" />
+            </a>
+
             <button
               onClick={handleShare}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-surface text-xs font-semibold text-foreground-soft hover:bg-stone-50 transition-colors"
@@ -177,20 +190,20 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
                     Recent Balls:
                   </span>
                   <div className="flex items-center gap-1.5">
-                    {liveDetails.recentBalls.map((b, i) => (
+                    {liveDetails.recentBalls.map((b, n) => ({ ball: b, ballId: `recent-ball-${n}` })).map((item) => (
                       <span
-                        key={i}
+                        key={item.ballId}
                         className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${
-                          b === "6"
+                          item.ball === "6"
                             ? "bg-purple-600 text-white"
-                            : b === "4"
+                            : item.ball === "4"
                             ? "bg-blue-600 text-white"
-                            : b === "W"
+                            : item.ball === "W"
                             ? "bg-brand-red text-white"
                             : "bg-white/20 text-white"
                         }`}
                       >
-                        {b}
+                        {item.ball}
                       </span>
                     ))}
                   </div>
@@ -270,6 +283,30 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
               >
                 {tab.label}
               </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Matchday Sponsors Banner */}
+        <div className="mb-8 p-4 rounded-2xl bg-surface border border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-brand-copper" />
+            <span className="text-xs font-bold uppercase tracking-wider text-muted">
+              Live Matchday Powered by Official DCC Partners:
+            </span>
+          </div>
+
+          <div className="flex items-center gap-6 overflow-x-auto py-1">
+            {sponsors.slice(0, 5).map((s) => (
+              <div key={s.id} className="relative h-6 w-20 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-[filter,opacity] shrink-0">
+                <Image
+                  src={s.logo}
+                  alt={s.name}
+                  fill
+                  className="object-contain"
+                  sizes="80px"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -482,8 +519,8 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
             </div>
 
             <div className="divide-y divide-border/80">
-              {filteredCommentary?.map((ball, idx) => (
-                <div key={idx} className="py-4.5 flex items-start gap-4">
+              {filteredCommentary?.map((ball) => (
+                <div key={ball.overBall} className="py-4.5 flex items-start gap-4">
                   {/* Ball Badge */}
                   <div className="shrink-0 flex flex-col items-center">
                     <span className="font-headline text-lg font-bold text-brand-black leading-none">
@@ -547,20 +584,20 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
 
                   {/* Balls sequence */}
                   <div className="flex items-center gap-2">
-                    {over.balls.map((b, i) => (
+                    {over.balls.map((b, n) => ({ ball: b, ballKey: `over-${over.overNumber}-ball-${n}` })).map((item) => (
                       <span
-                        key={i}
+                        key={item.ballKey}
                         className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${
-                          b === "6"
+                          item.ball === "6"
                             ? "bg-purple-600 text-white"
-                            : b === "4"
+                            : item.ball === "4"
                             ? "bg-blue-600 text-white"
-                            : b === "W"
+                            : item.ball === "W"
                             ? "bg-brand-red text-white"
                             : "bg-stone-200 text-stone-800"
                         }`}
                       >
-                        {b}
+                        {item.ball}
                       </span>
                     ))}
                   </div>
@@ -583,7 +620,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
               </div>
               <ul className="divide-y divide-border/60 text-sm">
                 {liveDetails.playingXI.dcc.map((name, i) => (
-                  <li key={i} className="py-2.5 flex items-center justify-between">
+                  <li key={name} className="py-2.5 flex items-center justify-between">
                     <span className="font-semibold text-brand-black">
                       {i + 1}. {name}
                     </span>
@@ -603,7 +640,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
               </div>
               <ul className="divide-y divide-border/60 text-sm">
                 {liveDetails.playingXI.opponent.map((name, i) => (
-                  <li key={i} className="py-2.5 flex items-center justify-between">
+                  <li key={name} className="py-2.5 flex items-center justify-between">
                     <span className="font-semibold text-foreground-soft">
                       {i + 1}. {name}
                     </span>

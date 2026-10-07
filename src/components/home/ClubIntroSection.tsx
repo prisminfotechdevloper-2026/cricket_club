@@ -2,19 +2,22 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
-import { CheckCircle2, ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 export function ClubIntroSection() {
   const pillars = [
     {
+      idx: "01",
       title: "Structured Coaching Syllabus",
       desc: "BCCI Level-2 certified coaching staff overseeing customized technical plans for pace, spin, batting, and match mental fortitude.",
     },
     {
+      idx: "02",
       title: "October–March Annual Cycle",
       desc: "A focused seasonal operating rhythm combining pre-season fitness, turf-net training, invitational leagues, and championship knockouts.",
     },
     {
+      idx: "03",
       title: "Multi-Tournament Exposure",
       desc: "Rather than organizing leagues, DCC enters the most competitive external white-ball tournaments across the region.",
     },
@@ -42,13 +45,13 @@ export function ClubIntroSection() {
             />
 
             <div className="space-y-4 pt-1">
-              {pillars.map((p, i) => (
+              {pillars.map((p) => (
                 <div
-                  key={i}
+                  key={p.idx}
                   className="p-4 sm:p-5 rounded-2xl bg-surface border border-border flex items-start gap-3.5 sports-card"
                 >
-                  <div className="p-1 rounded-lg bg-brand-copper/10 text-brand-copper shrink-0 mt-0.5 border border-brand-copper/20">
-                    <CheckCircle2 className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-lg bg-stone-900 text-brand-orange shrink-0 mt-0.5 flex items-center justify-center font-mono text-xs font-bold">
+                    {p.idx}
                   </div>
                   <div>
                     <h3 className="font-headline text-lg sm:text-xl font-bold text-brand-black">
@@ -94,9 +97,9 @@ export function ClubIntroSection() {
 
               {/* 6 Months Timeline Track */}
               <div className="space-y-3">
-                {timelineSteps.map((step, idx) => (
+                {timelineSteps.map((step) => (
                   <div
-                    key={idx}
+                    key={step.month}
                     className={`flex items-center justify-between p-3 rounded-xl border text-xs transition-colors ${
                       step.active
                         ? "bg-stone-900 text-white border-stone-900 shadow-sm"

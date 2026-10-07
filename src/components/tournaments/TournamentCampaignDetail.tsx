@@ -7,9 +7,7 @@ import {
   ArrowLeft,
   Calendar,
   MapPin,
-  Trophy,
   ArrowRight,
-  CheckCircle2,
 } from "lucide-react";
 
 interface TournamentCampaignDetailProps {
@@ -124,13 +122,13 @@ export function TournamentCampaignDetail({
         {/* Club Campaign Fixtures */}
         <div className="rounded-3xl bg-surface border border-border shadow-sm p-6 sm:p-8 space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-border">
-            <div className="flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-brand-copper" />
-              <h2 className="font-headline text-2xl font-bold text-brand-black">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-brand-orange" />
+              <h2 className="font-headline text-2xl font-bold text-brand-black uppercase">
                 Club Campaign Fixtures
               </h2>
             </div>
-            <span className="text-xs text-muted font-semibold">
+            <span className="text-xs font-mono text-muted font-semibold">
               {tournament.featuredMatches.length} Recorded Matches
             </span>
           </div>
@@ -171,8 +169,8 @@ export function TournamentCampaignDetail({
                     </div>
 
                     {m.result && (
-                      <div className="text-xs font-bold text-brand-copper pt-0.5 flex items-center gap-1">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-copper" />
+                      <div className="text-xs font-mono font-bold text-brand-copper pt-0.5 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-copper shrink-0" />
                         <span>{m.result}</span>
                       </div>
                     )}

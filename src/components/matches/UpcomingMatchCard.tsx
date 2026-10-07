@@ -9,7 +9,7 @@ interface UpcomingMatchCardProps {
 
 export function UpcomingMatchCard({ match }: UpcomingMatchCardProps) {
   return (
-    <div className="rounded-2xl bg-surface border border-border p-5 sm:p-6 shadow-sm hover:border-brand-copper/50 transition-all flex flex-col justify-between">
+    <div className="rounded-2xl bg-surface border border-border p-5 sm:p-6 shadow-sm hover:border-brand-copper/50 transition-[border-color] flex flex-col justify-between">
       <div className="space-y-4">
         {/* Tournament & Tag */}
         <div className="flex items-center justify-between gap-2">

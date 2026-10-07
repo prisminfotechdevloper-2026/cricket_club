@@ -5,7 +5,7 @@ import { Player, PlayerRole } from "@/lib/types/cricket";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 import { PlayerCard } from "./PlayerCard";
-import { Search, Filter, Users, X } from "lucide-react";
+import { Search, X, Users, Award, Shield } from "lucide-react";
 
 interface PlayersDirectoryProps {
   initialPlayers: Player[];
@@ -40,13 +40,109 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
   });
 
   return (
-    <div className="py-10 sm:py-16 bg-background min-h-screen">
-      <Container>
-        <SectionHeading
-          eyebrow="Club Roster"
-          title="Squad Players & Athlete Profiles"
-          description="Explore the registered squad of Devpur Cricket Club for Season 2026–27. Search by role, inspect individual strike rates, bowling figures, and recent match feats."
-        />
+    <div className="bg-background min-h-screen">
+      {/* =========================================================================
+          HERO BANNER: LIGHT THEME SQUAD SHOWCASE & ROSTER ATMOSPHERE
+          ========================================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-white text-stone-900 border-b border-stone-200 py-12 sm:py-16 lg:py-20">
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Squad Mission & Identity */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-pulse" />
+                <span>OFFICIAL SQUAD ROSTER // 2026–27 CAMPAIGN</span>
+              </div>
+
+              <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
+                50+ Athletes. One Crest.
+                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                  Pure Devpur Gaam Pride.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
+                Meet the registered players representing Devpur Gaam across Mumbai's competitive leagues.
+                From fierce powerplay opening batters and express seamers to seasoned mentors — united by
+                rigorous 3-day weekly turf net preparation.
+              </p>
+
+              {/* Action Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Users className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <span>50+ ACTIVE SQUAD MEMBERS</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Award className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <span>ORANGE &amp; PURPLE CAP HONOREES</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>EST. 2013 HERITAGE</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Squad Metrics Card (Light Theme) */}
+            <div className="lg:col-span-5">
+              <div className="rounded-3xl bg-white border border-stone-200 p-6 sm:p-7 shadow-md relative overflow-hidden">
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#D45D0E] font-bold">
+                    ROSTER BREAKDOWN
+                  </span>
+                  <span className="text-xs font-mono text-stone-500 font-medium">
+                    SEASON 2026–27
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                  <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                    <span className="text-stone-500 text-[10px] block uppercase font-bold">Batters</span>
+                    <span className="font-headline font-black text-2xl text-stone-900 mt-0.5 block">
+                      {initialPlayers.filter((p) => p.role.includes("Batter")).length}
+                    </span>
+                    <span className="text-[10px] text-stone-500">Top-order &amp; Finishers</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                    <span className="text-stone-500 text-[10px] block uppercase font-bold">Bowlers</span>
+                    <span className="font-headline font-black text-2xl text-stone-900 mt-0.5 block">
+                      {initialPlayers.filter((p) => p.role.includes("Bowler")).length}
+                    </span>
+                    <span className="text-[10px] text-stone-500">Pace &amp; Mystery Spin</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                    <span className="text-stone-500 text-[10px] block uppercase font-bold">All-Rounders</span>
+                    <span className="font-headline font-black text-2xl text-stone-900 mt-0.5 block">
+                      {initialPlayers.filter((p) => p.role.includes("All-Rounder")).length}
+                    </span>
+                    <span className="text-[10px] text-stone-500">Dual-impact balance</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                    <span className="text-stone-500 text-[10px] block uppercase font-bold">Keepers</span>
+                    <span className="font-headline font-black text-2xl text-stone-900 mt-0.5 block">
+                      {initialPlayers.filter((p) => p.role.includes("Wicketkeeper")).length}
+                    </span>
+                    <span className="text-[10px] text-stone-500">Glovework &amp; Vocals</span>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600 font-mono">
+                  <span>Net Practice: Matunga Ground</span>
+                  <span className="text-emerald-600 font-bold">100% Match Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Main Content Area */}
+      <div className="py-10 sm:py-14">
+        <Container>
 
         {/* Search & Filter Toolbar */}
         <div className="p-5 sm:p-6 rounded-3xl bg-surface border border-border shadow-sm mb-10 space-y-4">
@@ -75,10 +171,10 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
             </div>
 
             {/* Total Players Counter */}
-            <div className="flex items-center gap-2 text-xs font-bold text-foreground-soft px-3 py-1.5 rounded-xl bg-surface-soft border border-border self-start md:self-auto">
-              <Users className="w-4 h-4 text-brand-copper" />
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-foreground-soft px-3 py-1.5 rounded-xl bg-surface-soft border border-border self-start md:self-auto">
+              <span className="w-2 h-2 rounded-full bg-brand-orange" />
               <span>
-                Showing {filteredPlayers.length} of {initialPlayers.length} Players
+                ROSTER: {filteredPlayers.length} / {initialPlayers.length} ATHLETES
               </span>
             </div>
           </div>
@@ -89,7 +185,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
               <button
                 key={role}
                 onClick={() => setSelectedRole(role)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                   selectedRole === role
                     ? "bg-brand-charcoal text-white shadow-xs"
                     : "bg-surface-soft text-foreground-soft hover:bg-stone-100 hover:text-brand-black"
@@ -104,8 +200,10 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
         {/* Players Grid */}
         {filteredPlayers.length === 0 ? (
           <div className="text-center py-16 px-4 rounded-3xl bg-surface border border-border">
-            <Filter className="w-10 h-10 text-muted mx-auto mb-3" />
-            <h3 className="font-headline text-2xl font-bold text-brand-black">No players found</h3>
+            <div className="inline-block px-3 py-1 rounded-md bg-stone-900 text-stone-300 font-mono text-xs font-bold uppercase tracking-wider mb-3">
+              [ NO ATHLETE MATCHED ]
+            </div>
+            <h3 className="font-headline text-2xl font-bold text-brand-black">No squad members found</h3>
             <p className="text-xs sm:text-sm text-muted mt-1 max-w-sm mx-auto">
               No squad member matched &quot;{searchQuery}&quot; under the &quot;{selectedRole}&quot; filter.
             </p>
@@ -127,6 +225,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
           </div>
         )}
       </Container>
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Tournament } from "@/lib/types/cricket";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
-import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, ArrowRight, Trophy, Shield } from "lucide-react";
 
 interface TournamentsDirectoryProps {
   tournaments: Tournament[];
@@ -12,13 +12,108 @@ interface TournamentsDirectoryProps {
 
 export function TournamentsDirectory({ tournaments }: TournamentsDirectoryProps) {
   return (
-    <div className="py-10 sm:py-16 bg-background min-h-screen">
-      <Container>
-        <SectionHeading
-          eyebrow="Competitions"
-          title="Tournaments & External Participation"
-          description="Devpur Cricket Club participates in premier regional and state-level cricket championships across Rajasthan. Explore our competitive campaigns, match records, and top player honors."
-        />
+    <div className="bg-background min-h-screen">
+      {/* =========================================================================
+          HERO BANNER: LIGHT THEME TOURNAMENT CAMPAIGN ATMOSPHERE
+          ========================================================================= */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-white text-stone-900 border-b border-stone-200 py-12 sm:py-16 lg:py-20">
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Tournament Campaign Narrative */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-pulse" />
+                <span>COMPETITIVE CAMPAIGNS // KVO &amp; REGIONAL LEAGUES</span>
+              </div>
+
+              <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
+                Tournament Arenas.
+                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                  Testing Limits on the Pitch.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
+                Devpur Cricket Club participates in premier community tournaments, KVO championships, and Village
+                Premier Leagues across Mumbai. Explore our competitive campaigns, match records, and top player honors.
+              </p>
+
+              {/* Action Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Trophy className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <span>2× RUNNERS-UP SILVERWARE</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>RANK #10 KVO CIRCUIT</span>
+                </div>
+                <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
+                  <Calendar className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <span>25+ ANNUAL FIXTURES</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Telemetry Cards (Light Theme) */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-3.5 font-mono text-xs">
+                <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#D45D0E] tracking-wider block">
+                    CIRCUIT RANK
+                  </span>
+                  <span className="font-headline text-2xl font-black text-stone-900 block">
+                    Top #10
+                  </span>
+                  <span className="text-[11px] text-stone-500 font-body block">
+                    KVO Cricket Standings
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#D45D0E] tracking-wider block">
+                    SILVERWARE
+                  </span>
+                  <span className="font-headline text-2xl font-black text-stone-900 block">
+                    2× Finals
+                  </span>
+                  <span className="text-[11px] text-stone-500 font-body block">
+                    Community Cup Podium
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#D45D0E] tracking-wider block">
+                    MATCHES
+                  </span>
+                  <span className="font-headline text-2xl font-black text-[#D45D0E] block">
+                    25+ / Yr
+                  </span>
+                  <span className="text-[11px] text-stone-500 font-body block">
+                    Leather-Ball Pressure
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-emerald-600 tracking-wider block">
+                    DEVELOPMENT
+                  </span>
+                  <span className="font-headline text-2xl font-black text-stone-900 block">
+                    Kanga B
+                  </span>
+                  <span className="text-[11px] text-stone-500 font-body block">
+                    Aditya Koli Mentorship
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Main Content Area */}
+      <div className="py-10 sm:py-14">
+        <Container>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {tournaments.map((tour) => (
@@ -113,6 +208,7 @@ export function TournamentsDirectory({ tournaments }: TournamentsDirectoryProps)
           ))}
         </div>
       </Container>
+      </div>
     </div>
   );
 }

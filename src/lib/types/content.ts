@@ -106,3 +106,53 @@ export interface GalleryAlbum {
   location: string;
   items: GalleryItem[];
 }
+
+export type SponsorTier = "principal" | "associate" | "official" | "community";
+
+export interface Sponsor {
+  id: string;
+  name: string;
+  slug: string;
+  tier: SponsorTier;
+  tierLabel: string;
+  logo: string;
+  website?: string;
+  tagline?: string;
+  description: string;
+  tenure: string;
+  annualContribution?: string;
+  visibilityScope: string[];
+  featured?: boolean;
+  jerseyPlacement?: string;
+  categoryRole?: string;
+}
+
+export type BlogCategory =
+  | "all"
+  | "match-analysis"
+  | "coaching-tactics"
+  | "squad-spotlight"
+  | "club-heritage"
+  | "tournament-diaries";
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: BlogCategory;
+  categoryLabel: string;
+  image: string;
+  author: {
+    name: string;
+    role: string;
+    avatar?: string;
+  };
+  publishedAt: string;
+  readTime: string;
+  featured?: boolean;
+  trending?: boolean;
+  tags: string[];
+  content: string[];
+  keyTakeaways?: string[];
+}

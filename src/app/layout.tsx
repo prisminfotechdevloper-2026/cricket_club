@@ -13,10 +13,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     template: "%s | Devpur Cricket Club",
-    default: "Devpur Cricket Club | Train. Compete. Remember.",
+    default: "Devpur Cricket Club | Proudly Representing Devpur Gaam",
   },
   description:
-    "Official digital home of Devpur Cricket Club (DCC), Rajasthan. Explore club development, coaching, match schedules, live scores, player profiles, and season memories.",
+    "Official digital home of Devpur Cricket Club (DCC) — representing Devpur Gaam in the KVO cricket ecosystem. Incepted in 2013, 50+ members training at Matunga Ground, Mumbai.",
   icons: {
     icon: [
       { url: "/favicon.ico?v=2" },

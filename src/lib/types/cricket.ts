@@ -69,6 +69,10 @@ export interface Coach {
   experience: string;
   bio: string;
   coachingFocus: string[];
+  appointmentRef?: string;
+  tenure?: string;
+  schedule?: string;
+  responsibilities?: string[];
 }
 
 export type MatchStatus = "upcoming" | "live" | "completed";
@@ -155,6 +159,7 @@ export interface Match {
   tournament: string;
   tournamentSlug: string;
   season: string;
+  competitionType?: "White Ball" | "Red Ball" | "Practice Match";
   opponent: string;
   opponentShort: string;
   matchType: string; // "Semi Final", "Group Match", "Final", "Friendly"
@@ -169,7 +174,9 @@ export interface Match {
   opponentOvers?: string;
   toss?: string;
   featured?: boolean;
-  scoreUrl?: string; // external link for future integration
+  scoreUrl?: string; // external link for future integration (e.g. Cric Club)
+  liveScoreProvider?: string; // e.g. "Cric Club"
+  sponsorIds?: string[];
   liveDetails?: MatchLiveDetails;
 }
 
