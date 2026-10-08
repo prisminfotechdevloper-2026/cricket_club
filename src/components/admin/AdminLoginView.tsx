@@ -74,17 +74,17 @@ export function AdminLoginView() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3">
         {/* Email Address */}
         <div>
           <label
             htmlFor={`${idPrefix}-email`}
-            className="block text-xs sm:text-sm font-semibold text-stone-700 mb-1.5"
+            className="block text-xs font-semibold text-stone-700 mb-1"
           >
             Email Address
           </label>
           <div className="relative">
-            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             <input
               id={`${idPrefix}-email`}
               type="email"
@@ -92,7 +92,7 @@ export function AdminLoginView() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               required
-              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-4 py-2.5 sm:py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
+              className="w-full bg-white border border-stone-200/90 rounded-xl pl-9 pr-4 py-2 sm:py-2.5 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
             />
           </div>
         </div>
@@ -101,12 +101,12 @@ export function AdminLoginView() {
         <div>
           <label
             htmlFor={`${idPrefix}-password`}
-            className="block text-xs sm:text-sm font-semibold text-stone-700 mb-1.5"
+            className="block text-xs font-semibold text-stone-700 mb-1"
           >
             Password
           </label>
           <div className="relative">
-            <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             <input
               id={`${idPrefix}-password`}
               type={showPassword ? "text" : "password"}
@@ -114,31 +114,31 @@ export function AdminLoginView() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
-              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-10 py-2.5 sm:py-3 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
+              className="w-full bg-white border border-stone-200/90 rounded-xl pl-9 pr-9 py-2 sm:py-2.5 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1 cursor-pointer focus:outline-none"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1 cursor-pointer focus:outline-none"
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? (
-                <EyeOff className="w-4 h-4" />
+                <EyeOff className="w-3.5 h-3.5" />
               ) : (
-                <Eye className="w-4 h-4" />
+                <Eye className="w-3.5 h-3.5" />
               )}
             </button>
           </div>
         </div>
 
         {/* Options Row: Remember Me & Forgot Password */}
-        <div className="flex items-center justify-between pt-1 text-xs sm:text-sm">
-          <label className="flex items-center gap-2 cursor-pointer text-stone-600 select-none">
+        <div className="flex items-center justify-between pt-0.5 text-xs">
+          <label className="flex items-center gap-1.5 cursor-pointer text-stone-600 select-none">
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-4 h-4 rounded border-stone-300 text-[#C2581A] focus:ring-[#C2581A] accent-[#C2581A]"
+              className="w-3.5 h-3.5 rounded border-stone-300 text-[#C2581A] focus:ring-[#C2581A] accent-[#C2581A]"
             />
             <span>Remember me</span>
           </label>
@@ -156,16 +156,16 @@ export function AdminLoginView() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-[#B95015] via-[#C85D1B] to-[#D56F27] hover:from-[#A84510] hover:to-[#C25B18] active:scale-[0.99] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#C85D1B]/20 transition-[opacity,transform,background-color] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-4"
+          className="w-full py-2.5 px-5 rounded-xl bg-gradient-to-r from-[#B95015] via-[#C85D1B] to-[#D56F27] hover:from-[#A84510] hover:to-[#C25B18] active:scale-[0.99] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-[#C85D1B]/20 transition-[opacity,transform,background-color] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-2.5"
         >
           {isSubmitting ? (
             <>
-              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               <span>Authenticating...</span>
             </>
           ) : (
             <>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-3.5 h-3.5 text-white" />
               <span>Login</span>
             </>
           )}
@@ -173,9 +173,9 @@ export function AdminLoginView() {
       </form>
 
       {/* 'or' Divider */}
-      <div className="relative flex py-3.5 items-center">
+      <div className="relative flex py-2 sm:py-2.5 items-center">
         <div className="flex-grow border-t border-stone-200/90" />
-        <span className="flex-shrink mx-4 text-stone-400 text-xs font-mono">
+        <span className="flex-shrink mx-3 text-stone-400 text-xs font-mono">
           or
         </span>
         <div className="flex-grow border-t border-stone-200/90" />
@@ -185,14 +185,14 @@ export function AdminLoginView() {
       <button
         type="button"
         onClick={handleQuickSecureAccess}
-        className="w-full py-2.5 sm:py-3 px-4 rounded-xl border border-stone-300 hover:border-[#C2581A]/60 bg-white hover:bg-stone-50 active:bg-stone-100 text-stone-800 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2.5 transition-[border-color,background-color] shadow-2xs cursor-pointer group"
+        className="w-full py-2 px-3 rounded-xl border border-stone-300 hover:border-[#C2581A]/60 bg-white hover:bg-stone-50 active:bg-stone-100 text-stone-800 text-xs font-semibold flex items-center justify-center gap-2 transition-[border-color,background-color] shadow-2xs cursor-pointer group"
       >
-        <Shield className="w-4 h-4 text-[#C2581A] transition-transform group-hover:scale-110" />
+        <Shield className="w-3.5 h-3.5 text-[#C2581A] transition-transform group-hover:scale-110" />
         <span>Secure Admin Access</span>
       </button>
 
       {/* Footer Info inside Form Card */}
-      <div className="pt-4 text-center space-y-0.5">
+      <div className="pt-2.5 text-center space-y-0.5">
         <div className="flex items-center justify-center gap-1.5 text-[11px] font-medium text-stone-500">
           <Shield className="w-3.5 h-3.5 text-stone-400" />
           <span>Devpur Cricket Club Admin Panel</span>
@@ -205,8 +205,8 @@ export function AdminLoginView() {
   );
 
   return (
-    <div className="min-h-screen w-full bg-[#0B101D] text-stone-900 selection:bg-[#EA6E18]/20 selection:text-[#EA6E18] flex items-center justify-center p-2 sm:p-3 md:p-5 relative overflow-hidden">
-      {/* Ambient background glows outside the 95% card */}
+    <div className="min-h-screen w-full bg-[#0B101D] text-stone-900 selection:bg-[#EA6E18]/20 selection:text-[#EA6E18] flex items-center justify-center p-2 sm:p-3 md:p-4 relative overflow-hidden">
+      {/* Ambient background glows outside the card */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C2581A]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#182C4E]/40 rounded-full blur-3xl pointer-events-none" />
 
@@ -287,15 +287,15 @@ export function AdminLoginView() {
       {/* =========================================================================
           2. DESKTOP / TABLET LAYOUT (>= md):
           Matches 1:1 user instruction:
-          - Screen ke center mai
-          - Width: 95% (w-[95%])
-          - Height: 95% (h-[95vh])
+          - Screen ke exact center mai
+          - Width: compact & balanced (w-[92%] max-w-5xl)
+          - Height: reduced (h-auto md:h-[510px] lg:h-[530px] max-h-[86vh]) for zero-scroll on laptop screens
           - Left: Brand showcase with cricket ground image & helmet/bat
-          - Right: Clean luxury white login card
+          - Right: Clean luxury white login card (single footer, no duplicates)
           ========================================================================= */}
-      <div className="hidden md:flex w-[95%] h-[95vh] rounded-3xl shadow-2xl border border-stone-200/20 overflow-hidden bg-white flex-row relative z-10">
+      <div className="hidden md:flex w-[92%] max-w-5xl h-auto md:h-[510px] lg:h-[530px] max-h-[86vh] rounded-3xl shadow-2xl border border-stone-200/20 overflow-hidden bg-white flex-row relative z-10 my-auto">
         {/* Left Half: Brand & Atmosphere Showcase */}
-        <div className="relative w-1/2 h-full flex flex-col justify-between p-8 xl:p-12 overflow-hidden bg-stone-900">
+        <div className="relative w-1/2 h-full flex flex-col justify-between p-6 lg:p-7 overflow-hidden bg-stone-900">
           {/* Sunset cricket pitch image background */}
           <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
             <Image
@@ -313,28 +313,28 @@ export function AdminLoginView() {
 
           {/* Top Header of Left Half */}
           <div className="relative z-10 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-              <div className="relative w-11 h-11 xl:w-12 xl:h-12 shrink-0 drop-shadow-md transition-transform duration-200 group-hover:scale-105">
+            <Link href="/" className="flex items-center gap-2.5 group focus:outline-none">
+              <div className="relative w-9 h-9 lg:w-10 lg:h-10 shrink-0 drop-shadow-md transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Emblem"
                   fill
                   priority
                   className="object-contain"
-                  sizes="48px"
+                  sizes="40px"
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="font-headline font-black text-xl xl:text-2xl tracking-wide text-[#0F1E36] leading-none">
+                <span className="font-headline font-black text-lg lg:text-xl tracking-wide text-[#0F1E36] leading-none">
                   DEVPUR
                 </span>
-                <span className="text-[10px] xl:text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#C2581A] leading-tight mt-0.5">
+                <span className="text-[9px] lg:text-[10px] font-mono font-bold uppercase tracking-[0.22em] text-[#C2581A] leading-tight mt-0.5">
                   CRICKET CLUB
                 </span>
               </div>
             </Link>
 
-            <div className="flex items-center gap-2 text-xs font-medium text-stone-700 tracking-wide">
+            <div className="flex items-center gap-1.5 text-[11px] font-medium text-stone-700 tracking-wide">
               <span>Play</span>
               <span className="text-stone-400">|</span>
               <span>Practice</span>
@@ -346,42 +346,42 @@ export function AdminLoginView() {
           </div>
 
           {/* Center / Upper-Mid Content of Left Half */}
-          <div className="relative z-10 my-auto py-6 xl:py-10 max-w-lg">
-            <h1 className="font-headline tracking-tight leading-[1.04]">
-              <span className="block text-3xl xl:text-5xl font-black text-[#0F1E36]">
+          <div className="relative z-10 my-auto py-3 max-w-md">
+            <h1 className="font-headline tracking-tight leading-[1.08]">
+              <span className="block text-2xl lg:text-3xl font-black text-[#0F1E36]">
                 Manage. Organize.
               </span>
-              <span className="block text-3xl xl:text-5xl font-black text-[#C2581A] mt-1.5">
+              <span className="block text-2xl lg:text-3xl font-black text-[#C2581A] mt-1">
                 Grow the Club.
               </span>
             </h1>
 
-            <div className="mt-4 xl:mt-5 space-y-1">
-              <p className="text-sm xl:text-base font-semibold text-stone-800">
+            <div className="mt-2.5 space-y-0.5">
+              <p className="text-xs lg:text-sm font-semibold text-stone-800">
                 Admin panel for Devpur Cricket Club
               </p>
-              <p className="text-xs xl:text-sm text-stone-700 font-medium">
+              <p className="text-[11px] lg:text-xs text-stone-700 font-medium">
                 — build a stronger community, on and off the field.
               </p>
             </div>
           </div>
 
           {/* Bottom subtle bar of left column */}
-          <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-stone-800 bg-white/45 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-white/40 w-fit">
+          <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-stone-800 bg-white/55 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/50 w-fit">
             <span>DEVPUR GAAM // EST. 2013</span>
             <span className="mx-2 text-stone-400">•</span>
             <span>50+ MEMBERS</span>
           </div>
         </div>
 
-        {/* Right Half: Admin Login Card (Light Luxury Theme) */}
-        <div className="relative w-1/2 h-full flex flex-col justify-between items-center p-8 xl:p-12 bg-[#FAF8F5] overflow-y-auto">
+        {/* Right Half: Admin Login Card (Light Luxury Theme - Single clean form, no duplicate footer) */}
+        <div className="relative w-1/2 h-full flex flex-col justify-between items-center p-5 sm:p-6 lg:p-7 bg-[#FAF8F5] overflow-y-auto">
           {/* Subtle champagne diagonal ribbons */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#F2E3D5]/80 via-[#FDF8F3]/50 to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#EEDFD2]/70 via-[#FDF9F5]/40 to-transparent pointer-events-none" />
 
           {/* Top utility row: Return link */}
-          <div className="w-full flex justify-between items-center z-10">
+          <div className="w-full flex justify-between items-center z-10 shrink-0">
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-stone-500 hover:text-[#C2581A] transition-colors"
@@ -389,47 +389,36 @@ export function AdminLoginView() {
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Public Site</span>
             </Link>
-            <span className="text-[11px] font-mono font-semibold text-stone-400">
+            <span className="text-[10px] font-mono font-semibold text-stone-400">
               DCC Auth v4.2
             </span>
           </div>
 
           {/* Center Card Area */}
-          <div className="w-full max-w-[400px] my-auto py-4 z-10">
+          <div className="w-full max-w-[370px] my-auto py-1 z-10">
             {/* Centered DCC Crest */}
             <div className="flex flex-col items-center text-center">
-              <div className="relative w-16 h-16 xl:w-18 xl:h-18 drop-shadow-md transition-transform hover:scale-105 duration-300">
+              <div className="relative w-11 h-11 lg:w-12 lg:h-12 drop-shadow-md transition-transform hover:scale-105 duration-300">
                 <Image
                   src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Crest"
                   fill
                   priority
                   className="object-contain"
-                  sizes="72px"
+                  sizes="48px"
                 />
               </div>
 
-              <h2 className="font-headline text-2xl xl:text-3xl font-black text-[#0F1E36] tracking-tight mt-3">
+              <h2 className="font-headline text-xl lg:text-2xl font-black text-[#0F1E36] tracking-tight mt-1.5">
                 Admin <span className="text-[#C2581A]">Login</span>
               </h2>
-              <p className="text-xs xl:text-sm text-stone-500 mt-1 max-w-xs leading-relaxed">
+              <p className="text-[11px] lg:text-xs text-stone-500 mt-0.5 max-w-xs leading-relaxed">
                 Welcome back! Please login to your admin account to continue.
               </p>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-3">
               {renderFormContent("desktop")}
-            </div>
-          </div>
-
-          {/* Bottom Footer on Right Side */}
-          <div className="w-full pt-2 text-center z-10 space-y-0.5">
-            <div className="flex items-center justify-center gap-1.5 text-xs font-medium text-stone-600">
-              <Shield className="w-3.5 h-3.5 text-stone-500" />
-              <span>Devpur Cricket Club Admin Panel</span>
-            </div>
-            <div className="text-[11px] text-stone-400">
-              Secure • Private • Authorized Access Only
             </div>
           </div>
         </div>
