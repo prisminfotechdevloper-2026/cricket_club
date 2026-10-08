@@ -90,6 +90,65 @@ const CATEGORIES: CategoryMeta[] = [
   },
 ];
 
+/* Reusable Chapter Header */
+function ChapterHeader({
+  chapter,
+  tag,
+  title,
+  subtitle,
+}: {
+  chapter: string;
+  tag: string;
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <div className="border-b border-border pb-4 space-y-1">
+      <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+        <span>{chapter}</span>
+        <span>•</span>
+        <span>{tag}</span>
+      </div>
+      <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
+        {title}
+      </h2>
+      <p className="text-muted-foreground text-base">{subtitle}</p>
+    </div>
+  );
+}
+
+/* Reusable Story Photo Banner */
+function StoryPhotoBanner({
+  src,
+  alt,
+  badge,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  badge: string;
+  caption: string;
+}) {
+  return (
+    <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-border/80 shadow-md">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 750px"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+      <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm">
+        <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+          {badge}
+        </span>
+        <p className="text-white/90">{caption}</p>
+      </div>
+    </div>
+  );
+}
+
 export function ClubHistoryView() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("overview");
 
@@ -105,12 +164,10 @@ export function ClubHistoryView() {
     <div className="w-full bg-background min-h-screen flex flex-col">
       {/* =========================================================================
           TOP BREADCRUMBS & PAGE HEADER
-          Clean, athletic header with clear hierarchical breadcrumbs
           ========================================================================= */}
       <section className="border-b border-border/70 bg-card/60 backdrop-blur-sm py-4">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
-            {/* Breadcrumb Trail */}
             <nav
               aria-label="Breadcrumb"
               className="flex items-center gap-2 text-xs sm:text-sm font-medium"
@@ -135,7 +192,6 @@ export function ClubHistoryView() {
               </span>
             </nav>
 
-            {/* Inception Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-headline uppercase font-bold tracking-wider bg-primary/10 text-primary border border-primary/20">
               <Sparkles className="w-3.5 h-3.5 text-primary" />
               <span>Devpur Cricket Club • Est. 2013</span>
@@ -146,7 +202,6 @@ export function ClubHistoryView() {
 
       {/* =========================================================================
           PAGE HERO BANNER
-          Atmospheric banner with high-contrast club title & subtitle
           ========================================================================= */}
       <section className="relative overflow-hidden bg-[#0A0D14] border-b border-border/80 py-12 sm:py-16 text-white">
         <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#EA4326_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -168,7 +223,6 @@ export function ClubHistoryView() {
 
       {/* =========================================================================
           MOBILE CATEGORY PILL STRIP
-          Enables quick one-tap category switching on smaller viewports
           ========================================================================= */}
       <div className="lg:hidden sticky top-16 z-30 bg-background/95 backdrop-blur-md border-b border-border py-3">
         <Container>
@@ -199,35 +253,19 @@ export function ClubHistoryView() {
 
       {/* =========================================================================
           MAIN 2-COLUMN LAYOUT (MIG-INSPIRED ARCHITECTURE)
-          Left: Dedicated Category Story Content (No mixed clutter)
-          Right: Fixed / Sticky Categories Sidebar & Quick Club Facts
           ========================================================================= */}
       <section className="flex-1 py-10 sm:py-14">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-            {/* -------------------------------------------------------------------
-                LEFT COLUMN (COL 1-8): FOCUSED CATEGORY CONTENT
-                ------------------------------------------------------------------- */}
+            {/* LEFT COLUMN: DEDICATED CATEGORY CONTENT */}
             <main className="lg:col-span-8 min-w-0">
-              {/* Category 1: Overview & Genesis */}
               {activeCategory === "overview" && <OverviewStorySection />}
-
-              {/* Category 2: Timeline & Milestones */}
               {activeCategory === "timeline" && <TimelineStorySection />}
-
-              {/* Category 3: Vision & Philosophy */}
               {activeCategory === "vision" && <VisionStorySection />}
-
-              {/* Category 4: Matunga Ground & Training */}
               {activeCategory === "training" && <TrainingStorySection />}
-
-              {/* Category 5: Brotherhood & Club Life */}
               {activeCategory === "brotherhood" && <BrotherhoodStorySection />}
-
-              {/* Category 6: Trophies & Honors */}
               {activeCategory === "honors" && <HonorsStorySection />}
 
-              {/* Bottom Category Advancement Banner */}
               {nextCategory && (
                 <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-card/60 p-6 rounded-xl border border-border/80">
                   <div>
@@ -255,11 +293,8 @@ export function ClubHistoryView() {
               )}
             </main>
 
-            {/* -------------------------------------------------------------------
-                RIGHT COLUMN (COL 9-12): FIXED STICKY CATEGORIES SIDEBAR
-                ------------------------------------------------------------------- */}
+            {/* RIGHT COLUMN: FIXED STICKY CATEGORIES SIDEBAR */}
             <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-              {/* Categories Navigation Card */}
               <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-4">
                 <div className="border-b border-border pb-3">
                   <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
@@ -405,51 +440,23 @@ export function ClubHistoryView() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 1 COMPONENT: INCEPTION & GENESIS
-   Simple, heartfelt story of how 15 boys from Devpur Gaam started DCC in 2013
-   ============================================================================= */
 function OverviewStorySection() {
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 01</span>
-          <span>•</span>
-          <span>The Beginning</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Club Inception &amp; Genesis
-        </h2>
-        <p className="text-muted-foreground text-base">
-          How a handful of passionate cricket lovers from Devpur Gaam founded DCC
-          in 2013.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 01"
+        tag="The Beginning"
+        title="Club Inception & Genesis"
+        subtitle="How a handful of passionate cricket lovers from Devpur Gaam founded DCC in 2013."
+      />
 
-      {/* Authentic Photo */}
-      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-border/80 shadow-md">
-        <Image
-          src="/images/5year_age_memories.png"
-          alt="Early days memories of Devpur Cricket Club members"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 750px"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm">
-          <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-            Archival Record • 2013 Inception
-          </span>
-          <p className="text-white/90">
-            The foundation members of Devpur Cricket Club during our first
-            Sunday gathering.
-          </p>
-        </div>
-      </div>
+      <StoryPhotoBanner
+        src="/images/5year_age_memories.png"
+        alt="Early days memories of Devpur Cricket Club members"
+        badge="Archival Record • 2013 Inception"
+        caption="The foundation members of Devpur Cricket Club during our first Sunday gathering."
+      />
 
-      {/* Story Narrative in Simple Sentences */}
       <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
         <p>
           In 2013, a group of young boys from Devpur Gaam met in Mumbai. They had
@@ -468,7 +475,6 @@ function OverviewStorySection() {
         </p>
       </div>
 
-      {/* Highlight Points Card */}
       <div className="bg-card border border-border rounded-xl p-5 space-y-3">
         <h3 className="font-headline text-lg font-bold uppercase text-foreground">
           How It All Started:
@@ -498,7 +504,6 @@ function OverviewStorySection() {
         </ul>
       </div>
 
-      {/* Quote Block */}
       <blockquote className="border-l-4 border-[#EA4326] pl-4 py-2 italic text-muted-foreground bg-muted/30 rounded-r-lg">
         &ldquo;We did not start with money or fancy equipment. We started with
         passion, honesty, and an unbreakable bond between brothers.&rdquo;
@@ -507,10 +512,6 @@ function OverviewStorySection() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 2 COMPONENT: TIMELINE & MILESTONES
-   Chronological milestones of DCC from 2013 to present day
-   ============================================================================= */
 function TimelineStorySection() {
   const milestones = [
     {
@@ -547,22 +548,13 @@ function TimelineStorySection() {
 
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 02</span>
-          <span>•</span>
-          <span>Milestones</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Timeline &amp; Historical Milestones
-        </h2>
-        <p className="text-muted-foreground text-base">
-          A step-by-step journey of how DCC rose through hard work and unity.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 02"
+        tag="Milestones"
+        title="Timeline & Historical Milestones"
+        subtitle="A step-by-step journey of how DCC rose through hard work and unity."
+      />
 
-      {/* Chronological Timeline Cards */}
       <div className="space-y-6">
         {milestones.map((m, idx) => (
           <div
@@ -605,10 +597,6 @@ function TimelineStorySection() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 3 COMPONENT: VISION & PHILOSOPHY
-   Four clear pillars of Devpur Cricket Club
-   ============================================================================= */
 function VisionStorySection() {
   const pillars = [
     {
@@ -635,20 +623,12 @@ function VisionStorySection() {
 
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 03</span>
-          <span>•</span>
-          <span>Core Values</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Our Vision &amp; Philosophy
-        </h2>
-        <p className="text-muted-foreground text-base">
-          The values and standards that make DCC more than just a team.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 03"
+        tag="Core Values"
+        title="Our Vision & Philosophy"
+        subtitle="The values and standards that make DCC more than just a team."
+      />
 
       <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
         <p>
@@ -662,7 +642,6 @@ function VisionStorySection() {
         </p>
       </div>
 
-      {/* 4 Pillars Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
         {pillars.map((p) => (
           <div
@@ -682,7 +661,6 @@ function VisionStorySection() {
         ))}
       </div>
 
-      {/* Visual Quote Card */}
       <div className="bg-gradient-to-r from-card to-muted/40 border border-border p-6 rounded-xl space-y-2">
         <h3 className="font-headline text-xl font-bold uppercase text-foreground">
           Our Guiding Promise:
@@ -697,49 +675,22 @@ function VisionStorySection() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 4 COMPONENT: MATUNGA GROUND & TRAINING
-   Routine, fitness, and practice culture at Matunga Gymkhana Pavilion
-   ============================================================================= */
 function TrainingStorySection() {
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 04</span>
-          <span>•</span>
-          <span>The Ground</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Matunga Ground &amp; Training
-        </h2>
-        <p className="text-muted-foreground text-base">
-          The sacred ground where our skills are sharpened before the break of
-          dawn.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 04"
+        tag="The Ground"
+        title="Matunga Ground & Training"
+        subtitle="The sacred ground where our skills are sharpened before the break of dawn."
+      />
 
-      {/* Ground Image */}
-      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-border/80 shadow-md">
-        <Image
-          src="/images/ground_playing.png"
-          alt="Matunga Gymkhana Cricket Ground playing action"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 750px"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm">
-          <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-            Matunga Gymkhana Cricket Ground
-          </span>
-          <p className="text-white/90">
-            Dawn fitness sessions and turf net practices that shape our match
-            readiness.
-          </p>
-        </div>
-      </div>
+      <StoryPhotoBanner
+        src="/images/ground_playing.png"
+        alt="Matunga Gymkhana Cricket Ground playing action"
+        badge="Matunga Gymkhana Cricket Ground"
+        caption="Dawn fitness sessions and turf net practices that shape our match readiness."
+      />
 
       <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
         <p>
@@ -753,7 +704,6 @@ function TrainingStorySection() {
         </p>
       </div>
 
-      {/* Routine Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-card border border-border rounded-xl p-4 space-y-1.5">
           <Clock className="w-5 h-5 text-[#EA4326]" />
@@ -789,29 +739,16 @@ function TrainingStorySection() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 5 COMPONENT: BROTHERHOOD & CLUB LIFE
-   Memories beyond 22 yards: travels, celebrations, and lifelong bond
-   ============================================================================= */
 function BrotherhoodStorySection() {
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 05</span>
-          <span>•</span>
-          <span>Camaraderie</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Brotherhood &amp; Club Life
-        </h2>
-        <p className="text-muted-foreground text-base">
-          The laughter, post-match chai, train journeys, and family celebrations.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 05"
+        tag="Camaraderie"
+        title="Brotherhood & Club Life"
+        subtitle="The laughter, post-match chai, train journeys, and family celebrations."
+      />
 
-      {/* Two Photos Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border/80 shadow-sm">
           <Image
@@ -859,7 +796,6 @@ function BrotherhoodStorySection() {
         </p>
       </div>
 
-      {/* Life Memories Highlight Box */}
       <div className="bg-card border border-border rounded-xl p-5 space-y-3">
         <h3 className="font-headline text-lg font-bold uppercase text-foreground">
           What Makes Our Brotherhood Special:
@@ -892,49 +828,22 @@ function BrotherhoodStorySection() {
   );
 }
 
-/* =============================================================================
-   CATEGORY 6 COMPONENT: TROPHIES & HONORS
-   Championship trophies, Orange Caps, Purple Caps, and tournament victories
-   ============================================================================= */
 function HonorsStorySection() {
   return (
     <article className="space-y-6">
-      {/* Chapter Title */}
-      <div className="border-b border-border pb-4 space-y-1">
-        <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-          <span>Chapter 06</span>
-          <span>•</span>
-          <span>Silverware</span>
-        </div>
-        <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-foreground uppercase tracking-tight">
-          Trophies &amp; Honors
-        </h2>
-        <p className="text-muted-foreground text-base">
-          Celebrating the hard-earned victories that brought pride to Devpur
-          Gaam.
-        </p>
-      </div>
+      <ChapterHeader
+        chapter="Chapter 06"
+        tag="Silverware"
+        title="Trophies & Honors"
+        subtitle="Celebrating the hard-earned victories that brought pride to Devpur Gaam."
+      />
 
-      {/* Trophy Celebration Image */}
-      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-border/80 shadow-md">
-        <Image
-          src="/images/winning_time_with_group.png"
-          alt="Devpur Cricket Club celebrating tournament trophy win"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 750px"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm">
-          <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326]">
-            Championship Glory • Matunga Gymkhana
-          </span>
-          <p className="text-white/90">
-            DCC lifting the championship trophy surrounded by team members and
-            mentors.
-          </p>
-        </div>
-      </div>
+      <StoryPhotoBanner
+        src="/images/winning_time_with_group.png"
+        alt="Devpur Cricket Club celebrating tournament trophy win"
+        badge="Championship Glory • Matunga Gymkhana"
+        caption="DCC lifting the championship trophy surrounded by team members and mentors."
+      />
 
       <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
         <p>
@@ -948,9 +857,7 @@ function HonorsStorySection() {
         </p>
       </div>
 
-      {/* Honors Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Orange Cap Card */}
         <div className="bg-card border border-border rounded-xl p-5 space-y-3">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
@@ -971,7 +878,6 @@ function HonorsStorySection() {
           </p>
         </div>
 
-        {/* Purple Cap Card */}
         <div className="bg-card border border-border rounded-xl p-5 space-y-3">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
@@ -993,7 +899,6 @@ function HonorsStorySection() {
         </div>
       </div>
 
-      {/* Fair Play Highlight */}
       <div className="bg-card border border-border rounded-xl p-5 space-y-2">
         <div className="flex items-center gap-2 text-sm font-headline font-bold uppercase text-primary">
           <CheckCircle2 className="w-4 h-4" />
