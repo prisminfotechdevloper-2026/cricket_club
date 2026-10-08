@@ -37,18 +37,19 @@ export function HomeHero() {
           <div className="max-w-2xl sm:max-w-3xl space-y-3 sm:space-y-4 text-left">
             {/* Main Headline: Cricket Passion & Brotherhood */}
             <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white uppercase tracking-wide leading-[1.08] drop-shadow-md">
-              Where Passion Meets Brotherhood &amp; Champions Are Born
+              CRICKET BRINGS US TOGETHER <br></br>
+              THE CLUB MAKES US FAMILY.
             </h1>
 
             {/* Subtext: Purpose & Vision */}
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-xl drop-shadow-sm font-body">
-              Rooted in Devpur Gaam and united by the love of the leather ball. Built on dawn practice sessions, tournament grit, and an unbreakable bond that plays for the badge on the chest.
+              More than a game, cricket is the reason we meet, grow and create memories together.
             </p>
 
             {/* Know More Call-To-Action Button */}
             <div className="pt-2 sm:pt-3">
               <Link
-                href="/about"
+                href="/history"
                 className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-md bg-[#EA4326] hover:bg-[#D9381E] active:scale-[0.98] text-white font-headline text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider shadow-lg shadow-black/30 hover:shadow-xl transition-[transform,background-color,box-shadow] duration-150 cursor-pointer group"
               >
                 <span>KNOW MORE</span>
