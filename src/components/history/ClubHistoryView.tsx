@@ -20,6 +20,9 @@ import {
   ArrowRight,
   Home,
   CheckCircle2,
+  GraduationCap,
+  Building2,
+  Network,
 } from "lucide-react";
 import { Container } from "../common/Container";
 
@@ -44,10 +47,10 @@ const CATEGORIES: CategoryMeta[] = [
   {
     id: "overview",
     index: "01",
-    title: "Club Inception & Genesis",
-    shortTitle: "Overview & Genesis",
+    title: "Club Overview & Heart of DCC",
+    shortTitle: "Club Overview",
     icon: Compass,
-    tagline: "How passion for cricket brought Devpur boys together in 2013.",
+    tagline: "Why we started, post-education passion, and connecting villages through cricket.",
   },
   {
     id: "timeline",
@@ -443,71 +446,212 @@ export function ClubHistoryView() {
 
 function OverviewStorySection() {
   return (
-    <article className="space-y-6">
+    <article className="space-y-8">
+      {/* Chapter Title */}
       <ChapterHeader
         chapter="Chapter 01"
-        tag="The Beginning"
-        title="Club Inception & Genesis"
-        subtitle="How a handful of passionate cricket lovers from Devpur Gaam founded DCC in 2013."
+        tag="The Origin & Purpose"
+        title="Club Overview: The Heart of DCC"
+        subtitle="Why we started playing cricket, how post-education passion united our village youth, and how KVO tournaments connected communities."
       />
 
+      {/* Main Ground Feature Photo */}
       <StoryPhotoBanner
-        src="/images/5year_age_memories.png"
-        alt="Early days memories of Devpur Cricket Club members"
-        badge="Archival Record • 2013 Inception"
-        caption="The foundation members of Devpur Cricket Club during our first Sunday gathering."
+        src="/aboutimgs/ground.png"
+        alt="Devpur Cricket Club ground and training environment"
+        badge="The Sacred Ground • Devpur Cricket Club"
+        caption="Where village dreams and post-education passion meet under the open sky."
       />
 
-      <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
+      {/* Narrative Lead */}
+      <div className="space-y-4 text-foreground/90 font-body text-base sm:text-lg leading-relaxed">
         <p>
-          In 2013, a group of young boys from Devpur Gaam met in Mumbai. They had
-          different jobs and daily routines, but one shared dream — to play
-          serious cricket together.
-        </p>
-        <p>
-          At that time, there was no official cricket club for our village
-          youth. There were no sponsors, no proper kits, and no reserved ground.
-          All they had was a second-hand kit bag, deep love for the game, and
-          unstoppable enthusiasm.
-        </p>
-        <p>
-          They decided to give our community a proud name. That was the day
-          <strong> Devpur Cricket Club (DCC)</strong> was born.
+          Cricket in Devpur Gaam is not just a weekend distraction — it is our identity,
+          our therapy, and our greatest bond. This is the heartfelt story of why DCC was
+          created and what drives us forward every single day.
         </p>
       </div>
 
-      <div className="bg-card border border-border rounded-xl p-5 space-y-3">
-        <h3 className="font-headline text-lg font-bold uppercase text-foreground">
-          How It All Started:
-        </h3>
-        <ul className="space-y-2 text-sm text-muted-foreground">
-          <li className="flex items-start gap-2.5">
-            <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
-            <span>
-              <strong>15 dedicated players:</strong> Committed to early morning
-              practice every Sunday without missing a single week.
+      {/* Topic 1: The Origin Thought (Post-Education Dreams) */}
+      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-[#EA4326]/10 text-[#EA4326] flex items-center justify-center font-bold">
+            <GraduationCap className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+              Part 01 • The Deep Thought
             </span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
-            <span>
-              <strong>Community backing:</strong> Elders of Devpur Gaam
-              encouraged the boys and blessed the initiative.
-            </span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
-            <span>
-              <strong>First official jersey:</strong> White kit with the Devpur
-              Crest made its first appearance on the pitch.
-            </span>
-          </li>
-        </ul>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Why We Started: Dreams Paused by Academics
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            Growing up in and around Devpur Gaam, every kid held a cricket bat before holding
+            a pen. But as school, board exams, college degrees, and early career building
+            took over, cricket had to take a backseat.
+          </p>
+          <p>
+            Talented players who could have played serious league cricket had to prioritize
+            family responsibilities and desk jobs. For years, the cricket bats gathered dust
+            in closet corners.
+          </p>
+          <p>
+            Once our education was complete and our careers stabilized, a quiet void remained.
+            A burning realization hit a group of village friends: <em>&ldquo;We gave our youth
+            to books and jobs. But our heartbeat belongs to cricket. It is never too late to
+            step onto the 22 yards again.&rdquo;</em>
+          </p>
+          <p>
+            That post-education awakening — that deep, emotional desire to reclaim our lost
+            cricketing years — was the spark that founded Devpur Cricket Club.
+          </p>
+        </div>
       </div>
 
-      <blockquote className="border-l-4 border-[#EA4326] pl-4 py-2 italic text-muted-foreground bg-muted/30 rounded-r-lg">
-        &ldquo;We did not start with money or fancy equipment. We started with
-        passion, honesty, and an unbreakable bond between brothers.&rdquo;
+      {/* Topic 2: Inspired by Cricket Legacy (MIG, Wankhede & Rajasthan Cricket Board) */}
+      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
+            <Building2 className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-blue-500 tracking-wider">
+              Part 02 • Professional Blueprint
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Inspired by Legacy: Learning from MIG, Wankhede &amp; Cricket Boards
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            From the very first day, we resolved that DCC would not remain an informal Sunday
+            tennis-ball gathering. We wanted to build a culture of true cricketing respect.
+          </p>
+          <p>
+            We looked closely at historic cricketing shrines in Mumbai — the club prestige and
+            community warmth of <strong>MIG Cricket Club</strong> at Bandra, the international
+            aura of <strong>Wankhede Stadium</strong>, and the grassroots administrative
+            discipline of state associations like the <strong>Rajasthan Cricket Board</strong>.
+          </p>
+          <p>
+            We adopted proper turf practice wickets, official leather cricket balls, pristine
+            white and colored uniforms, structured fitness regimes, and professional coaching.
+            We wanted every village player to feel the pure dignity and pride of walking out
+            like a seasoned cricketer.
+          </p>
+        </div>
+      </div>
+
+      {/* Topic 3: Connecting Villages & Socialization (KVO Tournaments) */}
+      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold">
+            <Network className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-emerald-500 tracking-wider">
+              Part 03 • The Village Bridge
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Connecting Villages: KVO Tournaments &amp; Community Socialization
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            Devpur Gaam is an integral part of the proud <strong>Kutchhi Visa Oswal (KVO)</strong> community.
+            Over the decades, families from different Kutch villages migrated to Mumbai, spreading
+            out across suburbs from Borivali to Thane, Mulund, and South Mumbai.
+          </p>
+          <p>
+            Daily routines and business pressures had reduced community interactions. The
+            <strong> KVO Cricket Tournaments</strong> became the single greatest catalyst for
+            reconnecting our roots.
+          </p>
+          <p>
+            Cricket matches transformed into vibrant village gatherings. Childhood friends who
+            hadn&apos;t met in years embraced on boundary lines. Village elders sat in pavilions
+            sharing old memories. Young entrepreneurs networked over post-match tea, and families
+            spent Sundays cheering for their village boys.
+          </p>
+          <p>
+            DCC became an emotional bridge that brought Devpur Gaam and neighboring KVO villages
+            together under one shared banner of love and pride.
+          </p>
+        </div>
+      </div>
+
+      {/* Topic 4: Mission & Motive (Youth Platform & Future Vision) */}
+      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
+            <Target className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-amber-500 tracking-wider">
+              Part 04 • Our Mission &amp; Motive
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              The Mission Ahead: Grassroots Youth Platform &amp; Future Vision
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            Today, DCC has grown into a family of 50+ active members. But our core mission
+            remains crystal clear:
+          </p>
+          <ul className="space-y-2.5 text-sm text-foreground/90 pt-1">
+            <li className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
+              <span>
+                <strong>Zero Lost Talent:</strong> Ensuring that no kid from Devpur Gaam
+                has to bury their cricketing talent due to lack of funds, kits, or guidance.
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
+              <span>
+                <strong>Physical &amp; Mental Wellbeing:</strong> Offering a disciplined
+                counter-weight to stressful corporate life through 6:00 AM turf fitness and
+                brotherhood.
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
+              <span>
+                <strong>Village Unity &amp; Social Brotherhood:</strong> Continuing to serve
+                as a social hub where village elders, youth, and children stand together.
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
+              <span>
+                <strong>Future Sports Roadmap:</strong> Creating dedicated coaching clinics,
+                junior academy batches, and permanent sporting facilities for the next generation.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Heartfelt Quote Banner */}
+      <blockquote className="border-l-4 border-[#EA4326] pl-5 py-3 text-muted-foreground bg-muted/40 rounded-r-xl space-y-1">
+        <p className="font-headline text-lg sm:text-xl font-bold uppercase text-foreground not-italic">
+          &ldquo;Cricket brings us together. The club makes us family.&rdquo;
+        </p>
+        <p className="text-sm">
+          We play for the village, we play for our brothers, and we honor every dream
+          born on the red soil of the cricket pitch.
+        </p>
       </blockquote>
     </article>
   );
