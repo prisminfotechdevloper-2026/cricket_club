@@ -68,7 +68,7 @@ export function ClubView() {
           CLUB PANORAMIC HERO: STADIUM WITH BATSMAN, CREST & FLOATING STAT DOCK
           1:1 matching user design with DCC official crest & brand palette
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-[#F6F8FA] min-h-[500px] sm:min-h-[540px] lg:min-h-[560px] xl:min-h-[600px] flex items-center pt-4 pb-16 lg:py-10 mb-16">
+      <section className="relative overflow-hidden bg-[#F6F8FA] min-h-[540px] sm:min-h-[540px] lg:min-h-[560px] xl:min-h-[600px] flex items-center pt-6 pb-36 sm:pb-28 lg:py-10 mb-16">
         {/* Master Panoramic Background Image */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <Image
@@ -77,11 +77,11 @@ export function ClubView() {
             fill
             priority
             unoptimized
-            className="object-cover object-[52%_center] lg:object-center"
+            className="object-cover object-[68%_center] sm:object-[60%_center] lg:object-center"
             sizes="100vw"
           />
-          {/* Subtle daylight fade for text legibility on the left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent lg:via-white/40 lg:to-transparent pointer-events-none" />
+          {/* Daylight fade for text legibility on the left while keeping player vibrant */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 via-40% to-white/20 sm:to-transparent lg:via-white/40 lg:to-transparent pointer-events-none" />
         </div>
 
         {/* Upper Right Floating Calligraphy: "Play Train Grow Together" */}
@@ -204,7 +204,7 @@ export function ClubView() {
                 RIGHT COLUMN: DCC 3D OFFICIAL SHIELD OVER STADIUM
                 Balanced in the center of the right half, between batsman & helmet
                 ------------------------------------------------------------------- */}
-            <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 justify-center items-center lg:-translate-x-6 xl:-translate-x-3">
+            <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 justify-center items-center lg:-translate-x-10 xl:-translate-x-6">
               <div className="relative w-44 h-44 lg:w-48 lg:h-48 xl:w-56 xl:h-56 drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)] drop-shadow-[0_0_35px_rgba(240,118,30,0.3)] transition-transform hover:scale-105 duration-300">
                 <Image
                   src="/logo/dcc-logo.png"
