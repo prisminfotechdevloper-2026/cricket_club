@@ -295,3 +295,32 @@
 section {
   max-width: 100%;
 }
+
+/* Smooth Right-to-Left Slide-in Drawer Animation */
+@keyframes drawer-slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes drawer-fade-backdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-drawer-slide-in {
+  animation: drawer-slide-in-right 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.animate-drawer-backdrop {
+  animation: drawer-fade-backdrop 0.25s ease-out forwards;
+  will-change: opacity;
+}

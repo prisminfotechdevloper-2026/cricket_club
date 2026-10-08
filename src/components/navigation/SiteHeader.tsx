@@ -358,171 +358,184 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer: Full-screen overlay portal with permanent pinned top header bar */}
+      {/* Mobile Navigation Drawer: Full-screen overlay portal with smooth Right-to-Left slide-in movement */}
       {mounted &&
         isOpen &&
         createPortal(
           <div
-            id="mobile-navigation-drawer"
-            className="lg:hidden fixed inset-0 z-[9999] bg-surface flex flex-col justify-between overflow-hidden animate-in fade-in duration-200"
+            id="mobile-nav-portal-root"
+            className="lg:hidden fixed inset-0 z-[9999] overflow-hidden"
           >
-            {/* Top Heading Bar inside Sidenavbar: Always permanently visible at top, never hidden */}
-            <div className="shrink-0 flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 border-b border-border bg-surface z-20 shadow-2xs">
-              <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2.5 group focus:outline-none"
-              >
-                <div className="relative w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow-sm transition-transform group-hover:scale-105">
-                  <Image
-                    src="/logo/dcc-logo.png"
-                    alt="Devpur Cricket Club Emblem"
-                    fill
-                    priority
-                    className="object-contain"
-                    sizes="44px"
-                  />
-                </div>
-                <div className="flex flex-col min-w-0">
-                  <span className="font-headline font-bold text-base sm:text-lg text-brand-black leading-tight truncate">
-                    DEVPUR CRICKET CLUB
-                  </span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#EA6E18] font-bold">
-                    DEV PUR GAAM • EST. 2013
-                  </span>
-                </div>
-              </Link>
+            {/* Backdrop Overlay (Fade-in with tap to dismiss) */}
+            <div
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-drawer-backdrop cursor-pointer"
+              aria-hidden="true"
+            />
 
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EA6E18]"
-                aria-label="Close navigation menu"
-              >
-                <X className="w-5 h-5 text-stone-800" />
-              </button>
-            </div>
-
-            {/* Scrollable Content Body */}
-            <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 py-4 space-y-4">
-              {/* Live Match Quick Banner */}
-              <Link
-                href="/matches/dcc-vs-royal-xi"
-                onClick={() => setIsOpen(false)}
-                className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-colors shadow-md group"
-              >
-                <div className="flex items-center justify-between text-xs text-brand-peach mb-2">
-                  <span className="font-semibold uppercase tracking-wider flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+            {/* Slide-in Drawer Panel: Smooth Right-to-Left Movement */}
+            <div
+              id="mobile-navigation-drawer"
+              className="fixed inset-y-0 right-0 w-full sm:max-w-md bg-surface flex flex-col justify-between shadow-2xl animate-drawer-slide-in z-10 border-l border-border"
+            >
+              {/* Top Heading Bar inside Sidenavbar: Always permanently visible at top, never hidden */}
+              <div className="shrink-0 flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 border-b border-border bg-surface z-20 shadow-2xs">
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2.5 group focus:outline-none"
+                >
+                  <div className="relative w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow-sm transition-transform group-hover:scale-105">
+                    <Image
+                      src="/logo/dcc-logo.png"
+                      alt="Devpur Cricket Club Emblem"
+                      fill
+                      priority
+                      className="object-contain"
+                      sizes="44px"
+                    />
+                  </div>
+                  <div className="flex flex-col min-w-0">
+                    <span className="font-headline font-bold text-base sm:text-lg text-brand-black leading-tight truncate">
+                      DEVPUR CRICKET CLUB
                     </span>
-                    <span className="text-white font-bold">JPL Semi Final • LIVE</span>
-                  </span>
-                  <span className="font-bold text-brand-peach bg-white/10 px-2 py-0.5 rounded">
-                    Over 17.2
-                  </span>
-                </div>
-                <div className="flex items-center justify-between mt-2">
-                  <div>
-                    <div className="font-headline text-2xl font-bold tracking-tight text-white">
-                      DCC <span className="text-brand-orange">146/4</span>{" "}
-                      <span className="text-stone-400 text-base font-normal">vs</span>{" "}
-                      <span className="text-stone-300">RXI 183/8</span>
-                    </div>
-                    <div className="text-xs text-neutral-300 mt-1 font-medium">
-                      Need 38 runs in 16 balls • RR: 8.43
-                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#EA6E18] font-bold">
+                      DEV PUR GAAM • EST. 2013
+                    </span>
                   </div>
-                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-brand-black transition-colors">
-                    <ChevronRight className="w-5 h-5 text-brand-orange group-hover:text-brand-black transition-colors" />
-                  </div>
-                </div>
-              </Link>
+                </Link>
 
-              {/* Navigation Sections with Mobile Accordions */}
-              <div className="space-y-1.5">
-                {NAV_SECTIONS.map((section) => {
-                  const hasChildren = section.children && section.children.length > 0;
-                  const isExpanded = expandedMobile === section.name;
-
-                  if (!hasChildren) {
-                    const active = pathname === section.href;
-                    return (
-                      <Link
-                        key={section.name}
-                        href={section.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold transition-colors ${
-                          active
-                            ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
-                            : "text-foreground-soft hover:text-brand-black hover:bg-black/[0.03]"
-                        }`}
-                      >
-                        <span>{section.name}</span>
-                        <ChevronRight className="w-4 h-4 text-stone-400" />
-                      </Link>
-                    );
-                  }
-
-                  return (
-                    <div key={section.name} className="border border-stone-200/80 rounded-2xl overflow-hidden bg-stone-50/50">
-                      <button
-                        type="button"
-                        onClick={() => setExpandedMobile(isExpanded ? null : section.name)}
-                        className="w-full flex items-center justify-between px-3.5 py-3 text-base font-bold text-stone-900 focus:outline-none"
-                      >
-                        <span className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#EA6E18]" />
-                          <span>{section.name}</span>
-                        </span>
-                        <ChevronRight
-                          className={`w-4 h-4 text-stone-400 transition-transform duration-200 ${
-                            isExpanded ? "rotate-90 text-[#EA6E18]" : ""
-                          }`}
-                        />
-                      </button>
-
-                      {isExpanded && (
-                        <div className="px-3 pb-3 pt-1 space-y-1 bg-white border-t border-stone-100">
-                          {section.children?.map((child) => {
-                            const childActive = pathname === child.href;
-                            return (
-                              <Link
-                                key={child.name}
-                                href={child.href}
-                                onClick={() => setIsOpen(false)}
-                                className={`flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-colors ${
-                                  childActive
-                                    ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
-                                    : "text-stone-700 hover:text-stone-900 hover:bg-stone-50"
-                                }`}
-                              >
-                                <span>{child.name}</span>
-                                {child.badge && (
-                                  <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-red-100 text-red-600">
-                                    {child.badge}
-                                  </span>
-                                )}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EA6E18]"
+                  aria-label="Close navigation menu"
+                >
+                  <X className="w-5 h-5 text-stone-800" />
+                </button>
               </div>
-            </div>
 
-            {/* Club Footnote inside Drawer */}
-            <div className="shrink-0 px-4 sm:px-6 py-3.5 border-t border-border bg-surface-soft text-center space-y-1">
-              <p className="font-headline font-bold text-xs sm:text-sm tracking-wider uppercase text-brand-black">
-                Devpur Cricket Club • Devpur Gaam
-              </p>
-              <p className="text-[11px] text-muted">
-                PLAY • TRAIN • COMPETE • WIN • Est. 2013
-              </p>
+              {/* Scrollable Content Body */}
+              <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 py-4 space-y-4">
+                {/* Live Match Quick Banner */}
+                <Link
+                  href="/matches/dcc-vs-royal-xi"
+                  onClick={() => setIsOpen(false)}
+                  className="block p-4 rounded-2xl bg-brand-charcoal text-white border border-brand-charcoal hover:bg-black transition-colors shadow-md group"
+                >
+                  <div className="flex items-center justify-between text-xs text-brand-peach mb-2">
+                    <span className="font-semibold uppercase tracking-wider flex items-center gap-2">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+                      </span>
+                      <span className="text-white font-bold">JPL Semi Final • LIVE</span>
+                    </span>
+                    <span className="font-bold text-brand-peach bg-white/10 px-2 py-0.5 rounded">
+                      Over 17.2
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between mt-2">
+                    <div>
+                      <div className="font-headline text-2xl font-bold tracking-tight text-white">
+                        DCC <span className="text-brand-orange">146/4</span>{" "}
+                        <span className="text-stone-400 text-base font-normal">vs</span>{" "}
+                        <span className="text-stone-300">RXI 183/8</span>
+                      </div>
+                      <div className="text-xs text-neutral-300 mt-1 font-medium">
+                        Need 38 runs in 16 balls • RR: 8.43
+                      </div>
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-brand-black transition-colors">
+                      <ChevronRight className="w-5 h-5 text-brand-orange group-hover:text-brand-black transition-colors" />
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Navigation Sections with Mobile Accordions */}
+                <div className="space-y-1.5">
+                  {NAV_SECTIONS.map((section) => {
+                    const hasChildren = section.children && section.children.length > 0;
+                    const isExpanded = expandedMobile === section.name;
+
+                    if (!hasChildren) {
+                      const active = pathname === section.href;
+                      return (
+                        <Link
+                          key={section.name}
+                          href={section.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                            active
+                              ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
+                              : "text-foreground-soft hover:text-brand-black hover:bg-black/[0.03]"
+                          }`}
+                        >
+                          <span>{section.name}</span>
+                          <ChevronRight className="w-4 h-4 text-stone-400" />
+                        </Link>
+                      );
+                    }
+
+                    return (
+                      <div key={section.name} className="border border-stone-200/80 rounded-2xl overflow-hidden bg-stone-50/50">
+                        <button
+                          type="button"
+                          onClick={() => setExpandedMobile(isExpanded ? null : section.name)}
+                          className="w-full flex items-center justify-between px-3.5 py-3 text-base font-bold text-stone-900 focus:outline-none"
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#EA6E18]" />
+                            <span>{section.name}</span>
+                          </span>
+                          <ChevronRight
+                            className={`w-4 h-4 text-stone-400 transition-transform duration-200 ${
+                              isExpanded ? "rotate-90 text-[#EA6E18]" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {isExpanded && (
+                          <div className="px-3 pb-3 pt-1 space-y-1 bg-white border-t border-stone-100">
+                            {section.children?.map((child) => {
+                              const childActive = pathname === child.href;
+                              return (
+                                <Link
+                                  key={child.name}
+                                  href={child.href}
+                                  onClick={() => setIsOpen(false)}
+                                  className={`flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-colors ${
+                                    childActive
+                                      ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
+                                      : "text-stone-700 hover:text-stone-900 hover:bg-stone-50"
+                                  }`}
+                                >
+                                  <span>{child.name}</span>
+                                  {child.badge && (
+                                    <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-red-100 text-red-600">
+                                      {child.badge}
+                                    </span>
+                                  )}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Club Footnote inside Drawer */}
+              <div className="shrink-0 px-4 sm:px-6 py-3.5 border-t border-border bg-surface-soft text-center space-y-1">
+                <p className="font-headline font-bold text-xs sm:text-sm tracking-wider uppercase text-brand-black">
+                  Devpur Cricket Club • Devpur Gaam
+                </p>
+                <p className="text-[11px] text-muted">
+                  PLAY • TRAIN • COMPETE • WIN • Est. 2013
+                </p>
+              </div>
             </div>
           </div>,
           document.body
