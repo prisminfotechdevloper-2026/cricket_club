@@ -74,10 +74,10 @@ export function FeaturedPlayersSection() {
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-3">
+          <div className="w-full sm:w-auto shrink-0 flex items-center gap-3">
             <Link
               href="/players"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm group"
             >
               <span>View All 50+ Members →</span>
             </Link>

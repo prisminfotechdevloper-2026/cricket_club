@@ -191,10 +191,10 @@ export function SeasonJourneySection() {
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-3">
+          <div className="w-full sm:w-auto shrink-0 flex items-center gap-3">
             <Link
               href="/seasons"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface hover:bg-surface-soft border border-border text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-black transition-colors shadow-2xs group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface hover:bg-surface-soft border border-border text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-black transition-colors shadow-2xs group"
             >
               <span>Explore Multi-Season Archive</span>
               <ArrowRight className="w-4 h-4 text-brand-copper transition-transform group-hover:translate-x-1" />

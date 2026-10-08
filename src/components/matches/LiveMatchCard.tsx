@@ -44,16 +44,16 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
         {/* Scoreboard Big Numbers */}
         <div className="py-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* DCC Score */}
-          <div className="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface-soft border border-border/80">
-            <div className="space-y-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted">
+          <div className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-2xl bg-surface-soft border border-border/80">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-muted block">
                 Batting 2nd (Innings 2)
               </span>
-              <div className="flex items-center gap-2">
-                <span className="font-headline text-2xl sm:text-3xl font-bold text-brand-black">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="font-headline text-xl sm:text-2xl lg:text-3xl font-bold text-brand-black">
                   Devpur Cricket Club
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded font-extrabold bg-brand-charcoal text-white">
+                <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded font-extrabold bg-brand-charcoal text-white shrink-0">
                   DCC
                 </span>
               </div>
@@ -62,27 +62,27 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
               </span>
             </div>
 
-            <div className="text-right">
-              <div className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-black tracking-tight leading-none">
+            <div className="text-right shrink-0">
+              <div className="font-headline text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-black tracking-tight leading-none">
                 {match.dccScore}
               </div>
-              <span className="text-xs font-semibold text-brand-copper bg-brand-copper/10 px-2 py-0.5 rounded-full inline-block mt-1">
+              <span className="text-[11px] sm:text-xs font-semibold text-brand-copper bg-brand-copper/10 px-2 py-0.5 rounded-full inline-block mt-1">
                 CRR: {liveDetails?.currentRunRate || "8.42"}
               </span>
             </div>
           </div>
 
           {/* Opponent Score */}
-          <div className="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-surface-soft/60 border border-border/60">
-            <div className="space-y-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted">
+          <div className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-2xl bg-surface-soft/60 border border-border/60">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-muted block">
                 Innings 1 Completed
               </span>
-              <div className="flex items-center gap-2">
-                <span className="font-headline text-xl sm:text-2xl font-bold text-foreground-soft">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="font-headline text-lg sm:text-2xl font-bold text-foreground-soft">
                   {match.opponent}
                 </span>
-                <span className="text-xs px-1.5 py-0.5 rounded font-bold bg-stone-200 text-stone-700">
+                <span className="text-[10px] sm:text-xs px-1.5 py-0.5 rounded font-bold bg-stone-200 text-stone-700 shrink-0">
                   {match.opponentShort}
                 </span>
               </div>
@@ -91,11 +91,11 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
               </span>
             </div>
 
-            <div className="text-right">
-              <div className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground-soft tracking-tight leading-none">
+            <div className="text-right shrink-0">
+              <div className="font-headline text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground-soft tracking-tight leading-none">
                 {match.opponentScore}
               </div>
-              <span className="text-xs text-muted block mt-1">
+              <span className="text-[11px] sm:text-xs text-muted block mt-1">
                 Target: {liveDetails?.target || "184"}
               </span>
             </div>

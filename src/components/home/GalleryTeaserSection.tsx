@@ -5,6 +5,19 @@ import { Container } from "../common/Container";
 import { galleryAlbums } from "@/lib/data/gallery";
 import { ArrowRight } from "lucide-react";
 
+function getAlbumImagePosition(coverImage: string): string {
+  if (coverImage.includes("orange_cap_player") || coverImage.includes("purpal_cap_player")) {
+    return "object-[center_12%]";
+  }
+  if (coverImage.includes("winning_time_with_group")) {
+    return "object-[center_22%]";
+  }
+  if (coverImage.includes("team_wedding_party")) {
+    return "object-[center_20%]";
+  }
+  return "object-[center_25%]";
+}
+
 export function GalleryTeaserSection() {
   const albums = galleryAlbums.slice(0, 3);
 
@@ -28,10 +41,10 @@ export function GalleryTeaserSection() {
             </p>
           </div>
 
-          <div className="shrink-0">
+          <div className="w-full sm:w-auto shrink-0">
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm group"
             >
               <span>Explore Complete 23+ Photo Archive</span>
               <ArrowRight className="w-4 h-4 text-brand-orange transition-transform group-hover:translate-x-1" />
@@ -48,18 +61,18 @@ export function GalleryTeaserSection() {
               className="group rounded-3xl bg-surface-soft border border-border/80 overflow-hidden sports-card flex flex-col justify-between hover:border-brand-copper/70 hover:shadow-xl transition-[border-color,box-shadow] duration-300"
             >
               {/* Photo Cover with Count Pill */}
-              <div className="relative aspect-[4/3] w-full bg-stone-950 overflow-hidden">
+              <div className="relative aspect-[16/11] w-full bg-stone-950 overflow-hidden">
                 <Image
                   src={album.coverImage}
                   alt={album.title}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  className={`object-cover ${getAlbumImagePosition(album.coverImage)} transition-transform duration-700 ease-out group-hover:scale-105`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent group-hover:via-stone-950/25 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/35 to-transparent group-hover:via-stone-950/20 transition-colors" />
 
                 {/* Photo Count Tag */}
-                <div className="absolute top-3 right-3 font-mono text-[11px] font-bold text-white bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10 tracking-wider">
+                <div className="absolute top-3 right-3 font-mono text-[10px] sm:text-[11px] font-bold text-white bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10 tracking-wider">
                   [{album.photoCount} FRAMES]
                 </div>
 
@@ -72,7 +85,7 @@ export function GalleryTeaserSection() {
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
                     <span>{album.season} • {album.category.replace("-", " ")}</span>
                   </span>
-                  <h3 className="font-headline text-xl sm:text-2xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                  <h3 className="font-headline text-lg sm:text-xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
                     {album.title}
                   </h3>
                 </div>

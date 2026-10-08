@@ -37,10 +37,10 @@ export function SponsorShowcaseSection() {
             </p>
           </div>
 
-          <div className="shrink-0">
+          <div className="w-full sm:w-auto shrink-0">
             <Link
               href="/sponsors"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-xs group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-xs group"
             >
               <span>Explore All Partners</span>
               <ArrowRight className="w-4 h-4 text-brand-orange transition-transform group-hover:translate-x-1" />
