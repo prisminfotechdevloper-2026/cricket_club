@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/HomeHero";
+import { HomeAboutSection } from "@/components/home/HomeAboutSection";
 import { HomeSponsorsSection } from "@/components/home/HomeSponsorsSection";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function HomePage() {
       {/* Section 01 — Hero: Community-First Identity */}
       <HomeHero />
 
-      {/* Sponsors Section (Desktop: Simple PNG Grid, Mobile: 3s Slider) */}
+      {/* Section 02 — About DCC: Roots, Vision, Purpose & Mission (2-image showcase) */}
+      <HomeAboutSection />
+
+      {/* Section 03 — Official Club Sponsors (Desktop 5-slider, Mobile single slider) */}
       <HomeSponsorsSection />
     </div>
   );

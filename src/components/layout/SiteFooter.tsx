@@ -68,39 +68,31 @@ export function SiteFooter() {
           {/* Quick Links Column */}
           <div>
             <h4 className="font-headline text-base uppercase tracking-wider text-brand-black font-bold mb-4">
-              Club &amp; Life
+              Club &amp; Heritage
             </h4>
             <ul className="space-y-2.5 text-sm text-foreground-soft font-medium">
               <li>
                 <Link
-                  href="/club"
+                  href="/"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  About DCC &amp; Devpur Gaam
+                  Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/club-life"
+                  href="/history"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Club Life &amp; Practice
+                  Club History
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/players"
+                  href="/gallery"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Our Members
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/seasons"
-                  className="hover:text-brand-copper transition-colors"
-                >
-                  Season Journey
+                  Photo Gallery
                 </Link>
               </li>
               <li>
@@ -111,70 +103,37 @@ export function SiteFooter() {
                   Our Sponsors (2026–2029)
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-brand-copper transition-colors font-semibold text-[#EA6E18]"
-                >
-                  Contact &amp; Support
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Matches & Memories Column */}
+          {/* Cricket & Match Centre Column */}
           <div>
             <h4 className="font-headline text-base uppercase tracking-wider text-brand-black font-bold mb-4">
-              Cricket &amp; Memories
+              Cricket &amp; Matches
             </h4>
             <ul className="space-y-2.5 text-sm text-foreground-soft font-medium">
               <li>
                 <Link
-                  href="/matches"
+                  href="/score-board"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Matches We Play
+                  Score Board &amp; Fixtures
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/matches/dcc-vs-royal-xi"
-                  className="inline-flex items-center gap-1.5 text-brand-copper font-bold hover:underline"
+                  href="/cricket"
+                  className="hover:text-brand-copper transition-colors"
                 >
-                  <span>Live Score Centre</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-ping" />
+                  Cricket Life &amp; Practice
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/tournaments"
-                  className="hover:text-brand-copper transition-colors"
+                  href="/contact"
+                  className="hover:text-brand-copper transition-colors font-semibold text-[#EA4326]"
                 >
-                  Tournaments We Play
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/memories"
-                  className="hover:text-brand-copper transition-colors"
-                >
-                  Memories &amp; Gallery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/achievements"
-                  className="hover:text-brand-copper transition-colors"
-                >
-                  Trophies &amp; Milestones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-brand-copper transition-colors"
-                >
-                  Club Stories &amp; Match Reports
+                  Contact &amp; Support
                 </Link>
               </li>
             </ul>
