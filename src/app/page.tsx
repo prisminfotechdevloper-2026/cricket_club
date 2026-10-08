@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/HomeHero";
 import { SponsorShowcaseSection } from "@/components/home/SponsorShowcaseSection";
 import { TodayMatchSection } from "@/components/home/TodayMatchSection";
@@ -12,6 +13,18 @@ import { GalleryTeaserSection } from "@/components/home/GalleryTeaserSection";
 import { CommunityMomentsSection } from "@/components/home/CommunityMomentsSection";
 import { SeasonJourneySection } from "@/components/home/SeasonJourneySection";
 import { ClubCTASection } from "@/components/home/ClubCTASection";
+
+export const metadata: Metadata = {
+  title: "Devpur Cricket Club | Representing Devpur Gaam • Est. 2013",
+  description:
+    "Official website of Devpur Cricket Club (DCC). A community cricket club representing Devpur Gaam with 50+ members, regular Matunga Ground practice, match participation, and brotherhood.",
+  openGraph: {
+    title: "Devpur Cricket Club | Representing Devpur Gaam",
+    description:
+      "A community cricket club representing Devpur Gaam with 50+ members, regular Matunga Ground practice, match participation, and brotherhood.",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   return (
