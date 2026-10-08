@@ -77,9 +77,11 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      setIsScrolled(scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -113,11 +115,11 @@ export function SiteHeader() {
   return (
     <>
       <header
-        className={`sticky top-0 z-[100] transition-colors duration-200 ${
+        className={`sticky top-0 z-[100] w-full transition-[background-color,box-shadow,border-color] duration-200 ${
           isOpen
             ? "bg-surface border-b border-border shadow-xs"
             : isScrolled
-            ? "bg-surface shadow-xs border-b border-border"
+            ? "bg-surface/95 backdrop-blur-md shadow-md border-b border-border"
             : "bg-surface-soft border-b border-border/80"
         }`}
       >
@@ -161,7 +163,7 @@ export function SiteHeader() {
                       href={section.href}
                       className={`px-3.5 py-1.5 text-sm rounded-full transition-all duration-150 ${
                         active
-                          ? "bg-gradient-to-r from-[#D45D0E] to-[#F0761E] text-white font-bold shadow-xs"
+                          ? "bg-gradient-to-r from-[#EA6E18] to-[#F89928] text-white font-bold shadow-xs"
                           : "text-stone-700 hover:text-stone-950 font-semibold hover:bg-stone-100"
                       }`}
                     >
@@ -181,7 +183,7 @@ export function SiteHeader() {
                       href={section.href}
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm rounded-full transition-all duration-150 ${
                         active
-                          ? "bg-gradient-to-r from-[#D45D0E] to-[#F0761E] text-white font-bold shadow-xs"
+                          ? "bg-gradient-to-r from-[#EA6E18] to-[#F89928] text-white font-bold shadow-xs"
                           : "text-stone-700 hover:text-stone-950 font-semibold hover:bg-stone-100"
                       }`}
                       aria-expanded={openDropdown === section.name}
@@ -207,7 +209,7 @@ export function SiteHeader() {
                           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-400">
                             {section.name}
                           </span>
-                          <span className="text-[10px] font-mono text-[#D45D0E] font-semibold">
+                          <span className="text-[10px] font-mono text-[#EA6E18] font-semibold">
                             Quick Links
                           </span>
                         </div>
@@ -219,8 +221,8 @@ export function SiteHeader() {
                               href={child.href}
                               className={`group/item flex flex-col px-3 py-2 rounded-xl transition-colors ${
                                 childActive
-                                  ? "bg-[#F0761E]/10 text-[#D45D0E]"
-                                  : "hover:bg-stone-50 text-stone-800 hover:text-[#D45D0E]"
+                                  ? "bg-[#EA6E18]/10 text-[#EA6E18]"
+                                  : "hover:bg-stone-50 text-stone-800 hover:text-[#EA6E18]"
                               }`}
                             >
                               <div className="flex items-center justify-between">
@@ -294,52 +296,54 @@ export function SiteHeader() {
         </Container>
 
         {/* MCC Cricket Style Live Running Sports Ticker */}
-        <div className="bg-[#0D131F] text-stone-200 border-t border-white/[0.08] py-1.5 overflow-hidden flex items-center text-xs font-mono select-none">
-          <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#E86016] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-            <span>DCC PULSE</span>
-          </div>
+        {!isOpen && (
+          <div className="bg-[#0D131F] text-stone-200 border-t border-white/[0.08] py-1.5 overflow-hidden flex items-center text-xs font-mono select-none">
+            <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#EA6E18] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+              <span>DCC PULSE</span>
+            </div>
 
-          <div className="overflow-hidden flex-1 marquee-mask">
-            <div className="animate-marquee-rtl flex items-center gap-8 text-[11px] font-semibold text-stone-300">
-              {[1, 2].map((key) => (
-                <div key={key} className="flex items-center gap-8 shrink-0">
-                  <Link href="/matches/dcc-vs-royal-xi" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                    <span className="text-white font-bold">LIVE:</span>
-                    <span>DCC 146/4 (17.2 ov) vs Royal XI • Need 17 off 16 balls</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                  <Link href="/matches" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="text-[#F0761E] font-bold">NEXT FIXTURE:</span>
-                    <span>Sunday vs KVO Stars • 9:30 AM @ Matunga Ground</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                  <Link href="/club-life" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="text-[#D49A44] font-bold">TURF NETS:</span>
-                    <span>Mon • Wed • Fri 7:00 AM under Head Coach Aditya Koli</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                  <Link href="/players" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="text-white font-bold">SQUAD:</span>
-                    <span>50+ Registered Members Proudly Representing Devpur Gaam</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                  <Link href="/blog" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="text-[#F0761E] font-bold">JOURNAL:</span>
-                    <span>Death-Overs Blueprint & Pitch Analysis by Coach Aditya Koli</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                  <Link href="/club" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                    <span className="text-white font-bold">HONORS:</span>
-                    <span>2× Runners-Up Cups • Ranked 10 in KVO Teams • Est. 2013</span>
-                  </Link>
-                  <span className="text-stone-600">/</span>
-                </div>
-              ))}
+            <div className="overflow-hidden flex-1 marquee-mask">
+              <div className="animate-marquee-rtl flex items-center gap-8 text-[11px] font-semibold text-stone-300">
+                {[1, 2].map((key) => (
+                  <div key={key} className="flex items-center gap-8 shrink-0">
+                    <Link href="/matches/dcc-vs-royal-xi" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                      <span className="text-white font-bold">LIVE:</span>
+                      <span>DCC 146/4 (17.2 ov) vs Royal XI • Need 17 off 16 balls</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                    <Link href="/matches" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-[#EA6E18] font-bold">NEXT FIXTURE:</span>
+                      <span>Sunday vs KVO Stars • 9:30 AM @ Matunga Ground</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                    <Link href="/club-life" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-[#F89928] font-bold">TURF NETS:</span>
+                      <span>Mon • Wed • Fri 7:00 AM under Head Coach Aditya Koli</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                    <Link href="/players" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-white font-bold">SQUAD:</span>
+                      <span>50+ Registered Members Proudly Representing Devpur Gaam</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                    <Link href="/blog" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-[#EA6E18] font-bold">JOURNAL:</span>
+                      <span>Death-Overs Blueprint & Pitch Analysis by Coach Aditya Koli</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                    <Link href="/club" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-white font-bold">HONORS:</span>
+                      <span>2× Runners-Up Cups • Ranked 10 in KVO Teams • Est. 2013</span>
+                    </Link>
+                    <span className="text-stone-600">/</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </header>
 
       {/* Mobile Navigation Drawer: Rendered via Portal at body level to prevent parent stacking/overflow clipping */}
@@ -416,12 +420,12 @@ export function SiteHeader() {
                         className="w-full flex items-center justify-between px-3.5 py-3 text-base font-bold text-stone-900 focus:outline-none"
                       >
                         <span className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#E86016]" />
+                          <span className="w-2 h-2 rounded-full bg-[#EA6E18]" />
                           <span>{section.name}</span>
                         </span>
                         <ChevronRight
                           className={`w-4 h-4 text-stone-400 transition-transform duration-200 ${
-                            isExpanded ? "rotate-90 text-[#D45D0E]" : ""
+                            isExpanded ? "rotate-90 text-[#EA6E18]" : ""
                           }`}
                         />
                       </button>
@@ -437,7 +441,7 @@ export function SiteHeader() {
                                 onClick={() => setIsOpen(false)}
                                 className={`flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-colors ${
                                   childActive
-                                    ? "bg-[#E86016]/10 text-[#D45D0E] font-bold"
+                                    ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
                                     : "text-stone-700 hover:text-stone-900 hover:bg-stone-50"
                                 }`}
                               >

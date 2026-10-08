@@ -49,14 +49,14 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Squad Mission & Identity */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
                 <span>OFFICIAL SQUAD ROSTER // 2026–27 CAMPAIGN</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
                 50+ Athletes. One Crest.
-                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
                   Pure Devpur Gaam Pride.
                 </span>
               </h1>
@@ -70,11 +70,11 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
               {/* Action Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Users className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <Users className="w-3.5 h-3.5 text-[#EA6E18]" />
                   <span>50+ ACTIVE SQUAD MEMBERS</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Award className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <Award className="w-3.5 h-3.5 text-[#F89928]" />
                   <span>ORANGE &amp; PURPLE CAP HONOREES</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
@@ -88,7 +88,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
             <div className="lg:col-span-5">
               <div className="rounded-3xl bg-white border border-stone-200 p-6 sm:p-7 shadow-md relative overflow-hidden">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-stone-100">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#D45D0E] font-bold">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#EA6E18] font-bold">
                     ROSTER BREAKDOWN
                   </span>
                   <span className="text-xs font-mono text-stone-500 font-medium">
@@ -180,12 +180,12 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
           </div>
 
           {/* Role Filter Pills */}
-          <div className="flex items-center gap-1.5 pt-2 border-t border-border/60 overflow-x-auto pb-1">
+          <div className="flex items-center gap-1.5 pt-2 border-t border-border/60 overflow-x-auto pb-1 scrollbar-none">
             {ROLES.map((role) => (
               <button
                 key={role}
                 onClick={() => setSelectedRole(role)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                   selectedRole === role
                     ? "bg-brand-charcoal text-white shadow-xs"
                     : "bg-surface-soft text-foreground-soft hover:bg-stone-100 hover:text-brand-black"

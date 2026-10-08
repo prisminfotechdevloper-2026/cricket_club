@@ -469,7 +469,7 @@ export function SeasonJourneySection() {
             </div>
 
             <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-              <span className="font-headline text-2xl sm:text-3xl font-black text-[#D49A44] block leading-none">
+              <span className="font-headline text-2xl sm:text-3xl font-black text-[#F89928] block leading-none">
                 2× Silver
               </span>
               <span className="text-[10px] font-mono uppercase text-neutral-400 mt-1 block">

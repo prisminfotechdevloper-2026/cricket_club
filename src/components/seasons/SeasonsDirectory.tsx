@@ -20,14 +20,14 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Narrative */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
                 <span>HISTORICAL REGISTRY // 2013–2027 CLUB TIMELINE</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
                 Season Chronology.
-                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
                   Every Milestone &amp; Campaign.
                 </span>
               </h1>
@@ -40,11 +40,11 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
               {/* Action Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Calendar className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#EA6E18]" />
                   <span>OCT – MAR / MAY PEAK CYCLE</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Shield className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <Shield className="w-3.5 h-3.5 text-[#F89928]" />
                   <span>EST. 2013 INCEPTION</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
@@ -58,9 +58,9 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
             <div className="lg:col-span-5">
               <div className="grid grid-cols-2 gap-3.5 font-mono text-xs">
                 {[
-                  { label: "CYCLE LENGTH", value: "5–6 Mos", sub: "Annual Peak Season", color: "text-[#D45D0E]", valueColor: "text-stone-900" },
-                  { label: "TURF RHYTHM", value: "3 Days/Wk", sub: "Mon • Wed • Fri Nets", color: "text-[#D45D0E]", valueColor: "text-stone-900" },
-                  { label: "LEATHER-BALL", value: "25+ Games", sub: "Competitive Matches", color: "text-[#D45D0E]", valueColor: "text-[#D45D0E]" },
+                  { label: "CYCLE LENGTH", value: "5–6 Mos", sub: "Annual Peak Season", color: "text-[#EA6E18]", valueColor: "text-stone-900" },
+                  { label: "TURF RHYTHM", value: "3 Days/Wk", sub: "Mon • Wed • Fri Nets", color: "text-[#EA6E18]", valueColor: "text-stone-900" },
+                  { label: "LEATHER-BALL", value: "25+ Games", sub: "Competitive Matches", color: "text-[#EA6E18]", valueColor: "text-[#EA6E18]" },
                   { label: "COMMUNITY", value: "10,000+", sub: "KVO Cricket Network", color: "text-emerald-600", valueColor: "text-stone-900" },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">

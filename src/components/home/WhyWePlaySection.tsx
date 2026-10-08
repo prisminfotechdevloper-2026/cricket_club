@@ -58,7 +58,7 @@ const PILLARS: PillarData[] = [
       "Bridging rural heritage with modern Mumbai sports life",
       "Uniting senior patrons, youth, and families under one banner",
     ],
-    badgeColor: "from-[#D45D0E] to-[#F0761E]",
+    badgeColor: "from-[#EA6E18] to-[#F89928]",
   },
   {
     id: "discipline",
@@ -81,7 +81,7 @@ const PILLARS: PillarData[] = [
       "Workload management and match situation simulations",
       "Punctuality, dress code, and commitment across seasons",
     ],
-    badgeColor: "from-[#CF7647] to-[#D49A44]",
+    badgeColor: "from-[#EA6E18] to-[#F89928]",
   },
   {
     id: "brotherhood",
@@ -92,8 +92,8 @@ const PILLARS: PillarData[] = [
     quote: "Teammates for 20 overs under scoreboard pressure. Brothers for life through every celebration.",
     description:
       "From tense match chases to shared post-session cutting chai, Mumbai Western Railway local train journeys with heavy kit bags, and dancing at teammates' weddings in traditional kurtas — our fraternity is for life.",
-    image: "/images/buddies.png",
-    imagePosition: "object-[center_top]",
+    image: "/images/5year_age_memories.png",
+    imagePosition: "object-[center_28%]",
     metrics: [
       { value: "50+", label: "Active Brothers" },
       { value: "100%", label: "Fraternity Loyalty" },
@@ -104,7 +104,7 @@ const PILLARS: PillarData[] = [
       "Annual club dinners, get-togethers & victory parties",
       "Western Railway train commute camaraderie across tours",
     ],
-    badgeColor: "from-[#8B111B] to-[#CF7647]",
+    badgeColor: "from-[#8B111B] to-[#EA6E18]",
   },
   {
     id: "fitness",
@@ -127,7 +127,7 @@ const PILLARS: PillarData[] = [
       "Rotational core power for clean strokeplay and bowling pace",
       "Injury prevention and recovery routines for working adults",
     ],
-    badgeColor: "from-[#F0761E] to-[#D49A44]",
+    badgeColor: "from-[#EA6E18] to-[#F89928]",
   },
   {
     id: "network",
@@ -173,7 +173,7 @@ const PILLARS: PillarData[] = [
       "Progression opportunities into prestigious KVO tournaments",
       "Technical batting and bowling evolution under pressure",
     ],
-    badgeColor: "from-[#D45D0E] to-[#8B111B]",
+    badgeColor: "from-[#EA6E18] to-[#8B111B]",
   },
 ];
 
@@ -580,7 +580,7 @@ export function WhyWePlaySection() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-2xl bg-amber-500/15 flex items-center justify-center text-[#D49A44]">
+                  <div className="w-10 h-10 rounded-2xl bg-amber-500/15 flex items-center justify-center text-[#F89928]">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <span className="font-mono text-xs font-bold text-stone-400">
@@ -592,7 +592,7 @@ export function WhyWePlaySection() {
                   <h4 className="font-headline text-2xl font-black text-brand-black uppercase group-hover:text-brand-copper transition-colors">
                     The 3-Day Net Rhythm
                   </h4>
-                  <p className="text-xs font-bold text-[#D49A44] uppercase">
+                  <p className="text-xs font-bold text-[#EA6E18] uppercase">
                     Matunga Ground Turf Nets
                   </p>
                 </div>
@@ -655,16 +655,20 @@ export function WhyWePlaySection() {
                   </p>
                 </div>
 
-                {/* Natural, Bright Teammates Photo with Clear Faces (NO Dark Overlay) */}
-                <div className="relative h-28 rounded-2xl overflow-hidden border border-border bg-stone-100">
+                {/* High-Resolution Celebration Photo with Teammates Clear & Front-Facing */}
+                <div className="relative h-36 sm:h-40 rounded-2xl overflow-hidden border border-border bg-stone-100 shadow-2xs group/img">
                   <Image
-                    src="/images/buddies.png"
-                    alt="Camaraderie of teammates"
+                    src="/images/5year_age_memories.png"
+                    alt="Camaraderie and brotherhood of teammates"
                     fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    sizes="300px"
+                    className="object-cover object-[center_28%] group-hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 768px) 100vw, 360px"
                   />
-                  <div className="absolute inset-0 ring-1 ring-inset ring-black/5" />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-black/10 pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-black/65 backdrop-blur-md border border-white/20 text-[10px] font-mono font-bold text-white uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                    <span>Squad Brotherhood</span>
+                  </div>
                 </div>
 
                 <p className="text-xs text-foreground-soft leading-relaxed">
@@ -787,7 +791,7 @@ export function WhyWePlaySection() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-2xl bg-[#D45D0E]/15 flex items-center justify-center text-[#D45D0E]">
+                  <div className="w-10 h-10 rounded-2xl bg-[#EA6E18]/15 flex items-center justify-center text-[#EA6E18]">
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <span className="font-mono text-xs font-bold text-stone-400">
@@ -799,7 +803,7 @@ export function WhyWePlaySection() {
                   <h4 className="font-headline text-2xl font-black text-brand-black uppercase group-hover:text-brand-copper transition-colors">
                     Higher Doors
                   </h4>
-                  <p className="text-xs font-bold text-[#D45D0E] uppercase">
+                  <p className="text-xs font-bold text-[#EA6E18] uppercase">
                     25+ Tournament Fixtures
                   </p>
                 </div>

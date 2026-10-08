@@ -263,7 +263,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
           </div>
 
           {/* Interactive Navigation Tabs */}
-          <div className="px-5 sm:px-8 bg-surface-soft border-t border-border flex items-center gap-2 overflow-x-auto">
+          <div className="px-4 sm:px-8 bg-surface-soft border-t border-border flex items-center gap-2 overflow-x-auto scrollbar-none">
             {(
               [
                 { id: "scorecard", label: "Full Scorecard" },
@@ -275,7 +275,7 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`py-3.5 px-4 text-xs sm:text-sm font-bold uppercase tracking-wider border-b-2 transition-all whitespace-nowrap ${
+                className={`py-3.5 px-4 text-xs sm:text-sm font-bold uppercase tracking-wider border-b-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                   activeTab === tab.id
                     ? "border-brand-copper text-brand-black bg-white"
                     : "border-transparent text-muted hover:text-brand-black"

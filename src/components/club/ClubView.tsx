@@ -118,7 +118,7 @@ export function ClubView() {
             <div className="lg:col-span-7 xl:col-span-6 space-y-3.5 text-left">
               {/* Top Eyebrow Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#18202F] text-white font-mono text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                <Trophy className="w-3.5 h-3.5 text-[#E86016] shrink-0" />
+                <Trophy className="w-3.5 h-3.5 text-[#EA6E18] shrink-0" />
                 <span>COMMUNITY CLUB // EST. 2013</span>
                 <span className="text-stone-400">•</span>
                 <span>DEVPUR GAAM</span>
@@ -127,7 +127,7 @@ export function ClubView() {
               {/* Headline with Brand Orange Brush Style */}
               <div className="space-y-0.5">
                 <h1 className="font-headline tracking-tight uppercase leading-[0.95]">
-                  <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black italic text-[#E86016] drop-shadow-xs">
+                  <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black italic text-[#EA6E18] drop-shadow-xs">
                     MORE THAN CRICKET.
                   </span>
                   <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black italic text-[#0F1E36]">
@@ -143,9 +143,9 @@ export function ClubView() {
                     />
                     <defs>
                       <linearGradient id="brush-swoosh" x1="0" y1="0" x2="340" y2="0" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#D45D0E" />
-                        <stop offset="0.5" stopColor="#F0761E" />
-                        <stop offset="1" stopColor="#E86016" />
+                        <stop stopColor="#E66212" />
+                        <stop offset="0.5" stopColor="#EA6E18" />
+                        <stop offset="1" stopColor="#F89928" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -164,7 +164,7 @@ export function ClubView() {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Link
                   href="/contact"
-                  className="px-6 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#E86016] hover:from-[#B85018] hover:to-[#D45D0E] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-orange-500/25 hover:scale-[1.02] active:scale-[0.98] transition-[transform,box-shadow,background-image] inline-flex items-center gap-2.5 group"
+                  className="px-6 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] hover:from-[#D45508] hover:to-[#EA6E18] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-[#EA6E18]/25 hover:scale-[1.02] active:scale-[0.98] transition-[transform,box-shadow,background-image] inline-flex items-center gap-2.5 group"
                 >
                   <svg className="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -181,7 +181,7 @@ export function ClubView() {
                   href="#values"
                   className="px-5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-900 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:scale-[1.02] active:scale-[0.98] transition-[transform,background-color,border-color] inline-flex items-center gap-2"
                 >
-                  <Play className="w-3.5 h-3.5 fill-[#E86016] text-[#E86016]" />
+                  <Play className="w-3.5 h-3.5 fill-[#EA6E18] text-[#EA6E18]" />
                   <span>LEARN MORE</span>
                 </Link>
               </div>
@@ -189,11 +189,11 @@ export function ClubView() {
               {/* Bottom Left Meta Badge */}
               <div className="flex items-center gap-3 pt-3 text-xs font-bold text-stone-500">
                 <span className="font-headline tracking-widest text-stone-900 uppercase">
-                  EST. <span className="text-[#E86016] font-black">2013</span>
+                  EST. <span className="text-[#EA6E18] font-black">2013</span>
                 </span>
                 <span className="text-stone-300">|</span>
                 <div className="flex items-center gap-1 text-stone-700">
-                  <MapPin className="w-3.5 h-3.5 text-[#E86016]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#EA6E18]" />
                   <span>DEVPUR GAAM</span>
                 </div>
                 <div className="w-14 h-px bg-stone-300 hidden sm:block" />
@@ -233,10 +233,10 @@ export function ClubView() {
                   <circle cx="9" cy="7" r="4" />
                   <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  <circle cx="9" cy="17" r="1" fill="#E86016" stroke="none" />
+                  <circle cx="9" cy="17" r="1" fill="#EA6E18" stroke="none" />
                 </svg>
                 <div>
-                  <span className="font-headline text-lg sm:text-xl font-black text-[#E86016] block leading-none">
+                  <span className="font-headline text-lg sm:text-xl font-black text-[#EA6E18] block leading-none">
                     50+
                   </span>
                   <span className="text-[10px] uppercase font-bold text-[#0F1E36] block tracking-wider mt-0.5">
@@ -250,10 +250,10 @@ export function ClubView() {
                 <svg className="w-5 h-5 text-[#0F1E36] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 4l6 6-8 8a2 2 0 0 1-2.8 0l-1.4-1.4a2 2 0 0 1 0-2.8L14 4z" />
                   <path d="M3 21l3-3" />
-                  <circle cx="18" cy="18" r="2" fill="#E86016" stroke="#E86016" />
+                  <circle cx="18" cy="18" r="2" fill="#EA6E18" stroke="#EA6E18" />
                 </svg>
                 <div>
-                  <span className="font-headline text-lg sm:text-xl font-black text-[#E86016] block leading-none">
+                  <span className="font-headline text-lg sm:text-xl font-black text-[#EA6E18] block leading-none">
                     25+
                   </span>
                   <span className="text-[10px] uppercase font-bold text-[#0F1E36] block tracking-wider mt-0.5">
@@ -266,10 +266,10 @@ export function ClubView() {
               <div className="flex items-center gap-2.5 sm:px-4 pt-2 sm:pt-0">
                 <svg className="w-5 h-5 text-[#0F1E36] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12" />
-                  <circle cx="12" cy="15" r="1" fill="#E86016" stroke="none" />
+                  <circle cx="12" cy="15" r="1" fill="#EA6E18" stroke="none" />
                 </svg>
                 <div>
-                  <span className="font-headline text-sm font-black text-[#E86016] block leading-tight uppercase">
+                  <span className="font-headline text-sm font-black text-[#EA6E18] block leading-tight uppercase">
                     FITNESS
                   </span>
                   <span className="text-[10px] uppercase font-bold text-[#0F1E36] block tracking-wider mt-0.5">
@@ -286,10 +286,10 @@ export function ClubView() {
                   <path d="M4 22h16" />
                   <path d="M10 14.66V17c0 .55-.45 1-1 1H8v4h8v-4h-1c-.55 0-1-.45-1-1v-2.34" />
                   <path d="M6 2h12v7a6 6 0 0 1-12 0V2z" />
-                  <circle cx="12" cy="6" r="1" fill="#E86016" stroke="none" />
+                  <circle cx="12" cy="6" r="1" fill="#EA6E18" stroke="none" />
                 </svg>
                 <div>
-                  <span className="font-headline text-sm font-black text-[#E86016] block leading-tight uppercase">
+                  <span className="font-headline text-sm font-black text-[#EA6E18] block leading-tight uppercase">
                     MEMORIES
                   </span>
                   <span className="text-[10px] uppercase font-bold text-[#0F1E36] block tracking-wider mt-0.5">
@@ -463,7 +463,7 @@ export function ClubView() {
                 key={name}
                 className="px-4 py-2 rounded-xl bg-surface-soft border border-border/80 text-xs sm:text-sm font-bold text-brand-black flex items-center gap-2"
               >
-                <div className="w-2 h-2 rounded-full bg-[#E86016]" />
+                <div className="w-2 h-2 rounded-full bg-[#EA6E18]" />
                 <span>{name}</span>
               </div>
             ))}
@@ -472,7 +472,7 @@ export function ClubView() {
 
         {/* Community-First Banner */}
         <div className="p-8 sm:p-12 rounded-3xl bg-brand-charcoal text-white text-center space-y-4 shadow-xl">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#F0761E]">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#EA6E18]">
             JOIN OUR BROTHERHOOD
           </span>
           <h2 className="font-headline text-3xl sm:text-5xl font-extrabold tracking-tight">
@@ -484,7 +484,7 @@ export function ClubView() {
           <div className="pt-4 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-xl bg-[#E86016] hover:bg-[#D45D0E] text-white font-bold text-sm uppercase tracking-wider transition-colors shadow-md"
+              className="px-8 py-3.5 rounded-xl bg-[#EA6E18] hover:bg-[#D45508] text-white font-bold text-sm uppercase tracking-wider transition-colors shadow-md"
             >
               Contact Club Committee
             </Link>

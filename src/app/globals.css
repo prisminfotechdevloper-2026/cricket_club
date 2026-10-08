@@ -12,14 +12,14 @@
 @theme {
   --color-brand-black: #090A0C;
   --color-brand-charcoal: #1B1D22;
-  --color-brand-orange: #F0761E;
-  --color-brand-orange-light: #F8A860;
-  --color-brand-orange-dark: #D45D0E;
-  --color-brand-gold: #D49A44;
-  --color-brand-gold-light: #F8C080;
-  --color-brand-copper: #CF7647;
-  --color-brand-copper-dark: #A85227;
-  --color-brand-peach: #F3CA9F;
+  --color-brand-orange: #EA6E18;
+  --color-brand-orange-light: #FFA53B;
+  --color-brand-orange-dark: #C2520E;
+  --color-brand-gold: #F89928;
+  --color-brand-gold-light: #FFCA80;
+  --color-brand-copper: #D96214;
+  --color-brand-copper-dark: #A84508;
+  --color-brand-peach: #FCE1C2;
   --color-brand-maroon: #7A201B;
   --color-brand-red: #8B111B;
 
@@ -49,13 +49,13 @@
 
   --brand-black: #090A0C;
   --brand-charcoal: #1B1D22;
-  --brand-orange: #F0761E;
-  --brand-orange-light: #F8A860;
-  --brand-orange-dark: #D45D0E;
-  --brand-gold: #D49A44;
-  --brand-gold-light: #F8C080;
-  --brand-copper: #CF7647;
-  --brand-peach: #F3CA9F;
+  --brand-orange: #EA6E18;
+  --brand-orange-light: #FFA53B;
+  --brand-orange-dark: #C2520E;
+  --brand-gold: #F89928;
+  --brand-gold-light: #FFCA80;
+  --brand-copper: #D96214;
+  --brand-peach: #FCE1C2;
   --brand-maroon: #7A201B;
   --brand-red: #8B111B;
 
@@ -73,7 +73,7 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--background);
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
@@ -83,7 +83,14 @@
     font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  /* Ensure sticky header remains pinned on all devices and WebKit browsers */
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 
   h1,

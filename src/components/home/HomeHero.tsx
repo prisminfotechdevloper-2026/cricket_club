@@ -84,8 +84,8 @@ export function HomeHero() {
                 ------------------------------------------------------------------- */}
             <div className="lg:col-span-6 xl:col-span-5 space-y-3.5 sm:space-y-4 text-left">
               {/* Top Eyebrow Pill */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-[#D49A44]/40 shadow-xs text-xs font-bold text-stone-800">
-                <Trophy className="w-3.5 h-3.5 text-[#D45D0E] shrink-0" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-[#F89928]/40 shadow-xs text-xs font-bold text-stone-800">
+                <Trophy className="w-3.5 h-3.5 text-[#EA6E18] shrink-0" />
                 <span>Devpur Gaam • Community Cricket Club • Est. 2013</span>
               </div>
 
@@ -93,7 +93,7 @@ export function HomeHero() {
               <div className="space-y-0.5">
                 <h1 className="font-headline text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-black tracking-tight leading-[0.98]">
                   <span className="text-[#0F1E36] block">Rooted in Heritage.</span>
-                  <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block relative">
+                  <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block relative">
                     Forged in Cricket.
                   </span>
                   <span className="text-[#0F1E36] block">One Club. One Brotherhood.</span>
@@ -109,7 +109,7 @@ export function HomeHero() {
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <Link
                   href="/about"
-                  className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] hover:from-[#B85018] hover:via-[#D45D0E] hover:to-[#C58B35] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-[#D45D0E]/25 hover:scale-[1.02] active:scale-[0.98] transition-[transform,box-shadow,background-image] inline-flex items-center gap-1.5 group"
+                  className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] hover:from-[#D45508] hover:via-[#E0630E] hover:to-[#EB8D20] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-[#EA6E18]/25 hover:scale-[1.02] active:scale-[0.98] transition-[transform,box-shadow,background-image] inline-flex items-center gap-1.5 group"
                 >
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   <span>Explore Our Club</span>
@@ -117,7 +117,7 @@ export function HomeHero() {
 
                 <Link
                   href="/gallery"
-                  className="px-4.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:border-[#D49A44]/50 hover:scale-[1.02] active:scale-[0.98] transition-[transform,border-color,background-color] inline-flex items-center gap-2"
+                  className="px-4.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:border-[#F89928]/50 hover:scale-[1.02] active:scale-[0.98] transition-[transform,border-color,background-color] inline-flex items-center gap-2"
                 >
                   <div className="w-4.5 h-4.5 rounded-full bg-[#0F1E36] flex items-center justify-center shrink-0">
                     <Play className="w-2 h-2 fill-white text-white ml-0.5" />
@@ -129,8 +129,8 @@ export function HomeHero() {
               {/* Quick Stats / Meta Row with Brand Color Palette */}
               <div className="pt-2.5 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 items-center border-t border-stone-200/80">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-[#D45D0E]/10 flex items-center justify-center shrink-0">
-                    <Users className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <div className="w-7 h-7 rounded-full bg-[#EA6E18]/10 flex items-center justify-center shrink-0">
+                    <Users className="w-3.5 h-3.5 text-[#EA6E18]" />
                   </div>
                   <div>
                     <span className="font-headline text-base sm:text-lg font-black text-[#0F1E36] block leading-none">
@@ -143,8 +143,8 @@ export function HomeHero() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-[#D49A44]/15 flex items-center justify-center shrink-0">
-                    <Medal className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <div className="w-7 h-7 rounded-full bg-[#F89928]/15 flex items-center justify-center shrink-0">
+                    <Medal className="w-3.5 h-3.5 text-[#F89928]" />
                   </div>
                   <div>
                     <span className="font-headline text-base sm:text-lg font-black text-[#0F1E36] block leading-none">
@@ -157,8 +157,8 @@ export function HomeHero() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-[#D49A44]/15 flex items-center justify-center shrink-0">
-                    <Trophy className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <div className="w-7 h-7 rounded-full bg-[#F89928]/15 flex items-center justify-center shrink-0">
+                    <Trophy className="w-3.5 h-3.5 text-[#F89928]" />
                   </div>
                   <div>
                     <span className="font-headline text-base sm:text-lg font-black text-[#0F1E36] block leading-none">
@@ -171,8 +171,8 @@ export function HomeHero() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-[#D45D0E]/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <div className="w-7 h-7 rounded-full bg-[#EA6E18]/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-3.5 h-3.5 text-[#EA6E18]" />
                   </div>
                   <div>
                     <span className="font-headline text-xs font-black text-[#0F1E36] block leading-tight">
@@ -211,7 +211,7 @@ export function HomeHero() {
                     <h3 className="font-headline text-lg sm:text-xl font-black text-brand-black tracking-tight uppercase leading-tight">
                       DEVPUR CRICKET CLUB
                     </h3>
-                    <p className="text-[10px] font-bold text-[#D45D0E] tracking-wider uppercase">
+                    <p className="text-[10px] font-bold text-[#EA6E18] tracking-wider uppercase">
                       PROUDLY REPRESENTING DEVPUR GAAM
                     </p>
                     <p className="text-[9px] font-bold text-stone-400 tracking-widest uppercase">
@@ -223,7 +223,7 @@ export function HomeHero() {
                 {/* 4 Stat Metric Boxes in Grid */}
                 <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
                   <div className="bg-stone-50 rounded-xl p-2 text-center border border-stone-100">
-                    <Calendar className="w-3.5 h-3.5 text-[#D45D0E] mx-auto mb-0.5" />
+                    <Calendar className="w-3.5 h-3.5 text-[#EA6E18] mx-auto mb-0.5" />
                     <span className="text-[8.5px] uppercase font-bold text-stone-400 block tracking-wider">
                       INCEPTION
                     </span>
@@ -233,7 +233,7 @@ export function HomeHero() {
                   </div>
 
                   <div className="bg-stone-50 rounded-xl p-2 text-center border border-stone-100">
-                    <Users className="w-3.5 h-3.5 text-[#D45D0E] mx-auto mb-0.5" />
+                    <Users className="w-3.5 h-3.5 text-[#EA6E18] mx-auto mb-0.5" />
                     <span className="text-[8.5px] uppercase font-bold text-stone-400 block tracking-wider">
                       MEMBERS
                     </span>
@@ -243,7 +243,7 @@ export function HomeHero() {
                   </div>
 
                   <div className="bg-stone-50 rounded-xl p-2 text-center border border-stone-100">
-                    <Trophy className="w-3.5 h-3.5 text-[#D49A44] mx-auto mb-0.5" />
+                    <Trophy className="w-3.5 h-3.5 text-[#F89928] mx-auto mb-0.5" />
                     <span className="text-[8.5px] uppercase font-bold text-stone-400 block tracking-wider">
                       TROPHIES
                     </span>
@@ -253,7 +253,7 @@ export function HomeHero() {
                   </div>
 
                   <div className="bg-stone-50 rounded-xl p-2 text-center border border-stone-100">
-                    <Star className="w-3.5 h-3.5 text-[#D49A44] mx-auto mb-0.5 fill-[#D49A44]" />
+                    <Star className="w-3.5 h-3.5 text-[#F89928] mx-auto mb-0.5 fill-[#F89928]" />
                     <span className="text-[8.5px] uppercase font-bold text-stone-400 block tracking-wider">
                       KVO RANK
                     </span>
@@ -264,14 +264,14 @@ export function HomeHero() {
                 </div>
 
                 {/* Bottom Callout Strip: Practice Rhythm & Coach */}
-                <div className="bg-amber-50/80 border border-[#D49A44]/30 rounded-xl px-3 py-2 flex items-center justify-between text-[11px]">
+                <div className="bg-amber-50/80 border border-[#F89928]/30 rounded-xl px-3 py-2 flex items-center justify-between text-[11px]">
                   <div className="flex items-center gap-1.5 text-stone-700 font-medium">
-                    <MapPin className="w-3 h-3 text-[#D45D0E] shrink-0" />
+                    <MapPin className="w-3 h-3 text-[#EA6E18] shrink-0" />
                     <span className="truncate">Practice: Mon • Wed • Fri (Matunga Ground)</span>
                   </div>
                   <Link
                     href="/about#coach"
-                    className="font-bold text-[#D45D0E] hover:text-[#B85018] uppercase tracking-wide shrink-0 ml-1.5 transition-colors"
+                    className="font-bold text-[#EA6E18] hover:text-[#D45508] uppercase tracking-wide shrink-0 ml-1.5 transition-colors"
                   >
                     COACH A. KOLI →
                   </Link>
@@ -292,7 +292,7 @@ export function HomeHero() {
             {/* 1. Club Highlights (4 Action Cards) */}
             <div className="lg:col-span-5 bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200/80 shadow-sm flex flex-col justify-between">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-1 h-3.5 bg-gradient-to-b from-[#D45D0E] to-[#D49A44] rounded-full" />
+                <span className="w-1 h-3.5 bg-gradient-to-b from-[#EA6E18] to-[#F89928] rounded-full" />
                 <h4 className="font-headline text-sm font-black text-brand-black uppercase tracking-tight">
                   Club Highlights
                 </h4>
@@ -301,16 +301,16 @@ export function HomeHero() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <Link
                   href="/training"
-                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#D49A44]/40 transition-[background-color,border-color] text-left group"
+                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#F89928]/40 transition-[background-color,border-color] text-left group"
                 >
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#D45D0E]/10 flex items-center justify-center mb-1.5">
-                    <svg className="w-3.5 h-3.5 text-[#D45D0E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#EA6E18]/10 flex items-center justify-center mb-1.5">
+                    <svg className="w-3.5 h-3.5 text-[#EA6E18]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M14 4l6 6-8 8a2 2 0 0 1-2.8 0l-1.4-1.4a2 2 0 0 1 0-2.8L14 4z" />
                       <path d="M3 21l3-3" />
                       <circle cx="19" cy="5" r="1.5" fill="currentColor" />
                     </svg>
                   </div>
-                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#D45D0E] transition-colors">
+                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#EA6E18] transition-colors">
                     Regular Practice
                   </span>
                   <span className="text-[9.5px] text-stone-500 block">Build your skills</span>
@@ -318,12 +318,12 @@ export function HomeHero() {
 
                 <Link
                   href="/matches"
-                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#D49A44]/40 transition-[background-color,border-color] text-left group"
+                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#F89928]/40 transition-[background-color,border-color] text-left group"
                 >
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#D49A44]/15 flex items-center justify-center mb-1.5">
-                    <Trophy className="w-3.5 h-3.5 text-[#D49A44]" />
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#F89928]/15 flex items-center justify-center mb-1.5">
+                    <Trophy className="w-3.5 h-3.5 text-[#F89928]" />
                   </div>
-                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#D45D0E] transition-colors">
+                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#EA6E18] transition-colors">
                     Friendly Matches
                   </span>
                   <span className="text-[9.5px] text-stone-500 block">Play &amp; Learn</span>
@@ -331,12 +331,12 @@ export function HomeHero() {
 
                 <Link
                   href="/club-life"
-                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#D49A44]/40 transition-[background-color,border-color] text-left group"
+                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#F89928]/40 transition-[background-color,border-color] text-left group"
                 >
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#D45D0E]/10 flex items-center justify-center mb-1.5">
-                    <Users className="w-3.5 h-3.5 text-[#D45D0E]" />
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#EA6E18]/10 flex items-center justify-center mb-1.5">
+                    <Users className="w-3.5 h-3.5 text-[#EA6E18]" />
                   </div>
-                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#D45D0E] transition-colors">
+                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#EA6E18] transition-colors">
                     Team Bonding
                   </span>
                   <span className="text-[9.5px] text-stone-500 block">More than a team</span>
@@ -344,12 +344,12 @@ export function HomeHero() {
 
                 <Link
                   href="/memories"
-                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#D49A44]/40 transition-[background-color,border-color] text-left group"
+                  className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#F89928]/40 transition-[background-color,border-color] text-left group"
                 >
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-rose-100 flex items-center justify-center mb-1.5">
                     <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
                   </div>
-                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#D45D0E] transition-colors">
+                  <span className="font-headline font-black text-stone-900 text-[11px] sm:text-xs block leading-tight group-hover:text-[#EA6E18] transition-colors">
                     Life Milestones
                   </span>
                   <span className="text-[9.5px] text-stone-500 block">Together Always</span>
@@ -381,7 +381,7 @@ export function HomeHero() {
                 </h4>
                 <Link
                   href="/sponsors"
-                  className="text-[#D45D0E] hover:text-[#B85018] text-[11px] font-bold font-mono tracking-wider transition-colors"
+                  className="text-[#EA6E18] hover:text-[#D45508] text-[11px] font-bold font-mono tracking-wider transition-colors"
                 >
                   View All →
                 </Link>
@@ -393,7 +393,7 @@ export function HomeHero() {
                   <Link
                     key={sp.id}
                     href="/sponsors"
-                    className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white border border-stone-200 p-1.5 flex items-center justify-center hover:border-[#D49A44]/60 hover:shadow-xs transition-[border-color,box-shadow] group"
+                    className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white border border-stone-200 p-1.5 flex items-center justify-center hover:border-[#F89928]/60 hover:shadow-xs transition-[border-color,box-shadow] group"
                   >
                     <div className="relative w-full h-full">
                       <Image

@@ -42,10 +42,10 @@ export default async function BlogPage({
             <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-3">
               <Link href="/" className="hover:text-stone-900 transition-colors">Home</Link>
               <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
-              <span className="text-[#D45D0E] font-semibold">Cricket Blog</span>
+              <span className="text-[#EA6E18] font-semibold">Cricket Blog</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-xs font-mono font-bold tracking-wider uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-xs font-mono font-bold tracking-wider uppercase mb-3">
               <Newspaper className="w-3.5 h-3.5" />
               <span>DCC Cricket Stories • Est. 2013</span>
             </div>
@@ -70,7 +70,7 @@ export default async function BlogPage({
                   scroll={false}
                   className={`px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider shrink-0 transition-all duration-150 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#D45D0E] to-[#F0761E] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#EA6E18] to-[#F89928] text-white shadow-sm"
                       : "bg-white text-stone-700 hover:text-stone-950 hover:bg-stone-100 border border-stone-200 shadow-2xs"
                   }`}
                 >
@@ -88,7 +88,7 @@ export default async function BlogPage({
           {posts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-3xl border border-stone-200">
               <p className="text-lg font-headline font-bold text-stone-700">No articles found in this category</p>
-              <Link href="/blog" className="mt-4 inline-block text-sm font-semibold text-[#D45D0E] underline">
+              <Link href="/blog" className="mt-4 inline-block text-sm font-semibold text-[#EA6E18] underline">
                 View all stories
               </Link>
             </div>
@@ -108,7 +108,7 @@ export default async function BlogPage({
                         priority
                       />
                       <div className="absolute top-4 left-4 flex gap-2">
-                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E86016] text-white uppercase tracking-wider shadow">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#EA6E18] text-white uppercase tracking-wider shadow">
                           {featuredPost.categoryLabel}
                         </span>
                         <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-stone-900/80 backdrop-blur-xs text-white flex items-center gap-1">
@@ -130,7 +130,7 @@ export default async function BlogPage({
                         </div>
 
                         <h2 className="font-headline text-2xl sm:text-3xl font-bold text-stone-900 leading-tight">
-                          <Link href={`/blog/${featuredPost.slug}`} className="hover:text-[#D45D0E] transition-colors">
+                          <Link href={`/blog/${featuredPost.slug}`} className="hover:text-[#EA6E18] transition-colors">
                             {featuredPost.title}
                           </Link>
                         </h2>
@@ -141,7 +141,7 @@ export default async function BlogPage({
 
                         {featuredPost.keyTakeaways && (
                           <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 space-y-1">
-                            <span className="font-mono text-[#D45D0E] font-bold flex items-center gap-1">
+                            <span className="font-mono text-[#EA6E18] font-bold flex items-center gap-1">
                               <BookOpen className="w-3.5 h-3.5" /> Core Takeaway:
                             </span>
                             <p className="italic font-medium">"{featuredPost.keyTakeaways[0]}"</p>
@@ -162,7 +162,7 @@ export default async function BlogPage({
 
                         <Link
                           href={`/blog/${featuredPost.slug}`}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#111A2E] text-white hover:bg-[#D45D0E] text-xs font-bold uppercase tracking-wider transition-colors"
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#111A2E] text-white hover:bg-[#EA6E18] text-xs font-bold uppercase tracking-wider transition-colors"
                         >
                           <span>Read Full Story</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -206,7 +206,7 @@ export default async function BlogPage({
                           </span>
                         </div>
 
-                        <h3 className="font-headline text-lg sm:text-xl font-bold text-stone-900 group-hover:text-[#D45D0E] transition-colors leading-snug">
+                        <h3 className="font-headline text-lg sm:text-xl font-bold text-stone-900 group-hover:text-[#EA6E18] transition-colors leading-snug">
                           <Link href={`/blog/${post.slug}`}>
                             {post.title}
                           </Link>
@@ -223,7 +223,7 @@ export default async function BlogPage({
                       <span className="font-medium text-stone-500">By {post.author.name}</span>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="inline-flex items-center font-bold text-[#D45D0E] group-hover:underline"
+                        className="inline-flex items-center font-bold text-[#EA6E18] group-hover:underline"
                       >
                         <span>Read</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />

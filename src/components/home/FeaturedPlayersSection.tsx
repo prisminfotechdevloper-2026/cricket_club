@@ -89,7 +89,7 @@ export function FeaturedPlayersSection() {
             ROLE FILTER SEGMENTED BUTTONS
             Quick scannability without duplicate or repeated UI elements
             ========================================================================= */}
-        <div className="mb-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mb-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {[
             { id: "all", label: "All Core Squad (4)" },
             { id: "batter", label: "Batters" },
@@ -103,7 +103,7 @@ export function FeaturedPlayersSection() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveRoleFilter(tab.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
                   isActive
                     ? "bg-brand-charcoal text-white shadow-xs scale-[1.01]"
                     : "bg-surface hover:bg-stone-100 text-foreground-soft border border-border"
@@ -424,7 +424,7 @@ export function FeaturedPlayersSection() {
             </div>
 
             {/* Quick Helper Banner */}
-            <div className="p-4 rounded-2xl bg-surface border border-border flex items-center justify-between text-xs font-mono text-muted">
+            <div className="p-4 rounded-2xl bg-surface border border-border flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted">
               <span className="font-bold text-brand-black">50+ ACTIVE CLUB MEMBERS</span>
               <span>25+ ANNUAL FIXTURES</span>
               <Link

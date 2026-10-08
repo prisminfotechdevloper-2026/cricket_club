@@ -58,14 +58,14 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Matchday Typography & Campaign Info */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] border border-[#E86016]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E86016] animate-ping" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-ping" />
                 <span>DCC MATCHDAY // 2026–27 COMPETITIVE CAMPAIGN</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
                 Chasing Silverware.
-                <span className="bg-gradient-to-r from-[#D45D0E] via-[#F0761E] to-[#D49A44] bg-clip-text text-transparent block mt-1">
+                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
                   On The Cricket Pitch.
                 </span>
               </h1>
@@ -79,9 +79,9 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
               {/* Action Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 {[
-                  { icon: <Trophy className="w-3.5 h-3.5 text-[#D45D0E]" />, text: "2× KVO RUNNERS-UP" },
+                  { icon: <Trophy className="w-3.5 h-3.5 text-[#EA6E18]" />, text: "2× KVO RUNNERS-UP" },
                   { icon: <span className="w-2 h-2 rounded-full bg-emerald-500" />, text: "RANK #10 KVO CIRCUIT" },
-                  { icon: <Calendar className="w-3.5 h-3.5 text-[#D49A44]" />, text: "25+ FIXTURES / YEAR" },
+                  { icon: <Calendar className="w-3.5 h-3.5 text-[#F89928]" />, text: "25+ FIXTURES / YEAR" },
                 ].map((badge) => (
                   <div key={badge.text} className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
                     {badge.icon}
@@ -109,12 +109,12 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                   <div className="space-y-3 pb-4 border-b border-stone-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        <span className="w-3 h-3 rounded-full bg-[#E86016]" />
+                        <span className="w-3 h-3 rounded-full bg-[#EA6E18]" />
                         <span className="font-headline font-black text-xl text-stone-900">
                           Devpur CC
                         </span>
                       </div>
-                      <span className="font-mono text-2xl font-black text-[#D45D0E]">
+                      <span className="font-mono text-2xl font-black text-[#EA6E18]">
                         {liveMatch.dccScore || "146/4"}
                         <span className="text-xs font-normal text-stone-500 ml-1.5">(17.2 ov)</span>
                       </span>
@@ -142,7 +142,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                     </div>
                     <Link
                       href={`/matches/${liveMatch.slug}`}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#D45D0E] to-[#F0761E] hover:from-[#F0761E] hover:to-[#D49A44] text-white text-xs font-mono font-bold uppercase tracking-wider transition-[background-image,box-shadow] shadow-sm shrink-0"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#F89928] hover:from-[#D45508] hover:to-[#EA6E18] text-white text-xs font-mono font-bold uppercase tracking-wider transition-[background-image,box-shadow] shadow-sm shrink-0"
                     >
                       <span>Scorecard</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -163,7 +163,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
         <div className="p-5 sm:p-6 rounded-3xl bg-surface border border-border shadow-sm mb-10 space-y-4">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
             {/* Status Tabs */}
-            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-surface-soft border border-border/80 overflow-x-auto">
+            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-surface-soft border border-border/80 overflow-x-auto scrollbar-none">
               {[
                 { id: "all", label: "All Matches", count: initialMatches.length },
                 {
@@ -185,7 +185,7 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                 <button
                   key={tab.id}
                   onClick={() => setStatusFilter(tab.id)}
-                  className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-1.5 ${
+                  className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5 ${
                     statusFilter === tab.id
                       ? "bg-brand-charcoal text-white shadow-xs"
                       : "text-foreground-soft hover:text-brand-black"

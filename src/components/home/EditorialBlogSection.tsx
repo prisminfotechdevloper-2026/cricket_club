@@ -17,7 +17,7 @@ export function EditorialBlogSection() {
         {/* Section Masthead Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E86016]/10 text-[#D45D0E] text-xs font-mono font-bold tracking-wider uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] text-xs font-mono font-bold tracking-wider uppercase mb-3">
               <span>DCC Cricket Blog • Stories</span>
             </div>
             <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight">
@@ -30,7 +30,7 @@ export function EditorialBlogSection() {
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-white hover:bg-[#D45D0E] font-semibold text-sm transition-[background-color,color] duration-200 group shrink-0 shadow-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-white hover:bg-[#EA6E18] font-semibold text-sm transition-[background-color,color] duration-200 group shrink-0 shadow-sm"
           >
             <span>View All Stories</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -58,7 +58,7 @@ export function EditorialBlogSection() {
 
                 {/* Badges on image */}
                 <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E86016] text-white uppercase tracking-wider shadow-md">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#EA6E18] text-white uppercase tracking-wider shadow-md">
                     {featuredPost.categoryLabel}
                   </span>
                   <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/20 backdrop-blur-md text-white border border-white/20 flex items-center gap-1.5">
@@ -109,7 +109,7 @@ export function EditorialBlogSection() {
           <div className="lg:col-span-5 flex flex-col justify-between gap-6">
             <div className="flex items-center justify-between pb-3 border-b border-stone-200">
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-stone-600 flex items-center gap-1.5">
-                <Flame className="w-4 h-4 text-[#E86016]" />
+                <Flame className="w-4 h-4 text-[#EA6E18]" />
                 Popular Stories
               </span>
               <span className="text-xs font-mono text-stone-400">Recent Updates</span>
@@ -119,7 +119,7 @@ export function EditorialBlogSection() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:shadow-md hover:border-[#E86016]/40 transition-[box-shadow,border-color] duration-200"
+                className="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:shadow-md hover:border-[#EA6E18]/40 transition-[box-shadow,border-color] duration-200"
               >
                 <div className="relative w-full sm:w-36 h-36 shrink-0 rounded-xl overflow-hidden bg-stone-100">
                   <Image
@@ -141,7 +141,7 @@ export function EditorialBlogSection() {
                       <span>•</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h4 className="font-headline text-base sm:text-lg font-bold text-stone-900 group-hover:text-[#D45D0E] transition-colors line-clamp-2 leading-snug">
+                    <h4 className="font-headline text-base sm:text-lg font-bold text-stone-900 group-hover:text-[#EA6E18] transition-colors line-clamp-2 leading-snug">
                       {post.title}
                     </h4>
                     <p className="mt-1.5 text-xs text-stone-600 line-clamp-2 font-body">
@@ -149,7 +149,7 @@ export function EditorialBlogSection() {
                     </p>
                   </div>
 
-                  <div className="mt-3 flex items-center text-xs font-bold text-[#D45D0E] group-hover:underline">
+                  <div className="mt-3 flex items-center text-xs font-bold text-[#EA6E18] group-hover:underline">
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5" />
                   </div>
@@ -187,7 +187,7 @@ export function EditorialBlogSection() {
                   <span>{post.readTime}</span>
                 </div>
 
-                <h4 className="font-headline text-base font-bold text-stone-900 group-hover:text-[#D45D0E] transition-colors line-clamp-2 leading-snug">
+                <h4 className="font-headline text-base font-bold text-stone-900 group-hover:text-[#EA6E18] transition-colors line-clamp-2 leading-snug">
                   {post.title}
                 </h4>
 
@@ -196,7 +196,7 @@ export function EditorialBlogSection() {
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-700 group-hover:text-[#D45D0E]">
+              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-700 group-hover:text-[#EA6E18]">
                 <span>Read Story</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </div>
