@@ -77,7 +77,7 @@ export function ClubView() {
             fill
             priority
             unoptimized
-            className="object-cover object-center"
+            className="object-cover object-[52%_center] lg:object-center"
             sizes="100vw"
           />
           {/* Subtle daylight fade for text legibility on the left */}
@@ -202,17 +202,17 @@ export function ClubView() {
 
             {/* -------------------------------------------------------------------
                 RIGHT COLUMN: DCC 3D OFFICIAL SHIELD OVER STADIUM
-                Positioned with breathing room to the right of the batsman
+                Positioned with generous breathing room to the right of the batsman
                 ------------------------------------------------------------------- */}
-            <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 justify-end xl:justify-center items-center pr-20 xl:pr-24">
-              <div className="relative w-52 h-52 lg:w-56 lg:h-56 xl:w-64 xl:h-64 drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)] drop-shadow-[0_0_35px_rgba(240,118,30,0.3)] transition-transform hover:scale-105 duration-300">
+            <div className="hidden lg:flex lg:col-span-5 xl:col-span-6 justify-end items-center pr-2 lg:pr-4 xl:pr-6 translate-x-4 lg:translate-x-10 xl:translate-x-16">
+              <div className="relative w-48 h-48 lg:w-52 lg:h-52 xl:w-60 xl:h-60 drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)] drop-shadow-[0_0_35px_rgba(240,118,30,0.3)] transition-transform hover:scale-105 duration-300">
                 <Image
                   src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club 3D Official Crest"
                   fill
                   priority
                   className="object-contain"
-                  sizes="256px"
+                  sizes="240px"
                 />
               </div>
             </div>

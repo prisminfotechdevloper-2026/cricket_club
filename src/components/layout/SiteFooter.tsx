@@ -245,7 +245,7 @@ export function SiteFooter() {
         {/* Bottom Sub-footer */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
           <div>
-            © {new Date().getFullYear()} Devpur Cricket Club (DCC). Proudly Representing Devpur Gaam.
+            © {new Date().getFullYear()} Devpur Cricket Club (DCC). All Rights Reserved. Proudly Representing Devpur Gaam.
           </div>
           <div className="flex items-center gap-6">
             <span>Incepted in 2013</span>
