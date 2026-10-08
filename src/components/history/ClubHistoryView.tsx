@@ -210,9 +210,9 @@ export function ClubHistoryView() {
       </section>
 
       {/* =========================================================================
-          PAGE HERO BANNER WITH RESPONSIVE GROUND BACKGROUND
+          PAGE HERO BANNER WITH RESPONSIVE GROUND BACKGROUND (2% OVERLAY)
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-[#0A0D14] border-b border-border/80 text-white min-h-[250px] sm:min-h-[280px] md:min-h-[310px] lg:min-h-[340px] flex items-center">
+      <section className="relative overflow-hidden bg-neutral-900 border-b border-border/80 text-white min-h-[250px] sm:min-h-[280px] md:min-h-[310px] lg:min-h-[340px] flex items-center">
         {/* Mobile Ground Background Image (Perspective View) */}
         <div className="absolute inset-0 block md:hidden pointer-events-none">
           <Image
@@ -223,8 +223,8 @@ export function ClubHistoryView() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* Mobile Dark Gradient Overlay for Maximum Text Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/90" />
+          {/* 2% subtle dark tint so ground image stays bright and vibrant */}
+          <div className="absolute inset-0 bg-black/[0.02]" />
         </div>
 
         {/* Desktop Ground Background Image (Aerial Panoramic Pitch View) */}
@@ -237,24 +237,20 @@ export function ClubHistoryView() {
             className="object-cover object-[center_35%]"
             sizes="100vw"
           />
-          {/* Desktop Dual-Layer Gradient: High contrast for left text, pitch visible on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+          {/* 2% subtle dark tint so ground image stays bright and vibrant */}
+          <div className="absolute inset-0 bg-black/[0.02]" />
         </div>
 
-        {/* Subtle dot pattern texture */}
-        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#EA4326_1px,transparent_1px)] [background-size:24px_24px]" />
-
         {/* Hero Content */}
-        <Container className="relative z-10 py-10 sm:py-12 md:py-14 w-full">
-          <div className="max-w-3xl space-y-3">
-            <span className="inline-block text-[#EA4326] font-headline text-xs sm:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
+        <Container className="relative z-10 py-8 sm:py-12 md:py-14 w-full">
+          <div className="max-w-2xl space-y-3 p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-black/50 via-black/25 to-transparent">
+            <span className="inline-block text-[#EA4326] font-headline text-xs sm:text-sm font-bold uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               Club Heritage &amp; Archives
             </span>
-            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-md">
+            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
               History of Devpur Cricket Club
             </h1>
-            <p className="text-white/90 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl font-body drop-shadow-sm">
+            <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl font-body drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               More than a club, this is a brotherhood born on the red soil of
               Matunga Ground. Explore our authentic story, divided by chapters.
             </p>
