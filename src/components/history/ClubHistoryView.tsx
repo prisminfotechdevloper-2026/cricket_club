@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -146,6 +146,20 @@ function StoryPhotoBanner({
 
 export function ClubHistoryView() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("overview");
+  const mobileTabsRef = useRef<HTMLDivElement>(null);
+  const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  // Automatically center active category pill on mobile when active category changes
+  useEffect(() => {
+    const activeBtn = pillRefs.current[activeCategory];
+    if (activeBtn) {
+      activeBtn.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeCategory]);
 
   const currentCategoryIndex = CATEGORIES.findIndex(
     (c) => c.id === activeCategory
@@ -217,33 +231,57 @@ export function ClubHistoryView() {
       </section>
 
       {/* =========================================================================
-          MOBILE CATEGORY PILL STRIP
+          MOBILE CATEGORY PILL STRIP (OPTIMIZED & SHRINK-PROOF)
           ========================================================================= */}
-      <div className="lg:hidden sticky top-16 z-30 bg-background/95 backdrop-blur-md border-b border-border py-3">
-        <Container>
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div className="lg:hidden sticky top-16 sm:top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border py-2.5 shadow-xs">
+        <div className="relative w-full">
+          {/* Subtle horizontal edge gradient cues */}
+          <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+
+          {/* Horizontally scrollable category pills */}
+          <div
+            ref={mobileTabsRef}
+            className="flex items-center gap-2 overflow-x-auto scroll-smooth px-4 sm:px-6 py-1 scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+            role="tablist"
+            aria-label="Story Chapters Navigation"
+          >
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               const Icon = cat.icon;
               return (
                 <button
                   key={cat.id}
+                  ref={(el) => {
+                    pillRefs.current[cat.id] = el;
+                  }}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-headline font-bold uppercase tracking-wider whitespace-nowrap transition-colors cursor-pointer ${
+                  role="tab"
+                  aria-selected={isActive}
+                  className={`shrink-0 min-w-max inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-headline font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-150 cursor-pointer select-none ${
                     isActive
-                      ? "bg-[#EA4326] text-white shadow-sm"
-                      : "bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted"
+                      ? "bg-[#EA4326] text-white shadow-md shadow-[#EA4326]/20 font-extrabold ring-1 ring-[#EA4326]"
+                      : "bg-card border border-border/80 text-foreground-soft hover:bg-muted/80 hover:text-foreground active:scale-95"
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
-                  <span>
-                    {cat.index}. {cat.shortTitle}
+                  <span
+                    className={`text-[11px] font-mono font-bold shrink-0 ${
+                      isActive ? "text-white/80" : "text-muted-foreground"
+                    }`}
+                  >
+                    {cat.index}.
                   </span>
+                  <Icon
+                    className={`w-3.5 h-3.5 shrink-0 ${
+                      isActive ? "text-white" : "text-[#EA4326]"
+                    }`}
+                  />
+                  <span className="shrink-0">{cat.shortTitle}</span>
                 </button>
               );
             })}
           </div>
-        </Container>
+        </div>
       </div>
 
       {/* =========================================================================
