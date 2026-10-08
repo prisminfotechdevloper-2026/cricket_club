@@ -17,49 +17,49 @@ export function TrainingManager() {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E8E3DD]">
         <div>
-          <h2 className="font-headline text-3xl font-bold text-white tracking-tight">
+          <h2 className="font-headline text-3xl font-bold text-[#090A0C] tracking-tight">
             PRACTICE NETS &amp; COACHING HUB
           </h2>
-          <p className="text-xs font-mono text-stone-400">
+          <p className="text-xs text-stone-500 font-medium">
             Weekly turf net routines at Matunga Ground under Head Coach Aditya Koli (Kanga B Division).
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-xl">
-          <CheckCircle className="w-4 h-4" />
+        <div className="flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl font-semibold">
+          <CheckCircle className="w-4 h-4 text-emerald-600" />
           <span>Matunga Turf Nets Active</span>
         </div>
       </div>
 
       {/* Head Coach Profile Banner */}
       {coach && (
-        <div className="p-6 rounded-3xl bg-gradient-to-r from-[#17191F] to-[#121418] border border-brand-orange/30 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-black/60 border border-brand-orange/40 flex items-center justify-center font-headline text-3xl font-bold text-brand-orange shrink-0">
+            <div className="w-16 h-16 rounded-2xl bg-stone-100 border border-[#EA6E18]/30 flex items-center justify-center font-headline text-3xl font-bold text-[#EA6E18] shrink-0">
               AK
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full bg-brand-orange/15 text-brand-orange-light border border-brand-orange/30 text-[10px] font-mono font-bold uppercase">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25 text-xs font-headline font-bold uppercase tracking-wider">
                   HEAD PROFESSIONAL COACH
                 </span>
-                <span className="text-xs font-mono text-stone-400">
+                <span className="text-xs text-stone-400 font-medium">
                   Ref: DCC/COACH/2026-27
                 </span>
               </div>
-              <h3 className="font-headline text-2xl font-bold text-white mt-1">
+              <h3 className="font-headline text-2xl font-bold text-[#090A0C] mt-1">
                 {coach.name}
               </h3>
-              <p className="text-xs font-mono text-brand-gold-light">
+              <p className="text-xs text-stone-600 font-medium">
                 {coach.role} • {coach.experience}
               </p>
             </div>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-black/50 border border-white/5 text-xs font-mono space-y-1 max-w-sm">
-            <div className="text-stone-300 font-semibold">Appointment Scope:</div>
-            <p className="text-stone-400 text-xs">
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 text-xs space-y-1 max-w-sm">
+            <div className="text-stone-900 font-semibold">Appointment Scope:</div>
+            <p className="text-stone-600 text-xs">
               Direct technical guidance for 50+ squad members across batting temperament, red-soil line &amp; length, and match situation composure.
             </p>
           </div>
@@ -71,50 +71,50 @@ export function TrainingManager() {
         {trainingSessions.map((session) => (
           <div
             key={session.id}
-            className="p-6 rounded-2xl bg-[#14161B] border border-white/10 hover:border-brand-orange/30 transition-colors flex flex-col justify-between space-y-4"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/30 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30 text-[10px] font-mono font-bold uppercase">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25 text-xs font-headline font-bold uppercase tracking-wider">
                   {session.category}
                 </span>
-                <span className="text-xs font-mono text-stone-500">
+                <span className="text-xs text-stone-500 font-medium">
                   {session.duration}
                 </span>
               </div>
 
-              <h3 className="font-headline text-2xl font-bold text-white leading-tight">
+              <h3 className="font-headline text-2xl font-bold text-[#090A0C] leading-tight">
                 {session.title}
               </h3>
 
-              <div className="space-y-1.5 text-xs font-mono text-stone-400">
+              <div className="space-y-1.5 text-xs text-stone-600 font-medium">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-brand-orange" />
+                  <Calendar className="w-3.5 h-3.5 text-[#EA6E18]" />
                   <span>{session.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-brand-gold" />
+                  <Clock className="w-3.5 h-3.5 text-[#C2520E]" />
                   <span>{session.time}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-stone-500" />
+                  <MapPin className="w-3.5 h-3.5 text-stone-400" />
                   <span>{session.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-3.5 h-3.5 text-emerald-400" />
+                  <Users className="w-3.5 h-3.5 text-emerald-600" />
                   <span>{session.attendeesCount} squad members registered</span>
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-white/5 space-y-1">
-                <span className="text-[10px] font-mono text-stone-500 uppercase tracking-wider block">
+              <div className="pt-2 border-t border-[#E8E3DD] space-y-1">
+                <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">
                   Key Technical Focus
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {session.keyFocus?.map((focus, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 rounded bg-black/40 border border-white/5 text-[10px] font-mono text-stone-300"
+                      className="px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700"
                     >
                       {focus}
                     </span>
@@ -123,9 +123,9 @@ export function TrainingManager() {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-stone-400">
+            <div className="pt-3 border-t border-[#E8E3DD] flex items-center justify-between text-xs text-stone-500 font-medium">
               <span>Supervised by {session.coachName}</span>
-              <span className="text-emerald-400 font-semibold">Scheduled</span>
+              <span className="text-emerald-700 font-semibold">Scheduled</span>
             </div>
           </div>
         ))}

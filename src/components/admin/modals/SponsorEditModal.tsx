@@ -51,25 +51,25 @@ function SponsorFormInner({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-      <div className="relative w-full max-w-xl bg-[#14161B] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+      <div className="relative w-full max-w-xl bg-white border border-[#E8E3DD] rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between pb-4 border-b border-[#E8E3DD] mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-brand-orange/15 border border-brand-orange/30 text-brand-orange">
+            <div className="p-2.5 rounded-xl bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#EA6E18]">
               <Handshake className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-headline text-2xl font-bold text-white tracking-tight">
+              <h3 className="font-headline text-2xl font-bold text-[#090A0C] tracking-tight">
                 {initialSponsor ? "EDIT SPONSOR & MOU" : "REGISTER CLUB SPONSOR"}
               </h3>
-              <p className="text-xs font-mono text-stone-400">
+              <p className="text-xs text-stone-500 font-medium">
                 2026–2029 Official Devpur Cricket Club Partnership Agreement
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+            className="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -78,7 +78,7 @@ function SponsorFormInner({
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
               Sponsor / Company Name *
             </label>
             <input
@@ -87,13 +87,13 @@ function SponsorFormInner({
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
               placeholder="e.g. Nilkanth Green / Kutch Kraft"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Partnership Tier *
               </label>
               <select
@@ -108,7 +108,7 @@ function SponsorFormInner({
                   };
                   setFormData((prev) => ({ ...prev, tier: t, tierLabel: labelMap[t] }));
                 }}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
               >
                 <option value="principal">Principal Title Partner</option>
                 <option value="associate">Associate Club Partner</option>
@@ -118,7 +118,7 @@ function SponsorFormInner({
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Jersey Placement
               </label>
               <input
@@ -126,14 +126,14 @@ function SponsorFormInner({
                 value={formData.jerseyPlacement}
                 onChange={(e) => setFormData((prev) => ({ ...prev, jerseyPlacement: e.target.value }))}
                 placeholder="Front Chest / Sleeve / Collar"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Annual Commercial Commitment
               </label>
               <input
@@ -141,12 +141,12 @@ function SponsorFormInner({
                 value={formData.annualContribution}
                 onChange={(e) => setFormData((prev) => ({ ...prev, annualContribution: e.target.value }))}
                 placeholder="₹60,000 / Year"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-headline font-bold"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Tenure Period
               </label>
               <input
@@ -154,19 +154,19 @@ function SponsorFormInner({
                 value={formData.tenure}
                 onChange={(e) => setFormData((prev) => ({ ...prev, tenure: e.target.value }))}
                 placeholder="3 Seasons (2026–27 to 2028–29)"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
               Logo Asset Path
             </label>
             <select
               value={formData.logo}
               onChange={(e) => setFormData((prev) => ({ ...prev, logo: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
             >
               <option value="/sponsors/gala-diamond.png">Gala Diamond (/sponsors/gala-diamond.png)</option>
               <option value="/sponsors/devpur-mahajan.png">Devpur Mahajan (/sponsors/devpur-mahajan.png)</option>
@@ -179,28 +179,28 @@ function SponsorFormInner({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
               Partnership Scope &amp; Note
             </label>
             <textarea
               rows={2}
               value={formData.description}
               onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
-          <div className="pt-4 flex items-center justify-end gap-3 border-t border-white/10">
+          <div className="pt-4 flex items-center justify-end gap-3 border-t border-[#E8E3DD]">
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-2.5 rounded-xl border border-white/10 text-stone-300 hover:bg-white/5 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-headline font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-gold text-white font-headline text-base font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer shadow-md shadow-brand-orange/20"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20"
             >
               {initialSponsor ? "Save MOU Updates" : "Onboard Sponsor"}
             </button>

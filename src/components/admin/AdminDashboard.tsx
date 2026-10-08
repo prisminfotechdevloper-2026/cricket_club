@@ -41,7 +41,7 @@ export function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090A0C] text-white flex selection:bg-brand-orange/30 selection:text-white">
+    <div className="min-h-screen bg-[#F6F5F3] text-[#0B0B0D] flex selection:bg-[#EA6E18]/20 selection:text-[#EA6E18]">
       {/* Desktop Sidebar */}
       <div className="hidden lg:block shrink-0 sticky top-0 h-screen">
         <AdminSidebar />
@@ -51,10 +51,10 @@ export function AdminDashboard() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-xs animate-drawer-backdrop"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-drawer-backdrop"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="relative z-10 animate-drawer-slide-in h-full">
+          <div className="relative z-10 animate-drawer-slide-in h-full shadow-2xl">
             <AdminSidebar onCloseMobile={() => setMobileMenuOpen(false)} />
           </div>
         </div>

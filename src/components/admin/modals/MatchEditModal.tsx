@@ -52,25 +52,25 @@ function MatchFormInner({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-      <div className="relative w-full max-w-2xl bg-[#14161B] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+      <div className="relative w-full max-w-2xl bg-white border border-[#E8E3DD] rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between pb-4 border-b border-[#E8E3DD] mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-brand-orange/15 border border-brand-orange/30 text-brand-orange">
+            <div className="p-2.5 rounded-xl bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#EA6E18]">
               <Trophy className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-headline text-2xl font-bold text-white tracking-tight">
+              <h3 className="font-headline text-2xl font-bold text-[#090A0C] tracking-tight">
                 {initialMatch ? "EDIT MATCH FIXTURE" : "SCHEDULE NEW MATCH"}
               </h3>
-              <p className="text-xs font-mono text-stone-400">
+              <p className="text-xs text-stone-500 font-medium">
                 Official Devpur Cricket Club Seasonal Fixture Record
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+            className="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -80,7 +80,7 @@ function MatchFormInner({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Opponent Team Name *
               </label>
               <input
@@ -95,12 +95,12 @@ function MatchFormInner({
                   }))
                 }
                 placeholder="e.g. Royal XI Cricket Club"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Opponent Short Code
               </label>
               <input
@@ -108,14 +108,14 @@ function MatchFormInner({
                 value={formData.opponentShort}
                 onChange={(e) => setFormData((prev) => ({ ...prev, opponentShort: e.target.value }))}
                 placeholder="e.g. RXI"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Tournament / Cup *
               </label>
               <input
@@ -123,12 +123,12 @@ function MatchFormInner({
                 required
                 value={formData.tournament}
                 onChange={(e) => setFormData((prev) => ({ ...prev, tournament: e.target.value }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Competition Ball
               </label>
               <select
@@ -139,7 +139,7 @@ function MatchFormInner({
                     competitionType: e.target.value as "White Ball" | "Red Ball" | "Practice Match",
                   }))
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium cursor-pointer"
               >
                 <option value="White Ball">White Ball</option>
                 <option value="Red Ball">Red Ball (Leather)</option>
@@ -148,7 +148,7 @@ function MatchFormInner({
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Match Status
               </label>
               <select
@@ -156,7 +156,7 @@ function MatchFormInner({
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, status: e.target.value as MatchStatus }))
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium cursor-pointer"
               >
                 <option value="upcoming">Upcoming</option>
                 <option value="live">Live Now</option>
@@ -167,7 +167,7 @@ function MatchFormInner({
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Date
               </label>
               <input
@@ -175,12 +175,12 @@ function MatchFormInner({
                 value={formData.date}
                 onChange={(e) => setFormData((prev) => ({ ...prev, date: e.target.value }))}
                 placeholder="e.g. 24 Oct 2026"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Time
               </label>
               <input
@@ -188,12 +188,12 @@ function MatchFormInner({
                 value={formData.time}
                 onChange={(e) => setFormData((prev) => ({ ...prev, time: e.target.value }))}
                 placeholder="e.g. 09:30 AM IST"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Venue
               </label>
               <input
@@ -201,74 +201,74 @@ function MatchFormInner({
                 value={formData.venue}
                 onChange={(e) => setFormData((prev) => ({ ...prev, venue: e.target.value }))}
                 placeholder="Matunga Gymkhana Ground"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
 
           {/* Scores (if live or completed) */}
           {(formData.status === "live" || formData.status === "completed") && (
-            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-              <span className="text-xs font-mono font-bold text-brand-gold uppercase tracking-wider block">
+            <div className="p-4 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] space-y-3">
+              <span className="text-xs font-headline font-bold text-[#C2520E] uppercase tracking-wider block">
                 Scores &amp; Result Details
               </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div>
-                  <label className="text-[10px] font-mono text-stone-400 block mb-1">DCC Score</label>
+                  <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">DCC Score</label>
                   <input
                     type="text"
                     value={formData.dccScore}
                     onChange={(e) => setFormData((prev) => ({ ...prev, dccScore: e.target.value }))}
                     placeholder="184/5"
-                    className="w-full px-3 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono text-stone-400 block mb-1">DCC Overs</label>
+                  <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">DCC Overs</label>
                   <input
                     type="text"
                     value={formData.dccOvers}
                     onChange={(e) => setFormData((prev) => ({ ...prev, dccOvers: e.target.value }))}
                     placeholder="20.0"
-                    className="w-full px-3 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono text-stone-400 block mb-1">Opponent Score</label>
+                  <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Opponent Score</label>
                   <input
                     type="text"
                     value={formData.opponentScore}
                     onChange={(e) => setFormData((prev) => ({ ...prev, opponentScore: e.target.value }))}
                     placeholder="165/9"
-                    className="w-full px-3 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono text-stone-400 block mb-1">Opponent Overs</label>
+                  <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Opponent Overs</label>
                   <input
                     type="text"
                     value={formData.opponentOvers}
                     onChange={(e) => setFormData((prev) => ({ ...prev, opponentOvers: e.target.value }))}
                     placeholder="20.0"
-                    className="w-full px-3 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-[10px] font-mono text-stone-400 block mb-1">Match Result / Summary</label>
+                <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Match Result / Summary</label>
                 <input
                   type="text"
                   value={formData.result}
                   onChange={(e) => setFormData((prev) => ({ ...prev, result: e.target.value }))}
                   placeholder="e.g. DCC won by 19 runs"
-                  className="w-full px-3 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                  className="w-full px-3 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                 />
               </div>
             </div>
           )}
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
               Live Score Link (CricClubs / External Portal)
             </label>
             <input
@@ -276,21 +276,21 @@ function MatchFormInner({
               value={formData.scoreUrl}
               onChange={(e) => setFormData((prev) => ({ ...prev, scoreUrl: e.target.value }))}
               placeholder="https://cricclubs.com/..."
-              className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
-          <div className="pt-4 flex items-center justify-end gap-3 border-t border-white/10">
+          <div className="pt-4 flex items-center justify-end gap-3 border-t border-[#E8E3DD]">
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-2.5 rounded-xl border border-white/10 text-stone-300 hover:bg-white/5 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-headline font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-gold text-white font-headline text-base font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer shadow-md shadow-brand-orange/20"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20"
             >
               {initialMatch ? "Save Match Changes" : "Create Match"}
             </button>

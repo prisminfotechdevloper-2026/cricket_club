@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   LayoutDashboard,
   Trophy,
@@ -14,7 +13,6 @@ import {
   MessageSquare,
   LogOut,
   RotateCcw,
-  ExternalLink,
 } from "lucide-react";
 import { useAdmin, AdminTab } from "@/lib/admin/adminStore";
 
@@ -62,11 +60,11 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
   };
 
   return (
-    <aside aria-label="Admin Navigation" className="w-64 sm:w-72 bg-[#0E1013] border-r border-white/10 flex flex-col justify-between h-full select-none">
+    <aside aria-label="Admin Navigation" className="w-64 sm:w-72 bg-white border-r border-[#E8E3DD] flex flex-col justify-between h-full select-none shadow-2xs">
       {/* Top Brand Header */}
-      <div className="p-5 border-b border-white/10 space-y-4">
+      <div className="p-5 border-b border-[#E8E3DD] space-y-4">
         <div className="flex items-center gap-3">
-          <div className="relative w-11 h-11 p-1 rounded-xl bg-black/60 border border-brand-orange/40 shrink-0">
+          <div className="relative w-11 h-11 p-1 rounded-xl bg-[#FAF8F5] border border-stone-200 shrink-0 shadow-2xs">
             <Image
               src="/logo/dcc-logo.png"
               alt="DCC Crest"
@@ -75,35 +73,19 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
             />
           </div>
           <div>
-            <span className="font-headline font-bold text-lg text-white block leading-tight">
+            <span className="font-headline font-bold text-lg text-[#090A0C] block leading-tight">
               DEVPUR CRICKET CLUB
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange-light block">
+            <span className="text-[11px] font-headline uppercase tracking-widest text-[#C2520E] block font-bold">
               COMMITTEE ADMIN
             </span>
           </div>
         </div>
-
-        <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between text-[11px] font-mono text-stone-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Mode: Dummy Staging</span>
-          </div>
-          <Link
-            href="/"
-            className="text-stone-300 hover:text-brand-orange transition-colors flex items-center gap-1"
-            title="View public site in new tab"
-            target="_blank"
-          >
-            <span>Live Site</span>
-            <ExternalLink className="w-3 h-3" />
-          </Link>
-        </div>
       </div>
 
       {/* Navigation List */}
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
-        <div className="px-3 pb-2 text-[10px] font-mono font-bold uppercase tracking-wider text-stone-500">
+      <nav className="flex-1 px-3 py-4 space-y-1.5 overflow-y-auto">
+        <div className="px-3 pb-2 text-[11px] font-headline font-bold uppercase tracking-widest text-stone-400">
           Core Operations
         </div>
 
@@ -115,27 +97,29 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
             <button
               key={item.id}
               onClick={() => handleSelectTab(item.id)}
-              className={`w-full px-3.5 py-2.5 rounded-xl font-mono text-xs flex items-center justify-between transition-colors cursor-pointer ${
+              className={`w-full px-3.5 py-2.5 rounded-xl flex items-center justify-between transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "bg-gradient-to-r from-brand-orange to-brand-copper text-white font-bold shadow-md shadow-brand-orange/20"
-                  : "text-stone-300 hover:bg-white/5 hover:text-white"
+                  ? "bg-gradient-to-r from-[#EA6E18] via-[#C85D1B] to-[#D56F27] text-white font-bold shadow-md shadow-[#EA6E18]/20"
+                  : "text-stone-700 hover:bg-stone-100 hover:text-stone-950 font-semibold"
               }`}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 min-w-0">
                 <Icon
-                  className={`w-4 h-4 ${
-                    isActive ? "text-white" : "text-stone-400"
+                  className={`w-4 h-4 shrink-0 transition-transform ${
+                    isActive ? "text-white scale-110" : "text-stone-400"
                   }`}
                 />
-                <span className="truncate">{item.label}</span>
+                <span className="font-headline text-[16px] font-bold tracking-wide leading-none truncate">
+                  {item.label}
+                </span>
               </div>
 
               {item.badge !== undefined && (
                 <span
-                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold ${
+                  className={`px-2 py-0.5 rounded-full text-[11px] font-headline font-bold leading-none shrink-0 ${
                     isActive
-                      ? "bg-black/30 text-white"
-                      : "bg-white/5 text-stone-400"
+                      ? "bg-white/25 text-white"
+                      : "bg-stone-100 text-stone-600 border border-stone-200"
                   }`}
                 >
                   {item.badge}
@@ -147,7 +131,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
       </nav>
 
       {/* Bottom Profile and Utilities */}
-      <div className="p-4 border-t border-white/10 space-y-3">
+      <div className="p-4 border-t border-[#E8E3DD] space-y-3">
         {/* Reset Demo Data button */}
         <button
           onClick={() => {
@@ -155,23 +139,23 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
               resetDemoData();
             }
           }}
-          className="w-full py-2 px-3 rounded-xl bg-white/[0.03] hover:bg-white/10 border border-white/5 text-stone-400 hover:text-stone-200 text-[11px] font-mono uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+          className="w-full py-2.5 px-3 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-600 hover:text-stone-900 text-xs font-headline font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
         >
           <RotateCcw className="w-3.5 h-3.5 text-stone-500" />
           <span>Reset Demo Edits</span>
         </button>
 
         {/* User Card & Logout */}
-        <div className="p-3 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-between gap-3">
+        <div className="p-3 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-lg bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center font-headline text-sm font-bold text-brand-orange shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#EA6E18]/15 border border-[#EA6E18]/30 flex items-center justify-center font-headline text-sm font-bold text-[#EA6E18] shrink-0">
               {session?.user.name.charAt(0) || "A"}
             </div>
             <div className="min-w-0">
-              <span className="text-xs font-semibold text-white block truncate">
+              <span className="text-sm font-headline font-bold text-stone-900 block truncate leading-tight">
                 {session?.user.name || "DCC Committee"}
               </span>
-              <span className="text-[10px] font-mono text-stone-500 block truncate">
+              <span className="text-[11px] text-stone-500 font-medium block truncate">
                 {session?.user.role || "Admin"}
               </span>
             </div>
@@ -179,7 +163,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
 
           <button
             onClick={logout}
-            className="p-1.5 rounded-lg bg-white/5 hover:bg-red-500/20 text-stone-400 hover:text-red-300 transition-colors cursor-pointer shrink-0"
+            className="p-1.5 rounded-lg bg-white hover:bg-red-50 hover:border-red-200 border border-stone-200 text-stone-500 hover:text-red-600 transition-colors cursor-pointer shrink-0 shadow-2xs"
             title="Sign Out"
             aria-label="Sign Out"
           >

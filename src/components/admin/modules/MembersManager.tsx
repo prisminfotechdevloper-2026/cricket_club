@@ -43,18 +43,18 @@ export function MembersManager() {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E8E3DD]">
         <div>
-          <h2 className="font-headline text-3xl font-bold text-white tracking-tight">
+          <h2 className="font-headline text-3xl font-bold text-[#090A0C] tracking-tight">
             50+ CLUB SQUAD &amp; MEMBERS
           </h2>
-          <p className="text-xs font-mono text-stone-400">
+          <p className="text-xs text-stone-500 font-medium">
             Devpur Cricket Club member registry, discipline roles, and individual career performance records.
           </p>
         </div>
         <button
           onClick={handleAddNew}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-gold hover:from-brand-orange-light text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-brand-orange/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#D96214] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#EA6E18]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Enroll New Member</span>
@@ -62,22 +62,22 @@ export function MembersManager() {
       </div>
 
       {/* Search and Filters */}
-      <div className="p-4 rounded-2xl bg-[#14161B] border border-white/10 flex flex-col sm:flex-row items-center gap-3">
+      <div className="p-4 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs flex flex-col sm:flex-row items-center gap-3">
         <div className="relative flex-1 w-full">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-500" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by member name, role, or jersey #..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-black/50 border border-white/10 text-white text-xs font-mono focus:border-brand-orange outline-hidden"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-xs font-medium focus:border-[#EA6E18] focus:bg-white outline-hidden transition-colors"
           />
         </div>
 
         <select
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
-          className="px-3 py-2 rounded-xl bg-black/50 border border-white/10 text-stone-300 text-xs font-mono focus:border-brand-orange outline-hidden w-full sm:w-auto"
+          className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#EA6E18] focus:bg-white outline-hidden w-full sm:w-auto cursor-pointer"
         >
           <option value="all">All Playing Roles</option>
           <option value="Opening Batter">Opening Batter</option>
@@ -92,28 +92,28 @@ export function MembersManager() {
       {/* Grid of Players */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredPlayers.length === 0 ? (
-          <div className="col-span-full p-12 text-center rounded-3xl bg-[#14161B] border border-white/10">
-            <Users className="w-8 h-8 text-stone-600 mx-auto mb-3" />
-            <h3 className="text-white font-semibold text-sm">No members found</h3>
-            <p className="text-xs text-stone-500 font-mono mt-1">Try another search or reset filter</p>
+          <div className="col-span-full p-12 text-center rounded-3xl bg-white border border-[#E8E3DD] shadow-xs">
+            <Users className="w-8 h-8 text-stone-400 mx-auto mb-3" />
+            <h3 className="text-stone-900 font-semibold text-sm">No members found</h3>
+            <p className="text-xs text-stone-500 mt-1">Try another search or reset filter</p>
           </div>
         ) : (
           filteredPlayers.map((player) => (
             <div
               key={player.id}
-              className="p-5 rounded-2xl bg-[#14161B] border border-white/10 hover:border-brand-orange/40 transition-colors flex flex-col justify-between group"
+              className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/40 hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-black/60 border border-brand-orange/30 flex items-center justify-center font-headline text-xl font-bold text-brand-orange shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-stone-100 border border-[#EA6E18]/25 flex items-center justify-center font-headline text-2xl font-bold text-[#EA6E18] shrink-0">
                       #{player.jerseyNumber}
                     </div>
                     <div>
-                      <h3 className="font-headline text-xl font-bold text-white group-hover:text-brand-orange-light transition-colors leading-tight">
+                      <h3 className="font-headline text-xl font-bold text-[#090A0C] group-hover:text-[#EA6E18] transition-colors leading-tight">
                         {player.name}
                       </h3>
-                      <span className="text-xs font-mono text-stone-400 block mt-0.5">
+                      <span className="text-xs text-stone-500 block mt-0.5 font-medium">
                         {player.role}
                       </span>
                     </div>
@@ -122,7 +122,7 @@ export function MembersManager() {
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => handleEdit(player)}
-                      className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-400 hover:text-white transition-colors cursor-pointer"
+                      className="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-600 hover:text-stone-900 transition-colors cursor-pointer shadow-2xs"
                       aria-label="Edit player"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
@@ -133,7 +133,7 @@ export function MembersManager() {
                           deletePlayer(player.id);
                         }
                       }}
-                      className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 transition-colors cursor-pointer"
+                      className="p-1.5 rounded-lg bg-white hover:bg-red-50 border border-stone-200 text-stone-400 hover:text-red-600 transition-colors cursor-pointer shadow-2xs"
                       aria-label="Delete player"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -141,33 +141,33 @@ export function MembersManager() {
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-black/40 border border-white/5 grid grid-cols-4 gap-2 text-center text-xs font-mono">
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 grid grid-cols-4 gap-2 text-center">
                   <div>
-                    <span className="text-[10px] text-stone-500 block uppercase">Matches</span>
-                    <span className="text-white font-bold">{player.careerStats?.matches || 0}</span>
+                    <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Matches</span>
+                    <span className="text-stone-900 font-headline text-xl font-bold">{player.careerStats?.matches || 0}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-stone-500 block uppercase">Runs</span>
-                    <span className="text-brand-orange font-bold">{player.careerStats?.runs || 0}</span>
+                    <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Runs</span>
+                    <span className="text-[#EA6E18] font-headline text-xl font-bold">{player.careerStats?.runs || 0}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-stone-500 block uppercase">Wkts</span>
-                    <span className="text-brand-gold font-bold">{player.careerStats?.wickets || 0}</span>
+                    <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Wkts</span>
+                    <span className="text-[#C2520E] font-headline text-xl font-bold">{player.careerStats?.wickets || 0}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-stone-500 block uppercase">HS</span>
-                    <span className="text-white font-bold">{player.careerStats?.highestScore || "—"}</span>
+                    <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">HS</span>
+                    <span className="text-stone-900 font-headline text-xl font-bold">{player.careerStats?.highestScore || "—"}</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-stone-400 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed">
                   {player.bio || "Dedicated member actively participating in weekly training."}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-stone-500">
+              <div className="mt-4 pt-3 border-t border-[#E8E3DD] flex items-center justify-between text-xs text-stone-500 font-medium">
                 <span>Joined DCC {player.joiningYear || 2021}</span>
-                <span className="text-stone-400">{player.battingStyle || "Right-hand"}</span>
+                <span className="text-stone-700 font-semibold">{player.battingStyle || "Right-hand"}</span>
               </div>
             </div>
           ))

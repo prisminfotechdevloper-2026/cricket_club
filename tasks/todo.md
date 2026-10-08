@@ -58,4 +58,12 @@
 - [x] Task 7.4: Harmonize global theme tokens and eliminate outdated terracotta (`#D45D0E`) and dull mustard (`#D49A44`) across all components
 - [x] Task 7.5: Update hero headlines, CTA buttons, badges, sports ticker, scorecards, and directory components to exact logo-matching gradients
 
+## Phase 8: Admin Panel Implementation (`/admin`)
+- [x] Task 8.1: Header & Footer isolation for `/admin` routes (`SiteHeader.tsx`, `SiteFooter.tsx`)
+- [x] Task 8.2: Dummy Auth Session & Reactive Admin Store (`src/lib/admin/adminAuth.ts`, `src/lib/admin/adminStore.tsx`, `src/lib/admin/apiAdapter.ts`)
+- [x] Task 8.3: Branded Split-Screen Login View (`src/components/admin/AdminLoginView.tsx` with left hero image and right form + 1-click demo login)
+- [x] Task 8.4: Admin Navigation Shell (`AdminDashboard.tsx`, `AdminSidebar.tsx`, `AdminTopBar.tsx`, `src/app/admin/layout.tsx`, `src/app/admin/page.tsx`)
+- [x] Task 8.5: Admin Management Modules (Overview, Matches & Live Score, Members, Sponsors & 2026-2029 MOUs, Practice Nets, Seasons & Tournaments, Memories, Inquiries)
+- [x] Task 8.6: Interactive CRUD Modals (Match Editor, Member Editor, Sponsor Editor, Live Score Console)
+- [x] Task 8.7: Validation & Production Build Verification (`npx tsc --noEmit`, `npm run build`)
 

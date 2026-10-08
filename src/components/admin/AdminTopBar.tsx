@@ -31,21 +31,21 @@ export function AdminTopBar({ onOpenMobileMenu }: AdminTopBarProps) {
   const { activeTab, logout } = useAdmin();
 
   return (
-    <header className="h-16 px-4 sm:px-6 bg-[#0E1013]/90 backdrop-blur-md border-b border-white/10 flex items-center justify-between gap-4 sticky top-0 z-30">
+    <header className="h-16 px-4 sm:px-6 bg-white/95 backdrop-blur-md border-b border-[#E8E3DD] flex items-center justify-between gap-4 sticky top-0 z-30 shadow-2xs">
       {/* Left Breadcrumb & Mobile Menu Toggle */}
       <div className="flex items-center gap-3">
         <button
           onClick={onOpenMobileMenu}
-          className="lg:hidden p-2 rounded-xl text-stone-300 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+          className="lg:hidden p-2 rounded-xl text-stone-600 hover:text-stone-950 hover:bg-stone-100 transition-colors cursor-pointer"
           aria-label="Open sidebar menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 text-xs font-mono">
-          <span className="text-stone-500 hidden sm:inline">DCC Admin</span>
-          <ChevronRight className="w-3.5 h-3.5 text-stone-600 hidden sm:inline" />
-          <span className="font-bold text-white tracking-wide">
+        <div className="flex items-center gap-2 text-xs">
+          <span className="text-stone-400 hidden sm:inline font-semibold">DCC Admin</span>
+          <ChevronRight className="w-3.5 h-3.5 text-stone-300 hidden sm:inline" />
+          <span className="font-headline font-bold text-[#0B0B0D] tracking-wide text-base">
             {TAB_TITLES[activeTab] || "Overview"}
           </span>
         </div>
@@ -54,8 +54,8 @@ export function AdminTopBar({ onOpenMobileMenu }: AdminTopBarProps) {
       {/* Right Actions */}
       <div className="flex items-center gap-3">
         {/* Gaam Motto Pill */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange-light text-[11px] font-mono">
-          <ShieldCheck className="w-3.5 h-3.5 text-brand-orange" />
+        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/10 border border-[#EA6E18]/20 text-[#C2520E] text-[11px] font-bold">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#EA6E18]" />
           <span>Proudly Representing Devpur Gaam</span>
         </div>
 
@@ -63,17 +63,17 @@ export function AdminTopBar({ onOpenMobileMenu }: AdminTopBarProps) {
         <Link
           href="/"
           target="_blank"
-          className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 hover:text-white text-xs font-mono flex items-center gap-2 transition-colors"
+          className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-700 hover:text-stone-900 text-xs font-semibold flex items-center gap-2 transition-colors shadow-2xs"
           title="Visit Public Website"
         >
-          <Globe className="w-4 h-4 text-brand-gold" />
+          <Globe className="w-4 h-4 text-[#EA6E18]" />
           <span className="hidden sm:inline">View Site</span>
         </Link>
 
         {/* Logout Quick Action */}
         <button
           onClick={logout}
-          className="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-red-500/20 text-stone-300 hover:text-red-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer"
+          className="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-red-50 hover:border-red-200 text-stone-700 hover:text-red-600 border border-stone-200 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
           title="Sign out of Admin Portal"
         >
           <LogOut className="w-3.5 h-3.5" />

@@ -96,25 +96,25 @@ function MemberFormInner({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-      <div className="relative w-full max-w-xl bg-[#14161B] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+      <div className="relative w-full max-w-xl bg-white border border-[#E8E3DD] rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between pb-4 border-b border-[#E8E3DD] mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-brand-gold/15 border border-brand-gold/30 text-brand-gold">
+            <div className="p-2.5 rounded-xl bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#EA6E18]">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-headline text-2xl font-bold text-white tracking-tight">
+              <h3 className="font-headline text-2xl font-bold text-[#090A0C] tracking-tight">
                 {initialPlayer ? "EDIT MEMBER PROFILE" : "ENROLL NEW MEMBER"}
               </h3>
-              <p className="text-xs font-mono text-stone-400">
+              <p className="text-xs text-stone-500 font-medium">
                 Devpur Cricket Club 50+ Player Roster Registry
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+            className="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -124,7 +124,7 @@ function MemberFormInner({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="sm:col-span-2 space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Member Full Name *
               </label>
               <input
@@ -133,12 +133,12 @@ function MemberFormInner({
                 value={formData.name}
                 onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                 placeholder="e.g. Yash Haria"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Jersey #
               </label>
               <input
@@ -146,20 +146,20 @@ function MemberFormInner({
                 required
                 value={formData.jerseyNumber}
                 onChange={(e) => setFormData((prev) => ({ ...prev, jerseyNumber: Number(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-headline font-bold"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Playing Discipline / Role *
               </label>
               <select
                 value={formData.role}
                 onChange={(e) => setFormData((prev) => ({ ...prev, role: e.target.value as PlayerRole }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
               >
                 {ROLES.map((r) => (
                   <option key={r} value={r}>
@@ -170,21 +170,21 @@ function MemberFormInner({
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Joined DCC Year
               </label>
               <input
                 type="number"
                 value={formData.joiningYear}
                 onChange={(e) => setFormData((prev) => ({ ...prev, joiningYear: Number(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Batting Style
               </label>
               <input
@@ -192,12 +192,12 @@ function MemberFormInner({
                 value={formData.battingStyle}
                 onChange={(e) => setFormData((prev) => ({ ...prev, battingStyle: e.target.value }))}
                 placeholder="Right-hand bat"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
                 Bowling Style
               </label>
               <input
@@ -205,78 +205,78 @@ function MemberFormInner({
                 value={formData.bowlingStyle}
                 onChange={(e) => setFormData((prev) => ({ ...prev, bowlingStyle: e.target.value }))}
                 placeholder="Right-arm medium fast"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-            <span className="text-xs font-mono font-bold text-brand-orange uppercase tracking-wider block">
+          <div className="p-4 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] space-y-3">
+            <span className="text-xs font-headline font-bold text-[#EA6E18] uppercase tracking-wider block">
               Club Career Statistics
             </span>
             <div className="grid grid-cols-4 gap-2">
               <div>
-                <label className="text-[10px] font-mono text-stone-400 block mb-1">Matches</label>
+                <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Matches</label>
                 <input
                   type="number"
                   value={formData.matches}
                   onChange={(e) => setFormData((prev) => ({ ...prev, matches: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-stone-400 block mb-1">Runs</label>
+                <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Runs</label>
                 <input
                   type="number"
                   value={formData.runs}
                   onChange={(e) => setFormData((prev) => ({ ...prev, runs: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-stone-400 block mb-1">Wkts</label>
+                <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">Wkts</label>
                 <input
                   type="number"
                   value={formData.wickets}
                   onChange={(e) => setFormData((prev) => ({ ...prev, wickets: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-stone-400 block mb-1">HS</label>
+                <label className="text-[10px] text-stone-600 block mb-1 font-bold uppercase tracking-wider">HS</label>
                 <input
                   type="text"
                   value={formData.highestScore}
                   onChange={(e) => setFormData((prev) => ({ ...prev, highestScore: e.target.value }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-black/80 border border-white/10 text-white text-xs font-mono"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
                 />
               </div>
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono font-bold text-stone-300 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block">
               Member Bio &amp; Journey
             </label>
             <textarea
               rows={3}
               value={formData.bio}
               onChange={(e) => setFormData((prev) => ({ ...prev, bio: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-sm focus:border-brand-orange outline-hidden font-mono"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
-          <div className="pt-4 flex items-center justify-end gap-3 border-t border-white/10">
+          <div className="pt-4 flex items-center justify-end gap-3 border-t border-[#E8E3DD]">
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-2.5 rounded-xl border border-white/10 text-stone-300 hover:bg-white/5 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-headline font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-gold text-white font-headline text-base font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer shadow-md shadow-brand-orange/20"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20"
             >
               {initialPlayer ? "Save Member Details" : "Add to Squad"}
             </button>

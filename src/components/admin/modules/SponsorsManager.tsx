@@ -32,18 +32,18 @@ export function SponsorsManager() {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E8E3DD]">
         <div>
-          <h2 className="font-headline text-3xl font-bold text-white tracking-tight">
+          <h2 className="font-headline text-3xl font-bold text-[#090A0C] tracking-tight">
             SPONSORS &amp; 2026–2029 MOU REGISTRY
           </h2>
-          <p className="text-xs font-mono text-stone-400">
+          <p className="text-xs text-stone-500 font-medium">
             Track club commercial partners, official MOU deliverables, match jersey branding, and multi-season agreements.
           </p>
         </div>
         <button
           onClick={handleAddNew}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-gold hover:from-brand-orange-light text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-brand-orange/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#D96214] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#EA6E18]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Onboard New Partner</span>
@@ -51,28 +51,28 @@ export function SponsorsManager() {
       </div>
 
       {/* Official MOU Summary Schedule Banner */}
-      <div className="p-6 rounded-3xl bg-[#14161B] border border-brand-orange/30 shadow-xl space-y-4">
-        <div className="flex items-center gap-2 text-brand-orange-light font-mono text-xs font-bold uppercase tracking-wider">
-          <FileText className="w-4 h-4 text-brand-orange" />
+      <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-md space-y-4">
+        <div className="flex items-center gap-2 text-[#EA6E18] font-headline text-sm font-bold uppercase tracking-wider">
+          <FileText className="w-4 h-4 text-[#EA6E18]" />
           <span>OFFICIAL DCC SPONSORSHIP MOU SCHEDULE (SEASONS 2026–27 TO 2028–29)</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono">
-          <div className="p-3.5 rounded-2xl bg-black/50 border border-white/5">
-            <span className="text-stone-500 block uppercase text-[10px]">Agreement Term</span>
-            <span className="text-white font-bold text-sm">3 Seasons (2026–29)</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+            <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Agreement Term</span>
+            <span className="text-stone-900 font-headline text-2xl font-bold block mt-0.5">3 Seasons (2026–29)</span>
           </div>
-          <div className="p-3.5 rounded-2xl bg-black/50 border border-white/5">
-            <span className="text-stone-500 block uppercase text-[10px]">Annual Sponsorship</span>
-            <span className="text-brand-orange font-bold text-sm">₹60,000/- Per Year</span>
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+            <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Annual Sponsorship</span>
+            <span className="text-[#EA6E18] font-headline text-2xl font-bold block mt-0.5">₹60,000 / Year</span>
           </div>
-          <div className="p-3.5 rounded-2xl bg-black/50 border border-white/5">
-            <span className="text-stone-500 block uppercase text-[10px]">Total Contract Value</span>
-            <span className="text-brand-gold font-bold text-sm">₹1,80,000/- Per Partner</span>
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+            <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Total Contract Value</span>
+            <span className="text-[#C2520E] font-headline text-2xl font-bold block mt-0.5">₹1,80,000 Total</span>
           </div>
-          <div className="p-3.5 rounded-2xl bg-black/50 border border-white/5">
-            <span className="text-stone-500 block uppercase text-[10px]">Jersey Match Deliverable</span>
-            <span className="text-emerald-400 font-bold text-sm">~25 Matches / Season</span>
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+            <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Jersey Match Deliverable</span>
+            <span className="text-emerald-700 font-headline text-2xl font-bold block mt-0.5">~25 Matches / Season</span>
           </div>
         </div>
       </div>
@@ -82,12 +82,12 @@ export function SponsorsManager() {
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.id}
-            className="p-6 rounded-2xl bg-[#14161B] border border-white/10 hover:border-brand-orange/40 transition-colors flex flex-col justify-between group"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/40 hover:shadow-md transition-all flex flex-col justify-between group"
           >
             <div className="space-y-4">
               {/* Logo & Actions row */}
               <div className="flex items-start justify-between gap-4">
-                <div className="relative w-28 h-12 p-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="relative w-28 h-12 p-1.5 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-center">
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
@@ -99,7 +99,7 @@ export function SponsorsManager() {
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => handleEdit(sponsor)}
-                    className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-400 hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-600 hover:text-stone-900 transition-colors cursor-pointer shadow-2xs"
                     aria-label="Edit sponsor"
                   >
                     <Edit2 className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export function SponsorsManager() {
                         deleteSponsor(sponsor.id);
                       }
                     }}
-                    className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg bg-white hover:bg-red-50 border border-stone-200 text-stone-400 hover:text-red-600 transition-colors cursor-pointer shadow-2xs"
                     aria-label="Delete sponsor"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -119,46 +119,46 @@ export function SponsorsManager() {
               </div>
 
               <div>
-                <span className="px-2.5 py-0.5 rounded-full bg-brand-orange/15 text-brand-orange-light border border-brand-orange/30 text-[10px] font-mono font-bold uppercase inline-block mb-1.5">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25 text-xs font-headline font-bold uppercase tracking-wider inline-block mb-1.5">
                   {sponsor.tierLabel}
                 </span>
-                <h3 className="font-headline text-2xl font-bold text-white group-hover:text-brand-orange-light transition-colors">
+                <h3 className="font-headline text-2xl font-bold text-[#090A0C] group-hover:text-[#EA6E18] transition-colors">
                   {sponsor.name}
                 </h3>
                 {sponsor.jerseyPlacement && (
-                  <p className="text-xs font-mono text-brand-gold-light mt-0.5">
-                    Placement: {sponsor.jerseyPlacement}
+                  <p className="text-xs text-stone-600 mt-0.5 font-medium">
+                    Placement: <strong className="text-stone-800">{sponsor.jerseyPlacement}</strong>
                   </p>
                 )}
               </div>
 
-              <div className="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1.5 text-xs font-mono">
-                <div className="flex justify-between">
-                  <span className="text-stone-500">Commercials:</span>
-                  <span className="text-white font-bold">{sponsor.annualContribution || "₹60,000 / Year"}</span>
+              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 space-y-1.5 text-xs">
+                <div className="flex justify-between items-center">
+                  <span className="text-stone-500 font-medium">Commercials:</span>
+                  <span className="text-stone-900 font-headline text-base font-bold">{sponsor.annualContribution || "₹60,000 / Year"}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-stone-500">Tenure:</span>
-                  <span className="text-stone-300">{sponsor.tenure || "2026–2029 (3 Seasons)"}</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-stone-500 font-medium">Tenure:</span>
+                  <span className="text-stone-700 font-semibold">{sponsor.tenure || "2026–2029 (3 Seasons)"}</span>
                 </div>
               </div>
 
-              <div className="space-y-1 text-xs">
-                <span className="text-[10px] font-mono text-stone-500 uppercase tracking-wider block">
+              <div className="space-y-1.5 text-xs">
+                <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">
                   Deliverable Highlights
                 </span>
                 {sponsor.visibilityScope?.map((v, idx) => (
-                  <div key={idx} className="flex items-start gap-1.5 text-stone-300 text-[11px]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-1.5 text-stone-700 text-xs font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{v}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <div className="mt-5 pt-3 border-t border-[#E8E3DD] flex items-center justify-between text-xs text-stone-500 font-medium">
               <span>Status: Active Partner</span>
-              <span className="text-emerald-400">MOU In Effect</span>
+              <span className="text-emerald-700 font-semibold">MOU In Effect</span>
             </div>
           </div>
         ))}

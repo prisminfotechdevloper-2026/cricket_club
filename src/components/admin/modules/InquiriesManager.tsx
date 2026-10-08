@@ -11,12 +11,12 @@ export function InquiriesManager() {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E8E3DD]">
         <div>
-          <h2 className="font-headline text-3xl font-bold text-white tracking-tight">
+          <h2 className="font-headline text-3xl font-bold text-[#090A0C] tracking-tight">
             PUBLIC INQUIRIES &amp; CORRESPONDENCE
           </h2>
-          <p className="text-xs font-mono text-stone-400">
+          <p className="text-xs text-stone-500 font-medium">
             Messages received via club contact form: prospective members, sponsor inquiries, and match invitations.
           </p>
         </div>
@@ -30,28 +30,28 @@ export function InquiriesManager() {
           return (
             <div
               key={inq.id}
-              className={`p-6 rounded-2xl bg-[#14161B] border transition-colors space-y-4 ${
+              className={`p-6 rounded-2xl bg-white border transition-colors space-y-4 shadow-xs ${
                 isNew
-                  ? "border-brand-orange/40 bg-gradient-to-r from-[#171920] to-[#14161B]"
-                  : "border-white/10"
+                  ? "border-[#EA6E18]/40 ring-1 ring-[#EA6E18]/20"
+                  : "border-[#E8E3DD]"
               }`}
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center font-headline text-lg font-bold text-brand-orange shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center font-headline text-lg font-bold text-[#EA6E18] shrink-0">
                     {inq.senderName.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="font-headline text-xl font-bold text-white leading-tight">
+                    <h3 className="font-headline text-xl font-bold text-[#090A0C] leading-tight">
                       {inq.senderName}
                     </h3>
-                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-stone-400 mt-0.5">
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-stone-500 mt-0.5 font-medium">
                       <span className="flex items-center gap-1">
-                        <Mail className="w-3 h-3 text-stone-500" />
+                        <Mail className="w-3 h-3 text-stone-400" />
                         {inq.email}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Phone className="w-3 h-3 text-stone-500" />
+                        <Phone className="w-3 h-3 text-stone-400" />
                         {inq.phone}
                       </span>
                     </div>
@@ -60,12 +60,12 @@ export function InquiriesManager() {
 
                 <div className="flex items-center gap-2">
                   <span
-                    className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase ${
+                    className={`px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider ${
                       inq.type === "sponsorship_interest"
-                        ? "bg-brand-orange/15 text-brand-orange border border-brand-orange/30"
+                        ? "bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25"
                         : inq.type === "practice_match_request"
-                        ? "bg-purple-500/15 text-purple-300 border border-purple-500/30"
-                        : "bg-blue-500/15 text-blue-300 border border-blue-500/30"
+                        ? "bg-purple-50 text-purple-700 border border-purple-200"
+                        : "bg-blue-50 text-blue-700 border border-blue-200"
                     }`}
                   >
                     {inq.type.replace(/_/g, " ")}
@@ -76,7 +76,7 @@ export function InquiriesManager() {
                     onChange={(e) =>
                       updateInquiryStatus(inq.id, e.target.value as AdminInquiry["status"])
                     }
-                    className="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-xs font-mono text-stone-300 outline-hidden"
+                    className="px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800 outline-hidden cursor-pointer focus:border-[#EA6E18]"
                   >
                     <option value="new">New</option>
                     <option value="in_review">In Review</option>
@@ -86,16 +86,16 @@ export function InquiriesManager() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-xs text-stone-200 leading-relaxed font-mono">
+              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 leading-relaxed font-medium">
                 &ldquo;{inq.message}&rdquo;
               </div>
 
-              <div className="flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-white/5">
+              <div className="flex items-center justify-between text-xs text-stone-500 pt-2 border-t border-[#E8E3DD] font-medium">
                 <span className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
+                  <Clock className="w-3 h-3 text-stone-400" />
                   Received {inq.createdAt}
                 </span>
-                <span className="text-stone-400">DCC Secretariat Inbox</span>
+                <span className="text-stone-600 font-semibold">DCC Secretariat Inbox</span>
               </div>
             </div>
           );
