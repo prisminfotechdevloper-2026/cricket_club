@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeAboutSection } from "@/components/home/HomeAboutSection";
+import { HomeCoachingSection } from "@/components/home/HomeCoachingSection";
 import { HomeSponsorsSection } from "@/components/home/HomeSponsorsSection";
 
 export const metadata: Metadata = {
@@ -25,7 +26,10 @@ export default function HomePage() {
       {/* Section 02 — About DCC: Roots, Vision, Purpose & Mission (2-image showcase) */}
       <HomeAboutSection />
 
-      {/* Section 03 — Official Club Sponsors (Desktop 5-slider, Mobile single slider) */}
+      {/* Section 03 — Professional Coaching & Player Development Mandate */}
+      <HomeCoachingSection />
+
+      {/* Section 04 — Official Club Sponsors (Desktop 5-slider, Mobile single slider) */}
       <HomeSponsorsSection />
     </div>
   );
