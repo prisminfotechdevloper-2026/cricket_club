@@ -21,7 +21,7 @@ export function SiteFooter() {
               <span>OFFICIAL CLUB PARTNERS (2026–2029)</span>
             </div>
             <p className="text-sm font-semibold text-brand-black">
-              Supporting structured training, professional equipment, match participation &amp; community activities.
+              Supporting regular net practice, professional equipment, match participation &amp; community activities.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -102,7 +102,7 @@ export function SiteFooter() {
                   href="/players"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Squad &amp; Members
+                  Our Members
                 </Link>
               </li>
               <li>
@@ -160,7 +160,7 @@ export function SiteFooter() {
                   href="/tournaments"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Tournament Participation
+                  Tournaments We Play
                 </Link>
               </li>
               <li>
@@ -184,7 +184,7 @@ export function SiteFooter() {
                   href="/blog"
                   className="hover:text-brand-copper transition-colors"
                 >
-                  Cricket Blog &amp; Tactics
+                  Club Stories &amp; Match Reports
                 </Link>
               </li>
             </ul>

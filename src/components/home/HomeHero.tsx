@@ -300,7 +300,7 @@ export function HomeHero() {
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <Link
-                  href="/training"
+                  href="/club-life"
                   className="p-2 sm:p-2.5 rounded-xl bg-stone-50 hover:bg-amber-50/60 border border-stone-100 hover:border-[#F89928]/40 transition-[background-color,border-color] text-left group"
                 >
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#EA6E18]/10 flex items-center justify-center mb-1.5">

@@ -27,39 +27,44 @@ const NAV_SECTIONS: NavSection[] = [
     name: "Matches",
     href: "/matches",
     children: [
-      { name: "Live Match Score", href: "/matches/dcc-vs-royal-xi", badge: "LIVE", description: "Today's live score & scorecard" },
-      { name: "Match Schedule", href: "/matches", description: "Upcoming matches & recent results" },
-      { name: "Tournaments", href: "/tournaments", description: "Cups and tournament leagues" },
-      { name: "Past Seasons", href: "/seasons", description: "Year-by-year club records & journey" },
-      { name: "Our Trophies", href: "/achievements", description: "Cups & awards won by DCC" },
+      { name: "Matches We Play", href: "/matches", description: "Upcoming fixtures, results & scorecards" },
+      { name: "Live Score Centre", href: "/matches/dcc-vs-royal-xi", badge: "LIVE", description: "Matchday live score via CricClubs" },
+      { name: "Tournaments We Play", href: "/tournaments", description: "Community cups & tournament leagues" },
+      { name: "Season Journey", href: "/seasons", description: "Annual seasonal campaign & journey" },
+      { name: "Trophies & Milestones", href: "/achievements", description: "Silverware & club milestones" },
+    ],
+  },
+  {
+    name: "Club Life",
+    href: "/club-life",
+    children: [
+      { name: "Net Practice & Routine", href: "/club-life", description: "3-day weekly turf net practice at Matunga Ground" },
+      { name: "Coach Aditya Koli", href: "/club-life#coach", description: "Skill guidance by Kanga B Division player" },
+      { name: "Weekend Practice Matches", href: "/club-life#matches", description: "Applying preparation in competitive situations" },
+    ],
+  },
+  {
+    name: "Our Members",
+    href: "/players",
+    children: [
+      { name: "Meet Our Members", href: "/players", description: "The 50+ members behind the DCC crest" },
+      { name: "Member Milestones", href: "/players#milestones", description: "Celebrating member growth & achievements" },
+    ],
+  },
+  {
+    name: "Memories",
+    href: "/memories",
+    children: [
+      { name: "Season Memories", href: "/memories", description: "Match moments, tours & photo gallery" },
     ],
   },
   {
     name: "Our Club",
     href: "/club",
     children: [
-      { name: "Our Story", href: "/club", description: "Founding history, crest & village roots" },
-      { name: "Club Life", href: "/club-life", description: "Practice routines, fitness & team bond" },
-      { name: "Photos & Memories", href: "/memories", description: "Match moments, trips & gallery" },
-      { name: "Our Sponsors", href: "/sponsors", description: "Partners who support our team" },
-    ],
-  },
-  {
-    name: "Players",
-    href: "/players",
-    children: [
-      { name: "Team Players", href: "/players", description: "Meet all 50+ registered club players" },
-      { name: "Net Practice", href: "/training", description: "Weekly training at Matunga Ground" },
-    ],
-  },
-  {
-    name: "Cricket Blog",
-    href: "/blog",
-    children: [
-      { name: "All Articles", href: "/blog", description: "Match reports, cricket tips & stories" },
-      { name: "Match Reports", href: "/blog?category=match-analysis", description: "How we played and won key matches" },
-      { name: "Cricket Tips", href: "/blog?category=coaching-tactics", description: "Batting, bowling & pitch advice" },
-      { name: "Team Stories", href: "/blog?category=club-heritage", description: "Brotherhood, travel & memories" },
+      { name: "About DCC & Devpur Gaam", href: "/club", description: "Founding roots, crest history & community heritage" },
+      { name: "Official Club Partners", href: "/sponsors", description: "7 brands powering our 3-season cycle" },
+      { name: "Contact & Support", href: "/contact", description: "Connect with DCC organizers & coordinators" },
     ],
   },
 ];
@@ -320,17 +325,17 @@ export function SiteHeader() {
                     <span className="text-stone-600">/</span>
                     <Link href="/club-life" className="inline-flex items-center gap-2 hover:text-white transition-colors">
                       <span className="text-[#F89928] font-bold">TURF NETS:</span>
-                      <span>Mon • Wed • Fri 7:00 AM under Head Coach Aditya Koli</span>
+                      <span>Mon • Wed • Fri 7:00 AM guided by Coach Aditya Koli</span>
                     </Link>
                     <span className="text-stone-600">/</span>
                     <Link href="/players" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-white font-bold">SQUAD:</span>
-                      <span>50+ Registered Members Proudly Representing Devpur Gaam</span>
+                      <span className="text-white font-bold">MEMBERS:</span>
+                      <span>50+ Dedicated Members Proudly Representing Devpur Gaam</span>
                     </Link>
                     <span className="text-stone-600">/</span>
-                    <Link href="/blog" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-[#EA6E18] font-bold">JOURNAL:</span>
-                      <span>Death-Overs Blueprint & Pitch Analysis by Coach Aditya Koli</span>
+                    <Link href="/memories" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                      <span className="text-[#EA6E18] font-bold">MEMORIES:</span>
+                      <span>Preserving Season Moments &amp; Community Get-Togethers</span>
                     </Link>
                     <span className="text-stone-600">/</span>
                     <Link href="/club" className="inline-flex items-center gap-2 hover:text-white transition-colors">

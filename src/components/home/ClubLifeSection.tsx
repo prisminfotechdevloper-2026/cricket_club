@@ -81,7 +81,7 @@ export function ClubLifeSection() {
           </div>
 
           <Link
-            href="/training"
+            href="/club-life"
             className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-copper hover:text-brand-orange transition-colors shrink-0"
           >
             Explore Practice Schedule →

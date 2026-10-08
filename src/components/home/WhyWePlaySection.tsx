@@ -866,7 +866,7 @@ export function WhyWePlaySection() {
             </Link>
 
             <Link
-              href="/training"
+              href="/club-life"
               className="px-5 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors border border-stone-700"
             >
               Practice Schedule

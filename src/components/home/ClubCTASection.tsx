@@ -35,7 +35,7 @@ export function ClubCTASection() {
 
             <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <Link
-                href="/training"
+                href="/club-life"
                 className="px-6 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-copper text-brand-black font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-[background-color,box-shadow] shadow-md inline-flex items-center justify-center gap-2.5 group"
               >
                 <span>EXPLORE CLUB LIFE</span>
