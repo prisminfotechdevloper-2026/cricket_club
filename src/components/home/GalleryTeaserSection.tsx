@@ -7,15 +7,24 @@ import { ArrowRight } from "lucide-react";
 
 function getAlbumImagePosition(coverImage: string): string {
   if (coverImage.includes("orange_cap_player") || coverImage.includes("purpal_cap_player")) {
-    return "object-[center_12%]";
+    return "object-[center_10%]";
   }
-  if (coverImage.includes("winning_time_with_group")) {
-    return "object-[center_22%]";
+  if (coverImage.includes("training_team") || coverImage.includes("exersise")) {
+    return "object-[center_15%]";
+  }
+  if (coverImage.includes("ground_players_group") || coverImage.includes("ground_playing")) {
+    return "object-[center_15%]";
+  }
+  if (coverImage.includes("winning_time_with_group") || coverImage.includes("winning")) {
+    return "object-[center_20%]";
   }
   if (coverImage.includes("team_wedding_party")) {
     return "object-[center_20%]";
   }
-  return "object-[center_25%]";
+  if (coverImage.includes("memories")) {
+    return "object-[center_20%]";
+  }
+  return "object-[center_20%]";
 }
 
 export function GalleryTeaserSection() {
@@ -85,7 +94,7 @@ export function GalleryTeaserSection() {
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
                     <span>{album.season} • {album.category.replace("-", " ")}</span>
                   </span>
-                  <h3 className="font-headline text-lg sm:text-xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                  <h3 className="font-headline text-lg sm:text-xl font-bold leading-tight !text-white text-white drop-shadow-sm group-hover:text-brand-orange transition-colors">
                     {album.title}
                   </h3>
                 </div>

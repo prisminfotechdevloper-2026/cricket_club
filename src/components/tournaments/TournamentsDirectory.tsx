@@ -126,10 +126,10 @@ export function TournamentsDirectory({ tournaments }: TournamentsDirectoryProps)
                   src={tour.coverImage}
                   alt={tour.name}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover object-[center_20%] transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-white">
                   <span className="px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-black/60 backdrop-blur-sm border border-white/10">
@@ -141,7 +141,7 @@ export function TournamentsDirectory({ tournaments }: TournamentsDirectoryProps)
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="font-headline text-3xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                  <h3 className="font-headline text-3xl font-bold leading-tight !text-white text-white drop-shadow-sm group-hover:text-brand-orange transition-colors">
                     {tour.name}
                   </h3>
                   <div className="flex items-center gap-1.5 text-xs text-neutral-300 mt-1">

@@ -32,13 +32,13 @@ export function TournamentParticipationSection() {
                   src={tour.coverImage}
                   alt={tour.name}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover object-[center_20%] transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
-                  <span className="font-headline text-lg font-bold">
+                  <span className="font-headline text-lg font-bold !text-white text-white">
                     {tour.season}
                   </span>
                   <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-md font-semibold text-[11px]">

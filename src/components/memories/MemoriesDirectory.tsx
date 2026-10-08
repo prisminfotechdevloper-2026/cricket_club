@@ -21,6 +21,31 @@ interface MemoriesDirectoryProps {
   albums: GalleryAlbum[];
 }
 
+function getAlbumCoverFocalPosition(coverImage: string): string {
+  if (coverImage.includes("orange_cap_player") || coverImage.includes("purpal_cap_player")) {
+    return "object-[center_10%]";
+  }
+  if (coverImage.includes("training_team") || coverImage.includes("exersise")) {
+    return "object-[center_15%]";
+  }
+  if (coverImage.includes("ground_players_group") || coverImage.includes("ground_playing")) {
+    return "object-[center_15%]";
+  }
+  if (coverImage.includes("winning_time_with_group") || coverImage.includes("winning")) {
+    return "object-[center_20%]";
+  }
+  if (coverImage.includes("team_wedding_party")) {
+    return "object-[center_20%]";
+  }
+  if (coverImage.includes("memories")) {
+    return "object-[center_20%]";
+  }
+  if (coverImage.includes("team_group") || coverImage.includes("team_members") || coverImage.includes("members")) {
+    return "object-[center_18%]";
+  }
+  return "object-[center_20%]";
+}
+
 const CATEGORIES: { id: GalleryCategory; label: string }[] = [
   { id: "all", label: "All Moments" },
   { id: "celebrations", label: "Trophy & Cap Glory" },
@@ -311,30 +336,30 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
         {/* Albums Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredAlbums.map((album) => {
-            const coverImage = album.items[0]?.url || "/images/team_group.png";
+            const coverImage = album.coverImage || album.items[0]?.url || "/images/team_group.png";
             return (
               <Link
                 key={album.id}
                 href={`/memories/${album.slug}`}
                 className="group bg-surface rounded-2xl border border-border overflow-hidden hover:border-brand-copper/60 hover:shadow-lg transition-[border-color,box-shadow] flex flex-col"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-900">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-950">
                   <Image
                     src={coverImage}
                     alt={album.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`object-cover ${getAlbumCoverFocalPosition(coverImage)} group-hover:scale-105 transition-transform duration-500`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white font-mono text-[10px] font-bold">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 via-45% to-transparent pointer-events-none" />
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-white font-mono text-[10px] font-bold border border-white/10 shadow-xs">
                     {album.items.length} Photos
                   </div>
-                  <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="font-mono text-[10px] uppercase font-bold text-brand-orange block mb-1">
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 z-10 pointer-events-none space-y-1">
+                    <span className="font-mono text-[10px] sm:text-[11px] uppercase font-bold text-brand-peach drop-shadow-xs block">
                       {album.season}
                     </span>
-                    <h3 className="font-headline text-lg sm:text-xl font-bold leading-tight">
+                    <h3 className="font-headline text-lg sm:text-xl font-bold leading-tight !text-white text-white drop-shadow-md group-hover:text-brand-orange transition-colors">
                       {album.title}
                     </h3>
                   </div>

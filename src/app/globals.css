@@ -100,7 +100,7 @@
   h5,
   h6 {
     font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--brand-black);
+    color: inherit;
     letter-spacing: -0.01em;
   }
 

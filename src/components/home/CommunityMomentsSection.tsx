@@ -98,7 +98,7 @@ export function CommunityMomentsSection() {
                 <span className="text-[11px] font-bold uppercase tracking-widest text-brand-peach block">
                   {communityMoments[0].category}
                 </span>
-                <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                <h3 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold leading-tight !text-white text-white drop-shadow-sm group-hover:text-brand-orange transition-colors">
                   {communityMoments[0].title}
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 line-clamp-3 sm:line-clamp-2 leading-relaxed">
@@ -132,7 +132,7 @@ export function CommunityMomentsSection() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-peach block">
                   {communityMoments[1].category}
                 </span>
-                <h4 className="font-headline text-base sm:text-lg font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                <h4 className="font-headline text-base sm:text-lg font-bold leading-tight !text-white text-white drop-shadow-sm group-hover:text-brand-orange transition-colors">
                   {communityMoments[1].title}
                 </h4>
                 <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
@@ -163,7 +163,7 @@ export function CommunityMomentsSection() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-peach block">
                   {communityMoments[2].category}
                 </span>
-                <h4 className="font-headline text-base sm:text-lg font-bold leading-tight group-hover:text-brand-orange transition-colors">
+                <h4 className="font-headline text-base sm:text-lg font-bold leading-tight !text-white text-white drop-shadow-sm group-hover:text-brand-orange transition-colors">
                   {communityMoments[2].title}
                 </h4>
                 <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed">
