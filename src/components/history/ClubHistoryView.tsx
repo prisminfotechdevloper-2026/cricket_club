@@ -47,10 +47,10 @@ const CATEGORIES: CategoryMeta[] = [
   {
     id: "overview",
     index: "01",
-    title: "Club Overview & Heart of DCC",
+    title: "Club Overview: Our Story",
     shortTitle: "Club Overview",
     icon: Compass,
-    tagline: "Why we started, post-education passion, and connecting villages through cricket.",
+    tagline: "A community that found its way back to the game.",
   },
   {
     id: "timeline",
@@ -450,9 +450,9 @@ function OverviewStorySection() {
       {/* Chapter Title */}
       <ChapterHeader
         chapter="Chapter 01"
-        tag="The Origin & Purpose"
-        title="Club Overview: The Heart of DCC"
-        subtitle="Why we started playing cricket, how post-education passion united our village youth, and how KVO tournaments connected communities."
+        tag="Our Story & Foundation"
+        title="DEVPUR CRICKET CLUB — OUR STORY"
+        subtitle="A community that found its way back to the game."
       />
 
       {/* Main Ground Feature Photo */}
@@ -460,198 +460,418 @@ function OverviewStorySection() {
         src="/aboutimgs/ground.png"
         alt="Devpur Cricket Club ground and training environment"
         badge="The Sacred Ground • Devpur Cricket Club"
-        caption="Where village dreams and post-education passion meet under the open sky."
+        caption="Where our passion, friendships, and community unite on the 22 yards."
       />
 
-      {/* Narrative Lead */}
-      <div className="space-y-4 text-foreground/90 font-body text-base sm:text-lg leading-relaxed">
-        <p>
-          Cricket in Devpur Gaam is not just a weekend distraction — it is our identity,
-          our therapy, and our greatest bond. This is the heartfelt story of why DCC was
-          created and what drives us forward every single day.
-        </p>
-      </div>
-
-      {/* Topic 1: The Origin Thought (Post-Education Dreams) */}
-      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+      {/* Narrative Intro Note */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
           <div className="w-9 h-9 rounded-lg bg-[#EA4326]/10 text-[#EA4326] flex items-center justify-center font-bold">
-            <GraduationCap className="w-5 h-5" />
+            <Sparkles className="w-5 h-5" />
           </div>
           <div>
             <span className="text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
-              Part 01 • The Deep Thought
+              The Origin Thought
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
-              Why We Started: Dreams Paused by Academics
+              It started with a thought.
             </h3>
           </div>
         </div>
 
-        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
-          <p>
-            Growing up in and around Devpur Gaam, every kid held a cricket bat before holding
-            a pen. But as school, board exams, college degrees, and early career building
-            took over, cricket had to take a backseat.
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
+          <p className="text-lg font-medium text-foreground">
+            There was a time when cricket was a part of our lives.
           </p>
           <p>
-            Talented players who could have played serious league cricket had to prioritize
-            family responsibilities and desk jobs. For years, the cricket bats gathered dust
-            in closet corners.
+            We played whenever we could.
+            <br />
+            We loved the game. We dreamed about it.
           </p>
           <p>
-            Once our education was complete and our careers stabilized, a quiet void remained.
-            A burning realization hit a group of village friends: <em>&ldquo;We gave our youth
-            to books and jobs. But our heartbeat belongs to cricket. It is never too late to
-            step onto the 22 yards again.&rdquo;</em>
+            But as education, work and responsibilities came in, cricket slowly became something we had to leave behind.
           </p>
+
+          <div className="bg-muted/40 border-l-4 border-[#EA4326] p-4 rounded-r-lg my-2">
+            <p className="text-xs font-headline uppercase font-bold text-muted-foreground tracking-wider mb-1">
+              Then, years later, the thought came back:
+            </p>
+            <p className="font-headline text-xl sm:text-2xl font-extrabold text-[#EA4326] italic">
+              &ldquo;Why did we ever stop playing?&rdquo;
+            </p>
+          </div>
+
           <p>
-            That post-education awakening — that deep, emotional desire to reclaim our lost
-            cricketing years — was the spark that founded Devpur Cricket Club.
+            Many of us were from Devpur and neighbouring villages. We had the passion, the memories and the willingness to start again. What we were missing was simply a place to come together.
+          </p>
+          <p className="font-headline text-lg font-bold text-foreground uppercase tracking-wide">
+            So we decided to create one.
           </p>
         </div>
       </div>
 
-      {/* Topic 2: Inspired by Cricket Legacy (MIG, Wankhede & Rajasthan Cricket Board) */}
-      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+      {/* Part 02: From a few players to a club */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
           <div className="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
-            <Building2 className="w-5 h-5" />
+            <Users className="w-5 h-5" />
           </div>
           <div>
             <span className="text-xs uppercase font-headline font-bold text-blue-500 tracking-wider">
-              Part 02 • Professional Blueprint
+              The Foundation • Est. 2013
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
-              Inspired by Legacy: Learning from MIG, Wankhede &amp; Cricket Boards
+              From a few players to a club.
             </h3>
           </div>
         </div>
 
-        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
           <p>
-            From the very first day, we resolved that DCC would not remain an informal Sunday
-            tennis-ball gathering. We wanted to build a culture of true cricketing respect.
+            What started with a simple desire to play cricket again slowly became a community.
           </p>
           <p>
-            We looked closely at historic cricketing shrines in Mumbai — the club prestige and
-            community warmth of <strong>MIG Cricket Club</strong> at Bandra, the international
-            aura of <strong>Wankhede Stadium</strong>, and the grassroots administrative
-            discipline of state associations like the <strong>Rajasthan Cricket Board</strong>.
+            We started bringing people together through the game — players from Devpur and surrounding villages, friends who had known each other for years, and people who simply wanted to be back on the field.
           </p>
-          <p>
-            We adopted proper turf practice wickets, official leather cricket balls, pristine
-            white and colored uniforms, structured fitness regimes, and professional coaching.
-            We wanted every village player to feel the pure dignity and pride of walking out
-            like a seasoned cricketer.
+          <p className="font-semibold text-foreground">
+            That is how Devpur Cricket Club took shape.
+          </p>
+
+          <div className="bg-gradient-to-r from-[#EA4326]/10 via-[#EA4326]/5 to-transparent border border-[#EA4326]/20 rounded-xl p-5 my-2">
+            <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider mb-1.5">
+              Founded in 2013, the club grew around one simple idea:
+            </span>
+            <p className="font-headline text-xl sm:text-2xl font-extrabold uppercase text-[#EA4326] tracking-wider">
+              Come together. Play together. Grow together.
+            </p>
+          </div>
+
+          <p className="font-medium text-foreground pt-1">
+            Today, DCC has a 50+ strong member/player community and continues to represent Devpur Gaam with pride.
           </p>
         </div>
       </div>
 
-      {/* Topic 3: Connecting Villages & Socialization (KVO Tournaments) */}
-      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+      {/* Part 03: Cricket became our connection */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
           <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold">
             <Network className="w-5 h-5" />
           </div>
           <div>
             <span className="text-xs uppercase font-headline font-bold text-emerald-500 tracking-wider">
-              Part 03 • The Village Bridge
+              Villages &amp; Generations
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
-              Connecting Villages: KVO Tournaments &amp; Community Socialization
+              Cricket became our connection.
             </h3>
           </div>
         </div>
 
-        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
-          <p>
-            Devpur Gaam is an integral part of the proud <strong>Kutchhi Visa Oswal (KVO)</strong> community.
-            Over the decades, families from different Kutch villages migrated to Mumbai, spreading
-            out across suburbs from Borivali to Thane, Mulund, and South Mumbai.
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
+          <p className="text-lg font-medium text-foreground">
+            For us, cricket was never only about the score.
           </p>
           <p>
-            Daily routines and business pressures had reduced community interactions. The
-            <strong> KVO Cricket Tournaments</strong> became the single greatest catalyst for
-            reconnecting our roots.
+            It became a way to connect villages, friendships and generations.
           </p>
           <p>
-            Cricket matches transformed into vibrant village gatherings. Childhood friends who
-            hadn&apos;t met in years embraced on boundary lines. Village elders sat in pavilions
-            sharing old memories. Young entrepreneurs networked over post-match tea, and families
-            spent Sundays cheering for their village boys.
+            Through community cricket, people who may have never met found a common ground.
           </p>
-          <p>
-            DCC became an emotional bridge that brought Devpur Gaam and neighboring KVO villages
-            together under one shared banner of love and pride.
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <span className="text-sm font-medium text-foreground">A match brought players together.</span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <span className="text-sm font-medium text-foreground">A practice session built friendships.</span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <span className="text-sm font-medium text-foreground">A tournament created new connections.</span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
+              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <span className="text-sm font-medium text-foreground">And every season left behind another memory.</span>
+            </div>
+          </div>
+
+          <p className="pt-1">
+            From KVO cricket and Kachi community competitions to matches played across villages and communities, cricket became our common language.
           </p>
         </div>
       </div>
 
-      {/* Topic 4: Mission & Motive (Youth Platform & Future Vision) */}
-      <div className="bg-card border border-border rounded-xl p-6 shadow-sm space-y-4">
+      {/* Part 04: We came back to the game — together */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
           <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
-            <Target className="w-5 h-5" />
+            <Calendar className="w-5 h-5" />
           </div>
           <div>
             <span className="text-xs uppercase font-headline font-bold text-amber-500 tracking-wider">
-              Part 04 • Our Mission &amp; Motive
+              Discipline &amp; Routine • Matunga Ground
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
-              The Mission Ahead: Grassroots Youth Platform &amp; Future Vision
+              We came back to the game — together.
             </h3>
           </div>
         </div>
 
-        <div className="space-y-3 text-foreground/90 font-body text-base leading-relaxed">
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
           <p>
-            Today, DCC has grown into a family of 50+ active members. But our core mission
-            remains crystal clear:
+            Every season, we return to the ground with the same excitement.
           </p>
-          <ul className="space-y-2.5 text-sm text-foreground/90 pt-1">
-            <li className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
-              <span>
-                <strong>Zero Lost Talent:</strong> Ensuring that no kid from Devpur Gaam
-                has to bury their cricketing talent due to lack of funds, kits, or guidance.
+
+          <div className="flex flex-wrap gap-2 py-1">
+            {[
+              "Months of practice",
+              "Early mornings",
+              "Net sessions",
+              "Fitness",
+              "Fielding drills",
+              "Weekend practice matches",
+            ].map((item, idx) => (
+              <span
+                key={idx}
+                className="px-3 py-1.5 rounded-full text-xs font-semibold bg-muted border border-border text-foreground"
+              >
+                {item}
               </span>
+            ))}
+          </div>
+
+          <p>
+            We work with coaches, prepare ourselves and then step onto the field representing our club and our Gaam.
+          </p>
+
+          <div className="p-4 rounded-xl bg-muted/60 border border-border text-sm space-y-1">
+            <strong className="text-foreground block font-headline uppercase tracking-wide">
+              Seasonal Practice Routine
+            </strong>
+            <p className="text-muted-foreground leading-relaxed">
+              DCC conducts approximately 5–6 months of structured seasonal training, including indoor and outdoor net practice at Matunga Ground three days a week.
+            </p>
+          </div>
+
+          <p className="font-medium text-foreground pt-1">
+            But the real reward is not only improvement in cricket.
+          </p>
+
+          <ul className="space-y-2 text-sm text-foreground/90 pl-1">
+            <li className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span>It is the discipline.</span>
             </li>
-            <li className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
-              <span>
-                <strong>Physical &amp; Mental Wellbeing:</strong> Offering a disciplined
-                counter-weight to stressful corporate life through 6:00 AM turf fitness and
-                brotherhood.
-              </span>
+            <li className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span>The routine.</span>
             </li>
-            <li className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
-              <span>
-                <strong>Village Unity &amp; Social Brotherhood:</strong> Continuing to serve
-                as a social hub where village elders, youth, and children stand together.
-              </span>
+            <li className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span>The friendships.</span>
             </li>
-            <li className="flex items-start gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
-              <span>
-                <strong>Future Sports Roadmap:</strong> Creating dedicated coaching clinics,
-                junior academy batches, and permanent sporting facilities for the next generation.
-              </span>
+            <li className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span>The conversations after practice.</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span>The feeling of belonging somewhere.</span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Heartfelt Quote Banner */}
-      <blockquote className="border-l-4 border-[#EA4326] pl-5 py-3 text-muted-foreground bg-muted/40 rounded-r-xl space-y-1">
-        <p className="font-headline text-lg sm:text-xl font-bold uppercase text-foreground not-italic">
-          &ldquo;Cricket brings us together. The club makes us family.&rdquo;
+      {/* Part 05: Then came the bigger dream */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
+            <Target className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-purple-500 tracking-wider">
+              Aspiration &amp; Growth
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Then came the bigger dream.
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            Once we started playing regularly, another thought followed:
+          </p>
+
+          <div className="space-y-2 bg-muted/30 border border-border/80 rounded-xl p-4 sm:p-5 italic text-foreground text-sm sm:text-base">
+            <p>&ldquo;What if we could take this even further?&rdquo;</p>
+            <p>&ldquo;What if someone who once thought cricket had passed them by could find another opportunity?&rdquo;</p>
+            <p>&ldquo;What if a player from our community could move from a local ground to a bigger stage?&rdquo;</p>
+            <p className="font-semibold text-[#EA4326] not-italic">
+              &ldquo;What if the club could become a bridge between where we started and where we wanted to go?&rdquo;
+            </p>
+          </div>
+
+          <p>
+            That is why our journey is not limited to playing matches.
+          </p>
+          <p>
+            We want to create an environment where members can play, improve, compete and discover what they are capable of.
+          </p>
+          <p>
+            And when one of our members gets an opportunity to play at a higher level, we see it not only as an individual achievement, but as a moment of pride for the entire community.
+          </p>
+        </div>
+      </div>
+
+      {/* Part 06: Our journey has kept growing */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold">
+            <Trophy className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-orange-500 tracking-wider">
+              Milestones &amp; Success
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Our journey has kept growing.
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
+          <p>
+            From Devpur to the wider KVO cricket community, our journey continues through matches, competitions, relationships and shared experiences.
+          </p>
+          <p>
+            Our club has already experienced competitive success, including two runners-up finishes, while our stated goal is to continue improving our KVO standing and compete for championship success.
+          </p>
+          <div className="border-l-4 border-amber-500 pl-4 py-3 bg-amber-500/10 rounded-r-lg space-y-1">
+            <p className="font-headline text-base sm:text-lg font-bold uppercase text-foreground">
+              But our biggest achievement is something you cannot measure on a scorecard.
+            </p>
+            <p className="text-base font-semibold text-[#EA4326]">
+              It is the number of people we have brought together.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Part 07: Because the game never really ends */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-rose-500/10 text-rose-500 flex items-center justify-center font-bold">
+            <Heart className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-rose-500 tracking-wider">
+              Beyond The Boundary
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Because the game never really ends.
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-3.5 text-foreground/90 font-body text-base leading-relaxed">
+          <p>The match may finish.</p>
+          <p>The season may finish.</p>
+          <p className="font-semibold text-foreground text-lg">But the connection stays.</p>
+          <p>
+            The same people who meet on the cricket ground also meet as friends, as families and as a community. The friendships created through cricket can become conversations, collaborations and opportunities beyond the boundary.
+          </p>
+          <p className="font-medium text-foreground">
+            That is the bigger purpose behind DCC.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 py-2 text-center">
+            <div className="p-4 rounded-xl bg-muted/50 border border-border">
+              <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider">
+                Medium
+              </span>
+              <p className="font-headline text-base font-extrabold uppercase text-[#EA4326] mt-1">
+                Cricket is our medium.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-muted/50 border border-border">
+              <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider">
+                Strength
+              </span>
+              <p className="font-headline text-base font-extrabold uppercase text-foreground mt-1">
+                Community is our strength.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-muted/50 border border-border">
+              <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider">
+                Purpose
+              </span>
+              <p className="font-headline text-base font-extrabold uppercase text-[#EA4326] mt-1">
+                Connection is our purpose.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            And as we move forward, we want to open the door to even more possibilities — more opportunities for our members to stay active, connect, grow, celebrate and build something together.
+          </p>
+        </div>
+      </div>
+
+      {/* Part 08: Our Mission */}
+      <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div className="flex items-center gap-3 border-b border-border pb-3">
+          <div className="w-9 h-9 rounded-lg bg-[#EA4326]/10 text-[#EA4326] flex items-center justify-center font-bold">
+            <Award className="w-5 h-5" />
+          </div>
+          <div>
+            <span className="text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+              Core Purpose
+            </span>
+            <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+              Our Mission
+            </h3>
+          </div>
+        </div>
+
+        <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
+          <div className="text-center py-4 px-6 rounded-xl bg-gradient-to-r from-[#EA4326] to-[#D9381E] text-white shadow-md">
+            <span className="block text-xs uppercase tracking-widest font-headline font-bold opacity-80 mb-1">
+              The DCC Creed
+            </span>
+            <p className="font-headline text-2xl sm:text-3xl font-extrabold uppercase tracking-wider">
+              PLAY. TRAIN. COMPETE. CONNECT. GROW.
+            </p>
+          </div>
+
+          <div className="space-y-2.5 pt-2">
+            <p>We started because we wanted to play cricket again.</p>
+            <p>We continued because we found a community.</p>
+            <p>
+              And we move forward because we believe that when people come together around something they love, something bigger than the game can grow.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-border text-foreground font-headline font-bold uppercase space-y-1">
+            <p className="text-xl text-[#EA4326]">This is Devpur Cricket Club.</p>
+            <p className="text-sm sm:text-base text-muted-foreground font-body font-normal not-italic">
+              Not just a team. Not just a cricket club. A community that found its way back to the game.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Part 09: Powerful Closing Line */}
+      <blockquote className="border-l-4 border-[#EA4326] pl-6 py-5 bg-muted/40 rounded-r-xl space-y-2 shadow-sm">
+        <p className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground leading-snug">
+          &ldquo;Some of us missed the cricket we could not play when we were younger. So we built a place where we could play it together.&rdquo;
         </p>
-        <p className="text-sm">
-          We play for the village, we play for our brothers, and we honor every dream
-          born on the red soil of the cricket pitch.
-        </p>
+        <span className="block text-xs uppercase font-headline font-bold tracking-wider text-[#EA4326]">
+          — Devpur Cricket Club
+        </span>
       </blockquote>
     </article>
   );
