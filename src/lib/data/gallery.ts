@@ -11,14 +11,14 @@ export const galleryAlbums: GalleryAlbum[] = [
     photoCount: 4,
     coverImage: "/images/winning_time_with_group.png",
     description:
-      "Pure euphoria, roaring chants, and gleaming silverware! Unforgettable nights when Devpur Cricket Club lifted championship trophies surrounded by proud mentors, roaring local supporters, and the entire team.",
-    location: "Jhalawar Stadium & Devpur Pavilion",
+      "Pure euphoria, roaring chants, and gleaming silverware! Unforgettable nights when Devpur Cricket Club celebrated hard-fought tournament achievements surrounded by club members, mentors, and supporters.",
+    location: "Matunga Gymkhana & Mumbai Community Grounds",
     items: [
       {
         id: "g1-1",
         url: "/images/winning_time_with_group.png",
         caption:
-          "Champions of the Region! The grand victory celebration under floodlights with club founders, tournament organizers, and the ecstatic DCC squad.",
+          "Silverware on the Podium! The grand celebration under floodlights with club members, founders, and the DCC squad.",
         category: "celebrations",
         aspect: "landscape",
         date: "28 Feb 2026",
@@ -27,7 +27,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g1-2",
         url: "/images/winning.png",
         caption:
-          "Lifting the Silverware: Pure emotion and pride as the champions raise the coveted cup into the night sky.",
+          "Lifting the Silverware: Pure emotion and pride as the team raises the trophy into the night sky.",
         category: "celebrations",
         aspect: "portrait",
         date: "28 Feb 2026",
@@ -36,7 +36,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g1-3",
         url: "/images/achivement_winning.png",
         caption:
-          "Medals, Glory & Golden Smiles: Every hard hour in the nets rewarded on the grandest championship stage.",
+          "Medals, Pride & Team Smiles: Every hour in the nets rewarded on the tournament podium.",
         category: "celebrations",
         aspect: "portrait",
         date: "15 Jan 2026",
@@ -45,7 +45,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g1-4",
         url: "/images/achivement_winning2.png",
         caption:
-          "Double Crown Celebration: Winter Cup Champions standing proud on the winners podium with gold medals and trophy.",
+          "Runners-Up Silverware Honors: Squad standing proud on the podium with medals and trophy.",
         category: "celebrations",
         aspect: "portrait",
         date: "24 Jan 2026",
@@ -139,21 +139,21 @@ export const galleryAlbums: GalleryAlbum[] = [
   {
     id: "gal-4",
     slug: "sweat-and-drills-turf-conditioning",
-    title: "Sweat & Grit: Turf Nets & Conditioning Drills",
+    title: "Practice & Nets: Turf Preparation at Matunga",
     season: "2026–27",
     date: "12 Oct 2026",
     category: "training",
     photoCount: 3,
     coverImage: "/images/training_team.png",
     description:
-      "Where champions are forged! Sunrise sessions, intense conditioning drills, and live match scenarios on center-wicket turf nets preparing DCC for championship battles.",
-    location: "DCC High Performance Nets, Devpur",
+      "Where consistency is built! Morning net practice, fitness routines, and match simulation on turf nets at Matunga Ground.",
+    location: "Turf Practice Nets, Matunga Ground, Mumbai",
     items: [
       {
         id: "g4-1",
         url: "/images/training_team.png",
         caption:
-          "Sunrise Squad Huddle: Coaches and players reviewing tactical drills before an intensive 3-hour center-wicket net session.",
+          "Morning Net Session: Members gathered for regular net practice under Coach Aditya Koli at Matunga Ground.",
         category: "training",
         aspect: "landscape",
         date: "12 Oct 2026",
@@ -162,7 +162,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g4-2",
         url: "/images/exersise.png",
         caption:
-          "Peak Athletic Conditioning: Full-squad fitness drills, core workouts, and sprint agility on the lush outfield.",
+          "Fitness & Agility: Full-squad fitness drills, running between wickets, and injury prevention on the outfield.",
         category: "training",
         aspect: "landscape",
         date: "08 Oct 2026",
@@ -171,7 +171,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g4-3",
         url: "/images/ground_playing.png",
         caption:
-          "Match Simulation Battle: Batters taking on express pace during live scenario practice in full match whites.",
+          "Match Simulation: Batters facing pace and spin variations during regular weekly net practice.",
         category: "training",
         aspect: "square",
         date: "15 Oct 2026",
@@ -188,14 +188,14 @@ export const galleryAlbums: GalleryAlbum[] = [
     photoCount: 6,
     coverImage: "/images/ground_players_group.png",
     description:
-      "Whites on, caps tight, hearts high. The official matchday lineups, starting XI contingents, and dedicated club members standing united under the Devpur crest.",
-    location: "Devpur Cricket Ground & Hadoti Stadiums",
+      "Whites on, caps tight, hearts high. The matchday lineups, squad contingents, and dedicated club members standing united under the Devpur crest.",
+    location: "Matunga Ground & Mumbai Community Grounds",
     items: [
       {
         id: "g5-1",
         url: "/images/ground_players_group.png",
         caption:
-          "The Devpur Cricket Family: Complete player and coaching roster assembled across the green turf of the home oval.",
+          "The Devpur Cricket Family: Complete player contingent assembled across the green turf.",
         category: "match-day",
         aspect: "landscape",
         date: "20 Nov 2026",
@@ -204,7 +204,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g5-2",
         url: "/images/team_group_11.png",
         caption:
-          "The Matchday XI: Starters geared up before stepping over the boundary rope in championship white-ball fixtures.",
+          "The Matchday XI: Starters geared up before stepping over the boundary rope in community matches.",
         category: "match-day",
         aspect: "portrait",
         date: "14 Nov 2026",
@@ -213,7 +213,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g5-3",
         url: "/images/team_group.png",
         caption:
-          "United We Stand: Full tournament squad in official DCC team kits ready for knockout stage battles.",
+          "United We Stand: Full tournament squad in official DCC team kits ready for competition matches.",
         category: "match-day",
         aspect: "portrait",
         date: "01 Nov 2026",
@@ -222,7 +222,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g5-4",
         url: "/images/team.png",
         caption:
-          "Official Squad Lineup: Focused determination and collective club identity ahead of the tournament opener.",
+          "Official Squad Lineup: Focused determination and collective club identity ahead of the match opener.",
         category: "match-day",
         aspect: "portrait",
         date: "22 Oct 2026",
@@ -231,7 +231,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g5-5",
         url: "/images/team_members.png",
         caption:
-          "Squad Strength & Bench Power: Dedicated players backing each other through every delivery and tough over.",
+          "Squad Brotherhood: Dedicated members backing each other through every delivery.",
         category: "match-day",
         aspect: "landscape",
         date: "18 Oct 2026",
@@ -240,7 +240,7 @@ export const galleryAlbums: GalleryAlbum[] = [
         id: "g5-6",
         url: "/images/members.png",
         caption:
-          "The Club Pillars: Senior club members, mentors, and administrators whose guidance keeps Devpur Cricket Club growing.",
+          "The Club Pillars: Senior club members, mentors, and supporters whose guidance keeps Devpur Cricket Club growing.",
         category: "match-day",
         aspect: "landscape",
         date: "05 Oct 2026",
@@ -250,15 +250,15 @@ export const galleryAlbums: GalleryAlbum[] = [
   {
     id: "gal-6",
     slug: "roots-nostalgia-and-historic-memories",
-    title: "Timeless Roots: Historic Memories & 2018 Heritage",
+    title: "Timeless Roots: Historic Memories & Club Heritage",
     season: "Heritage Archives",
-    date: "2018 to Present",
+    date: "2013 to Present",
     category: "tournaments",
     photoCount: 4,
     coverImage: "/images/memories.png",
     description:
-      "The journey of a lifetime! From humble beginnings 5+ years ago and the milestone 2018 squad to modern champions — honoring the pioneers who laid the foundation.",
-    location: "Devpur Cricket Club Heritage Vault",
+      "The journey of a community! From the club's 2013 inception through milestone seasons to the present day — honoring the members who built and sustain Devpur Cricket Club.",
+    location: "Devpur Cricket Club Archives",
     items: [
       {
         id: "g6-1",

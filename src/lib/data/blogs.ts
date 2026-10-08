@@ -96,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "death-over-discipline-defending-12-runs",
     title: "Death-Over Discipline: The Art of Defending 12 Off 6 Balls",
     excerpt:
-      "A technical masterclass from our pace battery on execution, field geometry, and ice-cool composure when defending low margins in the 20th over.",
+      "A disciplined display from our pace battery on execution, field geometry, and ice-cool composure when defending low margins in the 20th over.",
     category: "coaching-tactics",
     categoryLabel: "Coaching & Tactics",
     image: "/images/purpal_cap_player.png",

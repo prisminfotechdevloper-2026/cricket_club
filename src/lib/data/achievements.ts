@@ -62,7 +62,7 @@ export const achievements: Achievement[] = [
     recipient: "Aarav Mehta",
     badgeText: "Member Highlight",
     description:
-      "Anchored a tense 181-run quarter-final chase against Royal XI, batting through the innings with a masterclass 92* off 51 balls.",
+      "Anchored a tense 181-run quarter-final chase against Royal XI, batting through the innings with a composed 92* off 51 balls.",
     tournamentName: "KVO Community Cup 2026",
     featured: true,
   },

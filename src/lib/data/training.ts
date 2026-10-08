@@ -27,7 +27,7 @@ export const trainingSessions: TrainingSession[] = [
   },
   {
     id: "ts-2",
-    slug: "death-overs-bowling-masterclass",
+    slug: "death-overs-bowling-practice",
     season: "2026–27",
     title: "Bowling Practice: Seam, Swing, Yorkers & Variation Accuracy",
     description:

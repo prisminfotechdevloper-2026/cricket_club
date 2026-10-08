@@ -101,7 +101,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
               </p>
             ))}
 
-            {/* Tactical Takeaways / Masterclass Card (Warm Light Theme) */}
+            {/* Tactical Takeaways / Match Insights Card (Warm Light Theme) */}
             {post.keyTakeaways && post.keyTakeaways.length > 0 && (
               <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-[#FFF8F0] border border-[#EA6E18]/30 space-y-4">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#EA6E18]">

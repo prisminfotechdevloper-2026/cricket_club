@@ -22,19 +22,19 @@ export function SeasonsDirectory({ seasons }: SeasonsDirectoryProps) {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
-                <span>HISTORICAL REGISTRY // 2013–2027 CLUB TIMELINE</span>
+                <span>SEASON ARCHIVE // OUR JOURNEY THROUGH TIME</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
-                Season Chronology.
+                Every Season Has A Story.
                 <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
-                  Every Milestone &amp; Campaign.
+                  Our Journey, Brotherhood &amp; Milestones.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
-                A year-by-year historical archive of Devpur Cricket Club. Review our annual operating cycles,
-                championship trophies, statistical leaders, and defining milestones.
+                A season-by-season archive of Devpur Cricket Club. Following our October to March annual cycle,
+                practice rhythm at Matunga Ground, community tournament campaigns, and shared memories.
               </p>
 
               {/* Action Badges */}
