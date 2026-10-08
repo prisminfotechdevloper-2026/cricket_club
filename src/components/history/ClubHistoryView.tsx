@@ -923,27 +923,40 @@ function TrophyCarousel() {
 
   return (
     <div className="space-y-4">
-      {/* Main Image Slider Frame with Y-Center Left/Right Buttons */}
-      <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-border/80 shadow-lg bg-black select-none group">
-        <Image
-          key={activeSlide.id}
-          src={activeSlide.image}
-          alt={activeSlide.title}
-          fill
-          priority
-          className="object-cover transition-opacity duration-300"
-          sizes="(max-width: 1024px) 100vw, 780px"
-        />
+      {/* Main Image Slider Frame with Y-Center Left/Right Buttons & Zero Face Cropping */}
+      <div className="relative h-[440px] sm:h-[500px] md:h-[540px] w-full rounded-2xl overflow-hidden border border-border/80 shadow-xl bg-[#0A0D14] select-none group">
+        {/* Ambient Blurred Background to create a rich stadium floodlight atmosphere */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <Image
+            key={`bg-${activeSlide.id}`}
+            src={activeSlide.image}
+            alt=""
+            fill
+            className="object-cover blur-2xl scale-125 opacity-35"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
+        </div>
 
-        {/* Cinematic Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+        {/* Uncropped Foreground Image: Full Head, Face, Trophy & Body 100% visible */}
+        <div className="relative w-full h-full p-2.5 sm:p-4 flex items-center justify-center z-10 pointer-events-none">
+          <Image
+            key={activeSlide.id}
+            src={activeSlide.image}
+            alt={activeSlide.title}
+            fill
+            priority
+            className="object-contain object-center drop-shadow-2xl"
+            sizes="(max-width: 1024px) 100vw, 780px"
+          />
+        </div>
 
         {/* Slide Counter & Category Pill (Top Corners) */}
-        <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10 pointer-events-none">
-          <span className="px-3 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm">
+        <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-20 pointer-events-none">
+          <span className="px-3 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm">
             {activeSlide.category}
           </span>
-          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-black/75 backdrop-blur-md text-white/90 border border-white/10 shadow-sm">
+          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-black/80 backdrop-blur-md text-white/90 border border-white/10 shadow-sm">
             {String(currentIdx + 1).padStart(2, "0")} / {String(TROPHY_SLIDES.length).padStart(2, "0")}
           </span>
         </div>
@@ -953,7 +966,7 @@ function TrophyCarousel() {
           type="button"
           onClick={prevSlide}
           aria-label="Previous Achievement"
-          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-2xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
         </button>
@@ -963,19 +976,16 @@ function TrophyCarousel() {
           type="button"
           onClick={nextSlide}
           aria-label="Next Achievement"
-          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-2xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
         </button>
 
-        {/* Bottom Overlay Text inside Slider */}
-        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white z-10 pointer-events-none">
-          <span className="font-headline text-xs font-bold uppercase tracking-wider text-[#EA4326]">
+        {/* Bottom Unobtrusive Title Tag inside Frame */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-20 pointer-events-none flex justify-center">
+          <span className="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider bg-black/85 backdrop-blur-md text-white border border-white/15 shadow-md truncate max-w-full">
             {activeSlide.badge}
           </span>
-          <h3 className="font-headline text-lg sm:text-2xl font-extrabold uppercase text-white drop-shadow-md leading-tight">
-            {activeSlide.title}
-          </h3>
         </div>
       </div>
 
@@ -1022,7 +1032,7 @@ function TrophyCarousel() {
         </p>
       </div>
 
-      {/* Thumbnail Strip for 1-Click Jumping */}
+      {/* Thumbnail Strip: Portrait Aspect Ratio with object-contain so all faces remain fully visible */}
       <div className="grid grid-cols-6 gap-2 pt-1">
         {TROPHY_SLIDES.map((slide, idx) => {
           const isSelected = currentIdx === idx;
@@ -1030,9 +1040,9 @@ function TrophyCarousel() {
             <button
               key={slide.id}
               onClick={() => setCurrentIdx(idx)}
-              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-[transform,opacity,border-color] duration-150 cursor-pointer ${
+              className={`relative aspect-[3/4] rounded-lg overflow-hidden border-2 bg-black/80 p-1 transition-[transform,opacity,border-color] duration-150 cursor-pointer ${
                 isSelected
-                  ? "border-[#EA4326] scale-[1.03] shadow-md"
+                  ? "border-[#EA4326] scale-[1.03] shadow-md ring-2 ring-[#EA4326]/30"
                   : "border-border/60 opacity-60 hover:opacity-100 hover:border-foreground/40"
               }`}
             >
@@ -1040,7 +1050,7 @@ function TrophyCarousel() {
                 src={slide.image}
                 alt={slide.title}
                 fill
-                className="object-cover"
+                className="object-contain p-0.5"
                 sizes="120px"
               />
             </button>
