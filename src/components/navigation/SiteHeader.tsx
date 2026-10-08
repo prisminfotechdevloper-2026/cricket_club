@@ -299,11 +299,34 @@ export function SiteHeader() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper"
+                className="relative p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] active:scale-95 transition-[background-color,border-color,transform] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 group"
                 aria-expanded={isOpen}
                 aria-label={isOpen ? "Close main menu" : "Open main menu"}
               >
-                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <div className="relative w-5 h-4 flex flex-col justify-between items-center pointer-events-none">
+                  {/* Top Bar */}
+                  <span
+                    className={`h-0.5 w-5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
+                      isOpen
+                        ? "translate-y-[7px] rotate-45 bg-[#EA6E18]"
+                        : "bg-current translate-y-0 rotate-0"
+                    }`}
+                  />
+                  {/* Middle Bar: Graceful Fade & Collapse */}
+                  <span
+                    className={`h-0.5 w-5 bg-current rounded-full transition-all duration-200 ease-in-out ${
+                      isOpen ? "opacity-0 scale-x-0 -translate-x-1" : "opacity-100 scale-x-100 translate-x-0"
+                    }`}
+                  />
+                  {/* Bottom Bar */}
+                  <span
+                    className={`h-0.5 w-5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
+                      isOpen
+                        ? "-translate-y-[7px] -rotate-45 bg-[#EA6E18]"
+                        : "bg-current translate-y-0 rotate-0"
+                    }`}
+                  />
+                </div>
               </button>
             </div>
           </div>
@@ -360,23 +383,31 @@ export function SiteHeader() {
 
       {/* Mobile Navigation Drawer: Full-screen overlay portal with smooth Right-to-Left slide-in movement */}
       {mounted &&
-        isOpen &&
         createPortal(
           <div
             id="mobile-nav-portal-root"
-            className="lg:hidden fixed inset-0 z-[9999] overflow-hidden"
+            className={`lg:hidden fixed inset-0 z-[9999] overflow-hidden transition-[visibility] ${
+              isOpen
+                ? "visible pointer-events-auto duration-0"
+                : "invisible pointer-events-none delay-[420ms] duration-0"
+            }`}
+            aria-hidden={!isOpen}
           >
-            {/* Backdrop Overlay (Fade-in with tap to dismiss) */}
+            {/* Backdrop Overlay (Smooth fade-in / fade-out with tap to dismiss) */}
             <div
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-drawer-backdrop cursor-pointer"
+              className={`fixed inset-0 bg-black/60 backdrop-blur-xs cursor-pointer transition-opacity duration-[420ms] ease-out ${
+                isOpen ? "opacity-100" : "opacity-0"
+              }`}
               aria-hidden="true"
             />
 
-            {/* Slide-in Drawer Panel: Smooth Right-to-Left Movement */}
+            {/* Slide-in Drawer Panel: Smooth Right-to-Left on Open & Left-to-Right on Close */}
             <div
               id="mobile-navigation-drawer"
-              className="fixed inset-y-0 right-0 w-full sm:max-w-md bg-surface flex flex-col justify-between shadow-2xl animate-drawer-slide-in z-10 border-l border-border"
+              className={`fixed inset-y-0 right-0 w-full sm:max-w-md bg-surface flex flex-col justify-between shadow-2xl z-10 border-l border-border transition-transform duration-[420ms] ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform transform ${
+                isOpen ? "translate-x-0" : "translate-x-full"
+              }`}
             >
               {/* Top Heading Bar inside Sidenavbar: Always permanently visible at top, never hidden */}
               <div className="shrink-0 flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 border-b border-border bg-surface z-20 shadow-2xs">
@@ -408,10 +439,10 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EA6E18]"
+                  className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-stone-100 active:scale-95 transition-[background-color,border-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EA6E18] group"
                   aria-label="Close navigation menu"
                 >
-                  <X className="w-5 h-5 text-stone-800" />
+                  <X className="w-5 h-5 text-stone-800 transition-transform duration-300 group-hover:rotate-90 group-active:scale-90" />
                 </button>
               </div>
 
