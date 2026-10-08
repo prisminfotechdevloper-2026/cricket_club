@@ -633,9 +633,9 @@ function OverviewStorySection() {
               "Fitness",
               "Fielding drills",
               "Weekend practice matches",
-            ].map((item, idx) => (
+            ].map((item) => (
               <span
-                key={idx}
+                key={item}
                 className="px-3 py-1.5 rounded-full text-xs font-semibold bg-muted border border-border text-foreground"
               >
                 {item}
