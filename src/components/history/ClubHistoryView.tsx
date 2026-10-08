@@ -932,6 +932,7 @@ function TrophyCarousel() {
             src={activeSlide.image}
             alt=""
             fill
+            sizes="100vw"
             className="object-cover blur-2xl scale-125 opacity-35"
             aria-hidden="true"
           />
