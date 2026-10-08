@@ -25,6 +25,7 @@ import {
   Network,
 } from "lucide-react";
 import { Container } from "../common/Container";
+import { HomeSponsorsSection } from "../home/HomeSponsorsSection";
 
 type CategoryId =
   | "overview"
@@ -202,7 +203,7 @@ export function ClubHistoryView() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-headline uppercase font-bold tracking-wider bg-primary/10 text-primary border border-primary/20">
-              <Sparkles className="w-3.5 h-3.5 text-primary" />
+              
               <span>Devpur Cricket Club • Est. 2013</span>
             </div>
           </div>
@@ -210,9 +211,9 @@ export function ClubHistoryView() {
       </section>
 
       {/* =========================================================================
-          PAGE HERO BANNER WITH RESPONSIVE GROUND BACKGROUND (2% OVERLAY)
+          PAGE HERO BANNER WITH RESPONSIVE GROUND BACKGROUND (ZERO DARK OVERLAY)
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-neutral-900 border-b border-border/80 text-white min-h-[250px] sm:min-h-[280px] md:min-h-[310px] lg:min-h-[340px] flex items-center">
+      <section className="relative overflow-hidden bg-background border-b border-border/80 text-white min-h-[250px] sm:min-h-[280px] md:min-h-[310px] lg:min-h-[340px] flex items-center">
         {/* Mobile Ground Background Image (Perspective View) */}
         <div className="absolute inset-0 block md:hidden pointer-events-none">
           <Image
@@ -223,8 +224,6 @@ export function ClubHistoryView() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* 2% subtle dark tint so ground image stays bright and vibrant */}
-          <div className="absolute inset-0 bg-black/[0.02]" />
         </div>
 
         {/* Desktop Ground Background Image (Aerial Panoramic Pitch View) */}
@@ -237,20 +236,19 @@ export function ClubHistoryView() {
             className="object-cover object-[center_35%]"
             sizes="100vw"
           />
-          {/* 2% subtle dark tint so ground image stays bright and vibrant */}
-          <div className="absolute inset-0 bg-black/[0.02]" />
         </div>
 
         {/* Hero Content */}
         <Container className="relative z-10 py-8 sm:py-12 md:py-14 w-full">
-          <div className="max-w-2xl space-y-3 p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-black/50 via-black/25 to-transparent">
-            <span className="inline-block text-[#EA4326] font-headline text-xs sm:text-sm font-bold uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
-              Club Heritage &amp; Archives
-            </span>
-            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+          <div className="max-w-3xl space-y-3">
+           
+            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               History of Devpur Cricket Club
             </h1>
-            <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl font-body drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+             <span className="inline-block   text-black font-headline text-xs sm:text-sm font-bold uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
+              Club Heritage &amp; Archives
+            </span>
+            <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl font-body drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
               More than a club, this is a brotherhood born on the red soil of
               Matunga Ground. Explore our authentic story, divided by chapters.
             </p>
@@ -496,6 +494,9 @@ export function ClubHistoryView() {
           </div>
         </Container>
       </section>
+
+      {/* Official Club Sponsors Showcase (5 on desktop, 1 on mobile with 2.5s auto-slide) */}
+      <HomeSponsorsSection />
     </div>
   );
 }
@@ -1288,66 +1289,195 @@ const TROPHY_SLIDES: TrophySlide[] = [
 
 function TrophyCarousel() {
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [animState, setAnimState] = useState<{
+    direction: "next" | "prev";
+    fromIdx: number;
+    toIdx: number;
+    active: boolean;
+  } | null>(null);
 
-  const prevSlide = () => {
-    setCurrentIdx((prev) => (prev === 0 ? TROPHY_SLIDES.length - 1 : prev - 1));
+  const touchStartX = useRef<number | null>(null);
+  const totalSlides = TROPHY_SLIDES.length;
+
+  const isAnimating = animState !== null;
+  const displayIdx = animState ? animState.toIdx : currentIdx;
+  const activeSlide = TROPHY_SLIDES[displayIdx];
+
+  const triggerSlide = (
+    direction: "next" | "prev",
+    fromIdx: number,
+    toIdx: number
+  ) => {
+    if (isAnimating || fromIdx === toIdx) return;
+    setAnimState({ direction, fromIdx, toIdx, active: false });
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setAnimState({ direction, fromIdx, toIdx, active: true });
+      });
+    });
+
+    setTimeout(() => {
+      setCurrentIdx(toIdx);
+      setAnimState(null);
+    }, 900);
   };
 
   const nextSlide = () => {
-    setCurrentIdx((prev) => (prev === TROPHY_SLIDES.length - 1 ? 0 : prev + 1));
+    if (isAnimating) return;
+    const nextIdx = currentIdx === totalSlides - 1 ? 0 : currentIdx + 1;
+    triggerSlide("next", currentIdx, nextIdx);
   };
 
-  const activeSlide = TROPHY_SLIDES[currentIdx];
+  const prevSlide = () => {
+    if (isAnimating) return;
+    const prevIdx = currentIdx === 0 ? totalSlides - 1 : currentIdx - 1;
+    triggerSlide("prev", currentIdx, prevIdx);
+  };
+
+  const goToSlide = (targetIdx: number) => {
+    if (isAnimating || targetIdx === currentIdx) return;
+    const direction = targetIdx > currentIdx ? "next" : "prev";
+    triggerSlide(direction, currentIdx, targetIdx);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 45) {
+      nextSlide();
+    } else if (diff < -45) {
+      prevSlide();
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <div className="space-y-4">
-      {/* Main Image Slider Frame: Fits exact image dimensions with zero extra side borders or black panels */}
+      {/* Main Image Slider Frame: Width hugs exact image dimensions — ZERO extra white side background */}
       <div className="relative w-full flex items-center justify-center">
-        <div className="relative inline-block max-w-full rounded-2xl overflow-hidden shadow-2xl select-none group">
-          {/* Natural Image Rendering — Width hugs the image, faces 100% visible */}
+        <div
+          className="relative inline-block max-w-full rounded-2xl overflow-hidden shadow-2xl select-none group bg-transparent"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* BASE IMAGE: Dictates exact natural image frame width and height, zero empty gutters */}
           <Image
-            key={activeSlide.id}
             src={activeSlide.image}
             alt={activeSlide.title}
             width={activeSlide.width}
             height={activeSlide.height}
             priority
-            className="max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto"
+            className={`max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto ${
+              isAnimating ? "invisible" : "visible"
+            }`}
           />
+
+          {/* SLIDING OVERLAY TRACK: Smooth 0.9s horizontal gliding animation */}
+          {animState && (
+            <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+              <div
+                className="flex w-[200%] h-full will-change-transform"
+                style={{
+                  transform:
+                    animState.direction === "next"
+                      ? animState.active
+                        ? "translate3d(-50%, 0, 0)"
+                        : "translate3d(0, 0, 0)"
+                      : animState.active
+                      ? "translate3d(0, 0, 0)"
+                      : "translate3d(-50%, 0, 0)",
+                  transition: animState.active
+                    ? "transform 900ms cubic-bezier(0.22, 1, 0.36, 1)"
+                    : "none",
+                }}
+              >
+                {animState.direction === "next" ? (
+                  <>
+                    <div className="w-1/2 h-full shrink-0 flex items-center justify-center">
+                      <Image
+                        src={TROPHY_SLIDES[animState.fromIdx].image}
+                        alt="Current"
+                        width={TROPHY_SLIDES[animState.fromIdx].width}
+                        height={TROPHY_SLIDES[animState.fromIdx].height}
+                        className="max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto"
+                      />
+                    </div>
+                    <div className="w-1/2 h-full shrink-0 flex items-center justify-center">
+                      <Image
+                        src={TROPHY_SLIDES[animState.toIdx].image}
+                        alt="Incoming"
+                        width={TROPHY_SLIDES[animState.toIdx].width}
+                        height={TROPHY_SLIDES[animState.toIdx].height}
+                        className="max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 h-full shrink-0 flex items-center justify-center">
+                      <Image
+                        src={TROPHY_SLIDES[animState.toIdx].image}
+                        alt="Incoming"
+                        width={TROPHY_SLIDES[animState.toIdx].width}
+                        height={TROPHY_SLIDES[animState.toIdx].height}
+                        className="max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto"
+                      />
+                    </div>
+                    <div className="w-1/2 h-full shrink-0 flex items-center justify-center">
+                      <Image
+                        src={TROPHY_SLIDES[animState.fromIdx].image}
+                        alt="Current"
+                        width={TROPHY_SLIDES[animState.fromIdx].width}
+                        height={TROPHY_SLIDES[animState.fromIdx].height}
+                        className="max-h-[460px] sm:max-h-[520px] md:max-h-[580px] w-auto h-auto max-w-full rounded-2xl object-contain block mx-auto"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Slide Counter & Category Pill (Directly on top corners of image) */}
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-            <span className="px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm">
+            <span className="px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm transition-opacity duration-300">
               {activeSlide.category}
             </span>
             <span className="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-black/75 backdrop-blur-md text-white/90 border border-white/10 shadow-sm">
-              {String(currentIdx + 1).padStart(2, "0")} / {String(TROPHY_SLIDES.length).padStart(2, "0")}
+              {String(displayIdx + 1).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
             </span>
           </div>
 
-          {/* LEFT SLIDER BUTTON: CENTER PLACED IN Y-DIRECTION on image edge */}
+          {/* LEFT SLIDER BUTTON: Pinned directly on left edge of the photo */}
           <button
             type="button"
             onClick={prevSlide}
+            disabled={isAnimating}
             aria-label="Previous Achievement"
-            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer"
+            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
           </button>
 
-          {/* RIGHT SLIDER BUTTON: CENTER PLACED IN Y-DIRECTION on image edge */}
+          {/* RIGHT SLIDER BUTTON: Pinned directly on right edge of the photo */}
           <button
             type="button"
             onClick={nextSlide}
+            disabled={isAnimating}
             aria-label="Next Achievement"
-            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
           </button>
 
-          {/* Bottom Title Pill directly on image bottom */}
+          {/* Bottom Title Pill pinned directly on bottom of the photo */}
           <div className="absolute bottom-3 left-3 right-3 z-20 pointer-events-none flex justify-center">
-            <span className="px-3 py-1 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/15 shadow-md truncate max-w-full">
+            <span className="px-3 py-1 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/15 shadow-md truncate max-w-full transition-opacity duration-300">
               {activeSlide.badge}
             </span>
           </div>
@@ -1359,10 +1489,10 @@ function TrophyCarousel() {
         {TROPHY_SLIDES.map((slide, idx) => (
           <button
             key={slide.id}
-            onClick={() => setCurrentIdx(idx)}
+            onClick={() => goToSlide(idx)}
             aria-label={`Go to slide ${idx + 1}`}
-            className={`transition-[width,background-color] duration-200 cursor-pointer rounded-full ${
-              currentIdx === idx
+            className={`transition-[width,background-color] duration-300 cursor-pointer rounded-full ${
+              displayIdx === idx
                 ? "w-8 h-2.5 bg-[#EA4326]"
                 : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
             }`}
@@ -1371,7 +1501,7 @@ function TrophyCarousel() {
       </div>
 
       {/* Selected Trophy Story Card (Simple & Clear Text) */}
-      <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-3">
+      <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-3 transition-all duration-300">
         <div className="flex items-center justify-between gap-3 border-b border-border pb-2.5">
           <div className="flex items-center gap-2">
             <Trophy className="w-4 h-4 text-[#EA4326]" />
@@ -1380,7 +1510,7 @@ function TrophyCarousel() {
             </span>
           </div>
           <span className="text-xs text-muted-foreground font-mono">
-            Trophy {currentIdx + 1} of {TROPHY_SLIDES.length}
+            Trophy {displayIdx + 1} of {totalSlides}
           </span>
         </div>
 
@@ -1400,15 +1530,15 @@ function TrophyCarousel() {
       {/* Thumbnail Strip: Natural preview cards without dark frame */}
       <div className="grid grid-cols-6 gap-2 pt-1">
         {TROPHY_SLIDES.map((slide, idx) => {
-          const isSelected = currentIdx === idx;
+          const isSelected = displayIdx === idx;
           return (
             <button
               key={slide.id}
-              onClick={() => setCurrentIdx(idx)}
-              className={`relative aspect-[3/4] rounded-lg overflow-hidden border-2 bg-muted/30 transition-[transform,opacity,border-color] duration-150 cursor-pointer ${
+              onClick={() => goToSlide(idx)}
+              className={`relative aspect-[3/4] rounded-lg overflow-hidden border-2 bg-muted/30 transition-[transform,opacity,border-color] duration-200 cursor-pointer ${
                 isSelected
-                  ? "border-[#EA4326] scale-[1.03] shadow-md ring-2 ring-[#EA4326]/30"
-                  : "border-border/60 opacity-70 hover:opacity-100 hover:border-foreground/40"
+                  ? "border-[#EA4326] scale-[1.03] shadow-md ring-2 ring-[#EA4326]/30 opacity-100"
+                  : "border-border/60 opacity-60 hover:opacity-100 hover:border-foreground/40"
               }`}
             >
               <Image

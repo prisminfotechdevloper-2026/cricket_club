@@ -22,26 +22,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-surface-soft border-t border-border mt-auto pt-16 pb-12">
       <Container>
-        {/* Sponsors Recognition Banner in Footer */}
-        <div className="mb-12 p-6 sm:p-7 rounded-2xl bg-surface border border-border flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-brand-copper">
-              <span className="w-2 h-2 rounded-full bg-brand-orange" />
-              <span>OFFICIAL CLUB PARTNERS (2026–2029)</span>
-            </div>
-            <p className="text-sm font-semibold text-brand-black">
-              Supporting regular net practice, professional equipment, match participation &amp; community activities.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Link
-              href="/sponsors"
-              className="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-black text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-xs"
-            >
-              VIEW ALL SPONSORS
-            </Link>
-          </div>
-        </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-border">
           {/* Brand & Manifesto Column */}
