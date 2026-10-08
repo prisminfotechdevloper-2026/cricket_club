@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "kvo-championship-blueprint-season-2026-27",
     title: "The KVO Championship Blueprint: Preparing for the 2026–27 Campaign",
     excerpt:
-      "An inside look into our upcoming squad training schedules, video analysis sessions, and player rotation strategy as DCC targets the top podium.",
+      "An inside look into our upcoming squad training schedules, tactical analysis sessions, and player rotation strategy as DCC targets the top podium.",
     category: "tournament-diaries",
     categoryLabel: "Tournament Diaries",
     image: "/images/team_group.png",
@@ -176,7 +176,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "With 50+ committed players vying for selection, internal competition is at an all-time high, creating a squad built on merit, discipline, and village pride.",
     ],
     keyTakeaways: [
-      "Biomechanical video feedback accelerates bowler recovery and accuracy.",
+      "Biomechanical coaching feedback accelerates bowler recovery and accuracy.",
       "Squad depth ensures peak performance during demanding multi-day weekend schedules.",
       "Devpur Gaam community backing remains the core pillar driving the team forward.",
     ],

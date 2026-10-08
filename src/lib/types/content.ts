@@ -22,8 +22,6 @@ export interface TrainingSession {
   coachRole: string;
   location: string;
   thumbnail: string;
-  videoDuration?: string;
-  youtubeId?: string;
   keyFocus: string[];
   attendeesCount: number;
 }

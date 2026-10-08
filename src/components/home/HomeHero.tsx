@@ -7,7 +7,7 @@ import { Container } from "../common/Container";
 import {
   Trophy,
   ArrowUpRight,
-  Play,
+  Camera,
   Users,
   Medal,
   MapPin,
@@ -116,13 +116,13 @@ export function HomeHero() {
                 </Link>
 
                 <Link
-                  href="/gallery"
+                  href="/memories"
                   className="px-4.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:border-[#F89928]/50 hover:scale-[1.02] active:scale-[0.98] transition-[transform,border-color,background-color] inline-flex items-center gap-2"
                 >
                   <div className="w-4.5 h-4.5 rounded-full bg-[#0F1E36] flex items-center justify-center shrink-0">
-                    <Play className="w-2 h-2 fill-white text-white ml-0.5" />
+                    <Camera className="w-2.5 h-2.5 text-white" />
                   </div>
-                  <span>Watch Our Story</span>
+                  <span>Club Memories</span>
                 </Link>
               </div>
 

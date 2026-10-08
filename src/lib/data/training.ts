@@ -17,8 +17,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Head Coach (Kanga B Division)",
     location: "Turf Practice Nets, Matunga Ground",
     thumbnail: "/images/training_team.png",
-    videoDuration: "14:20",
-    youtubeId: "v3soFH5Jn68",
     keyFocus: [
       "Front-Foot & Back-Foot Play",
       "Strike Rotation & 2-Run Calls",
@@ -43,8 +41,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Head Coach (Kanga B Division)",
     location: "Turf Practice Nets, Matunga Ground",
     thumbnail: "/images/exersise.png",
-    videoDuration: "18:45",
-    youtubeId: "qlKfbLKOdBv",
     keyFocus: [
       "Run-up & Biomechanical Release",
       "Yorker Target Cones",
@@ -69,8 +65,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Assistant Coach & Fielding Specialist",
     location: "Outfield Practice Area, Matunga Ground",
     thumbnail: "/images/ground_players_group.png",
-    videoDuration: "11:30",
-    youtubeId: "e_sWl0s81b0",
     keyFocus: [
       "High Swirling Sky Catches",
       "Rapid Release Throwing Accuracy",
@@ -95,8 +89,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Head Coach (Kanga B Division)",
     location: "Spin Turf Nets, Matunga Ground",
     thumbnail: "/images/ground_playing.png",
-    videoDuration: "16:10",
-    youtubeId: "F0kQvK4_FhQ",
     keyFocus: [
       "Reading Wrist Releases & Length",
       "Paddle Sweep & Reverse Options",
@@ -121,8 +113,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Stamina & Athletic Conditioning Mentor",
     location: "Fitness & Agility Zone, Matunga Ground",
     thumbnail: "/images/team_members.png",
-    videoDuration: "09:40",
-    youtubeId: "4O6fGLrZF4d",
     keyFocus: [
       "Cricket Shuttle Sprints & Turning",
       "Hamstring & Groin Mobility",
@@ -147,8 +137,6 @@ export const trainingSessions: TrainingSession[] = [
     coachRole: "Head Coach (Kanga B Division)",
     location: "Matunga Ground Match Turf",
     thumbnail: "/images/team.png",
-    videoDuration: "24:15",
-    youtubeId: "0ZhXvTzVr0s",
     keyFocus: [
       "Situational Game Management",
       "High-Pressure Target Chasing",

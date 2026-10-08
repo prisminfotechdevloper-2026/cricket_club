@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import React, { useState } from "react";
 import Image from "next/image";
 import { TrainingSession, TrainingCategory } from "@/lib/types/content";
 import { Coach } from "@/lib/types/cricket";
@@ -11,8 +10,7 @@ import {
   Clock,
   User,
   MapPin,
-  Play,
-  X,
+  Calendar,
 } from "lucide-react";
 
 interface ClubLifeViewProps {
@@ -30,38 +28,8 @@ const CATEGORIES: { id: TrainingCategory; label: string }[] = [
   { id: "match-prep", label: "Match Scenarios" },
 ];
 
-const emptySubscribe = () => () => {};
-const useIsMounted = () => React.useSyncExternalStore(emptySubscribe, () => true, () => false);
-
 export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
   const [selectedCategory, setSelectedCategory] = useState<TrainingCategory>("all");
-  const [selectedVideo, setSelectedVideo] = useState<TrainingSession | null>(null);
-  const mounted = useIsMounted();
-
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (selectedVideo) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedVideo]);
-
-  // Keyboard navigation: Escape key to close
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedVideo(null);
-    };
-    if (selectedVideo) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedVideo]);
 
   const filteredSessions =
     selectedCategory === "all"
@@ -207,33 +175,26 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
               key={session.id}
               className="group bg-surface rounded-2xl border border-border overflow-hidden hover:border-brand-copper/60 hover:shadow-md transition-[border-color,box-shadow] flex flex-col"
             >
-              <button
-                type="button"
-                className="relative aspect-video w-full bg-stone-900 overflow-hidden cursor-pointer block text-left group/btn"
-                onClick={() => setSelectedVideo(session)}
-                aria-label={`Play session video: ${session.title}`}
-              >
+              <div className="relative aspect-[16/10] w-full bg-stone-900 overflow-hidden">
                 <Image
                   src={session.thumbnail}
                   alt={session.title}
                   fill
-                  className="object-cover group-hover/btn:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover/btn:bg-black/35 transition-colors flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-lg group-hover/btn:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-white ml-0.5" />
-                  </div>
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-stone-950/80 backdrop-blur-xs text-white font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                  {session.category.replace("-", " ")}
                 </div>
                 <div className="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/80 text-white font-mono text-[10px] font-bold">
                   {session.duration}
                 </div>
-              </button>
+              </div>
 
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div className="space-y-1.5">
                   <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-brand-copper">
-                    {session.category.replace("-", " ")}
+                    {session.time || "Mon • Wed • Fri"}
                   </span>
                   <h4 className="font-headline text-lg sm:text-xl font-bold text-brand-black group-hover:text-brand-orange transition-colors">
                     {session.title}
@@ -295,69 +256,6 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
         </div>
       </Container>
       </div>
-
-      {/* Video Modal */}
-      {mounted &&
-        selectedVideo &&
-        createPortal(
-          <dialog
-            open
-            className="fixed inset-0 m-0 p-0 w-full h-full max-w-none max-h-none z-[120] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 border-0 text-inherit"
-            aria-modal="true"
-            aria-labelledby="video-modal-title"
-          >
-            <button
-              type="button"
-              className="absolute inset-0 w-full h-full cursor-default bg-transparent -z-10"
-              onClick={() => setSelectedVideo(null)}
-              aria-label="Close video dialog backdrop"
-            />
-            <div
-              className="relative w-full max-w-4xl bg-stone-950 rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-10"
-            >
-              <div className="p-4 bg-stone-900 border-b border-white/10 flex items-center justify-between">
-                <div>
-                  <h3 id="video-modal-title" className="font-headline text-lg sm:text-xl font-bold text-white">
-                    {selectedVideo.title}
-                  </h3>
-                  <span className="text-xs text-stone-400">
-                    Coach: {selectedVideo.coachName} • {selectedVideo.duration}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setSelectedVideo(null)}
-                  aria-label="Close video dialog"
-                  className="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-white/10 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="relative aspect-video w-full bg-black flex items-center justify-center">
-                <Image
-                  src={selectedVideo.thumbnail}
-                  alt={selectedVideo.title}
-                  fill
-                  className="object-cover opacity-60"
-                  sizes="100vw"
-                />
-                <div className="relative z-10 text-center space-y-2 p-6">
-                  <div className="w-16 h-16 rounded-full bg-brand-orange text-white flex items-center justify-center mx-auto shadow-xl">
-                    <Play className="w-7 h-7 fill-white ml-1" />
-                  </div>
-                  <p className="text-white text-sm font-semibold">
-                    Simulated Club Practice Video Clip
-                  </p>
-                  <p className="text-xs text-stone-400 max-w-md">
-                    {selectedVideo.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </dialog>,
-          document.body
-        )}
     </div>
   );
 }

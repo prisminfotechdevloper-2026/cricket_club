@@ -7,7 +7,7 @@ import { Container } from "../common/Container";
 import {
   ArrowRight,
   Trophy,
-  Play,
+  ArrowDown,
   MapPin,
   Calendar,
   Shield,
@@ -181,7 +181,7 @@ export function ClubView() {
                   href="#values"
                   className="px-5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-900 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:scale-[1.02] active:scale-[0.98] transition-[transform,background-color,border-color] inline-flex items-center gap-2"
                 >
-                  <Play className="w-3.5 h-3.5 fill-[#EA6E18] text-[#EA6E18]" />
+                  <ArrowDown className="w-3.5 h-3.5 text-[#EA6E18]" />
                   <span>LEARN MORE</span>
                 </Link>
               </div>
