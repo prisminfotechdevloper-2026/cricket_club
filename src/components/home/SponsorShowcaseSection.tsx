@@ -30,11 +30,10 @@ export function SponsorShowcaseSection() {
               <span className="hidden sm:inline">DEVPUR GAAM</span>
             </div>
             <h2 className="font-headline text-3xl sm:text-5xl font-black tracking-tight text-brand-black uppercase leading-tight">
-              Proudly Supported By{" "}
-              <span className="text-brand-copper">Our Official Partners</span>
+              PROUDLY SUPPORTED BY
             </h2>
             <p className="text-sm sm:text-base text-foreground-soft leading-relaxed">
-              Backing Devpur Cricket Club&apos;s structured training under Coach Aditya Koli, match jerseys, leather-ball equipment, and tournament participation.
+              Supporting Club Life • Cricket • Equipment • Match Participation
             </p>
           </div>
 
@@ -43,7 +42,7 @@ export function SponsorShowcaseSection() {
               href="/sponsors"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-xs group"
             >
-              <span>Explore All Partners &amp; MOUs</span>
+              <span>Explore All Partners</span>
               <ArrowRight className="w-4 h-4 text-brand-orange transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

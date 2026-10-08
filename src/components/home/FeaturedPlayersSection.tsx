@@ -57,7 +57,7 @@ export function FeaturedPlayersSection() {
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex flex-wrap items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-900 text-stone-200 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs max-w-full">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
-              <span className="whitespace-nowrap">CORE SQUAD // 2026–27 ROSTER</span>
+              <span className="whitespace-nowrap">FEATURED MEMBERS • DEMO // 2026–27</span>
               <span className="text-stone-600 hidden sm:inline">•</span>
               <span className="text-brand-peach hidden sm:inline">DEVPUR GAAM</span>
             </div>
@@ -66,11 +66,11 @@ export function FeaturedPlayersSection() {
               id="featured-squad-title"
               className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-brand-black uppercase leading-[0.98]"
             >
-              Featured Players <span className="text-brand-copper">&amp; Match Winners</span>
+              Our Members <span className="text-brand-copper block text-2xl sm:text-4xl mt-1">The People Behind The Crest.</span>
             </h2>
 
             <p className="text-sm sm:text-base text-foreground-soft leading-relaxed font-medium">
-              From explosive powerplay stroke-makers to death-overs seamers. Meet the core members driving Devpur Cricket Club across seasonal leather-ball tournaments.
+              A community of members connected through cricket, regular practice, tournament competition, friendship and shared experiences representing Devpur Gaam.
             </p>
           </div>
 
@@ -79,8 +79,7 @@ export function FeaturedPlayersSection() {
               href="/players"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-black text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm group"
             >
-              <span>Explore All 50+ Squad Members</span>
-              <ArrowRight className="w-4 h-4 text-brand-orange transition-transform group-hover:translate-x-1" />
+              <span>View All 50+ Members →</span>
             </Link>
           </div>
         </div>

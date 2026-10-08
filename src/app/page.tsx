@@ -1,56 +1,55 @@
 import React from "react";
 import { HomeHero } from "@/components/home/HomeHero";
-import { TodayMatchSection } from "@/components/home/TodayMatchSection";
 import { SponsorShowcaseSection } from "@/components/home/SponsorShowcaseSection";
-import { WhyWePlaySection } from "@/components/home/WhyWePlaySection";
+import { TodayMatchSection } from "@/components/home/TodayMatchSection";
+import { ClubIntroSection } from "@/components/home/ClubIntroSection";
 import { ClubLifeSection } from "@/components/home/ClubLifeSection";
-import { SeasonJourneySection } from "@/components/home/SeasonJourneySection";
+import { TournamentParticipationSection } from "@/components/home/TournamentParticipationSection";
 import { FeaturedPlayersSection } from "@/components/home/FeaturedPlayersSection";
 import { NextLevelStorySection } from "@/components/home/NextLevelStorySection";
-import { CommunityMomentsSection } from "@/components/home/CommunityMomentsSection";
+import { WhyWePlaySection } from "@/components/home/WhyWePlaySection";
 import { GalleryTeaserSection } from "@/components/home/GalleryTeaserSection";
-import { EditorialBlogSection } from "@/components/home/EditorialBlogSection";
+import { CommunityMomentsSection } from "@/components/home/CommunityMomentsSection";
+import { SeasonJourneySection } from "@/components/home/SeasonJourneySection";
 import { ClubCTASection } from "@/components/home/ClubCTASection";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero: Club + Community + Cricket First */}
+      {/* 1. Community Club Hero */}
       <HomeHero />
 
-      {/* 2. Today's Match & Live Score Trigger */}
-      <TodayMatchSection />
-
-      {/* 3. Official Sponsor Showcase Strip */}
+      {/* 2. Sponsor Visibility (PROUDLY SUPPORTED BY) */}
       <SponsorShowcaseSection />
 
-      {/* 4. Why We Play Together (Community Benefits: Fitness, Discipline, Friendship, Community, Network, Growth) */}
-      <WhyWePlaySection />
+      {/* 3. Today / Live / Next Match */}
+      <TodayMatchSection />
 
-      {/* 5. Life Inside DCC (6 Club Activities) */}
+      {/* 4. What DCC Is (From Net Practice to Match Day) */}
+      <ClubIntroSection />
+
+      {/* 5. Club Life (3-Day Nets & Practice Routines) */}
       <ClubLifeSection />
 
-      {/* 6. Season Journey (Oct - Mar/May Annual Cycle) */}
-      <SeasonJourneySection />
+      {/* 6. Matches & Tournaments We Play */}
+      <TournamentParticipationSection />
 
-      {/* 7. Featured Players & Squad */}
+      {/* 7. Member Highlights & Progression */}
       <FeaturedPlayersSection />
-
-      {/* 8. From DCC to the Next Level (Cricket Can Open Bigger Doors) */}
       <NextLevelStorySection />
 
-      {/* 9. Beyond the Boundary (Social Gatherings, Weddings, Team Travel) */}
+      {/* 8. Why Community Cricket Matters (Why Members Choose Club Life) */}
+      <WhyWePlaySection />
+
+      {/* 9. Season Memories & Community Moments */}
+      <GalleryTeaserSection />
       <CommunityMomentsSection />
 
-      {/* 10. Memories & Photo Archive */}
-      <GalleryTeaserSection />
+      {/* 10. Season Journey (Oct - Mar/May Annual Cycle) */}
+      <SeasonJourneySection />
 
-      {/* 11. Editorial Journal & Cricket Playbooks */}
-      <EditorialBlogSection />
-
-      {/* 12. Community CTA & Location */}
+      {/* 11. Sponsors / Community Partnership CTA */}
       <ClubCTASection />
     </div>
   );
 }
-

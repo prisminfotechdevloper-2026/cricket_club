@@ -86,43 +86,46 @@ export function HomeHero() {
               {/* Top Eyebrow Pill */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-[#F89928]/40 shadow-xs text-xs font-bold text-stone-800">
                 <Trophy className="w-3.5 h-3.5 text-[#EA6E18] shrink-0" />
-                <span>Devpur Gaam • Community Cricket Club • Est. 2013</span>
+                <span>DEVPUR GAAM • COMMUNITY CRICKET CLUB</span>
               </div>
 
               {/* High-Impact Headline with DCC Brand Gradient */}
               <div className="space-y-0.5">
                 <h1 className="font-headline text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-black tracking-tight leading-[0.98]">
-                  <span className="text-[#0F1E36] block">Rooted in Heritage.</span>
+                  <span className="text-[#0F1E36] block">MORE THAN CRICKET.</span>
                   <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block relative">
-                    Forged in Cricket.
+                    A CLUB. A COMMUNITY.
                   </span>
-                  <span className="text-[#0F1E36] block">One Club. One Brotherhood.</span>
                 </h1>
               </div>
 
               {/* Subtitle */}
               <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-md font-medium">
-                Devpur Cricket Club unites generations of cricketers — training at Matunga Ground, competing with honor across the KVO ecosystem, and building lifelong brotherhood.
+                We practice together, compete together, celebrate together and grow together — representing Devpur Gaam through cricket.
               </p>
 
               {/* High-Impact Action Buttons with Brand Palette */}
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <Link
-                  href="/about"
+                  href="/club-life"
                   className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] hover:from-[#D45508] hover:via-[#E0630E] hover:to-[#EB8D20] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md shadow-[#EA6E18]/25 hover:scale-[1.02] active:scale-[0.98] transition-[transform,box-shadow,background-image] inline-flex items-center gap-1.5 group"
                 >
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  <span>Explore Our Club</span>
+                  <span>Explore Club Life</span>
+                </Link>
+
+                <Link
+                  href="/matches"
+                  className="px-4.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:border-[#F89928]/50 hover:scale-[1.02] active:scale-[0.98] transition-[transform,border-color,background-color] inline-flex items-center gap-2"
+                >
+                  <span>View Matches</span>
                 </Link>
 
                 <Link
                   href="/memories"
-                  className="px-4.5 py-2.5 sm:px-5 sm:py-3 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm tracking-wide shadow-sm border border-stone-200/90 hover:border-[#F89928]/50 hover:scale-[1.02] active:scale-[0.98] transition-[transform,border-color,background-color] inline-flex items-center gap-2"
+                  className="text-xs font-bold text-stone-600 hover:text-[#EA6E18] transition-colors py-1 px-2"
                 >
-                  <div className="w-4.5 h-4.5 rounded-full bg-[#0F1E36] flex items-center justify-center shrink-0">
-                    <Camera className="w-2.5 h-2.5 text-white" />
-                  </div>
-                  <span>Club Memories</span>
+                  <span>See Our Memories →</span>
                 </Link>
               </div>
 

@@ -39,9 +39,9 @@ export function ClubIntroSection() {
           {/* Left Side: Philosophy Editorial */}
           <div className="lg:col-span-7 space-y-6">
             <SectionHeading
-              eyebrow="Who We Are"
+              eyebrow="What DCC Is"
               title="From Net Practice To Match Day"
-              description="Devpur Cricket Club is an athlete-centered cricket fraternity. Every season is a relentless journey of preparation, discipline, brotherhood, and match performance."
+              description="Devpur Cricket Club is a community cricket club proudly representing Devpur Gaam. Every season is a shared journey of disciplined net practice, teamwork, brotherhood, and spirited match competition."
             />
 
             <div className="space-y-4 pt-1">

@@ -14,9 +14,9 @@ export function TournamentParticipationSection() {
       <Container>
         <SectionHeading
           eyebrow="Tournament Participation"
-          title="Tournaments & Competitive Leagues"
-          description="Devpur Cricket Club tests its mettle across premier KVO community cups, Village Premier Leagues, and competitive leather-ball tournaments in Mumbai."
-          actionText="View Tournament Archives"
+          title="Tournaments We Play"
+          description="DCC participates in community cricket competitions and represents Devpur Gaam when we take the field."
+          actionText="View Tournaments"
           actionHref="/tournaments"
         />
 

@@ -254,7 +254,7 @@ export function WhyWePlaySection() {
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest shadow-2xs">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>THE CLUB DNA // PHILOSOPHY</span>
+              <span>COMMUNITY VALUE</span>
               <span className="text-stone-500">•</span>
               <span className="text-brand-peach">DEVPUR GAAM</span>
             </div>
@@ -263,11 +263,11 @@ export function WhyWePlaySection() {
               id="why-we-play-title"
               className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black text-brand-black tracking-tight leading-[0.98] uppercase"
             >
-              Why We Play <span className="text-brand-copper">Together</span>
+              Why Members <span className="text-brand-copper">Choose Club Life</span>
             </h2>
 
             <p className="text-sm sm:text-base text-foreground-soft leading-relaxed font-medium">
-              Cricket is more than scorecards and statistics. It is the common catalyst through which our 50+ members build fitness, instill discipline, celebrate brotherhood, and strengthen community ties.
+              Cricket is our medium — but our club life encompasses fitness, routine, lasting friendship, community connection, and personal growth for our 50+ members.
             </p>
           </div>
 
@@ -849,10 +849,10 @@ export function WhyWePlaySection() {
         <div className="mt-12 rounded-2xl bg-stone-900 border border-stone-800 p-6 sm:p-7 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-1 text-center md:text-left">
             <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-orange block">
-              THE CLUB CREED // PLAY • TRAIN • COMPETE • WIN
+              A COMMUNITY-SUPPORTED CLUB
             </span>
             <p className="text-sm sm:text-base font-semibold text-neutral-200">
-              Devpur Cricket Club — Cricket is the medium, community is our heartbeat.
+              Member contributions and sponsor support help sustain practice, coaching, equipment, match participation and club activities.
             </p>
           </div>
 
