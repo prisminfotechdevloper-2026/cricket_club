@@ -11,6 +11,7 @@ import {
   Heart,
   Trophy,
   ChevronRight,
+  ChevronLeft,
   MapPin,
   Calendar,
   Users,
@@ -828,6 +829,228 @@ function BrotherhoodStorySection() {
   );
 }
 
+interface TrophySlide {
+  id: string;
+  image: string;
+  badge: string;
+  title: string;
+  category: string;
+  description: string;
+  detail: string;
+}
+
+const TROPHY_SLIDES: TrophySlide[] = [
+  {
+    id: "trophy-1",
+    image: "/images/winning_time_with_group.png",
+    badge: "Tournament Champions • Matunga Gymkhana",
+    title: "Championship Trophy on the Podium",
+    category: "Team Silverware",
+    description:
+      "The entire DCC squad celebrating our major tournament victory in front of the historic Matunga Cricket Pavilion.",
+    detail:
+      "Every player, mentor, and supporter from Devpur Gaam united under the floodlights to lift the championship cup.",
+  },
+  {
+    id: "trophy-2",
+    image: "/images/winning.png",
+    badge: "Championship Victory Moment",
+    title: "Lifting the Cup to the Sky",
+    category: "Pure Silverware Emotion",
+    description:
+      "Uncontainable joy as our captain and team lift the trophy high into the Mumbai night sky.",
+    detail:
+      "A moment that rewarded hundreds of hours of sweat and dawn training at the nets.",
+  },
+  {
+    id: "trophy-3",
+    image: "/images/achivement_winning.png",
+    badge: "Medals & Team Podium",
+    title: "Podium Finish & Gold Medals",
+    category: "Podium Honors",
+    description:
+      "Proud smiles as every playing member is honored on the tournament stage with championship medals.",
+    detail:
+      "Proof that teamwork, mutual trust, and relentless practice always bring results on the 22 yards.",
+  },
+  {
+    id: "trophy-4",
+    image: "/images/achivement_winning2.png",
+    badge: "Tournament Finals",
+    title: "Finalist Shield & Silverware",
+    category: "League Excellence",
+    description:
+      "DCC squad standing strong on the podium with the runner-up shield in a hard-fought premier division final.",
+    detail:
+      "Competing with pride against Mumbai's top community cricket clubs till the very last over.",
+  },
+  {
+    id: "trophy-5",
+    image: "/images/orange_cap_player.png",
+    badge: "Leading Run-Scorer Award",
+    title: "The Prestigious Orange Cap",
+    category: "Individual Batting Honor",
+    description:
+      "Awarded to DCC's leading batsman for fearless match-winning fifties and top tournament run tally.",
+    detail:
+      "Anchoring tough chases under pressure and giving DCC explosive starts at the top of the order.",
+  },
+  {
+    id: "trophy-6",
+    image: "/images/purpal_cap_player.png",
+    badge: "Leading Wicket-Taker Award",
+    title: "The Prestigious Purple Cap",
+    category: "Individual Bowling Honor",
+    description:
+      "Awarded to DCC's strike fast bowler for lethal inswinging yorkers and tournament-best wickets.",
+    detail:
+      "Consistently delivering breakthroughs in powerplays and bowling tight death overs to win crucial matches.",
+  },
+];
+
+function TrophyCarousel() {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIdx((prev) => (prev === 0 ? TROPHY_SLIDES.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIdx((prev) => (prev === TROPHY_SLIDES.length - 1 ? 0 : prev + 1));
+  };
+
+  const activeSlide = TROPHY_SLIDES[currentIdx];
+
+  return (
+    <div className="space-y-4">
+      {/* Main Image Slider Frame with Y-Center Left/Right Buttons */}
+      <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-border/80 shadow-lg bg-black select-none group">
+        <Image
+          key={activeSlide.id}
+          src={activeSlide.image}
+          alt={activeSlide.title}
+          fill
+          priority
+          className="object-cover transition-opacity duration-300"
+          sizes="(max-width: 1024px) 100vw, 780px"
+        />
+
+        {/* Cinematic Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+        {/* Slide Counter & Category Pill (Top Corners) */}
+        <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10 pointer-events-none">
+          <span className="px-3 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm">
+            {activeSlide.category}
+          </span>
+          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-black/75 backdrop-blur-md text-white/90 border border-white/10 shadow-sm">
+            {String(currentIdx + 1).padStart(2, "0")} / {String(TROPHY_SLIDES.length).padStart(2, "0")}
+          </span>
+        </div>
+
+        {/* LEFT SLIDER BUTTON: CENTER PLACED IN Y-DIRECTION */}
+        <button
+          type="button"
+          onClick={prevSlide}
+          aria-label="Previous Achievement"
+          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-all duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
+        </button>
+
+        {/* RIGHT SLIDER BUTTON: CENTER PLACED IN Y-DIRECTION */}
+        <button
+          type="button"
+          onClick={nextSlide}
+          aria-label="Next Achievement"
+          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-all duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
+        </button>
+
+        {/* Bottom Overlay Text inside Slider */}
+        <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white z-10 pointer-events-none">
+          <span className="font-headline text-xs font-bold uppercase tracking-wider text-[#EA4326]">
+            {activeSlide.badge}
+          </span>
+          <h3 className="font-headline text-lg sm:text-2xl font-extrabold uppercase text-white drop-shadow-md leading-tight">
+            {activeSlide.title}
+          </h3>
+        </div>
+      </div>
+
+      {/* Dot Indicators */}
+      <div className="flex items-center justify-center gap-2 py-1">
+        {TROPHY_SLIDES.map((slide, idx) => (
+          <button
+            key={slide.id}
+            onClick={() => setCurrentIdx(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`transition-all duration-200 cursor-pointer rounded-full ${
+              currentIdx === idx
+                ? "w-8 h-2.5 bg-[#EA4326]"
+                : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Selected Trophy Story Card (Simple & Clear Text) */}
+      <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-3">
+        <div className="flex items-center justify-between gap-3 border-b border-border pb-2.5">
+          <div className="flex items-center gap-2">
+            <Trophy className="w-4 h-4 text-[#EA4326]" />
+            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+              {activeSlide.category}
+            </span>
+          </div>
+          <span className="text-xs text-muted-foreground font-mono">
+            Trophy {currentIdx + 1} of {TROPHY_SLIDES.length}
+          </span>
+        </div>
+
+        <h4 className="font-headline text-xl font-bold uppercase text-foreground">
+          {activeSlide.title}
+        </h4>
+
+        <p className="text-foreground/90 font-body text-base leading-relaxed">
+          {activeSlide.description}
+        </p>
+
+        <p className="text-sm text-muted-foreground font-body leading-relaxed bg-muted/40 p-3 rounded-lg border border-border/50">
+          {activeSlide.detail}
+        </p>
+      </div>
+
+      {/* Thumbnail Strip for 1-Click Jumping */}
+      <div className="grid grid-cols-6 gap-2 pt-1">
+        {TROPHY_SLIDES.map((slide, idx) => {
+          const isSelected = currentIdx === idx;
+          return (
+            <button
+              key={slide.id}
+              onClick={() => setCurrentIdx(idx)}
+              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+                isSelected
+                  ? "border-[#EA4326] scale-[1.03] shadow-md"
+                  : "border-border/60 opacity-60 hover:opacity-100 hover:border-foreground/40"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover"
+                sizes="120px"
+              />
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function HonorsStorySection() {
   return (
     <article className="space-y-6">
@@ -838,14 +1061,10 @@ function HonorsStorySection() {
         subtitle="Celebrating the hard-earned victories that brought pride to Devpur Gaam."
       />
 
-      <StoryPhotoBanner
-        src="/images/winning_time_with_group.png"
-        alt="Devpur Cricket Club celebrating tournament trophy win"
-        badge="Championship Glory • Matunga Gymkhana"
-        caption="DCC lifting the championship trophy surrounded by team members and mentors."
-      />
+      {/* Interactive Trophy & Achievement Carousel */}
+      <TrophyCarousel />
 
-      <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
+      <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed pt-2">
         <p>
           Over the past decade, DCC has competed against top community clubs
           across Mumbai and Gujarat.
