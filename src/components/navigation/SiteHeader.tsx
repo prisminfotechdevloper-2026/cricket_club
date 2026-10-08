@@ -126,23 +126,23 @@ export function SiteHeader() {
             {/* Logo Brand */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper rounded-lg shrink-0"
+              className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper rounded-lg shrink-0 min-w-0"
             >
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-sm transition-transform duration-200 group-hover:scale-105">
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 shrink-0 drop-shadow-sm transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/logo/dcc-logo.png"
                   alt="Devpur Cricket Club Emblem"
                   fill
                   priority
                   className="object-contain"
-                  sizes="(max-width: 640px) 44px, 52px"
+                  sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 52px"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-headline font-bold text-lg sm:text-xl tracking-tight text-brand-black leading-tight">
+              <div className="flex flex-col min-w-0">
+                <span className="font-headline font-bold text-base sm:text-lg md:text-xl tracking-tight text-brand-black leading-tight truncate">
                   DEVPUR CRICKET CLUB
                 </span>
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-brand-copper leading-none">
+                <span className="hidden sm:block text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-brand-copper leading-none">
                   Representing Devpur Gaam • Est. 2013
                 </span>
               </div>
@@ -267,10 +267,10 @@ export function SiteHeader() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 lg:hidden">
               <Link
                 href="/matches/dcc-vs-royal-xi"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-red-50 text-brand-red border border-red-200"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold rounded-lg bg-red-50 text-brand-red border border-red-200"
                 aria-label="View live match score"
               >
                 <span className="relative flex h-2 w-2">
@@ -283,7 +283,7 @@ export function SiteHeader() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2.5 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper"
+                className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-copper"
                 aria-expanded={isOpen}
                 aria-label={isOpen ? "Close main menu" : "Open main menu"}
               >

@@ -65,7 +65,7 @@ export function ClubLifeSection() {
     <section id="club-life" className="py-16 sm:py-24 bg-surface-soft border-b border-border/80">
       <Container>
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-14">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />

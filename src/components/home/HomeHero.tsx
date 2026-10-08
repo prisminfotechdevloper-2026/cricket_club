@@ -34,7 +34,7 @@ export function HomeHero() {
           HERO CANVAS: SUNNY DAYTIME STADIUM WITH BATSMAN BACKGROUND
           Tightened padding and min-height for clean viewport fit on large screens
           ========================================================================= */}
-      <div className="relative min-h-[480px] sm:min-h-[520px] lg:min-h-[500px] xl:min-h-[520px] flex items-center pt-3 pb-4 sm:pt-4 sm:pb-5 lg:pt-5 lg:pb-6 overflow-hidden">
+      <div className="relative min-h-[auto] sm:min-h-[500px] lg:min-h-[500px] xl:min-h-[520px] flex items-center pt-4 pb-4 sm:pt-4 sm:pb-5 lg:pt-5 lg:pb-6 overflow-hidden">
         {/* Master Panoramic Background Image from User Asset */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <Image
@@ -374,7 +374,7 @@ export function HomeHero() {
             </div>
 
             {/* 3. Our Sponsors Pill Row */}
-            <div className="lg:col-span-3 bg-white rounded-2xl p-3.5 sm:p-4 border border-stone-200/80 shadow-sm flex flex-col justify-between">
+            <div className="lg:col-span-3 bg-white rounded-2xl p-3 sm:p-4 border border-stone-200/80 shadow-sm flex flex-col justify-between">
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-headline text-sm font-black text-brand-black uppercase tracking-tight">
                   Our Sponsors
@@ -388,12 +388,12 @@ export function HomeHero() {
               </div>
 
               {/* Sponsor Logo Squares */}
-              <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                 {dockSponsors.map((sp) => (
                   <Link
                     key={sp.id}
                     href="/sponsors"
-                    className="w-12 h-12 sm:w-13 sm:h-13 rounded-xl bg-white border border-stone-200 p-1.5 flex items-center justify-center hover:border-[#D49A44]/60 hover:shadow-xs transition-[border-color,box-shadow] group"
+                    className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white border border-stone-200 p-1.5 flex items-center justify-center hover:border-[#D49A44]/60 hover:shadow-xs transition-[border-color,box-shadow] group"
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -410,7 +410,7 @@ export function HomeHero() {
                 {/* Plus Button leading to All Sponsors */}
                 <Link
                   href="/sponsors"
-                  className="w-12 h-12 sm:w-13 sm:h-13 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200/80 flex items-center justify-center text-stone-500 hover:text-stone-900 font-bold text-base transition-colors"
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200/80 flex items-center justify-center text-stone-500 hover:text-stone-900 font-bold text-base transition-colors"
                 >
                   +
                 </Link>

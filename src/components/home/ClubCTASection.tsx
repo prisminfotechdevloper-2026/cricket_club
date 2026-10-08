@@ -7,7 +7,7 @@ export function ClubCTASection() {
   return (
     <section className="py-16 sm:py-24 bg-surface border-t border-border/80">
       <Container>
-        <div className="rounded-3xl bg-stone-950 text-white p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl border border-stone-800 carbon-mesh">
+        <div className="rounded-3xl bg-stone-950 text-white p-6 sm:p-10 lg:p-20 relative overflow-hidden shadow-2xl border border-stone-800 carbon-mesh">
           {/* Subtle atmospheric glow */}
           <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-brand-orange/10 blur-3xl pointer-events-none" />
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-brand-copper/10 blur-2xl pointer-events-none" />
@@ -33,10 +33,10 @@ export function ClubCTASection() {
               </p>
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <Link
                 href="/training"
-                className="px-7 py-4 rounded-xl bg-brand-orange hover:bg-brand-copper text-brand-black font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-[background-color,box-shadow] shadow-md inline-flex items-center gap-2.5 group"
+                className="px-6 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-copper text-brand-black font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-[background-color,box-shadow] shadow-md inline-flex items-center justify-center gap-2.5 group"
               >
                 <span>EXPLORE CLUB LIFE</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -44,14 +44,14 @@ export function ClubCTASection() {
 
               <Link
                 href="/sponsors"
-                className="px-7 py-4 rounded-xl bg-stone-900/80 hover:bg-stone-800 text-white font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors border border-stone-700 backdrop-blur-sm"
+                className="px-6 py-3.5 rounded-xl bg-stone-900/80 hover:bg-stone-800 text-white font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors border border-stone-700 backdrop-blur-sm text-center"
               >
                 OFFICIAL PARTNERSHIPS
               </Link>
 
               <Link
                 href="/matches"
-                className="px-7 py-4 rounded-xl bg-stone-900/80 hover:bg-stone-800 text-stone-300 font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors border border-stone-700/60"
+                className="px-6 py-3.5 rounded-xl bg-stone-900/80 hover:bg-stone-800 text-stone-300 font-mono font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors border border-stone-700/60 text-center"
               >
                 SEASON FIXTURES
               </Link>

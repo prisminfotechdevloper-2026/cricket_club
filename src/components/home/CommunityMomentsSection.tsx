@@ -48,7 +48,7 @@ export function CommunityMomentsSection() {
     <section className="py-16 sm:py-24 border-b border-border/80 bg-background relative overflow-hidden">
       <Container>
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-14">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />

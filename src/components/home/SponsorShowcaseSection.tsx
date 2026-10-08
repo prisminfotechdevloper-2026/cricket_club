@@ -23,14 +23,15 @@ export function SponsorShowcaseSection() {
         {/* Focused Header: Highlighting Club Partners */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="space-y-2.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-900 text-stone-200 font-mono text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>OFFICIAL CLUB PATRONS // 2026–2029 CYCLE</span>
-              <span className="text-stone-600">•</span>
-              <span>DEVPUR GAAM</span>
+            <div className="inline-flex flex-wrap items-center gap-1.5 px-3 py-1.5 rounded-md bg-stone-900 text-stone-200 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs max-w-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
+              <span className="whitespace-nowrap">OFFICIAL CLUB PATRONS // 2026–2029</span>
+              <span className="text-stone-600 hidden sm:inline">•</span>
+              <span className="hidden sm:inline">DEVPUR GAAM</span>
             </div>
             <h2 className="font-headline text-3xl sm:text-5xl font-black tracking-tight text-brand-black uppercase leading-tight">
-              Proudly Supported By <span className="text-brand-copper">Our Official Partners</span>
+              Proudly Supported By{" "}
+              <span className="text-brand-copper">Our Official Partners</span>
             </h2>
             <p className="text-sm sm:text-base text-foreground-soft leading-relaxed">
               Backing Devpur Cricket Club&apos;s structured training under Coach Aditya Koli, match jerseys, leather-ball equipment, and tournament participation.

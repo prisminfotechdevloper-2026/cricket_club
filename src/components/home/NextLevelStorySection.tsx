@@ -8,7 +8,7 @@ export function NextLevelStorySection() {
     <section className="py-16 sm:py-24 border-b border-border/80 bg-surface">
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
             <span>PLAYER PROGRESSION TRACK</span>
@@ -83,7 +83,7 @@ export function NextLevelStorySection() {
               </div>
 
               {/* Development Pillars (Typographic, NO Clipart Icons) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-border">
                 <div className="space-y-1">
                   <span className="font-mono text-xs font-bold text-brand-copper">01</span>
                   <h4 className="text-xs font-bold text-brand-black uppercase tracking-wider">Tactical Clarity</h4>

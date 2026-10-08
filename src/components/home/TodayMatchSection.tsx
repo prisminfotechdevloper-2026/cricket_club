@@ -15,13 +15,13 @@ export function TodayMatchSection() {
     <section className="py-12 sm:py-16 border-b border-border/80 bg-background">
       <Container>
         {/* Section Header */}
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
               <span>MATCHDAY COMMAND CENTER</span>
             </div>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-black tracking-tight leading-none uppercase">
+            <h2 className="font-headline text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-black tracking-tight leading-none uppercase">
               Today&apos;s Match &amp; Live Score
             </h2>
             <p className="text-xs sm:text-sm text-foreground-soft mt-1">
@@ -29,12 +29,12 @@ export function TodayMatchSection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/matches"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface hover:bg-surface-soft border border-border text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-black transition-colors shadow-2xs"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-surface hover:bg-surface-soft border border-border text-xs font-bold uppercase tracking-wider text-brand-black transition-colors shadow-2xs"
             >
-              <span>Full Fixtures Calendar →</span>
+              <span>Full Fixtures →</span>
             </Link>
           </div>
         </div>
@@ -52,9 +52,9 @@ export function TodayMatchSection() {
           </div>
         </div>
 
-        {/* Live Match Sponsor Integration Banner (Section 7.2 & 39 of work_optimize.md) */}
-        <div className="mt-8 p-5 rounded-2xl bg-surface border border-border/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
+        {/* Live Match Sponsor Integration Banner */}
+        <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-surface border border-border/80 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="min-w-0">
             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-brand-copper block">
               MATCHDAY BROADCAST &amp; SCORECARD PARTNERS
             </span>
@@ -64,11 +64,11 @@ export function TodayMatchSection() {
           </div>
 
           {/* Mini Sponsor Logos Strip */}
-          <div className="flex items-center gap-4 overflow-x-auto py-1">
+          <div className="flex items-center gap-3 sm:gap-4 overflow-x-auto py-1 w-full sm:w-auto scrollbar-none">
             {sponsors.slice(0, 5).map((sp) => (
               <div
                 key={sp.id}
-                className="relative w-14 h-8 shrink-0 opacity-80 hover:opacity-100 transition-opacity"
+                className="relative w-12 h-7 sm:w-14 sm:h-8 shrink-0 opacity-80 hover:opacity-100 transition-opacity"
                 title={sp.name}
               >
                 <Image

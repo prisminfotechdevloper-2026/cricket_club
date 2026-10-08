@@ -170,13 +170,13 @@ export function SeasonJourneySection() {
         {/* =========================================================================
             HEADER: ANNUAL CYCLE CONTEXT & ARCHIVE LINK
             ========================================================================= */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-12">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>ANNUAL CAMPAIGN // 5–6 MONTH CYCLE</span>
-              <span className="text-stone-500">•</span>
-              <span className="text-brand-peach">OCTOBER TO MARCH/MAY</span>
+            <div className="inline-flex flex-wrap items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-charcoal text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-widest shadow-2xs max-w-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
+              <span className="whitespace-nowrap">ANNUAL CAMPAIGN // 5–6 MONTH CYCLE</span>
+              <span className="text-stone-500 hidden sm:inline">•</span>
+              <span className="text-brand-peach hidden sm:inline">OCT TO MARCH/MAY</span>
             </div>
 
             <h2

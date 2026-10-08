@@ -55,11 +55,11 @@ export function FeaturedPlayersSection() {
             ========================================================================= */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-900 text-stone-200 font-mono text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>CORE SQUAD // 2026–27 ROSTER</span>
-              <span className="text-stone-600">•</span>
-              <span className="text-brand-peach">DEVPUR GAAM</span>
+            <div className="inline-flex flex-wrap items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-900 text-stone-200 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs max-w-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
+              <span className="whitespace-nowrap">CORE SQUAD // 2026–27 ROSTER</span>
+              <span className="text-stone-600 hidden sm:inline">•</span>
+              <span className="text-brand-peach hidden sm:inline">DEVPUR GAAM</span>
             </div>
 
             <h2
