@@ -42,7 +42,7 @@ export const trainingSessions: TrainingSession[] = [
     location: "Turf Practice Nets, Matunga Ground",
     thumbnail: "/images/exersise.png",
     keyFocus: [
-      "Run-up & Biomechanical Release",
+      "Run-up & Repeatable Release Action",
       "Yorker Target Cones",
       "Disguised Slower Balls",
       "Bowling Workload Management",

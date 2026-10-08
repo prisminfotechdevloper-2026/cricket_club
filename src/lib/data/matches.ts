@@ -1,7 +1,7 @@
 import { Match } from "../types/cricket";
 
-// Developer flag indicating preview / demonstration data state for the prototype
-export const IS_DEMO_DATA = true;
+// Internal seed data flag for frontend development until live database arrives
+export const IS_SEED_DATA = true;
 
 export const matches: Match[] = [
   {
@@ -499,6 +499,41 @@ export const matches: Match[] = [
     dccScore: "160/7",
     dccOvers: "20.0",
     opponentScore: "172/8",
+    opponentOvers: "20.0",
+  },
+  {
+    id: "m-9",
+    slug: "dcc-vs-matunga-invitational-xi",
+    tournament: "Weekend Practice Fixture",
+    tournamentSlug: "weekend-practice-fixtures",
+    season: "2026–27",
+    competitionType: "Practice Match",
+    opponent: "Matunga Friends XI",
+    opponentShort: "MFX",
+    matchType: "Weekend Practice Match",
+    date: "18 Oct 2026",
+    time: "7:00 AM IST",
+    venue: "Matunga Ground, Mumbai",
+    status: "upcoming",
+  },
+  {
+    id: "m-10",
+    slug: "dcc-inter-squad-practice-sim",
+    tournament: "Weekend Practice Fixture",
+    tournamentSlug: "weekend-practice-fixtures",
+    season: "2026–27",
+    competitionType: "Practice Match",
+    opponent: "DCC Reds vs DCC Blues",
+    opponentShort: "BLU",
+    matchType: "Weekend Practice Match",
+    date: "27 Sep 2026",
+    time: "7:30 AM IST",
+    venue: "Matunga Ground, Mumbai",
+    status: "completed",
+    result: "DCC Reds won by 14 runs (Practice fixture)",
+    dccScore: "168/7",
+    dccOvers: "20.0",
+    opponentScore: "154/8",
     opponentOvers: "20.0",
   },
 ];

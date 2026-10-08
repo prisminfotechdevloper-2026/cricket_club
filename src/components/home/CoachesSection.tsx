@@ -9,9 +9,9 @@ export function CoachesSection() {
     <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
       <Container>
         <SectionHeading
-          eyebrow="Club Practice & Development"
-          title="Guided by Experience"
-          description="Led by Head Coach Mr. Aditya Koli (Kanga B Division player), providing structured mentorship and skill refinement during our 3-days-a-week net sessions at Matunga Ground."
+          eyebrow="Club Life Support"
+          title="Professional Coaching Support"
+          description="Coaching is one part of DCC club life, helping members improve cricket skills, fitness and match readiness under Coach Mr. Aditya Koli (Kanga B Division player) during our 3-days-a-week net sessions at Matunga Ground."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">

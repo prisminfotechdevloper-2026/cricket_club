@@ -172,11 +172,11 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ["Season 2026-27", "Tournament Prep", "Squad Depth", "Roadmap"],
     content: [
       "As we enter the 2026–27 competitive cricket calendar, Devpur Cricket Club has outlined a clear operational and athletic roadmap. Having finished as two-time runners-up in premier KVO tournaments, our squad depth is now engineered for one definitive target: lifting the winners' cup.",
-      "The upcoming campaign introduces three key upgrades: high-speed bowling cameras at turf nets for biomechanical review, structured fitness benchmarks supervised by qualified trainers, and competitive warm-up matches across Navi Mumbai and South Mumbai grounds.",
+      "The upcoming campaign introduces three key upgrades: high-volume turf net practice sessions for repeatable accuracy, structured fitness warm-ups, and competitive warm-up matches across Mumbai grounds.",
       "With 50+ committed players vying for selection, internal competition is at an all-time high, creating a squad built on merit, discipline, and village pride.",
     ],
     keyTakeaways: [
-      "Biomechanical coaching feedback accelerates bowler recovery and accuracy.",
+      "Consistent coaching feedback accelerates bowler accuracy and rhythm.",
       "Squad depth ensures peak performance during demanding multi-day weekend schedules.",
       "Devpur Gaam community backing remains the core pillar driving the team forward.",
     ],

@@ -11,10 +11,6 @@ export const metadata = {
 };
 
 export default function SponsorsPage() {
-  const principalSponsors = sponsors.filter((s) => s.tier === "principal");
-  const associateSponsors = sponsors.filter((s) => s.tier === "associate");
-  const officialAndCommunity = sponsors.filter((s) => s.tier === "official" || s.tier === "community");
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* 1. Page Header: MCC Cricket Inspired Prestige Partner Atmosphere */}
@@ -122,152 +118,128 @@ export default function SponsorsPage() {
       {/* 2. Official Sponsor Roster */}
       <section className="py-14 sm:py-20 border-b border-border/80">
         <Container>
-          {/* Principal Tier */}
+          {/* Official Multi-Season Partners */}
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-brand-orange/20 text-brand-black text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-copper" />
-                <span>Principal Partner</span>
+                <span>Official Club Partners</span>
               </span>
-              <span className="text-xs text-muted font-medium">Primary Front-of-Jersey Sponsor</span>
+              <span className="text-xs text-muted font-medium">3-Season Association (2026–27 to 2028–29)</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {principalSponsors.map((sponsor) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {sponsors.filter((s) => s.id !== "devpur-mahajan").map((sponsor) => (
                 <div
                   key={sponsor.id}
-                  className="p-8 rounded-3xl bg-surface border-2 border-brand-orange/40 shadow-sm flex flex-col justify-between space-y-6 sports-card"
+                  className="p-6 sm:p-7 rounded-3xl bg-surface border border-border/90 shadow-xs hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between space-y-5 sports-card"
                 >
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="relative w-44 h-18 sm:w-56 sm:h-20 bg-white rounded-2xl p-3 border border-border flex items-center justify-center shadow-xs">
-                        <Image
-                          src={sponsor.logo}
-                          alt={sponsor.name}
-                          fill
-                          className="object-contain p-2"
-                          sizes="220px"
-                        />
-                      </div>
-                      <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-[11px] font-bold uppercase tracking-wider">
-                        {sponsor.tenure}
-                      </span>
+                  <div className="space-y-4">
+                    <div className="relative w-full h-24 bg-white rounded-2xl p-3 border border-border flex items-center justify-center shadow-xs">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain p-2"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
                     </div>
 
                     <div>
-                      <h3 className="font-headline text-2xl font-bold text-brand-black">
+                      <div className="flex items-center justify-between text-xs font-mono mb-1">
+                        <span className="font-bold text-brand-copper uppercase">
+                          {sponsor.tierLabel}
+                        </span>
+                        <span className="text-stone-400">
+                          {sponsor.tenure.split(" ")[0]}
+                        </span>
+                      </div>
+                      <h3 className="font-headline text-xl font-bold text-brand-black">
                         {sponsor.name}
                       </h3>
-                      <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed mt-2">
+                      <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed mt-2 line-clamp-3">
                         {sponsor.description}
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-surface-soft border border-border space-y-2">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-muted block">
+                    <div className="p-3.5 rounded-xl bg-surface-soft border border-border/80 space-y-1.5">
+                      <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-muted block">
                         Partnership Scope
                       </span>
                       <ul className="space-y-1">
-                        {sponsor.visibilityScope.map((scope) => (
+                        {sponsor.visibilityScope.slice(0, 2).map((scope) => (
                           <li key={scope} className="text-xs text-foreground-soft font-medium flex items-center gap-1.5">
-                            <span className="w-1 h-1 rounded-full bg-brand-copper" />
-                            <span>{scope}</span>
+                            <span className="w-1 h-1 rounded-full bg-brand-copper shrink-0" />
+                            <span className="line-clamp-1">{scope}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Associate Tier */}
-          <div className="mb-14">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="px-3 py-1 rounded-full bg-stone-200 text-stone-800 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-stone-600" />
-                <span>Associate Partners</span>
-              </span>
-              <span className="text-xs text-muted font-medium">Kit &amp; Matchday Sponsors</span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {associateSponsors.map((sponsor) => (
-                <div
-                  key={sponsor.id}
-                  className="p-6 rounded-3xl bg-surface border border-border shadow-xs flex flex-col justify-between space-y-5 sports-card"
-                >
-                  <div className="space-y-4">
-                    <div className="relative w-full h-20 bg-white rounded-2xl p-2 border border-border flex items-center justify-center shadow-xs">
-                      <Image
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        fill
-                        className="object-contain p-2"
-                        sizes="200px"
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="font-headline text-xl font-bold text-brand-black">
-                        {sponsor.name}
-                      </h3>
-                      <p className="text-xs text-foreground-soft leading-relaxed mt-2 line-clamp-3">
-                        {sponsor.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-border flex items-center justify-between text-[11px] text-muted">
-                    <span className="font-semibold">{sponsor.tenure}</span>
-                    <span className="text-brand-black font-medium">{sponsor.tierLabel}</span>
+                  <div className="pt-3 border-t border-border flex items-center justify-between text-[11px] text-muted font-mono">
+                    <span className="font-semibold text-stone-700">{sponsor.tenure}</span>
+                    <span className="text-brand-copper font-bold">~25 Matches/Yr</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Official & Community Tier */}
+          {/* Community Patron Tier */}
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-md bg-stone-900 text-stone-200 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 border border-stone-800">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-                <span>Official &amp; Community Patrons</span>
+                <span>Community Patron &amp; Heritage</span>
               </span>
-              <span className="text-xs text-muted font-medium">Equipment &amp; Gaam Mahajan Patrons</span>
+              <span className="text-xs text-muted font-medium">Devpur Gaam Mahajan Patronage</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {officialAndCommunity.map((sponsor) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {sponsors.filter((s) => s.id === "devpur-mahajan").map((sponsor) => (
                 <div
                   key={sponsor.id}
-                  className="p-6 rounded-3xl bg-surface border border-border shadow-xs flex flex-col justify-between space-y-5 sports-card"
+                  className="p-8 rounded-3xl bg-surface border-2 border-brand-orange/40 shadow-sm flex flex-col justify-between space-y-6 sports-card md:col-span-2"
                 >
-                  <div className="space-y-4">
-                    <div className="relative w-full h-20 bg-white rounded-2xl p-2 border border-border flex items-center justify-center shadow-xs">
-                      <Image
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        fill
-                        className="object-contain p-2"
-                        sizes="200px"
-                      />
+                  <div className="space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="relative w-48 h-20 bg-white rounded-2xl p-3 border border-border flex items-center justify-center shadow-xs">
+                        <Image
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          fill
+                          className="object-contain p-2"
+                          sizes="240px"
+                        />
+                      </div>
+                      <span className="px-3.5 py-1.5 rounded-full bg-stone-100 text-stone-800 text-xs font-mono font-bold uppercase tracking-wider self-start sm:self-auto">
+                        {sponsor.tenure}
+                      </span>
                     </div>
 
                     <div>
-                      <h3 className="font-headline text-xl font-bold text-brand-black">
+                      <h3 className="font-headline text-2xl sm:text-3xl font-bold text-brand-black">
                         {sponsor.name}
                       </h3>
-                      <p className="text-xs text-foreground-soft leading-relaxed mt-2 line-clamp-3">
+                      <p className="text-sm text-foreground-soft leading-relaxed mt-2 max-w-3xl">
                         {sponsor.description}
                       </p>
                     </div>
-                  </div>
 
-                  <div className="pt-3 border-t border-border flex items-center justify-between text-[11px] text-muted">
-                    <span className="font-semibold">{sponsor.tenure}</span>
-                    <span className="text-brand-black font-medium">{sponsor.tierLabel}</span>
+                    <div className="p-4 rounded-2xl bg-surface-soft border border-border space-y-2">
+                      <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-muted block">
+                        Community Patronage Scope
+                      </span>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {sponsor.visibilityScope.map((scope) => (
+                          <li key={scope} className="text-xs text-foreground-soft font-medium flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-copper shrink-0" />
+                            <span>{scope}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               ))}

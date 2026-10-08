@@ -172,7 +172,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-foreground-soft px-3 py-1.5 rounded-xl bg-surface-soft border border-border self-start md:self-auto">
               <span className="w-2 h-2 rounded-full bg-brand-orange" />
               <span>
-                FEATURED MEMBERS • DEMO ({filteredPlayers.length} Members)
+                OFFICIAL SQUAD ROSTER ({filteredPlayers.length} Members)
               </span>
             </div>
           </div>

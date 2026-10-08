@@ -24,47 +24,64 @@ interface NavSection {
 const NAV_SECTIONS: NavSection[] = [
   { name: "Home", href: "/" },
   {
-    name: "Matches",
-    href: "/matches",
+    name: "Club",
+    href: "/club",
     children: [
-      { name: "Matches We Play", href: "/matches", description: "Upcoming fixtures, results & scorecards" },
-      { name: "Live Score Centre", href: "/matches/dcc-vs-royal-xi", badge: "LIVE", description: "Matchday live score via CricClubs" },
-      { name: "Tournaments We Play", href: "/tournaments", description: "Community cups & tournament leagues" },
-      { name: "Season Journey", href: "/seasons", description: "Annual seasonal campaign & journey" },
-      { name: "Trophies & Milestones", href: "/achievements", description: "Silverware & club milestones" },
+      { name: "About DCC & Devpur Gaam", href: "/club", description: "Founding roots, crest history & community heritage" },
+      { name: "Club Legacy & Values", href: "/about", description: "Why we play, brotherhood & community values" },
+      { name: "Managing Committee", href: "/club#values", description: "Dedicated members managing DCC operations" },
+      { name: "Contact & Enquiry", href: "/contact", description: "Connect with DCC organizers & coordinators" },
     ],
   },
   {
     name: "Club Life",
     href: "/club-life",
     children: [
-      { name: "Net Practice & Routine", href: "/club-life", description: "3-day weekly turf net practice at Matunga Ground" },
+      { name: "Practice Rhythm", href: "/club-life", description: "3-day weekly turf net practice at Matunga Ground" },
       { name: "Coach Aditya Koli", href: "/club-life#coach", description: "Skill guidance by Kanga B Division player" },
       { name: "Weekend Practice Matches", href: "/club-life#matches", description: "Applying preparation in competitive situations" },
+      { name: "Fitness & Routines", href: "/club-life#fitness", description: "Conditioning, agility & match readiness" },
     ],
   },
   {
-    name: "Our Members",
+    name: "Matches",
+    href: "/matches",
+    children: [
+      { name: "Matches We Play", href: "/matches", description: "Upcoming fixtures, results & scorecards" },
+      { name: "Live Score Centre", href: "/matches/dcc-vs-royal-xi", badge: "LIVE", description: "Matchday live score via CricClubs" },
+      { name: "Tournaments We Play", href: "/tournaments", description: "Community cups & tournament leagues" },
+    ],
+  },
+  {
+    name: "Members",
     href: "/players",
     children: [
-      { name: "Meet Our Members", href: "/players", description: "The 50+ members behind the DCC crest" },
+      { name: "Squad Roster", href: "/players", description: "The 50+ members behind the DCC crest" },
       { name: "Member Milestones", href: "/players#milestones", description: "Celebrating member growth & achievements" },
+    ],
+  },
+  {
+    name: "Seasons",
+    href: "/seasons",
+    children: [
+      { name: "Season Journey", href: "/seasons", description: "Annual seasonal campaign & journey" },
+      { name: "Trophies & Milestones", href: "/achievements", description: "Silverware & club milestones" },
     ],
   },
   {
     name: "Memories",
     href: "/memories",
     children: [
-      { name: "Season Memories", href: "/memories", description: "Match moments, tours & photo gallery" },
+      { name: "Season Memories", href: "/memories", description: "Match moments, tours & photo gallery archive" },
+      { name: "Club Stories", href: "/blog", description: "Matchday narratives & community reflections" },
     ],
   },
   {
-    name: "Our Club",
-    href: "/club",
+    name: "Sponsors",
+    href: "/sponsors",
     children: [
-      { name: "About DCC & Devpur Gaam", href: "/club", description: "Founding roots, crest history & community heritage" },
       { name: "Official Club Partners", href: "/sponsors", description: "7 brands powering our 3-season cycle" },
-      { name: "Contact & Support", href: "/contact", description: "Connect with DCC organizers & coordinators" },
+      { name: "Sponsor Visibility", href: "/sponsors#visibility", description: "Match jersey, kit & community network presence" },
     ],
   },
 ];
@@ -116,6 +133,10 @@ export function SiteHeader() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   const isSectionActive = (section: NavSection) => {
     if (section.href === "/" && pathname === "/") return true;

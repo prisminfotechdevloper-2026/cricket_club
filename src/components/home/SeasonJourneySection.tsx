@@ -63,9 +63,9 @@ const SEASON_STAGES: JourneyStage[] = [
     description:
       "Intensive technical skill development with Coach Aditya Koli (Kanga B Division player) — repeatable bowling run-ups, strike rotation, slip reflexes, and full-length weekend friendly fixtures.",
     keyObjectives: [
-      "Specialized batsman and bowler biomechanics review",
-      "Slip catching reflexes and boundary riding drills",
-      "Full 20-over and 40-over weekend friendly simulations",
+      "Refining batting rhythm, bowling control, and match temperament",
+      "Slip catching reflexes and outfield boundary drills",
+      "Full 20-over and 40-over weekend friendly fixtures",
     ],
     milestoneHighlight: "Weekend friendly fixtures to calibrate match readiness",
   },

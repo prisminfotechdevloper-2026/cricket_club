@@ -16,39 +16,39 @@ import { ClubCTASection } from "@/components/home/ClubCTASection";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Community Club Hero */}
+      {/* Section 01 — Hero: Community-First Identity */}
       <HomeHero />
 
-      {/* 2. Sponsor Visibility (PROUDLY SUPPORTED BY) */}
-      <SponsorShowcaseSection />
-
-      {/* 3. Today / Live / Next Match */}
+      {/* Section 02 — Today / Next Match: Dynamic Match Center */}
       <TodayMatchSection />
 
-      {/* 4. What DCC Is (From Net Practice to Match Day) */}
+      {/* Section 03 — What DCC Is: Short Explanation of the Club */}
       <ClubIntroSection />
 
-      {/* 5. Club Life (3-Day Nets & Practice Routines) */}
+      {/* Section 04 — Club Life: Practice + Fitness + Match Preparation + Social Connection */}
       <ClubLifeSection />
 
-      {/* 6. Matches & Tournaments We Play */}
-      <TournamentParticipationSection />
-
-      {/* 7. Member Highlights & Progression */}
+      {/* Section 05 — Our Members: People First, Stats Second */}
       <FeaturedPlayersSection />
-      <NextLevelStorySection />
 
-      {/* 8. Why Community Cricket Matters (Why Members Choose Club Life) */}
+      {/* Section 06 — Community Value: Why Members Choose Club Life */}
       <WhyWePlaySection />
 
-      {/* 9. Season Memories & Community Moments */}
+      {/* Section 07 — Tournament Participation: External/Community Competitions DCC Plays In */}
+      <TournamentParticipationSection />
+
+      {/* Section 08 — Sponsors: Highly Visible Partner Showcase */}
+      <SponsorShowcaseSection />
+
+      {/* Section 09 — Season Memories: Visual Archive & Documentary Moments */}
       <GalleryTeaserSection />
       <CommunityMomentsSection />
 
-      {/* 10. Season Journey (Oct - Mar/May Annual Cycle) */}
+      {/* Section 10 — Member Growth & Milestones: Achievements & Season Journey */}
+      <NextLevelStorySection />
       <SeasonJourneySection />
 
-      {/* 11. Sponsors / Community Partnership CTA */}
+      {/* Section 11 — Final Community CTA */}
       <ClubCTASection />
     </div>
   );

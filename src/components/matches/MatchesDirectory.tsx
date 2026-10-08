@@ -21,6 +21,7 @@ interface MatchesDirectoryProps {
 
 export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [typeFilter, setTypeFilter] = useState<"all" | "tournament" | "practice">("all");
   const [tournamentFilter, setTournamentFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -30,6 +31,14 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
     // Status filter
     if (statusFilter !== "all" && match.status !== statusFilter) {
       return false;
+    }
+    // Match Type filter (Practice vs Tournament per Section 16)
+    if (typeFilter !== "all") {
+      const isPractice =
+        match.competitionType === "Practice Match" ||
+        match.matchType.toLowerCase().includes("practice");
+      if (typeFilter === "practice" && !isPractice) return false;
+      if (typeFilter === "tournament" && isPractice) return false;
     }
     // Tournament filter
     if (tournamentFilter !== "all" && match.tournamentSlug !== tournamentFilter) {
@@ -160,45 +169,68 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
         {/* Filter Controls Bar */}
         <div className="p-5 sm:p-6 rounded-3xl bg-surface border border-border shadow-sm mb-10 space-y-4">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
-            {/* Status Tabs */}
-            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-surface-soft border border-border/80 overflow-x-auto scrollbar-none">
-              {[
-                { id: "all", label: "All Matches", count: initialMatches.length },
-                {
-                  id: "live",
-                  label: "Live Now",
-                  count: initialMatches.filter((m) => m.status === "live").length,
-                },
-                {
-                  id: "upcoming",
-                  label: "Upcoming",
-                  count: initialMatches.filter((m) => m.status === "upcoming").length,
-                },
-                {
-                  id: "completed",
-                  label: "Results",
-                  count: initialMatches.filter((m) => m.status === "completed").length,
-                },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setStatusFilter(tab.id)}
-                  className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5 ${
-                    statusFilter === tab.id
-                      ? "bg-brand-charcoal text-white shadow-xs"
-                      : "text-foreground-soft hover:text-brand-black"
-                  }`}
-                >
-                  <span>{tab.label}</span>
-                  <span
-                    className={`text-[11px] px-1.5 py-0.2 rounded-full ${
-                      statusFilter === tab.id ? "bg-white/20 text-white" : "bg-stone-200 text-stone-700"
+            {/* Status & Type Tabs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-surface-soft border border-border/80 overflow-x-auto scrollbar-none">
+                {[
+                  { id: "all", label: "All Status", count: initialMatches.length },
+                  {
+                    id: "live",
+                    label: "Live Now",
+                    count: initialMatches.filter((m) => m.status === "live").length,
+                  },
+                  {
+                    id: "upcoming",
+                    label: "Upcoming",
+                    count: initialMatches.filter((m) => m.status === "upcoming").length,
+                  },
+                  {
+                    id: "completed",
+                    label: "Results",
+                    count: initialMatches.filter((m) => m.status === "completed").length,
+                  },
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setStatusFilter(tab.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                      statusFilter === tab.id
+                        ? "bg-brand-charcoal text-white shadow-xs"
+                        : "text-foreground-soft hover:text-brand-black"
                     }`}
                   >
-                    {tab.count}
-                  </span>
-                </button>
-              ))}
+                    <span>{tab.label}</span>
+                    <span
+                      className={`text-[11px] px-1.5 py-0.2 rounded-full ${
+                        statusFilter === tab.id ? "bg-white/20 text-white" : "bg-stone-200 text-stone-700"
+                      }`}
+                    >
+                      {tab.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Match Category Tabs: Tournament vs Practice */}
+              <div className="flex items-center gap-1 p-1 rounded-2xl bg-surface-soft border border-border/80 overflow-x-auto scrollbar-none">
+                {[
+                  { id: "all", label: "All Fixtures" },
+                  { id: "tournament", label: "Tournament" },
+                  { id: "practice", label: "Practice" },
+                ].map((typeTab) => (
+                  <button
+                    key={typeTab.id}
+                    onClick={() => setTypeFilter(typeTab.id as "all" | "tournament" | "practice")}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                      typeFilter === typeTab.id
+                        ? "bg-[#EA6E18] text-white shadow-2xs"
+                        : "text-stone-600 hover:text-stone-900"
+                    }`}
+                  >
+                    {typeTab.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Search & Tournament Dropdown */}
@@ -249,25 +281,31 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
             <button
               onClick={() => {
                 setStatusFilter("all");
+                setTypeFilter("all");
                 setTournamentFilter("all");
                 setSearchQuery("");
               }}
-              className="mt-4 px-4 py-2 rounded-xl bg-brand-charcoal text-white text-xs font-bold uppercase tracking-wider"
+              className="mt-4 px-4 py-2 rounded-xl bg-brand-charcoal text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
             >
               Reset Filters
             </button>
           </div>
         ) : (
           <div className="space-y-6">
-            {filteredMatches.map((match) => (
+            {filteredMatches.map((match) => {
+              const isPracticeMatch =
+                match.competitionType === "Practice Match" ||
+                match.matchType.toLowerCase().includes("practice");
+
+              return (
               <div
                 key={match.id}
                 className="group rounded-3xl bg-surface border border-border p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow sports-card"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                  {/* Left: Tournament & Status */}
+                  {/* Left: Tournament, Category & Status */}
                   <div className="space-y-2 lg:w-1/3">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       {match.status === "live" ? (
                         <LiveBadge text="LIVE NOW" size="sm" />
                       ) : match.status === "upcoming" ? (
@@ -279,6 +317,18 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                           COMPLETED
                         </span>
                       )}
+
+                      {/* Section 16: Strict Practice Match vs Tournament Match distinction */}
+                      <span
+                        className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider ${
+                          isPracticeMatch
+                            ? "bg-sky-50 text-sky-700 border border-sky-200"
+                            : "bg-amber-50 text-[#EA6E18] border border-[#EA6E18]/30"
+                        }`}
+                      >
+                        {isPracticeMatch ? "PRACTICE MATCH" : "TOURNAMENT MATCH"}
+                      </span>
+
                       <span className="text-xs font-bold uppercase tracking-wider text-brand-copper">
                         {match.tournament}
                       </span>
@@ -360,7 +410,8 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </Container>

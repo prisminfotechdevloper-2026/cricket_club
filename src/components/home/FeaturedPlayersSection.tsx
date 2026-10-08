@@ -57,7 +57,7 @@ export function FeaturedPlayersSection() {
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex flex-wrap items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-900 text-stone-200 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border border-stone-800 shadow-2xs max-w-full">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
-              <span className="whitespace-nowrap">FEATURED MEMBERS • DEMO // 2026–27</span>
+              <span className="whitespace-nowrap">FEATURED SQUAD MEMBERS // 2026–27</span>
               <span className="text-stone-600 hidden sm:inline">•</span>
               <span className="text-brand-peach hidden sm:inline">DEVPUR GAAM</span>
             </div>
@@ -90,7 +90,7 @@ export function FeaturedPlayersSection() {
             ========================================================================= */}
         <div className="mb-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {[
-            { id: "all", label: "All Core Squad (4)" },
+            { id: "all", label: "All Featured Members" },
             { id: "batter", label: "Batters" },
             { id: "bowler", label: "Bowlers" },
             { id: "wicketkeeper", label: "Wicketkeeper" },

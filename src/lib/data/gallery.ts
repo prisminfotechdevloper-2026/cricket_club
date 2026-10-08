@@ -1,4 +1,4 @@
-import { GalleryAlbum } from "../types/content";
+import { GalleryAlbum, GalleryItem } from "../types/content";
 
 export const galleryAlbums: GalleryAlbum[] = [
   {
@@ -299,3 +299,5 @@ export const galleryAlbums: GalleryAlbum[] = [
     ],
   },
 ];
+
+export const galleryItems: GalleryItem[] = galleryAlbums.flatMap((a) => a.items);

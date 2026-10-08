@@ -101,7 +101,7 @@ export function HomeHero() {
 
               {/* Subtitle */}
               <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-md font-medium">
-                We practice together, compete together, celebrate together and grow together — representing Devpur Gaam through cricket.
+                DCC brings people together through cricket, regular practice, match participation, fitness, friendship and shared experiences while proudly representing Devpur Gaam.
               </p>
 
               {/* High-Impact Action Buttons with Brand Palette */}
