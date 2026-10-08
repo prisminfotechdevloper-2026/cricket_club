@@ -877,39 +877,96 @@ function OverviewStorySection() {
   );
 }
 
+interface MilestoneSlide {
+  year: string;
+  phase: string;
+  title: string;
+  desc: string;
+  highlights: string[];
+  img: string;
+  imgCaption: string;
+}
+
+const MILESTONES_DATA: MilestoneSlide[] = [
+  {
+    year: "2013",
+    phase: "Phase 01",
+    title: "The First Step: Club Foundation",
+    desc: "Devpur Cricket Club was formally founded. The first 15 players began weekly net practice at local Mumbai grounds, reclaiming the passion paused during academic years.",
+    highlights: [
+      "Initial squad of 15 dedicated village players from Devpur Gaam.",
+      "First structured morning net sessions on Mumbai grounds.",
+      "Establishment of the official club name and white jersey identity.",
+    ],
+    img: "/images/memories_2018.png",
+    imgCaption: "2013 • Founding members and core village organizers coming together.",
+  },
+  {
+    year: "2015",
+    phase: "Phase 02",
+    title: "Tournament Debut in KVO League",
+    desc: "DCC officially registered for competitive leather-ball community tournaments. We played our first official fixture against established community clubs.",
+    highlights: [
+      "Official entry into the prestigious Kutchhi Visa Oswal (KVO) cricket circuit.",
+      "Transition from tennis ball cricket to professional leather-ball matches.",
+      "Adoption of proper protective equipment, team kits, and weekend fixtures.",
+    ],
+    img: "/images/team_members.png",
+    imgCaption: "2015 • DCC squad lined up in official match kits for early community league games.",
+  },
+  {
+    year: "2018",
+    phase: "Phase 03",
+    title: "The First Championship Cup",
+    desc: "After five years of relentless hard work, DCC won its first major trophy. The celebration brought the entire village and community together.",
+    highlights: [
+      "Maiden tournament trophy secured with outstanding all-round team displays.",
+      "Devpur Gaam elders and families celebrated our historic silverware victory.",
+      "Recognition of DCC as a formidable contender in Mumbai community cricket.",
+    ],
+    img: "/images/achivement_winning.png",
+    imgCaption: "2018 • The championship moment as the squad lifts the maiden trophy on the podium.",
+  },
+  {
+    year: "2021",
+    phase: "Phase 04",
+    title: "Squad Expansion to 50+ Players",
+    desc: "The club grew from one squad to multiple teams. Junior talent from Devpur Gaam was inducted and mentored by seniors with structured training.",
+    highlights: [
+      "Roster expanded beyond 50 active playing members across age brackets.",
+      "Junior development program instituted to mentor teenagers and emerging talent.",
+      "Structured 5–6 months seasonal camp and 3-days-a-week practice at Matunga Ground.",
+    ],
+    img: "/images/team_group.png",
+    imgCaption: "2021 • Expanded roster united on the ground representing the growing DCC community.",
+  },
+  {
+    year: "2024–Present",
+    phase: "Phase 05",
+    title: "Dominance & Premier Consistency",
+    desc: "Regular finalists at Matunga Gymkhana with Orange Cap and Purple Cap honors. DCC stands recognized as a premier club in community cricket.",
+    highlights: [
+      "Back-to-back runners-up finishes in top-tier KVO championships.",
+      "Prestigious individual league awards: Orange Cap (Runs) & Purple Cap (Wickets).",
+      "Thriving community hub connecting generations through cricket and brotherhood.",
+    ],
+    img: "/images/winning_time_with_group.png",
+    imgCaption: "2024–Present • Premier division finalists celebrating podium success at Matunga Pavilion.",
+  },
+];
+
 function TimelineStorySection() {
-  const milestones = [
-    {
-      year: "2013",
-      title: "The First Step",
-      desc: "Devpur Cricket Club was formally founded. The first 15 players began weekly net practice at local Mumbai grounds.",
-      img: "/images/memories_2018.png",
-    },
-    {
-      year: "2015",
-      title: "Tournament Debut in KVO League",
-      desc: "DCC officially registered for competitive leather-ball community tournaments. We played our first official fixture.",
-      img: null,
-    },
-    {
-      year: "2018",
-      title: "The First Championship Cup",
-      desc: "After five years of relentless hard work, DCC won its first major trophy. The celebration brought the entire village together.",
-      img: "/images/achivement_winning.png",
-    },
-    {
-      year: "2021",
-      title: "Squad Expansion to 50+ Players",
-      desc: "The club grew from one squad to multiple teams. Junior talent from Devpur Gaam was inducted and mentored by seniors.",
-      img: null,
-    },
-    {
-      year: "2024–Present",
-      title: "Dominance & Premier Consistency",
-      desc: "Regular finalists at Matunga Gymkhana with Orange Cap and Purple Cap honors. DCC stands recognized as a premier club.",
-      img: "/images/achivement_winning2.png",
-    },
-  ];
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const prevMilestone = () => {
+    setCurrentIdx((prev) => (prev === 0 ? MILESTONES_DATA.length - 1 : prev - 1));
+  };
+
+  const nextMilestone = () => {
+    setCurrentIdx((prev) => (prev === MILESTONES_DATA.length - 1 ? 0 : prev + 1));
+  };
+
+  const active = MILESTONES_DATA[currentIdx];
 
   return (
     <article className="space-y-6">
@@ -920,43 +977,163 @@ function TimelineStorySection() {
         subtitle="A step-by-step journey of how DCC rose through hard work and unity."
       />
 
-      <div className="space-y-6">
-        {milestones.map((m, idx) => (
-          <div
-            key={m.year}
-            className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-4"
-          >
-            <div className="flex items-center justify-between gap-3">
-              <span className="font-headline text-2xl sm:text-3xl font-extrabold text-[#EA4326]">
-                {m.year}
+      {/* Horizontal Interactive Year Stepper */}
+      <div className="bg-card border border-border rounded-xl p-2 sm:p-2.5 shadow-sm">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none">
+          {MILESTONES_DATA.map((m, idx) => {
+            const isActive = currentIdx === idx;
+            return (
+              <button
+                key={m.year}
+                type="button"
+                onClick={() => setCurrentIdx(idx)}
+                className={`flex-1 min-w-[100px] sm:min-w-[120px] py-2 sm:py-2.5 px-3 rounded-lg text-center transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-[#EA4326] text-white shadow-md font-bold"
+                    : "bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span className="block text-[11px] font-mono uppercase tracking-wider opacity-85">
+                  {m.phase}
+                </span>
+                <span className="font-headline text-base sm:text-lg font-bold block truncate">
+                  {m.year}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Active Milestone Slide Card with Left & Right controls */}
+      <div className="bg-card border border-border rounded-2xl p-6 sm:p-7 shadow-sm space-y-5">
+        {/* Card Header: Year, Phase & Navigation Buttons */}
+        <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <span className="font-headline text-3xl sm:text-4xl font-extrabold text-[#EA4326] tracking-tight">
+                {active.year}
               </span>
-              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
-                Phase 0{idx + 1}
+              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border">
+                {active.phase}
               </span>
             </div>
-
-            <div className="space-y-1.5">
-              <h3 className="font-headline text-xl font-bold uppercase text-foreground">
-                {m.title}
-              </h3>
-              <p className="text-foreground/90 font-body text-base leading-relaxed">
-                {m.desc}
-              </p>
-            </div>
-
-            {m.img && (
-              <div className="relative aspect-[16/8] w-full rounded-lg overflow-hidden border border-border/70 mt-3">
-                <Image
-                  src={m.img}
-                  alt={m.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 750px"
-                />
-              </div>
-            )}
+            <span className="text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider block">
+              Step {currentIdx + 1} of {MILESTONES_DATA.length} in DCC History
+            </span>
           </div>
-        ))}
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={prevMilestone}
+              aria-label="Previous Milestone"
+              className="w-10 h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={nextMilestone}
+              aria-label="Next Milestone"
+              className="w-10 h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Milestone Title & Narrative */}
+        <div className="space-y-2">
+          <h3 className="font-headline text-2xl sm:text-3xl font-bold uppercase text-foreground">
+            {active.title}
+          </h3>
+          <p className="text-foreground/90 font-body text-base sm:text-lg leading-relaxed">
+            {active.desc}
+          </p>
+        </div>
+
+        {/* Key Highlights of this era */}
+        <div className="bg-muted/40 border border-border/80 rounded-xl p-4 sm:p-5 space-y-2.5">
+          <span className="block text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+            Era Highlights &amp; Accomplishments
+          </span>
+          <ul className="space-y-2 text-sm sm:text-base text-foreground/90">
+            {active.highlights.map((h) => (
+              <li key={h} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Milestone Photo Frame with Centered Y-Direction Arrow Buttons */}
+        <div className="relative w-full rounded-xl overflow-hidden border border-border/80 shadow-md group">
+          <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full bg-black/20">
+            <Image
+              key={active.img}
+              src={active.img}
+              alt={active.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 750px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+            {/* Left Button on Image */}
+            <button
+              type="button"
+              onClick={prevMilestone}
+              aria-label="Previous Milestone"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            {/* Right Button on Image */}
+            <button
+              type="button"
+              onClick={nextMilestone}
+              aria-label="Next Milestone"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            {/* Caption on image bottom */}
+            <div className="absolute bottom-3 left-3 right-3 text-white text-xs sm:text-sm font-medium">
+              <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326] mr-2">
+                {active.year} Archive
+              </span>
+              <span className="text-white/90">{active.imgCaption}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Dots and Quick Summary Footer */}
+        <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center gap-2">
+            {MILESTONES_DATA.map((m, idx) => (
+              <button
+                key={m.year}
+                type="button"
+                onClick={() => setCurrentIdx(idx)}
+                aria-label={`Jump to ${m.year}`}
+                className={`transition-all duration-200 cursor-pointer rounded-full ${
+                  currentIdx === idx
+                    ? "w-8 h-2.5 bg-[#EA4326]"
+                    : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                }`}
+              />
+            ))}
+          </div>
+
+          <span className="text-xs font-mono font-semibold text-muted-foreground">
+            {String(currentIdx + 1).padStart(2, "0")} / {String(MILESTONES_DATA.length).padStart(2, "0")}
+          </span>
+        </div>
       </div>
     </article>
   );
