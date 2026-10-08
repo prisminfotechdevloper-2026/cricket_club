@@ -39,7 +39,7 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
   return (
     <div className="bg-background min-h-screen">
       {/* =========================================================================
-          HERO BANNER: LIGHT THEME SPORTS LIFE & NETS ATMOSPHERE
+          HERO BANNER: CLUB LIFE & PRACTICE RHYTHM
           ========================================================================= */}
       <section className="relative overflow-hidden bg-gradient-to-b from-stone-100 via-stone-50 to-white text-stone-900 border-b border-stone-200 py-12 sm:py-16 lg:py-20">
         <Container className="relative z-10">
@@ -48,20 +48,18 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
-                <span>DCC ATHLETIC &amp; CRICKET LIFE • MATUNGA GROUND</span>
+                <span>DEVPUR CRICKET CLUB // PRACTICE &amp; BROTHERHOOD</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
-                Discipline in the Nets.
-                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
-                  Brotherhood for Life.
+                CLUB LIFE
+                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1.5 text-2xl sm:text-4xl lg:text-5xl font-extrabold">
+                  Practice Together. Play Together. Stay Connected.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
-                Devpur Cricket Club maintains a consistent 3-day weekly rhythm at Matunga Ground on turf and clay wickets.
-                Structured practice under Head Coach Mr. Aditya Koli (Kanga B Division player) develops genuine match
-                temperament, fitness, and lifelong community bonds.
+                Across the season, our members come together for regular net practice, fitness, coaching support, practice matches and the social life that grows around the game.
               </p>
 
               {/* Action Badges */}
@@ -72,7 +70,7 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
                   <Clock className="w-3.5 h-3.5 text-[#EA6E18]" />
-                  <span>MON • WED • FRI 7:00 AM</span>
+                  <span>MON • WED • FRI ~2 HOURS</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
                   <MapPin className="w-3.5 h-3.5 text-[#F89928]" />
@@ -85,14 +83,14 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
             <div className="lg:col-span-5">
               <div className="rounded-3xl bg-white border border-stone-200 p-6 sm:p-7 shadow-md relative overflow-hidden">
                 <div className="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-l from-[#EA6E18] to-[#C2520E] text-[10px] font-mono font-black uppercase tracking-wider rounded-bl-2xl text-white">
-                  REGULAR NET PRACTICE
+                  PRACTICE RHYTHM
                 </div>
 
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#EA6E18] font-bold block mb-1">
-                  NET PRACTICE SCHEDULE
+                  WEEKLY PRACTICE STRUCTURE
                 </span>
                 <h3 className="font-headline text-2xl font-bold text-stone-900 mb-4">
-                  Weekly Practice Structure
+                  Practice Routine
                 </h3>
 
                 <div className="space-y-3 text-xs text-stone-700">
@@ -101,8 +99,8 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
                       01
                     </div>
                     <div>
-                      <p className="font-bold text-stone-900">Turf Net Practice (2 Hours)</p>
-                      <p className="text-[11px] text-stone-500 mt-0.5">High-volume throwdowns, genuine leather-ball pace and spin variations.</p>
+                      <p className="font-bold text-stone-900">Turf Net Practice (~2 Hours)</p>
+                      <p className="text-[11px] text-stone-500 mt-0.5">Mon • Wed • Fri regular turf &amp; clay net sessions at Matunga Ground.</p>
                     </div>
                   </div>
 
@@ -111,8 +109,8 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
                       02
                     </div>
                     <div>
-                      <p className="font-bold text-stone-900">Coach Aditya Koli Mentorship</p>
-                      <p className="text-[11px] text-stone-500 mt-0.5">Tactical match simulations and technique refinement by Kanga B Div cricketer.</p>
+                      <p className="font-bold text-stone-900">Weekend Practice Matches</p>
+                      <p className="text-[11px] text-stone-500 mt-0.5">Practice is taken into match situations through regular weekend fixtures, helping members apply what they work on during the week.</p>
                     </div>
                   </div>
 
@@ -121,23 +119,23 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
                       03
                     </div>
                     <div>
-                      <p className="font-bold text-stone-900">Athletic Stamina &amp; Reflexes</p>
-                      <p className="text-[11px] text-stone-500 mt-0.5">Dynamic slip catches, sprint intervals between wickets &amp; injury prevention.</p>
+                      <p className="font-bold text-stone-900">Professional Coaching Support</p>
+                      <p className="text-[11px] text-stone-500 mt-0.5">Hands-on technique refinement and match scenarios under Mr. Aditya Koli (Kanga B Division Player).</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-5 pt-4 border-t border-stone-100 grid grid-cols-3 gap-2 text-center font-mono">
                   <div>
-                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Weekly</span>
-                    <span className="font-black text-base text-stone-900">3 Days</span>
+                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Rhythm</span>
+                    <span className="font-black text-base text-stone-900">Mon-Wed-Fri</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Per Year</span>
-                    <span className="font-black text-base text-[#EA6E18]">5–6 Mos</span>
+                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Session</span>
+                    <span className="font-black text-base text-[#EA6E18]">~2 Hours</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Squad</span>
+                    <span className="text-[10px] text-stone-500 uppercase block font-bold">Community</span>
                     <span className="font-black text-base text-stone-900">50+ Men</span>
                   </div>
                 </div>
@@ -218,18 +216,45 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
             </div>
           ))}
         </div>
+        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 text-white border border-stone-800 relative overflow-hidden shadow-lg">
+          <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-[#EA6E18]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/20 text-[#EA6E18] border border-[#EA6E18]/30 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <Calendar className="w-3 h-3" />
+                <span>WEEKEND FIXTURES</span>
+              </div>
+              <h3 className="font-headline text-2xl sm:text-3xl font-black text-white">
+                Weekend Practice Matches
+              </h3>
+              <p className="text-sm text-stone-300 leading-relaxed">
+                Practice is taken into match situations through regular weekend fixtures, helping members apply what they work on during the week in real match environments.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="px-4 py-3 rounded-2xl bg-stone-800/80 border border-stone-700/80 text-center font-mono">
+                <span className="text-[10px] text-stone-400 uppercase block font-bold">Rhythm</span>
+                <span className="font-bold text-sm text-[#F89928]">Every Weekend</span>
+              </div>
+              <div className="px-4 py-3 rounded-2xl bg-stone-800/80 border border-stone-700/80 text-center font-mono">
+                <span className="text-[10px] text-stone-400 uppercase block font-bold">Setting</span>
+                <span className="font-bold text-sm text-white">Match Situations</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Coach Guidance Strip */}
         <div className="p-8 sm:p-12 rounded-3xl bg-surface-soft border border-border">
           <div className="max-w-2xl mb-8 space-y-2">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-brand-copper">
-              GUIDED BY EXPERIENCE
+              PROFESSIONAL COACHING SUPPORT
             </span>
             <h3 className="font-headline text-2xl sm:text-3xl font-extrabold text-brand-black">
-              Professional Mentorship &amp; Club Coaching
+              Professional Coaching Support
             </h3>
             <p className="text-xs sm:text-sm text-foreground-soft">
-              Mr. Aditya Koli guides our 50+ members through match-scenario preparation, workload management, and technique refinement.
+              Coaching is one part of the DCC seasonal routine — helping members improve cricket skills, fitness and match readiness.
             </p>
           </div>
 
@@ -244,10 +269,10 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
                     {c.name}
                   </h4>
                   <span className="text-xs font-semibold text-brand-copper block">
-                    {c.role}
+                    {c.role} • {c.experience}
                   </span>
                   <span className="text-[11px] text-foreground-soft block mt-0.5">
-                    {c.experience} • {c.coachingFocus.slice(0, 2).join(" • ")}
+                    {c.coachingFocus.join(" • ")}
                   </span>
                 </div>
               </div>

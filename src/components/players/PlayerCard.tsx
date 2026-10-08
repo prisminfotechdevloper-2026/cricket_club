@@ -38,7 +38,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
           {player.featured && (
             <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-peach bg-stone-900/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-              CORE SQUAD
+              FEATURED MEMBER
             </span>
           )}
         </div>
@@ -97,7 +97,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
           href={`/players/${player.slug}`}
           className="inline-flex items-center justify-between w-full py-2.5 px-3.5 rounded-xl bg-surface-soft hover:bg-stone-200/70 text-xs font-mono font-bold uppercase tracking-wider text-brand-black transition-colors group/btn"
         >
-          <span>VIEW ATHLETE PROFILE</span>
+          <span>VIEW MEMBER PROFILE</span>
           <ArrowRight className="w-3.5 h-3.5 text-brand-copper transition-transform group-hover/btn:translate-x-1" />
         </Link>
       </div>

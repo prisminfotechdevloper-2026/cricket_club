@@ -55,16 +55,14 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
-                50+ Athletes. One Crest.
+                Our Members
                 <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
-                  Pure Devpur Gaam Pride.
+                  The People Behind The Crest.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
-                Meet the registered players representing Devpur Gaam across Mumbai's competitive leagues.
-                From fierce powerplay opening batters and express seamers to seasoned mentors — united by
-                rigorous 3-day weekly turf net preparation.
+                A community of members connected through cricket, practice, competition, friendship and shared experiences representing Devpur Gaam.
               </p>
 
               {/* Action Badges */}
@@ -174,7 +172,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-foreground-soft px-3 py-1.5 rounded-xl bg-surface-soft border border-border self-start md:self-auto">
               <span className="w-2 h-2 rounded-full bg-brand-orange" />
               <span>
-                ROSTER: {filteredPlayers.length} / {initialPlayers.length} ATHLETES
+                FEATURED MEMBERS • DEMO ({filteredPlayers.length} Members)
               </span>
             </div>
           </div>
@@ -201,7 +199,7 @@ export function PlayersDirectory({ initialPlayers }: PlayersDirectoryProps) {
         {filteredPlayers.length === 0 ? (
           <div className="text-center py-16 px-4 rounded-3xl bg-surface border border-border">
             <div className="inline-block px-3 py-1 rounded-md bg-stone-900 text-stone-300 font-mono text-xs font-bold uppercase tracking-wider mb-3">
-              [ NO ATHLETE MATCHED ]
+              [ NO MEMBER MATCHED ]
             </div>
             <h3 className="font-headline text-2xl font-bold text-brand-black">No squad members found</h3>
             <p className="text-xs sm:text-sm text-muted mt-1 max-w-sm mx-auto">

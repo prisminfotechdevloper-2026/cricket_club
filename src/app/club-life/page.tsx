@@ -4,9 +4,9 @@ import { trainingSessions } from "@/lib/data/training";
 import { coaches } from "@/lib/data/coaches";
 
 export const metadata: Metadata = {
-  title: "Club Life & Development | Devpur Cricket Club",
+  title: "Club Life | Practice Together. Play Together. Stay Connected. | Devpur Cricket Club",
   description:
-    "Life inside Devpur Cricket Club — net practice at Matunga Ground, coach-led skill development under Aditya Koli, fitness routines, and community bonding.",
+    "Life inside Devpur Cricket Club — regular net practice at Matunga Ground, professional coaching support under Mr. Aditya Koli, weekend practice matches, and community friendship.",
 };
 
 export default function ClubLifePage() {

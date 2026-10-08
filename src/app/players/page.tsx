@@ -3,9 +3,9 @@ import { PlayersDirectory } from "@/components/players/PlayersDirectory";
 import { players } from "@/lib/data/players";
 
 export const metadata: Metadata = {
-  title: "Squad & Players",
+  title: "Our Members | The People Behind The Crest",
   description:
-    "Meet the players of Devpur Cricket Club. Detailed career statistics, batting averages, bowling strike rates, and recent match performances.",
+    "Meet the 50+ members of Devpur Cricket Club — connected through regular practice, tournament competition, friendship and shared experiences representing Devpur Gaam.",
 };
 
 export default function PlayersPage() {
