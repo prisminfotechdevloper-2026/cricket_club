@@ -28,7 +28,6 @@ import { Container } from "../common/Container";
 
 type CategoryId =
   | "overview"
-  | "timeline"
   | "vision"
   | "training"
   | "brotherhood"
@@ -53,16 +52,8 @@ const CATEGORIES: CategoryMeta[] = [
     tagline: "A community that found its way back to the game.",
   },
   {
-    id: "timeline",
-    index: "02",
-    title: "Timeline & Milestones",
-    shortTitle: "Journey Timeline",
-    icon: Clock,
-    tagline: "Key chapters from our humble beginning to championship finals.",
-  },
-  {
     id: "vision",
-    index: "03",
+    index: "02",
     title: "Our Vision & Philosophy",
     shortTitle: "Vision & Values",
     icon: Target,
@@ -70,7 +61,7 @@ const CATEGORIES: CategoryMeta[] = [
   },
   {
     id: "training",
-    index: "04",
+    index: "03",
     title: "Matunga Ground & Training",
     shortTitle: "Ground & Practice",
     icon: Shield,
@@ -78,7 +69,7 @@ const CATEGORIES: CategoryMeta[] = [
   },
   {
     id: "brotherhood",
-    index: "05",
+    index: "04",
     title: "Brotherhood & Club Life",
     shortTitle: "Brotherhood & Life",
     icon: Heart,
@@ -86,11 +77,11 @@ const CATEGORIES: CategoryMeta[] = [
   },
   {
     id: "honors",
-    index: "06",
-    title: "Trophies & Honors",
-    shortTitle: "Silverware & Awards",
+    index: "05",
+    title: "Trophies, Honors & Milestones",
+    shortTitle: "Trophies & Milestones",
     icon: Trophy,
-    tagline: "Championship cups, Orange Caps, Purple Caps, and fair-play honors.",
+    tagline: "Championship silverware, individual honors, and our historic road to glory.",
   },
 ];
 
@@ -264,7 +255,6 @@ export function ClubHistoryView() {
             {/* LEFT COLUMN: DEDICATED CATEGORY CONTENT */}
             <main className="lg:col-span-8 min-w-0">
               {activeCategory === "overview" && <OverviewStorySection />}
-              {activeCategory === "timeline" && <TimelineStorySection />}
               {activeCategory === "vision" && <VisionStorySection />}
               {activeCategory === "training" && <TrainingStorySection />}
               {activeCategory === "brotherhood" && <BrotherhoodStorySection />}
@@ -877,268 +867,6 @@ function OverviewStorySection() {
   );
 }
 
-interface MilestoneSlide {
-  year: string;
-  phase: string;
-  title: string;
-  desc: string;
-  highlights: string[];
-  img: string;
-  imgCaption: string;
-}
-
-const MILESTONES_DATA: MilestoneSlide[] = [
-  {
-    year: "2013",
-    phase: "Phase 01",
-    title: "The First Step: Club Foundation",
-    desc: "Devpur Cricket Club was formally founded. The first 15 players began weekly net practice at local Mumbai grounds, reclaiming the passion paused during academic years.",
-    highlights: [
-      "Initial squad of 15 dedicated village players from Devpur Gaam.",
-      "First structured morning net sessions on Mumbai grounds.",
-      "Establishment of the official club name and white jersey identity.",
-    ],
-    img: "/images/memories_2018.png",
-    imgCaption: "2013 • Founding members and core village organizers coming together.",
-  },
-  {
-    year: "2015",
-    phase: "Phase 02",
-    title: "Tournament Debut in KVO League",
-    desc: "DCC officially registered for competitive leather-ball community tournaments. We played our first official fixture against established community clubs.",
-    highlights: [
-      "Official entry into the prestigious Kutchhi Visa Oswal (KVO) cricket circuit.",
-      "Transition from tennis ball cricket to professional leather-ball matches.",
-      "Adoption of proper protective equipment, team kits, and weekend fixtures.",
-    ],
-    img: "/images/team_members.png",
-    imgCaption: "2015 • DCC squad lined up in official match kits for early community league games.",
-  },
-  {
-    year: "2018",
-    phase: "Phase 03",
-    title: "The First Championship Cup",
-    desc: "After five years of relentless hard work, DCC won its first major trophy. The celebration brought the entire village and community together.",
-    highlights: [
-      "Maiden tournament trophy secured with outstanding all-round team displays.",
-      "Devpur Gaam elders and families celebrated our historic silverware victory.",
-      "Recognition of DCC as a formidable contender in Mumbai community cricket.",
-    ],
-    img: "/images/achivement_winning.png",
-    imgCaption: "2018 • The championship moment as the squad lifts the maiden trophy on the podium.",
-  },
-  {
-    year: "2021",
-    phase: "Phase 04",
-    title: "Squad Expansion to 50+ Players",
-    desc: "The club grew from one squad to multiple teams. Junior talent from Devpur Gaam was inducted and mentored by seniors with structured training.",
-    highlights: [
-      "Roster expanded beyond 50 active playing members across age brackets.",
-      "Junior development program instituted to mentor teenagers and emerging talent.",
-      "Structured 5–6 months seasonal camp and 3-days-a-week practice at Matunga Ground.",
-    ],
-    img: "/images/team_group.png",
-    imgCaption: "2021 • Expanded roster united on the ground representing the growing DCC community.",
-  },
-  {
-    year: "2024–Present",
-    phase: "Phase 05",
-    title: "Dominance & Premier Consistency",
-    desc: "Regular finalists at Matunga Gymkhana with Orange Cap and Purple Cap honors. DCC stands recognized as a premier club in community cricket.",
-    highlights: [
-      "Back-to-back runners-up finishes in top-tier KVO championships.",
-      "Prestigious individual league awards: Orange Cap (Runs) & Purple Cap (Wickets).",
-      "Thriving community hub connecting generations through cricket and brotherhood.",
-    ],
-    img: "/images/winning_time_with_group.png",
-    imgCaption: "2024–Present • Premier division finalists celebrating podium success at Matunga Pavilion.",
-  },
-];
-
-function TimelineStorySection() {
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  const prevMilestone = () => {
-    setCurrentIdx((prev) => (prev === 0 ? MILESTONES_DATA.length - 1 : prev - 1));
-  };
-
-  const nextMilestone = () => {
-    setCurrentIdx((prev) => (prev === MILESTONES_DATA.length - 1 ? 0 : prev + 1));
-  };
-
-  const active = MILESTONES_DATA[currentIdx];
-
-  return (
-    <article className="space-y-6">
-      <ChapterHeader
-        chapter="Chapter 02"
-        tag="Milestones"
-        title="Timeline & Historical Milestones"
-        subtitle="A step-by-step journey of how DCC rose through hard work and unity."
-      />
-
-      {/* Horizontal Interactive Year Stepper */}
-      <div className="bg-card border border-border rounded-xl p-2 sm:p-2.5 shadow-sm">
-        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none">
-          {MILESTONES_DATA.map((m, idx) => {
-            const isActive = currentIdx === idx;
-            return (
-              <button
-                key={m.year}
-                type="button"
-                onClick={() => setCurrentIdx(idx)}
-                className={`flex-1 min-w-[100px] sm:min-w-[120px] py-2 sm:py-2.5 px-3 rounded-lg text-center transition-all cursor-pointer ${
-                  isActive
-                    ? "bg-[#EA4326] text-white shadow-md font-bold"
-                    : "bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <span className="block text-[11px] font-mono uppercase tracking-wider opacity-85">
-                  {m.phase}
-                </span>
-                <span className="font-headline text-base sm:text-lg font-bold block truncate">
-                  {m.year}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Active Milestone Slide Card with Left & Right controls */}
-      <div className="bg-card border border-border rounded-2xl p-6 sm:p-7 shadow-sm space-y-5">
-        {/* Card Header: Year, Phase & Navigation Buttons */}
-        <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
-          <div className="space-y-1">
-            <div className="flex items-center gap-3">
-              <span className="font-headline text-3xl sm:text-4xl font-extrabold text-[#EA4326] tracking-tight">
-                {active.year}
-              </span>
-              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border">
-                {active.phase}
-              </span>
-            </div>
-            <span className="text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider block">
-              Step {currentIdx + 1} of {MILESTONES_DATA.length} in DCC History
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={prevMilestone}
-              aria-label="Previous Milestone"
-              className="w-10 h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              type="button"
-              onClick={nextMilestone}
-              aria-label="Next Milestone"
-              className="w-10 h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Milestone Title & Narrative */}
-        <div className="space-y-2">
-          <h3 className="font-headline text-2xl sm:text-3xl font-bold uppercase text-foreground">
-            {active.title}
-          </h3>
-          <p className="text-foreground/90 font-body text-base sm:text-lg leading-relaxed">
-            {active.desc}
-          </p>
-        </div>
-
-        {/* Key Highlights of this era */}
-        <div className="bg-muted/40 border border-border/80 rounded-xl p-4 sm:p-5 space-y-2.5">
-          <span className="block text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
-            Era Highlights &amp; Accomplishments
-          </span>
-          <ul className="space-y-2 text-sm sm:text-base text-foreground/90">
-            {active.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-1 shrink-0" />
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Milestone Photo Frame with Centered Y-Direction Arrow Buttons */}
-        <div className="relative w-full rounded-xl overflow-hidden border border-border/80 shadow-md group">
-          <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full bg-black/20">
-            <Image
-              key={active.img}
-              src={active.img}
-              alt={active.title}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 750px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-            {/* Left Button on Image */}
-            <button
-              type="button"
-              onClick={prevMilestone}
-              aria-label="Previous Milestone"
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            {/* Right Button on Image */}
-            <button
-              type="button"
-              onClick={nextMilestone}
-              aria-label="Next Milestone"
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            {/* Caption on image bottom */}
-            <div className="absolute bottom-3 left-3 right-3 text-white text-xs sm:text-sm font-medium">
-              <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326] mr-2">
-                {active.year} Archive
-              </span>
-              <span className="text-white/90">{active.imgCaption}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Slide Dots and Quick Summary Footer */}
-        <div className="flex items-center justify-between pt-2">
-          <div className="flex items-center gap-2">
-            {MILESTONES_DATA.map((m, idx) => (
-              <button
-                key={m.year}
-                type="button"
-                onClick={() => setCurrentIdx(idx)}
-                aria-label={`Jump to ${m.year}`}
-                className={`transition-all duration-200 cursor-pointer rounded-full ${
-                  currentIdx === idx
-                    ? "w-8 h-2.5 bg-[#EA4326]"
-                    : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                }`}
-              />
-            ))}
-          </div>
-
-          <span className="text-xs font-mono font-semibold text-muted-foreground">
-            {String(currentIdx + 1).padStart(2, "0")} / {String(MILESTONES_DATA.length).padStart(2, "0")}
-          </span>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 function VisionStorySection() {
   const pillars = [
     {
@@ -1166,7 +894,7 @@ function VisionStorySection() {
   return (
     <article className="space-y-6">
       <ChapterHeader
-        chapter="Chapter 03"
+        chapter="Chapter 02"
         tag="Core Values"
         title="Our Vision & Philosophy"
         subtitle="The values and standards that make DCC more than just a team."
@@ -1221,7 +949,7 @@ function TrainingStorySection() {
   return (
     <article className="space-y-6">
       <ChapterHeader
-        chapter="Chapter 04"
+        chapter="Chapter 03"
         tag="The Ground"
         title="Matunga Ground & Training"
         subtitle="The sacred ground where our skills are sharpened before the break of dawn."
@@ -1285,12 +1013,13 @@ function BrotherhoodStorySection() {
   return (
     <article className="space-y-6">
       <ChapterHeader
-        chapter="Chapter 05"
+        chapter="Chapter 04"
         tag="Camaraderie"
         title="Brotherhood & Club Life"
         subtitle="The laughter, post-match chai, train journeys, and family celebrations."
       />
 
+      {/* 4-Photo Rich Memories Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border/80 shadow-sm">
           <Image
@@ -1300,9 +1029,23 @@ function BrotherhoodStorySection() {
             className="object-cover"
             sizes="(max-width: 640px) 100vw, 380px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
           <span className="absolute bottom-3 left-3 text-white text-xs font-headline font-bold uppercase tracking-wider">
             Brothers On &amp; Off The Field
+          </span>
+        </div>
+
+        <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border/80 shadow-sm">
+          <Image
+            src="/images/train_travel.png"
+            alt="Local train travel with cricket kitbags"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 380px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+          <span className="absolute bottom-3 left-3 text-white text-xs font-headline font-bold uppercase tracking-wider">
+            6:00 AM Mumbai Local Journeys
           </span>
         </div>
 
@@ -1314,9 +1057,23 @@ function BrotherhoodStorySection() {
             className="object-cover"
             sizes="(max-width: 640px) 100vw, 380px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
           <span className="absolute bottom-3 left-3 text-white text-xs font-headline font-bold uppercase tracking-wider">
-            Celebrating Life Milestones
+            Celebrating Life Milestones &amp; Weddings
+          </span>
+        </div>
+
+        <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border/80 shadow-sm">
+          <Image
+            src="/images/memories_with_players.png"
+            alt="Post-match tea gathering and bonding"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 380px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+          <span className="absolute bottom-3 left-3 text-white text-xs font-headline font-bold uppercase tracking-wider">
+            Post-Match Reflections &amp; Team Bonds
           </span>
         </div>
       </div>
@@ -1332,9 +1089,9 @@ function BrotherhoodStorySection() {
           and good spirits.
         </p>
         <p>
-          We travel together for outstation tournaments, celebrate each other&apos;s
-          weddings, festivals, and career victories. When one player goes through
-          a difficult time, the whole club stands behind them.
+          We travel together across Mumbai in local trains carrying heavy kitbags,
+          celebrate each other&apos;s weddings, festivals, and career victories. When one
+          player goes through a difficult time, the whole club stands behind them.
         </p>
       </div>
 
@@ -1342,7 +1099,7 @@ function BrotherhoodStorySection() {
         <h3 className="font-headline text-lg font-bold uppercase text-foreground">
           What Makes Our Brotherhood Special:
         </h3>
-        <ul className="space-y-2 text-sm text-muted-foreground">
+        <ul className="space-y-2.5 text-sm text-muted-foreground">
           <li className="flex items-start gap-2.5">
             <Heart className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
             <span>
@@ -1353,7 +1110,7 @@ function BrotherhoodStorySection() {
           <li className="flex items-start gap-2.5">
             <Heart className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
             <span>
-              <strong>Outstation Journeys:</strong> Train travels with bats, kit
+              <strong>Local &amp; Outstation Journeys:</strong> Train travels with bats, kit
               bags, and late-night singing create lifetime memories.
             </span>
           </li>
@@ -1603,84 +1360,385 @@ function TrophyCarousel() {
   );
 }
 
+interface MilestoneSlide {
+  year: string;
+  phase: string;
+  title: string;
+  desc: string;
+  highlights: string[];
+  img: string;
+  imgCaption: string;
+}
+
+const MILESTONES_DATA: MilestoneSlide[] = [
+  {
+    year: "2013",
+    phase: "Phase 01",
+    title: "The First Step: Club Foundation",
+    desc: "Devpur Cricket Club was formally founded. The first 15 players began weekly net practice at local Mumbai grounds, reclaiming the passion paused during academic years.",
+    highlights: [
+      "Initial squad of 15 dedicated village players from Devpur Gaam.",
+      "First structured morning net sessions on Mumbai grounds.",
+      "Establishment of the official club name and white jersey identity.",
+    ],
+    img: "/images/memories_2018.png",
+    imgCaption: "2013 • Founding members and core village organizers coming together.",
+  },
+  {
+    year: "2015",
+    phase: "Phase 02",
+    title: "Tournament Debut in KVO League",
+    desc: "DCC officially registered for competitive leather-ball community tournaments. We played our first official fixture against established community clubs.",
+    highlights: [
+      "Official entry into the prestigious Kutchhi Visa Oswal (KVO) cricket circuit.",
+      "Transition from tennis ball cricket to professional leather-ball matches.",
+      "Adoption of proper protective equipment, team kits, and weekend fixtures.",
+    ],
+    img: "/images/team_members.png",
+    imgCaption: "2015 • DCC squad lined up in official match kits for early community league games.",
+  },
+  {
+    year: "2018",
+    phase: "Phase 03",
+    title: "The First Championship Cup",
+    desc: "After five years of relentless hard work, DCC won its first major trophy. The celebration brought the entire village and community together.",
+    highlights: [
+      "Maiden tournament trophy secured with outstanding all-round team displays.",
+      "Devpur Gaam elders and families celebrated our historic silverware victory.",
+      "Recognition of DCC as a formidable contender in Mumbai community cricket.",
+    ],
+    img: "/images/memories.png",
+    imgCaption: "2018 • Celebrating five years of relentless grit culminating in the first historic silverware victory.",
+  },
+  {
+    year: "2021",
+    phase: "Phase 04",
+    title: "Squad Expansion to 50+ Players",
+    desc: "The club grew from one squad to multiple teams. Junior talent from Devpur Gaam was inducted and mentored by seniors with structured training.",
+    highlights: [
+      "Roster expanded beyond 50 active playing members across age brackets.",
+      "Junior development program instituted to mentor teenagers and emerging talent.",
+      "Structured 5–6 months seasonal camp and 3-days-a-week practice at Matunga Ground.",
+    ],
+    img: "/images/team_group.png",
+    imgCaption: "2021 • Expanded roster united on the ground representing the growing DCC community.",
+  },
+  {
+    year: "2024–Present",
+    phase: "Phase 05",
+    title: "Dominance & Premier Consistency",
+    desc: "Regular finalists at Matunga Gymkhana with Orange Cap and Purple Cap honors. DCC stands recognized as a premier club in community cricket.",
+    highlights: [
+      "Back-to-back runners-up finishes in top-tier KVO championships.",
+      "Prestigious individual league awards: Orange Cap (Runs) & Purple Cap (Wickets).",
+      "Thriving community hub connecting generations through cricket and brotherhood.",
+    ],
+    img: "/images/ground_players_group.png",
+    imgCaption: "2024–Present • Premier division finalists celebrating consistent dominance on the pitch.",
+  },
+];
+
+function MilestoneTimelineSlider() {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const prevMilestone = () => {
+    setCurrentIdx((prev) => (prev === 0 ? MILESTONES_DATA.length - 1 : prev - 1));
+  };
+
+  const nextMilestone = () => {
+    setCurrentIdx((prev) => (prev === MILESTONES_DATA.length - 1 ? 0 : prev + 1));
+  };
+
+  const active = MILESTONES_DATA[currentIdx];
+
+  return (
+    <div className="space-y-5">
+      {/* Horizontal Interactive Year Stepper */}
+      <div className="bg-card border border-border rounded-xl p-2 sm:p-2.5 shadow-sm">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none">
+          {MILESTONES_DATA.map((m, idx) => {
+            const isActive = currentIdx === idx;
+            return (
+              <button
+                key={m.year}
+                type="button"
+                onClick={() => setCurrentIdx(idx)}
+                className={`flex-1 min-w-[95px] sm:min-w-[115px] py-2 sm:py-2.5 px-2.5 rounded-lg text-center transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-[#EA4326] text-white shadow-md font-bold"
+                    : "bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span className="block text-[11px] font-mono uppercase tracking-wider opacity-85">
+                  {m.phase}
+                </span>
+                <span className="font-headline text-sm sm:text-base font-bold block truncate">
+                  {m.year}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Active Milestone Slide Card */}
+      <div className="bg-card border border-border rounded-2xl p-5 sm:p-7 shadow-sm space-y-5">
+        {/* Card Header: Year, Phase & Navigation Buttons */}
+        <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <span className="font-headline text-3xl sm:text-4xl font-extrabold text-[#EA4326] tracking-tight">
+                {active.year}
+              </span>
+              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border">
+                {active.phase}
+              </span>
+            </div>
+            <span className="text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider block">
+              Step {currentIdx + 1} of {MILESTONES_DATA.length} in DCC Journey
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={prevMilestone}
+              aria-label="Previous Milestone"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={nextMilestone}
+              aria-label="Next Milestone"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Milestone Title & Narrative */}
+        <div className="space-y-2">
+          <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
+            {active.title}
+          </h3>
+          <p className="text-foreground/90 font-body text-base leading-relaxed">
+            {active.desc}
+          </p>
+        </div>
+
+        {/* Key Highlights */}
+        <div className="bg-muted/40 border border-border/80 rounded-xl p-4 sm:p-5 space-y-2.5">
+          <span className="block text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+            Era Highlights &amp; Accomplishments
+          </span>
+          <ul className="space-y-2 text-sm text-foreground/90">
+            {active.highlights.map((h) => (
+              <li key={h} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Milestone Photo Frame */}
+        <div className="relative w-full rounded-xl overflow-hidden border border-border/80 shadow-md group">
+          <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full bg-black/20">
+            <Image
+              key={active.img}
+              src={active.img}
+              alt={active.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 750px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+            <button
+              type="button"
+              onClick={prevMilestone}
+              aria-label="Previous Milestone"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            <button
+              type="button"
+              onClick={nextMilestone}
+              aria-label="Next Milestone"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            <div className="absolute bottom-3 left-3 right-3 text-white text-xs sm:text-sm font-medium">
+              <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326] mr-2">
+                {active.year} Archive
+              </span>
+              <span className="text-white/90">{active.imgCaption}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Dots and Footer */}
+        <div className="flex items-center justify-between pt-1">
+          <div className="flex items-center gap-2">
+            {MILESTONES_DATA.map((m, idx) => (
+              <button
+                key={m.year}
+                type="button"
+                onClick={() => setCurrentIdx(idx)}
+                aria-label={`Jump to ${m.year}`}
+                className={`transition-all duration-200 cursor-pointer rounded-full ${
+                  currentIdx === idx
+                    ? "w-8 h-2.5 bg-[#EA4326]"
+                    : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                }`}
+              />
+            ))}
+          </div>
+
+          <span className="text-xs font-mono font-semibold text-muted-foreground">
+            {String(currentIdx + 1).padStart(2, "0")} / {String(MILESTONES_DATA.length).padStart(2, "0")}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function HonorsStorySection() {
+  const [activeTab, setActiveTab] = useState<"trophies" | "milestones">("trophies");
+
   return (
     <article className="space-y-6">
       <ChapterHeader
-        chapter="Chapter 06"
-        tag="Silverware"
-        title="Trophies & Honors"
-        subtitle="Celebrating the hard-earned victories that brought pride to Devpur Gaam."
+        chapter="Chapter 05"
+        tag="Silverware & Milestones"
+        title="Trophies, Honors & Historical Milestones"
+        subtitle="Celebrating our championship silverware, individual league accolades, and the historic road from 2013 to today."
       />
 
-      {/* Interactive Trophy & Achievement Carousel */}
-      <TrophyCarousel />
+      {/* Interactive Tabs Switcher */}
+      <div className="flex items-center gap-2 p-1.5 rounded-xl bg-card border border-border shadow-sm max-w-lg mx-auto">
+        <button
+          type="button"
+          onClick={() => setActiveTab("trophies")}
+          className={`flex-1 py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
+            activeTab === "trophies"
+              ? "bg-[#EA4326] text-white shadow-md"
+              : "text-muted-foreground hover:text-foreground hover:bg-muted"
+          }`}
+        >
+          <Trophy className="w-4 h-4" />
+          <span>Trophies &amp; Awards</span>
+        </button>
 
-      <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed pt-2">
-        <p>
-          Over the past decade, DCC has competed against top community clubs
-          across Mumbai and Gujarat.
-        </p>
-        <p>
-          Our trophy cabinet holds multiple tournament championships, runner-up
-          shields, and individual accolades that reflect the consistency of our
-          players.
-        </p>
+        <button
+          type="button"
+          onClick={() => setActiveTab("milestones")}
+          className={`flex-1 py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
+            activeTab === "milestones"
+              ? "bg-[#EA4326] text-white shadow-md"
+              : "text-muted-foreground hover:text-foreground hover:bg-muted"
+          }`}
+        >
+          <Clock className="w-4 h-4" />
+          <span>Journey Milestones</span>
+        </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-card border border-border rounded-xl p-5 space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
-              <Award className="w-5 h-5" />
+      {activeTab === "trophies" ? (
+        <div className="space-y-6">
+          {/* Interactive Trophy & Achievement Carousel */}
+          <TrophyCarousel />
+
+          <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed pt-2">
+            <p>
+              Over the past decade, DCC has competed against top community clubs
+              across Mumbai and Gujarat.
+            </p>
+            <p>
+              Our trophy cabinet holds multiple tournament championships, runner-up
+              shields, and individual accolades that reflect the consistency of our
+              players.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-card border border-border rounded-xl p-5 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs uppercase font-headline font-bold text-amber-500">
+                    Batting Mastery
+                  </span>
+                  <h3 className="font-headline text-lg font-bold uppercase text-foreground">
+                    Orange Cap Honors
+                  </h3>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                Awarded to DCC&apos;s leading run-scorers for steering pressure run
+                chases in critical knockout matches.
+              </p>
             </div>
-            <div>
-              <span className="text-xs uppercase font-headline font-bold text-amber-500">
-                Batting Mastery
-              </span>
-              <h3 className="font-headline text-lg font-bold uppercase text-foreground">
-                Orange Cap Honors
-              </h3>
+
+            <div className="bg-card border border-border rounded-xl p-5 space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs uppercase font-headline font-bold text-purple-500">
+                    Bowling Mastery
+                  </span>
+                  <h3 className="font-headline text-lg font-bold uppercase text-foreground">
+                    Purple Cap Honors
+                  </h3>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                Recognizing our strike bowlers who delivered match-winning spells,
+                maidens, and breakthroughs.
+              </p>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground font-body leading-relaxed">
-            Awarded to DCC&apos;s leading run-scorers for steering pressure run
-            chases in critical knockout matches.
-          </p>
-        </div>
 
-        <div className="bg-card border border-border rounded-xl p-5 space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
-              <Award className="w-5 h-5" />
+          <div className="bg-card border border-border rounded-xl p-5 space-y-2">
+            <div className="flex items-center gap-2 text-sm font-headline font-bold uppercase text-primary">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Fair Play &amp; Sportsmanship Awards</span>
             </div>
-            <div>
-              <span className="text-xs uppercase font-headline font-bold text-purple-500">
-                Bowling Mastery
-              </span>
-              <h3 className="font-headline text-lg font-bold uppercase text-foreground">
-                Purple Cap Honors
-              </h3>
-            </div>
+            <p className="text-sm text-muted-foreground font-body leading-relaxed">
+              Beyond match wins, tournament committees have repeatedly commended DCC
+              for our discipline, respect toward umpires, and positive conduct on
+              the field.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground font-body leading-relaxed">
-            Recognizing our strike bowlers who delivered match-winning spells,
-            maidens, and breakthroughs.
-          </p>
         </div>
-      </div>
+      ) : (
+        <div className="space-y-6">
+          <MilestoneTimelineSlider />
 
-      <div className="bg-card border border-border rounded-xl p-5 space-y-2">
-        <div className="flex items-center gap-2 text-sm font-headline font-bold uppercase text-primary">
-          <CheckCircle2 className="w-4 h-4" />
-          <span>Fair Play &amp; Sportsmanship Awards</span>
+          <div className="bg-card border border-border rounded-xl p-5 space-y-2">
+            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+              Milestone Legacy
+            </span>
+            <p className="text-sm text-foreground/90 font-body leading-relaxed">
+              Every phase in our timeline represents years of patience, morning sweat at Matunga Ground,
+              and the collective dreams of Devpur Gaam players stepping onto bigger platforms.
+            </p>
+          </div>
         </div>
-        <p className="text-sm text-muted-foreground font-body leading-relaxed">
-          Beyond match wins, tournament committees have repeatedly commended DCC
-          for our discipline, respect toward umpires, and positive conduct on
-          the field.
-        </p>
-      </div>
+      )}
     </article>
   );
 }
