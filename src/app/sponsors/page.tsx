@@ -158,10 +158,7 @@ export default function SponsorsPage() {
                       <h3 className="font-headline text-2xl font-bold text-brand-black">
                         {sponsor.name}
                       </h3>
-                      <p className="text-xs font-bold text-brand-copper mt-0.5">
-                        {sponsor.tagline}
-                      </p>
-                      <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed mt-3">
+                      <p className="text-xs sm:text-sm text-foreground-soft leading-relaxed mt-2">
                         {sponsor.description}
                       </p>
                     </div>
@@ -216,9 +213,6 @@ export default function SponsorsPage() {
                       <h3 className="font-headline text-xl font-bold text-brand-black">
                         {sponsor.name}
                       </h3>
-                      <p className="text-[11px] font-bold text-brand-copper mt-0.5">
-                        {sponsor.tagline}
-                      </p>
                       <p className="text-xs text-foreground-soft leading-relaxed mt-2 line-clamp-3">
                         {sponsor.description}
                       </p>
@@ -265,9 +259,6 @@ export default function SponsorsPage() {
                       <h3 className="font-headline text-xl font-bold text-brand-black">
                         {sponsor.name}
                       </h3>
-                      <p className="text-[11px] font-bold text-brand-copper mt-0.5">
-                        {sponsor.tagline}
-                      </p>
                       <p className="text-xs text-foreground-soft leading-relaxed mt-2 line-clamp-3">
                         {sponsor.description}
                       </p>
@@ -367,7 +358,7 @@ export default function SponsorsPage() {
               </h2>
 
               <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl">
-                The standard DCC sponsorship agreement covers three seasons (2026–27, 2027–28, and 2028–29) at ₹60,000 per season (total ₹1,80,000). Sponsors receive jersey logo placement across approximately 25 tournament matches per season, social media presence, and authentic community engagement.
+                The standard DCC sponsorship agreement covers three competitive seasons (2026–27, 2027–28, and 2028–29). Sponsors receive jersey logo placement across approximately 25 tournament matches per season, social media presence, and authentic community engagement.
               </p>
 
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-neutral-300 space-y-1.5 max-w-xl">

@@ -85,11 +85,11 @@ export function ClubLifeView({ sessions, coaches }: ClubLifeViewProps) {
             <div className="lg:col-span-5">
               <div className="rounded-3xl bg-white border border-stone-200 p-6 sm:p-7 shadow-md relative overflow-hidden">
                 <div className="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-l from-[#EA6E18] to-[#C2520E] text-[10px] font-mono font-black uppercase tracking-wider rounded-bl-2xl text-white">
-                  OFFICIAL NET PROTOCOL
+                  REGULAR NET PRACTICE
                 </div>
 
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#EA6E18] font-bold block mb-1">
-                  ROUTINE SPECIFICATION
+                  NET PRACTICE SCHEDULE
                 </span>
                 <h3 className="font-headline text-2xl font-bold text-stone-900 mb-4">
                   Weekly Practice Structure

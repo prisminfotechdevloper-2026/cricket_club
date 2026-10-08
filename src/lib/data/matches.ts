@@ -1,5 +1,8 @@
 import { Match } from "../types/cricket";
 
+// Developer flag indicating preview / demonstration data state for the prototype
+export const IS_DEMO_DATA = true;
+
 export const matches: Match[] = [
   {
     id: "m-1",

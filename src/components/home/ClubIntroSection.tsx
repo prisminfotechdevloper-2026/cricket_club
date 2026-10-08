@@ -8,8 +8,8 @@ export function ClubIntroSection() {
   const pillars = [
     {
       idx: "01",
-      title: "Structured Coaching Syllabus",
-      desc: "BCCI Level-2 certified coaching staff overseeing customized technical plans for pace, spin, batting, and match mental fortitude.",
+      title: "Regular 3-Day Net Practice",
+      desc: "Disciplined weekday net practice at Matunga Ground guided by Coach Aditya Koli (Kanga B Division), sharpening batting, bowling, and match fitness.",
     },
     {
       idx: "02",
@@ -24,12 +24,12 @@ export function ClubIntroSection() {
   ];
 
   const timelineSteps = [
-    { month: "OCT", label: "Trials & Nets", active: false },
-    { month: "NOV", label: "Tactical Camps", active: false },
-    { month: "DEC", label: "Tournaments", active: false },
-    { month: "JAN", label: "Winter Cup", active: false },
-    { month: "FEB", label: "Knockout Run", active: true },
-    { month: "MAR", label: "Annual Awards", active: false },
+    { month: "OCT", label: "Pre-Season Nets", active: false },
+    { month: "NOV", label: "Tactical Practice", active: false },
+    { month: "DEC", label: "League Matches", active: false },
+    { month: "JAN", label: "Winter Tournaments", active: false },
+    { month: "FEB", label: "Knockout Battles", active: true },
+    { month: "MAR", label: "Season Gathering", active: false },
   ];
 
   return (

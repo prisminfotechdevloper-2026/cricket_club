@@ -42,8 +42,8 @@ export function ClubView() {
     },
     {
       num: "02",
-      name: "Professional Coaching Pedigree",
-      desc: "Led by Head Coach Mr. Aditya Koli, Kanga B Division player, providing structured skill development and match drills.",
+      name: "Professional Coach Guidance",
+      desc: "Regular guidance by Coach Mr. Aditya Koli, Kanga B Division player, sharpening member skills and match sharpness.",
     },
     {
       num: "03",
@@ -416,13 +416,13 @@ export function ClubView() {
         <div className="mb-20 p-8 sm:p-12 rounded-3xl bg-surface-soft border border-border relative overflow-hidden">
           <div className="max-w-2xl space-y-3 mb-8">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-brand-copper">
-              STRUCTURED PREPARATION
+              REGULAR CLUB PRACTICE
             </span>
             <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-brand-black">
-              Practice Nets &amp; Coaching Pedigree
+              Practice Nets &amp; Coach Guidance
             </h2>
             <p className="text-sm text-foreground-soft">
-              Every season begins with intense preparation. We provide our members with professional coaching and quality facilities to compete at the highest community level.
+              Every season begins with disciplined net sessions. We provide our members with experienced coaching guidance and turf facilities to compete at the community level.
             </p>
           </div>
 

@@ -103,9 +103,9 @@ export function SponsorShowcaseSection() {
         <div className="mt-8 pt-6 border-t border-border/70 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-foreground-soft">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-brand-orange" />
-            <span className="font-bold text-brand-black uppercase">2026–2029 Triennial MOU Cycle</span>
+            <span className="font-bold text-brand-black uppercase">2026–2029 Triennial Cycle</span>
             <span className="text-stone-400">•</span>
-            <span>₹1,80,000 Committed per Partner</span>
+            <span>Official Multi-Season Club Partners</span>
           </div>
 
           <div className="flex items-center gap-2">

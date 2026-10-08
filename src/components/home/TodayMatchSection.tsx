@@ -19,13 +19,13 @@ export function TodayMatchSection() {
           <div>
             <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
-              <span>MATCHDAY COMMAND CENTER</span>
+              <span>MATCHDAY UPDATES</span>
             </div>
             <h2 className="font-headline text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-black tracking-tight leading-none uppercase">
               Today&apos;s Match &amp; Live Score
             </h2>
             <p className="text-xs sm:text-sm text-foreground-soft mt-1">
-              Follow DCC&apos;s community tournament matches with simulated live scoring &amp; external Cric Club links.
+              Follow DCC&apos;s community tournament fixtures and live score updates.
             </p>
           </div>
 
@@ -56,10 +56,10 @@ export function TodayMatchSection() {
         <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-surface border border-border/80 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="min-w-0">
             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-brand-copper block">
-              MATCHDAY BROADCAST &amp; SCORECARD PARTNERS
+              MATCHDAY • PROUDLY SUPPORTED BY DCC PARTNERS
             </span>
             <p className="text-xs text-foreground-soft font-medium mt-0.5">
-              Live tournament coverage supported by official DCC community sponsors.
+              Community tournament participation supported by official DCC partners.
             </p>
           </div>
 

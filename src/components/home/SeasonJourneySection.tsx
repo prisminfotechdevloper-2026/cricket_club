@@ -118,7 +118,7 @@ const SEASON_STAGES: JourneyStage[] = [
       "High-stakes quarter-finals and semi-finals with live match scoring updates, enthusiastic Devpur Gaam supporters in the stands, and unwavering club brotherhood.",
     keyObjectives: [
       "Quarter-final and semi-final knockout battles",
-      "Simulated live scoring on Cric Club for community followers",
+      "Live score updates on CricClubs for community followers",
       "Aiming to improve stated KVO ranking towards glory",
     ],
     milestoneHighlight: "2× Runners-Up history with relentless target for top silverware",

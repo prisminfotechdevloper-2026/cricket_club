@@ -11,14 +11,13 @@ export function NextLevelStorySection() {
         <div className="max-w-3xl mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-charcoal text-white text-[11px] font-bold uppercase tracking-widest mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-            <span>PLAYER PROGRESSION TRACK</span>
+            <span>MEMBER SPOTLIGHT & PROGRESSION</span>
           </div>
           <h2 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight leading-[0.98]">
-            Cricket Can Open Bigger Doors
+            Celebrating Member Milestones &amp; Growth
           </h2>
           <p className="mt-4 text-sm sm:text-base text-foreground-soft leading-relaxed">
-            For some members, DCC is not the destination — it is an essential part of the journey.
-            As players develop technique, compete in 25+ seasonal leather-ball fixtures, and build match temperament under pressure, new opportunities open across premier community and Mumbai cricket circuits.
+            Through consistent net practice at Matunga Ground, 25+ seasonal leather-ball fixtures, and dedicated coaching guidance under Mr. Aditya Koli, our members hone match temperament, achieve milestones, and represent Devpur Gaam with distinction across community cricket circuits.
           </p>
         </div>
 
@@ -110,15 +109,15 @@ export function NextLevelStorySection() {
             <div className="p-7 sm:p-8 rounded-3xl dark-sports-card text-white flex-1 flex flex-col justify-between relative overflow-hidden">
               <div className="space-y-5 relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brand-peach text-[11px] font-bold uppercase tracking-widest">
-                  <span>How DCC Enables Growth</span>
+                  <span>Club Practice Rhythm</span>
                 </div>
 
                 <h3 className="font-headline text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  Structured Preparation Without False Guarantees
+                  Consistent Practice &amp; Community Values
                 </h3>
 
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                  We avoid unrealistic promises of automatic state selections. Instead, we provide real cricket infrastructure: turf pitches at Matunga Ground, intense leather-ball match volume, certified coaching oversight, and an empowering brotherhood.
+                  We focus on real cricket discipline: turf practice at Matunga Ground, intense leather-ball match volume, experienced coaching guidance under Mr. Aditya Koli, and an empowering club brotherhood.
                 </p>
 
                 {/* Progression Steps */}

@@ -205,7 +205,7 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
         <div className="pt-5 flex flex-wrap items-center justify-between gap-4">
           <div className="text-xs text-muted flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-copper shrink-0" />
-            <span>Simulated live scoring linked with Cric Club tournament registry.</span>
+            <span>Official tournament live scoring updates via CricClubs.</span>
           </div>
 
           <div className="flex items-center gap-3 ml-auto">
@@ -215,7 +215,7 @@ export function LiveMatchCard({ match }: LiveMatchCardProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-border bg-surface text-brand-black hover:bg-stone-100 font-bold text-xs uppercase tracking-wider transition-colors"
             >
-              <span>Cric Club Feed</span>
+              <span>CricClubs Feed</span>
               <ExternalLink className="w-3.5 h-3.5 text-muted" />
             </a>
 

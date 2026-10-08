@@ -113,7 +113,7 @@ export default async function BlogPage({
                         </span>
                         <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-stone-900/80 backdrop-blur-xs text-white flex items-center gap-1">
                           <Flame className="w-3.5 h-3.5 text-amber-400" />
-                          <span>Featured Masterclass</span>
+                          <span>Featured Club Story</span>
                         </span>
                       </div>
                     </div>
