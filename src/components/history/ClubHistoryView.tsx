@@ -319,7 +319,7 @@ export function ClubHistoryView() {
                         }}
                         role="tab"
                         aria-selected={isActive}
-                        className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all duration-150 cursor-pointer group ${
+                        className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-[background-color,color,box-shadow] duration-150 cursor-pointer group ${
                           isActive
                             ? "bg-[#EA4326] text-white shadow-md shadow-[#EA4326]/20 font-semibold"
                             : "bg-transparent text-foreground hover:bg-muted/70 hover:text-foreground"
@@ -953,7 +953,7 @@ function TrophyCarousel() {
           type="button"
           onClick={prevSlide}
           aria-label="Previous Achievement"
-          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-all duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
         </button>
@@ -963,7 +963,7 @@ function TrophyCarousel() {
           type="button"
           onClick={nextSlide}
           aria-label="Next Achievement"
-          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-all duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
+          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-20 cursor-pointer"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
         </button>
@@ -986,7 +986,7 @@ function TrophyCarousel() {
             key={slide.id}
             onClick={() => setCurrentIdx(idx)}
             aria-label={`Go to slide ${idx + 1}`}
-            className={`transition-all duration-200 cursor-pointer rounded-full ${
+            className={`transition-[width,background-color] duration-200 cursor-pointer rounded-full ${
               currentIdx === idx
                 ? "w-8 h-2.5 bg-[#EA4326]"
                 : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
@@ -1030,7 +1030,7 @@ function TrophyCarousel() {
             <button
               key={slide.id}
               onClick={() => setCurrentIdx(idx)}
-              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-[transform,opacity,border-color] duration-150 cursor-pointer ${
                 isSelected
                   ? "border-[#EA4326] scale-[1.03] shadow-md"
                   : "border-border/60 opacity-60 hover:opacity-100 hover:border-foreground/40"
