@@ -96,15 +96,24 @@ export function SiteHeader() {
     setOpenDropdown(null);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and listen for Escape key when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
 
@@ -301,62 +310,101 @@ export function SiteHeader() {
         </Container>
 
         {/* MCC Cricket Style Live Running Sports Ticker */}
-        {!isOpen && (
-          <div className="bg-[#0D131F] text-stone-200 border-t border-white/[0.08] py-1.5 overflow-hidden flex items-center text-xs font-mono select-none">
-            <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#EA6E18] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-              <span>DCC PULSE</span>
-            </div>
+        <div className="bg-[#0D131F] text-stone-200 border-t border-white/[0.08] py-1.5 overflow-hidden flex items-center text-xs font-mono select-none">
+          <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#EA6E18] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+            <span>DCC PULSE</span>
+          </div>
 
-            <div className="overflow-hidden flex-1 marquee-mask">
-              <div className="animate-marquee-rtl flex items-center gap-8 text-[11px] font-semibold text-stone-300">
-                {[1, 2].map((key) => (
-                  <div key={key} className="flex items-center gap-8 shrink-0">
-                    <Link href="/matches/dcc-vs-royal-xi" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                      <span className="text-white font-bold">LIVE:</span>
-                      <span>DCC 146/4 (17.2 ov) vs Royal XI • Need 17 off 16 balls</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                    <Link href="/matches" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-[#EA6E18] font-bold">NEXT FIXTURE:</span>
-                      <span>Sunday vs KVO Stars • 9:30 AM @ Matunga Ground</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                    <Link href="/club-life" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-[#F89928] font-bold">TURF NETS:</span>
-                      <span>Mon • Wed • Fri 7:00 AM guided by Coach Aditya Koli</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                    <Link href="/players" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-white font-bold">MEMBERS:</span>
-                      <span>50+ Dedicated Members Proudly Representing Devpur Gaam</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                    <Link href="/memories" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-[#EA6E18] font-bold">MEMORIES:</span>
-                      <span>Preserving Season Moments &amp; Community Get-Togethers</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                    <Link href="/club" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                      <span className="text-white font-bold">HONORS:</span>
-                      <span>2× Runners-Up Cups • Ranked 10 in KVO Teams • Est. 2013</span>
-                    </Link>
-                    <span className="text-stone-600">/</span>
-                  </div>
-                ))}
-              </div>
+          <div className="overflow-hidden flex-1 marquee-mask">
+            <div className="animate-marquee-rtl flex items-center gap-8 text-[11px] font-semibold text-stone-300">
+              {[1, 2].map((key) => (
+                <div key={key} className="flex items-center gap-8 shrink-0">
+                  <Link href="/matches/dcc-vs-royal-xi" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                    <span className="text-white font-bold">LIVE:</span>
+                    <span>DCC 146/4 (17.2 ov) vs Royal XI • Need 17 off 16 balls</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                  <Link href="/matches" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="text-[#EA6E18] font-bold">NEXT FIXTURE:</span>
+                    <span>Sunday vs KVO Stars • 9:30 AM @ Matunga Ground</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                  <Link href="/club-life" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="text-[#F89928] font-bold">TURF NETS:</span>
+                    <span>Mon • Wed • Fri 7:00 AM guided by Coach Aditya Koli</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                  <Link href="/players" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="text-white font-bold">MEMBERS:</span>
+                    <span>50+ Dedicated Members Proudly Representing Devpur Gaam</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                  <Link href="/memories" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="text-[#EA6E18] font-bold">MEMORIES:</span>
+                    <span>Preserving Season Moments &amp; Community Get-Togethers</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                  <Link href="/club" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span className="text-white font-bold">HONORS:</span>
+                    <span>2× Runners-Up Cups • Ranked 10 in KVO Teams • Est. 2013</span>
+                  </Link>
+                  <span className="text-stone-600">/</span>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
       </header>
 
-      {/* Mobile Navigation Drawer: Rendered via Portal at body level to prevent parent stacking/overflow clipping */}
+      {/* Mobile Navigation Drawer: Full-screen overlay portal with permanent pinned top header bar */}
       {mounted &&
         isOpen &&
         createPortal(
-          <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[90] bg-surface overflow-y-auto overscroll-contain px-5 pt-5 pb-16 flex flex-col justify-between shadow-2xl animate-in fade-in duration-200">
-            <div className="space-y-4">
+          <div
+            id="mobile-navigation-drawer"
+            className="lg:hidden fixed inset-0 z-[9999] bg-surface flex flex-col justify-between overflow-hidden animate-in fade-in duration-200"
+          >
+            {/* Top Heading Bar inside Sidenavbar: Always permanently visible at top, never hidden */}
+            <div className="shrink-0 flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 border-b border-border bg-surface z-20 shadow-2xs">
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2.5 group focus:outline-none"
+              >
+                <div className="relative w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow-sm transition-transform group-hover:scale-105">
+                  <Image
+                    src="/logo/dcc-logo.png"
+                    alt="Devpur Cricket Club Emblem"
+                    fill
+                    priority
+                    className="object-contain"
+                    sizes="44px"
+                  />
+                </div>
+                <div className="flex flex-col min-w-0">
+                  <span className="font-headline font-bold text-base sm:text-lg text-brand-black leading-tight truncate">
+                    DEVPUR CRICKET CLUB
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#EA6E18] font-bold">
+                    DEV PUR GAAM • EST. 2013
+                  </span>
+                </div>
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="p-2 sm:p-2.5 rounded-xl border border-border text-brand-black hover:bg-stone-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EA6E18]"
+                aria-label="Close navigation menu"
+              >
+                <X className="w-5 h-5 text-stone-800" />
+              </button>
+            </div>
+
+            {/* Scrollable Content Body */}
+            <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 py-4 space-y-4">
               {/* Live Match Quick Banner */}
               <Link
                 href="/matches/dcc-vs-royal-xi"
@@ -407,7 +455,7 @@ export function SiteHeader() {
                         onClick={() => setIsOpen(false)}
                         className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-semibold transition-colors ${
                           active
-                            ? "bg-brand-copper/10 text-brand-copper-dark font-bold"
+                            ? "bg-[#EA6E18]/10 text-[#EA6E18] font-bold"
                             : "text-foreground-soft hover:text-brand-black hover:bg-black/[0.03]"
                         }`}
                       >
@@ -468,11 +516,11 @@ export function SiteHeader() {
             </div>
 
             {/* Club Footnote inside Drawer */}
-            <div className="pt-4 border-t border-border mt-6 text-center space-y-1">
-              <p className="font-headline font-bold text-sm tracking-wider uppercase text-brand-black">
+            <div className="shrink-0 px-4 sm:px-6 py-3.5 border-t border-border bg-surface-soft text-center space-y-1">
+              <p className="font-headline font-bold text-xs sm:text-sm tracking-wider uppercase text-brand-black">
                 Devpur Cricket Club • Devpur Gaam
               </p>
-              <p className="text-xs text-muted">
+              <p className="text-[11px] text-muted">
                 PLAY • TRAIN • COMPETE • WIN • Est. 2013
               </p>
             </div>
