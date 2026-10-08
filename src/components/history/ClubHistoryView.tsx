@@ -210,19 +210,51 @@ export function ClubHistoryView() {
       </section>
 
       {/* =========================================================================
-          PAGE HERO BANNER
+          PAGE HERO BANNER WITH RESPONSIVE GROUND BACKGROUND
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-[#0A0D14] border-b border-border/80 py-12 sm:py-16 text-white">
-        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#EA4326_1px,transparent_1px)] [background-size:24px_24px]" />
-        <Container className="relative z-10">
+      <section className="relative overflow-hidden bg-[#0A0D14] border-b border-border/80 text-white min-h-[250px] sm:min-h-[280px] md:min-h-[310px] lg:min-h-[340px] flex items-center">
+        {/* Mobile Ground Background Image (Perspective View) */}
+        <div className="absolute inset-0 block md:hidden pointer-events-none">
+          <Image
+            src="/aboutimgs/history-hero-mobile.png"
+            alt="Devpur Cricket Club Ground Pitch - Mobile"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Mobile Dark Gradient Overlay for Maximum Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/90" />
+        </div>
+
+        {/* Desktop Ground Background Image (Aerial Panoramic Pitch View) */}
+        <div className="absolute inset-0 hidden md:block pointer-events-none">
+          <Image
+            src="/aboutimgs/history-hero-desktop.jpg"
+            alt="Devpur Cricket Club Ground Pitch - Desktop"
+            fill
+            priority
+            className="object-cover object-[center_35%]"
+            sizes="100vw"
+          />
+          {/* Desktop Dual-Layer Gradient: High contrast for left text, pitch visible on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+        </div>
+
+        {/* Subtle dot pattern texture */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#EA4326_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        {/* Hero Content */}
+        <Container className="relative z-10 py-10 sm:py-12 md:py-14 w-full">
           <div className="max-w-3xl space-y-3">
-            <span className="inline-block text-[#EA4326] font-headline text-sm font-bold uppercase tracking-widest">
+            <span className="inline-block text-[#EA4326] font-headline text-xs sm:text-sm font-bold uppercase tracking-widest drop-shadow-sm">
               Club Heritage &amp; Archives
             </span>
-            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
+            <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-md">
               History of Devpur Cricket Club
             </h1>
-            <p className="text-white/80 text-base sm:text-lg font-normal leading-relaxed max-w-2xl font-body">
+            <p className="text-white/90 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-2xl font-body drop-shadow-sm">
               More than a club, this is a brotherhood born on the red soil of
               Matunga Ground. Explore our authentic story, divided by chapters.
             </p>
