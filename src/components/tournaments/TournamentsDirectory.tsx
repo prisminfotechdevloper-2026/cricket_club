@@ -23,19 +23,18 @@ export function TournamentsDirectory({ tournaments }: TournamentsDirectoryProps)
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
-                <span>COMPETITIVE CAMPAIGNS // KVO &amp; REGIONAL LEAGUES</span>
+                <span>COMMUNITY PARTICIPATION // KVO &amp; VILLAGE CUPS</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
-                Tournament Arenas.
+                TOURNAMENTS WE PLAY
                 <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
-                  Testing Limits on the Pitch.
+                  Our Competitive Journey.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
-                Devpur Cricket Club participates in premier community tournaments, KVO championships, and Village
-                Premier Leagues across Mumbai. Explore our competitive campaigns, match records, and top player honors.
+                DCC participates in community cricket competitions and represents Devpur Gaam when we take the field.
               </p>
 
               {/* Action Badges */}

@@ -64,16 +64,14 @@ export function MatchesDirectory({ initialMatches }: MatchesDirectoryProps) {
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
-                Chasing Silverware.
+                MATCHES WE PLAY
                 <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
-                  On The Cricket Pitch.
+                  Season Fixtures &amp; Scorecards.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl">
-                25+ competitive leather-ball fixtures across Mumbai and KVO community circuits.
-                From intense last-over run chases to championship knockout matches — follow every ball,
-                upcoming fixture, and historical scorecard.
+                Follow Devpur Cricket Club&apos;s practice matches and community tournament fixtures across each season.
               </p>
 
               {/* Action Badges */}

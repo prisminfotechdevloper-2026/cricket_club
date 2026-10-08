@@ -651,6 +651,49 @@ export function LiveScoreCentre({ match }: LiveScoreCentreProps) {
             </div>
           </div>
         )}
+
+        {/* Matchday Official Partner Integration Layer */}
+        <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-surface border border-border/80 shadow-xs">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-border/60">
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-copper block">
+                MATCHDAY • PROUDLY SUPPORTED BY DCC PARTNERS
+              </span>
+              <p className="text-xs text-foreground-soft font-medium mt-0.5">
+                Devpur Cricket Club tournament participation is proudly powered by official club sponsors.
+              </p>
+            </div>
+            <a
+              href="https://cricclubs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-charcoal text-white hover:bg-black text-xs font-bold uppercase tracking-wider transition-colors shrink-0"
+            >
+              <span>View On CricClubs</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3 items-center">
+            {sponsors.map((sp) => (
+              <div
+                key={sp.id}
+                className="h-16 rounded-xl bg-white border border-stone-200/80 p-2 flex items-center justify-center relative shadow-2xs hover:border-[#EA6E18]/60 transition-colors"
+                title={sp.name}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={sp.logo}
+                    alt={sp.name}
+                    fill
+                    className="object-contain"
+                    sizes="120px"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </Container>
     </div>
   );
