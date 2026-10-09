@@ -197,10 +197,10 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
           <div className="flex items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/20 text-[11px] font-mono font-bold uppercase tracking-widest shadow-lg">
-                <Camera className="w-3.5 h-3.5 text-[#EA6E18]" />
+                <Camera className="w-3.5 h-3.5 text-[#F0A04B]" />
                 <span>VISUAL ARCHIVES // 2013–2027</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#EA6E18]/30 backdrop-blur-md text-[#F8C080] border border-[#EA6E18]/50 text-[11px] font-mono font-bold tracking-wider">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F0A04B]/30 backdrop-blur-md text-[#F8C080] border border-[#C16A35]/50 text-[11px] font-mono font-bold tracking-wider">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>3s AUTO-LOOP</span>
                 <span className="text-white/60 mx-1">•</span>
@@ -246,7 +246,7 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
           <div className="space-y-3 sm:space-y-4 max-w-4xl text-left">
             {/* Kicker & Location */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono">
-              <span className="px-2.5 py-1 rounded-md bg-[#EA6E18] text-white font-bold tracking-wider uppercase text-[10px] sm:text-xs shadow-sm">
+              <span className="px-2.5 py-1 rounded-md bg-[#D7833D] text-white font-bold tracking-wider uppercase text-[10px] sm:text-xs shadow-sm">
                 {currentSlideData.kicker}
               </span>
               <span className="inline-flex items-center gap-1.5 text-stone-300 font-medium">
@@ -254,7 +254,7 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
                 <span>{currentSlideData.location}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 text-[#F8C080] font-bold">
-                <Trophy className="w-3.5 h-3.5 text-[#EA6E18]" />
+                <Trophy className="w-3.5 h-3.5 text-[#F0A04B]" />
                 <span>{currentSlideData.highlightStat}</span>
               </span>
             </div>
@@ -285,7 +285,7 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
                   <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden mb-1.5 relative">
                     <div
                       key={`prog-${idx}-${activeSlide}`}
-                      className={`h-full bg-gradient-to-r from-[#EA6E18] to-[#F89928] rounded-full ${
+                      className={`h-full bg-gradient-to-r from-[#F0A04B] to-[#D7833D] rounded-full ${
                         isActive
                           ? "animate-progress-3s w-full"
                           : idx < activeSlide

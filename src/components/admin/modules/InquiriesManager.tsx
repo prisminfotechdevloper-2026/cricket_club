@@ -32,13 +32,13 @@ export function InquiriesManager() {
               key={inq.id}
               className={`p-6 rounded-2xl bg-white border transition-colors space-y-4 shadow-xs ${
                 isNew
-                  ? "border-[#EA6E18]/40 ring-1 ring-[#EA6E18]/20"
+                  ? "border-[#D7833D]/40 ring-1 ring-[#D7833D]/20"
                   : "border-[#E8E3DD]"
               }`}
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center font-headline text-lg font-bold text-[#EA6E18] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center font-headline text-lg font-bold text-[#D7833D] shrink-0">
                     {inq.senderName.charAt(0)}
                   </div>
                   <div>
@@ -62,7 +62,7 @@ export function InquiriesManager() {
                   <span
                     className={`px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider ${
                       inq.type === "sponsorship_interest"
-                        ? "bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25"
+                        ? "bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/25"
                         : inq.type === "practice_match_request"
                         ? "bg-purple-50 text-purple-700 border border-purple-200"
                         : "bg-blue-50 text-blue-700 border border-blue-200"
@@ -76,7 +76,7 @@ export function InquiriesManager() {
                     onChange={(e) =>
                       updateInquiryStatus(inq.id, e.target.value as AdminInquiry["status"])
                     }
-                    className="px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800 outline-hidden cursor-pointer focus:border-[#EA6E18]"
+                    className="px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800 outline-hidden cursor-pointer focus:border-[#D7833D]"
                   >
                     <option value="new">New</option>
                     <option value="in_review">In Review</option>

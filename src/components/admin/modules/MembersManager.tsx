@@ -54,7 +54,7 @@ export function MembersManager() {
         </div>
         <button
           onClick={handleAddNew}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#D96214] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#EA6E18]/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#C27332] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#D7833D]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Enroll New Member</span>
@@ -70,14 +70,14 @@ export function MembersManager() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by member name, role, or jersey #..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-xs font-medium focus:border-[#EA6E18] focus:bg-white outline-hidden transition-colors"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-xs font-medium focus:border-[#D7833D] focus:bg-white outline-hidden transition-colors"
           />
         </div>
 
         <select
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
-          className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#EA6E18] focus:bg-white outline-hidden w-full sm:w-auto cursor-pointer"
+          className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#D7833D] focus:bg-white outline-hidden w-full sm:w-auto cursor-pointer"
         >
           <option value="all">All Playing Roles</option>
           <option value="Opening Batter">Opening Batter</option>
@@ -101,16 +101,16 @@ export function MembersManager() {
           filteredPlayers.map((player) => (
             <div
               key={player.id}
-              className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/40 hover:shadow-md transition-all flex flex-col justify-between group"
+              className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-stone-100 border border-[#EA6E18]/25 flex items-center justify-center font-headline text-2xl font-bold text-[#EA6E18] shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-stone-100 border border-[#D7833D]/25 flex items-center justify-center font-headline text-2xl font-bold text-[#D7833D] shrink-0">
                       #{player.jerseyNumber}
                     </div>
                     <div>
-                      <h3 className="font-headline text-xl font-bold text-[#090A0C] group-hover:text-[#EA6E18] transition-colors leading-tight">
+                      <h3 className="font-headline text-xl font-bold text-[#090A0C] group-hover:text-[#D7833D] transition-colors leading-tight">
                         {player.name}
                       </h3>
                       <span className="text-xs text-stone-500 block mt-0.5 font-medium">
@@ -148,11 +148,11 @@ export function MembersManager() {
                   </div>
                   <div>
                     <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Runs</span>
-                    <span className="text-[#EA6E18] font-headline text-xl font-bold">{player.careerStats?.runs || 0}</span>
+                    <span className="text-[#D7833D] font-headline text-xl font-bold">{player.careerStats?.runs || 0}</span>
                   </div>
                   <div>
                     <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Wkts</span>
-                    <span className="text-[#C2520E] font-headline text-xl font-bold">{player.careerStats?.wickets || 0}</span>
+                    <span className="text-[#B96623] font-headline text-xl font-bold">{player.careerStats?.wickets || 0}</span>
                   </div>
                   <div>
                     <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">HS</span>

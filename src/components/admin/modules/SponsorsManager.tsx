@@ -43,7 +43,7 @@ export function SponsorsManager() {
         </div>
         <button
           onClick={handleAddNew}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#D96214] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#EA6E18]/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#C27332] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#D7833D]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Onboard New Partner</span>
@@ -52,8 +52,8 @@ export function SponsorsManager() {
 
       {/* Official MOU Summary Schedule Banner */}
       <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-md space-y-4">
-        <div className="flex items-center gap-2 text-[#EA6E18] font-headline text-sm font-bold uppercase tracking-wider">
-          <FileText className="w-4 h-4 text-[#EA6E18]" />
+        <div className="flex items-center gap-2 text-[#D7833D] font-headline text-sm font-bold uppercase tracking-wider">
+          <FileText className="w-4 h-4 text-[#D7833D]" />
           <span>OFFICIAL DCC SPONSORSHIP MOU SCHEDULE (SEASONS 2026–27 TO 2028–29)</span>
         </div>
 
@@ -64,11 +64,11 @@ export function SponsorsManager() {
           </div>
           <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
             <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Annual Sponsorship</span>
-            <span className="text-[#EA6E18] font-headline text-2xl font-bold block mt-0.5">₹60,000 / Year</span>
+            <span className="text-[#D7833D] font-headline text-2xl font-bold block mt-0.5">₹60,000 / Year</span>
           </div>
           <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
             <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Total Contract Value</span>
-            <span className="text-[#C2520E] font-headline text-2xl font-bold block mt-0.5">₹1,80,000 Total</span>
+            <span className="text-[#B96623] font-headline text-2xl font-bold block mt-0.5">₹1,80,000 Total</span>
           </div>
           <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
             <span className="text-stone-500 font-bold uppercase text-[10px] tracking-wider block">Jersey Match Deliverable</span>
@@ -82,7 +82,7 @@ export function SponsorsManager() {
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.id}
-            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/40 hover:shadow-md transition-all flex flex-col justify-between group"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col justify-between group"
           >
             <div className="space-y-4">
               {/* Logo & Actions row */}
@@ -119,10 +119,10 @@ export function SponsorsManager() {
               </div>
 
               <div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25 text-xs font-headline font-bold uppercase tracking-wider inline-block mb-1.5">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/25 text-xs font-headline font-bold uppercase tracking-wider inline-block mb-1.5">
                   {sponsor.tierLabel}
                 </span>
-                <h3 className="font-headline text-2xl font-bold text-[#090A0C] group-hover:text-[#EA6E18] transition-colors">
+                <h3 className="font-headline text-2xl font-bold text-[#090A0C] group-hover:text-[#D7833D] transition-colors">
                   {sponsor.name}
                 </h3>
                 {sponsor.jerseyPlacement && (

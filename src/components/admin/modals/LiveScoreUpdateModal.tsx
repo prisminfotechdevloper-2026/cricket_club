@@ -91,7 +91,7 @@ export function LiveScoreUpdateModal({
 
         {/* Quick Simulator Buttons */}
         <div className="mb-5 p-3 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] space-y-2">
-          <span className="text-xs font-headline font-bold text-[#C2520E] uppercase tracking-wider block">
+          <span className="text-xs font-headline font-bold text-[#B96623] uppercase tracking-wider block">
             ⚡ Quick Ball Simulator
           </span>
           <div className="grid grid-cols-4 gap-2">
@@ -112,7 +112,7 @@ export function LiveScoreUpdateModal({
             <button
               type="button"
               onClick={() => handleQuickAddBoundary("six")}
-              className="py-1.5 rounded-lg bg-[#EA6E18]/15 hover:bg-[#EA6E18]/25 text-[#EA6E18] border border-[#EA6E18]/30 font-headline text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
+              className="py-1.5 rounded-lg bg-[#D7833D]/15 hover:bg-[#D7833D]/25 text-[#D7833D] border border-[#D7833D]/30 font-headline text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
             >
               +6 SIX
             </button>
@@ -128,7 +128,7 @@ export function LiveScoreUpdateModal({
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 space-y-2">
-            <span className="text-xs font-headline font-bold text-[#EA6E18] uppercase tracking-wider block">
+            <span className="text-xs font-headline font-bold text-[#D7833D] uppercase tracking-wider block">
               DCC Current Innings
             </span>
             <div className="grid grid-cols-3 gap-3">
@@ -138,7 +138,7 @@ export function LiveScoreUpdateModal({
                   type="text"
                   value={dccRuns}
                   onChange={(e) => setDccRuns(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -147,7 +147,7 @@ export function LiveScoreUpdateModal({
                   type="text"
                   value={dccWickets}
                   onChange={(e) => setDccWickets(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -157,7 +157,7 @@ export function LiveScoreUpdateModal({
                   value={dccOvers}
                   onChange={(e) => setDccOvers(e.target.value)}
                   placeholder="19.2"
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export function LiveScoreUpdateModal({
                   type="text"
                   value={oppRuns}
                   onChange={(e) => setOppRuns(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -183,7 +183,7 @@ export function LiveScoreUpdateModal({
                   type="text"
                   value={oppWickets}
                   onChange={(e) => setOppWickets(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -192,7 +192,7 @@ export function LiveScoreUpdateModal({
                   type="text"
                   value={oppOvers}
                   onChange={(e) => setOppOvers(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-stone-200 text-stone-900 text-lg font-headline font-bold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
             </div>
@@ -204,7 +204,7 @@ export function LiveScoreUpdateModal({
                 type="checkbox"
                 checked={markCompleted}
                 onChange={(e) => setMarkCompleted(e.target.checked)}
-                className="rounded border-stone-300 bg-white text-[#EA6E18] focus:ring-[#EA6E18]"
+                className="rounded border-stone-300 bg-white text-[#D7833D] focus:ring-[#D7833D]"
               />
               <span className="font-semibold">Conclude &amp; Mark Match as Completed</span>
             </label>
@@ -215,7 +215,7 @@ export function LiveScoreUpdateModal({
                 value={resultSummary}
                 onChange={(e) => setResultSummary(e.target.value)}
                 placeholder="e.g. DCC won by 14 runs"
-                className="w-full px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] focus:bg-white outline-hidden"
+                className="w-full px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#D7833D] focus:bg-white outline-hidden"
               />
             )}
           </div>
@@ -230,7 +230,7 @@ export function LiveScoreUpdateModal({
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20 flex items-center gap-2"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#C27332] transition-opacity cursor-pointer shadow-md shadow-[#D7833D]/20 flex items-center gap-2"
             >
               <RefreshCw className="w-4 h-4" />
               <span>Broadcast Score Update</span>

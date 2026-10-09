@@ -16,8 +16,8 @@ export default function SponsorsPage() {
       {/* 1. Page Header: MCC Cricket Inspired Prestige Partner Atmosphere */}
       <section className="relative overflow-hidden bg-[#080D1A] text-white border-b border-white/10 py-12 sm:py-16 lg:py-20">
         {/* Warm Golden/Amber Glow & Sports Matrix */}
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#F89928]/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#EA6E18]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#EAA05E]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#F0A04B]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
         <Container className="relative z-10">
@@ -25,13 +25,13 @@ export default function SponsorsPage() {
             {/* Left Column: Mission & Identity */}
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-stone-200 border border-white/15 text-[11px] font-mono font-bold uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F0A04B] animate-pulse" />
                 <span>COMMUNITY PARTNERSHIPS // 2026–2029 CYCLE</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.98]">
                 Powered by Our
-                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
+                <span className="bg-gradient-to-r from-[#F0A04B] via-[#F0A04B] to-[#D7833D] bg-clip-text text-transparent block mt-1">
                   Proud Club Partners.
                 </span>
               </h1>
@@ -45,11 +45,11 @@ export default function SponsorsPage() {
               {/* Action Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-stone-200">
-                  <Shield className="w-3.5 h-3.5 text-[#EA6E18]" />
+                  <Shield className="w-3.5 h-3.5 text-[#F0A04B]" />
                   <span>7 OFFICIAL BRANDS</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-stone-200">
-                  <Award className="w-3.5 h-3.5 text-[#F89928]" />
+                  <Award className="w-3.5 h-3.5 text-[#EAA05E]" />
                   <span>~25 MATCHES / YR ON JERSEY</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-stone-200">
@@ -87,10 +87,10 @@ export default function SponsorsPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md space-y-1">
-                  <span className="text-[10px] uppercase font-bold text-[#F0761E] tracking-wider block">
+                  <span className="text-[10px] uppercase font-bold text-[#F0A04B] tracking-wider block">
                     DIGITAL PRESENCE
                   </span>
-                  <span className="font-headline text-2xl font-black text-[#F0761E] block">
+                  <span className="font-headline text-2xl font-black text-[#F0A04B] block">
                     ~1K Views
                   </span>
                   <span className="text-[11px] text-stone-400 font-body block">

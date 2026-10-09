@@ -34,14 +34,14 @@ export function AchievementsHub({ achievements }: AchievementsHubProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Narrative */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#EA6E18] border border-[#EA6E18]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#EA6E18] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F0A04B]/10 text-[#F0A04B] border border-[#C16A35]/20 text-[11px] font-mono font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F0A04B] animate-pulse" />
                 <span>SILVERWARE VAULT // CLUB HONORS &amp; INDIVIDUAL CAPS</span>
               </div>
 
               <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[0.98]">
                 Silverware &amp; Glory.
-                <span className="bg-gradient-to-r from-[#E66212] via-[#EA6E18] to-[#F89928] bg-clip-text text-transparent block mt-1">
+                <span className="bg-gradient-to-r from-[#F0A04B] via-[#F0A04B] to-[#D7833D] bg-clip-text text-transparent block mt-1">
                   Honoring Sporting Grit.
                 </span>
               </h1>
@@ -54,11 +54,11 @@ export function AchievementsHub({ achievements }: AchievementsHubProps) {
               {/* Action Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Trophy className="w-3.5 h-3.5 text-[#EA6E18]" />
+                  <Trophy className="w-3.5 h-3.5 text-[#F0A04B]" />
                   <span>2× RUNNERS-UP CUPS</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
-                  <Award className="w-3.5 h-3.5 text-[#F89928]" />
+                  <Award className="w-3.5 h-3.5 text-[#EAA05E]" />
                   <span>ORANGE &amp; PURPLE CAPS</span>
                 </div>
                 <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs font-mono text-stone-800 shadow-2xs">
@@ -72,9 +72,9 @@ export function AchievementsHub({ achievements }: AchievementsHubProps) {
             <div className="lg:col-span-5">
               <div className="grid grid-cols-2 gap-3.5 font-mono text-xs">
                 {[
-                  { label: "TROPHIES", val: "2× Silver", sub: "KVO Circuit Finals", color: "text-[#EA6E18]" },
-                  { label: "CAP HONORS", val: "Orange & Purple", sub: "Batter & Bowler", color: "text-[#EA6E18]" },
-                  { label: "CIRCUIT RANK", val: "Top #10", sub: "Community Leagues", color: "text-[#EA6E18]" },
+                  { label: "TROPHIES", val: "2× Silver", sub: "KVO Circuit Finals", color: "text-[#F0A04B]" },
+                  { label: "CAP HONORS", val: "Orange & Purple", sub: "Batter & Bowler", color: "text-[#F0A04B]" },
+                  { label: "CIRCUIT RANK", val: "Top #10", sub: "Community Leagues", color: "text-[#F0A04B]" },
                   { label: "SQUAD", val: "50+ Men", sub: "United Brotherhood", color: "text-emerald-600" },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1">

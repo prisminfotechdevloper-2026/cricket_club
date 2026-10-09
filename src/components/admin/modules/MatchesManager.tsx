@@ -75,7 +75,7 @@ export function MatchesManager() {
         </div>
         <button
           onClick={handleAddNew}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#D96214] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#EA6E18]/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#C27332] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#D7833D]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Schedule New Match</span>
@@ -91,7 +91,7 @@ export function MatchesManager() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by opponent, tournament, or ground..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-xs font-medium focus:border-[#EA6E18] focus:bg-white outline-hidden transition-colors"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-xs font-medium focus:border-[#D7833D] focus:bg-white outline-hidden transition-colors"
           />
         </div>
 
@@ -99,7 +99,7 @@ export function MatchesManager() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#EA6E18] focus:bg-white outline-hidden cursor-pointer"
+            className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#D7833D] focus:bg-white outline-hidden cursor-pointer"
           >
             <option value="all">All Statuses</option>
             <option value="upcoming">Upcoming</option>
@@ -110,7 +110,7 @@ export function MatchesManager() {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#EA6E18] focus:bg-white outline-hidden cursor-pointer"
+            className="px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-stone-800 text-xs font-semibold focus:border-[#D7833D] focus:bg-white outline-hidden cursor-pointer"
           >
             <option value="all">All Formats</option>
             <option value="leather">Red Ball (Leather)</option>
@@ -136,7 +136,7 @@ export function MatchesManager() {
             return (
               <div
                 key={m.id}
-                className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#EA6E18]/40 hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5"
+                className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5"
               >
                 {/* Left match summary */}
                 <div className="space-y-2">
@@ -152,7 +152,7 @@ export function MatchesManager() {
                       </span>
                     )}
                     {!isLive && !isCompleted && (
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/25 text-xs font-headline font-bold uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/25 text-xs font-headline font-bold uppercase tracking-wider">
                         UPCOMING
                       </span>
                     )}
@@ -170,7 +170,7 @@ export function MatchesManager() {
                       Devpur Cricket Club
                     </span>
                     <span className="font-headline text-xl font-bold text-stone-400">VS</span>
-                    <span className="font-headline text-2xl font-bold text-[#EA6E18] tracking-tight">
+                    <span className="font-headline text-2xl font-bold text-[#D7833D] tracking-tight">
                       {m.opponent}
                     </span>
                   </div>
@@ -188,7 +188,7 @@ export function MatchesManager() {
                       {m.result && (
                         <>
                           <span className="text-stone-300">|</span>
-                          <span className="text-[#C2520E] font-headline font-bold text-sm tracking-wide">{m.result}</span>
+                          <span className="text-[#B96623] font-headline font-bold text-sm tracking-wide">{m.result}</span>
                         </>
                       )}
                     </div>
@@ -196,11 +196,11 @@ export function MatchesManager() {
 
                   <div className="flex flex-wrap items-center gap-4 text-xs text-stone-500 font-medium pt-1">
                     <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-[#EA6E18]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#D7833D]" />
                       {m.date}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#C2520E]" />
+                      <Clock className="w-3.5 h-3.5 text-[#B96623]" />
                       {m.time}
                     </span>
                     <span className="flex items-center gap-1.5">
@@ -245,7 +245,7 @@ export function MatchesManager() {
                       href={m.scoreUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-600 hover:text-[#EA6E18] transition-colors shadow-2xs"
+                      className="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-600 hover:text-[#D7833D] transition-colors shadow-2xs"
                       title="Open external live score page"
                     >
                       <ExternalLink className="w-4 h-4" />

@@ -131,7 +131,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-brand-copper transition-colors font-semibold text-[#EA4326]"
+                  className="hover:text-brand-copper transition-colors font-semibold text-[#F0A04B]"
                 >
                   Contact &amp; Support
                 </Link>
@@ -175,9 +175,9 @@ export function SiteFooter() {
               <div className="pt-2 flex flex-col gap-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 hover:bg-[#EA6E18] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-2xs group"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 hover:bg-[#D7833D] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-2xs group"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#FFA53B]" />
+                  <MessageSquare className="w-3.5 h-3.5 text-[#F0A04B]" />
                   <span>Send Cricket Query</span>
                 </Link>
                 <div className="flex items-center gap-2">

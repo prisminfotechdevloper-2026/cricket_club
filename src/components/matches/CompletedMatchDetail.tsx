@@ -142,7 +142,7 @@ export function CompletedMatchDetail({ match }: CompletedMatchDetailProps) {
             {sponsors.map((sp) => (
               <div
                 key={sp.id}
-                className="h-16 rounded-xl bg-white border border-stone-200/80 p-2 flex items-center justify-center relative shadow-2xs hover:border-[#EA6E18]/60 transition-colors"
+                className="h-16 rounded-xl bg-white border border-stone-200/80 p-2 flex items-center justify-center relative shadow-2xs hover:border-[#D7833D]/60 transition-colors"
                 title={sp.name}
               >
                 <div className="relative w-full h-full">

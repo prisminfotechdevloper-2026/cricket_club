@@ -50,7 +50,7 @@ export function ContactForm() {
 
         <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs font-mono text-stone-700 max-w-sm mx-auto space-y-1.5 text-left">
           <div className="flex items-center gap-2 text-stone-900 font-bold">
-            <Clock className="w-3.5 h-3.5 text-[#EA6E18]" />
+            <Clock className="w-3.5 h-3.5 text-[#F0A04B]" />
             <span>Response Time: Usually within 24 hours</span>
           </div>
           <p className="text-stone-500 font-body">
@@ -64,7 +64,7 @@ export function ContactForm() {
             setSubmitted(false);
             setFormData({ name: "", phone: "", email: "", queryType: "trial", message: "" });
           }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#EA6E18] transition-colors"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#D7833D] transition-colors"
         >
           Send Another Query
         </button>
@@ -101,7 +101,7 @@ export function ContactForm() {
                 onClick={() => setFormData({ ...formData, queryType: type.id })}
                 className={`p-3 rounded-xl text-xs font-semibold text-left transition-colors border ${
                   isSelected
-                    ? "bg-[#EA6E18]/10 text-[#EA6E18] border-[#EA6E18] font-bold shadow-2xs"
+                    ? "bg-[#F0A04B]/10 text-[#F0A04B] border-[#C16A35] font-bold shadow-2xs"
                     : "bg-stone-50/80 text-stone-700 border-stone-200 hover:bg-stone-100"
                 }`}
               >
@@ -125,7 +125,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Rahul Patel"
-            className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA6E18]/30 focus:border-[#EA6E18] transition-colors"
+            className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#D7833D]/30 focus:border-[#C16A35] transition-colors"
           />
         </div>
 
@@ -140,7 +140,7 @@ export function ContactForm() {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="e.g. +91 98765 43210"
-            className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA6E18]/30 focus:border-[#EA6E18] transition-colors"
+            className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#D7833D]/30 focus:border-[#C16A35] transition-colors"
           />
         </div>
       </div>
@@ -156,7 +156,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="e.g. rahul@example.com"
-          className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA6E18]/30 focus:border-[#EA6E18] transition-colors"
+          className="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#D7833D]/30 focus:border-[#C16A35] transition-colors"
         />
       </div>
 
@@ -172,7 +172,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Tell us what you need — e.g. 'I am a top-order batsman looking to attend Wednesday nets at Matunga' or 'Looking to schedule a Sunday fixture with our club'"
-          className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA6E18]/30 focus:border-[#EA6E18] transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#D7833D]/30 focus:border-[#C16A35] transition-colors resize-none"
         />
       </div>
 
@@ -180,7 +180,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#EA6E18] to-[#F89928] hover:from-[#D45508] hover:to-[#EA6E18] text-white font-bold text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-[box-shadow,opacity] duration-200 disabled:opacity-60 cursor-pointer"
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#F0A04B] to-[#D7833D] hover:from-[#C27332] hover:to-[#D7833D] text-white font-bold text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-[box-shadow,opacity] duration-200 disabled:opacity-60 cursor-pointer"
       >
         {loading ? (
           <span>Sending Query...</span>

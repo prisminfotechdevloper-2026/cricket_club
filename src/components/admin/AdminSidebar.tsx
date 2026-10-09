@@ -76,7 +76,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
             <span className="font-headline font-bold text-lg text-[#090A0C] block leading-tight">
               DEVPUR CRICKET CLUB
             </span>
-            <span className="text-[11px] font-headline uppercase tracking-widest text-[#C2520E] block font-bold">
+            <span className="text-[11px] font-headline uppercase tracking-widest text-[#B96623] block font-bold">
               COMMITTEE ADMIN
             </span>
           </div>
@@ -99,7 +99,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
               onClick={() => handleSelectTab(item.id)}
               className={`w-full px-3.5 py-2.5 rounded-xl flex items-center justify-between transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "bg-gradient-to-r from-[#EA6E18] via-[#C85D1B] to-[#D56F27] text-white font-bold shadow-md shadow-[#EA6E18]/20"
+                  ? "bg-gradient-to-r from-[#D7833D] via-[#B96623] to-[#D7833D] text-white font-bold shadow-md shadow-[#D7833D]/20"
                   : "text-stone-700 hover:bg-stone-100 hover:text-stone-950 font-semibold"
               }`}
             >
@@ -148,7 +148,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
         {/* User Card & Logout */}
         <div className="p-3 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-lg bg-[#EA6E18]/15 border border-[#EA6E18]/30 flex items-center justify-center font-headline text-sm font-bold text-[#EA6E18] shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#D7833D]/15 border border-[#D7833D]/30 flex items-center justify-center font-headline text-sm font-bold text-[#D7833D] shrink-0">
               {session?.user.name.charAt(0) || "A"}
             </div>
             <div className="min-w-0">

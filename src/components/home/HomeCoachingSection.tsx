@@ -1,334 +1,210 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "../common/Container";
-import {
-  Activity,
-  Target,
-  Shield,
-  Zap,
-  Trophy,
-  ArrowRight,
-  CheckCircle2,
-  Calendar,
-} from "lucide-react";
+import { Trophy, ArrowRight } from "lucide-react";
+
+/* ------------------------------------------------------------------ */
+/* Cricket Stumps & Bat Sketch Watermark SVG                          */
+/* ------------------------------------------------------------------ */
+function CricketStumpsWatermark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      fill="none"
+      stroke="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* 3 Stumps / Wickets */}
+      <rect x="74" y="36" width="4.5" height="88" rx="1.5" strokeWidth="1.6" />
+      <rect x="86" y="36" width="4.5" height="88" rx="1.5" strokeWidth="1.6" />
+      <rect x="98" y="36" width="4.5" height="88" rx="1.5" strokeWidth="1.6" />
+      {/* Bails on top */}
+      <rect x="72" y="32" width="16" height="3" rx="1" strokeWidth="1.4" />
+      <rect x="86" y="32" width="18" height="3" rx="1" strokeWidth="1.4" />
+      {/* Leaning Cricket Bat */}
+      <path
+        d="M58 136 L124 50 L132 56 L69 142 Z"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      {/* Bat handle */}
+      <path d="M124 50 L138 32 L144 37 L132 56" strokeWidth="1.6" />
+      {/* Cricket ball at base */}
+      <circle cx="54" cy="130" r="13" strokeWidth="1.6" />
+      <path
+        d="M45 122 C51 126 59 133 64 138"
+        strokeWidth="1.4"
+        strokeDasharray="2 2"
+      />
+    </svg>
+  );
+}
 
 export function HomeCoachingSection() {
-  const [coachImgIdx, setCoachImgIdx] = useState(0);
-  const [mobilePillarIdx, setMobilePillarIdx] = useState(0);
-
-  const coachImages = [
-    {
-      src: "/coaching_drill/Aditya_Koli_coach1.png",
-      alt: "Aditya Koli - Cricket Coach Devpur Cricket Club in Action",
-      tag: "Coach In Action • Match Prep",
-      objectPosition: "object-[center_78%]",
-    },
-    {
-      src: "/coaching_drill/Aditya_Koli_coach2.png",
-      alt: "Coach Aditya Koli - DCC Turf Net Drills at Matunga Ground",
-      tag: "Turf Net Drills • Matunga Ground",
-      objectPosition: "object-[center_20%]",
-    },
-    {
-      src: "/coaching_drill/Aditya_Koli_coach3.png",
-      alt: "Coach Aditya Koli - Devpur Cricket Club Head Coach",
-      tag: "Coach Mentorship • Devpur Cricket Club",
-      objectPosition: "object-[center_20%]",
-    },
-  ];
-
-  // Auto-rotate coach images every 3 seconds (3000ms)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCoachImgIdx((prev) => (prev + 1) % coachImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [coachImages.length]);
-
-  const pillars = [
-    {
-      step: "01",
-      title: "Nets & Training",
-      subtitle: "Disciplined Turf Practice",
-      tag: "Turf Drills & Nets",
-      image: "/coaching_drill/net_training.png",
-    },
-    {
-      step: "02",
-      title: "Batting Technique",
-      subtitle: "Strokeplay & Composure",
-      tag: "Technique & Timing",
-      image: "/coaching_drill/batting.png",
-    },
-    {
-      step: "03",
-      title: "Bowling Mastery",
-      subtitle: "Accuracy & Variations",
-      tag: "Pace, Spin & Seam",
-      image: "/coaching_drill/balling.png",
-    },
-    {
-      step: "04",
-      title: "Fielding & Agility",
-      subtitle: "Reflexes & Precision",
-      tag: "Ground & Aerial Drills",
-      image: "/coaching_drill/fielding.png",
-    },
-  ];
-
-  // Auto-slide mobile pillars every 3 seconds (3000ms)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setMobilePillarIdx((prev) => (prev + 1) % pillars.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [pillars.length]);
-
   return (
-    <section className="py-14 sm:py-20 bg-background border-b border-border/80 overflow-hidden relative">
-      <Container>
-        {/* Section Header */}
-        <div className="max-w-3xl text-start space-y-3 sm:space-y-4 mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-orange/10 text-brand-orange font-mono text-xs font-bold uppercase tracking-wider">
-            <span>Professional Coaching &amp; Player Development</span>
+    <section
+      id="coaching-development"
+      aria-labelledby="coaching-development-title"
+      className="relative w-full overflow-hidden bg-[#0A0D14] py-5 sm:py-6 lg:py-7 lg:pb-13 border-b border-[#1B2232]"
+    >
+      {/* Background Image: Dark Batsmen Action Photo provided by User */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/coach_dark_bg.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-right-top sm:object-right opacity-65"
+        />
+        {/* High-contrast dark gradients for seamless text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D14]/95 via-[#0A0D14]/80 to-[#0A0D14]/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0D14]/85 via-transparent to-[#0A0D14]/90" />
+      </div>
+
+      <Container className="relative z-10">
+        {/* =====================================================================
+            TOP HEADER (Left Aligned):
+            Eyebrow: THE PEOPLE BEHIND THE PLAY —
+            Title: MEET THE COACH BEHIND / OUR NEXT GENERATION
+            ===================================================================== */}
+        <div className="text-left max-w-4xl mb-8 sm:mb-12">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-3 mb-2 sm:mb-2.5">
+            <span className="font-body text-[#F0A04B] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
+              THE PEOPLE BEHIND THE PLAY
+            </span>
+            <span className="w-8 sm:w-10 h-px bg-[#D7833D]" aria-hidden="true" />
           </div>
 
-          <h2 className="font-headline text-3xl sm:text-5xl font-black uppercase tracking-tight text-foreground leading-[1.1]">
-            Structured Training Complete Player Development.
+          {/* Headline */}
+          <h2
+            id="coaching-development-title"
+            className="font-display-serif font-black uppercase text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight leading-[1.08] mt-2"
+          >
+            <span className="block text-white">MEET THE COACH BEHIND</span>
+            <span className="block text-[#F0A04B]">OUR NEXT GENERATION</span>
           </h2>
-
-          <p className="text-foreground-soft text-sm sm:text-base font-body leading-relaxed max-w-2xl">
-            Under the professional guidance of Coach <strong>Aditya Koli</strong> (Kanga B Division),
-            our coaching mandate focuses on systematic technical skills, stamina, discipline,
-            and match readiness for every Devpur Cricket Club player.
-          </p>
         </div>
 
         {/* =====================================================================
-            COACH PROFILE SECTION: Left Single 3s-Rotating Image, Right Summary
+            FEATURED COACH SHOWCASE CARD
+            - Split layout (Left: Coach Photo + Trophy Badge, Right: Info & Quote)
+            - Warm orange backdrop flap on the left
             ===================================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 sm:mb-20 p-4 sm:p-7 md:p-10 rounded-2xl sm:rounded-3xl bg-surface border border-border/80 shadow-sm">
-          {/* Left: Single Coach Image (Auto-slides every 3 seconds) */}
-          <div className="lg:col-span-5 w-full max-w-md mx-auto">
-            <div className="relative aspect-[4/5] object-cover sm:aspect-[4/5] max-h-[400px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-border/80 shadow-lg group bg-stone-900">
-              {coachImages.map((img, idx) => (
-                <div
-                  key={img.src}
-                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${coachImgIdx === idx
-                    ? "opacity-100 z-10"
-                    : "opacity-0 z-0 pointer-events-none"
-                    }`}
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    priority={idx === 0}
-                    className={`object-cover ${img.objectPosition} transition-transform duration-700 ease-out group-hover:scale-105`}
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
+        <div className="relative w-full max-w-5xl mx-auto">
+          {/* Left accent flap behind the card */}
+          <div
+            aria-hidden="true"
+            className="absolute -left-2.5 sm:-left-3.5 top-6 bottom-6 w-12 sm:w-16 bg-[#D7833D] rounded-2xl sm:rounded-3xl -rotate-1 pointer-events-none"
+          />
 
+          {/* Main White Card Container */}
+          <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 border border-white/20">
+            {/* ================= LEFT COLUMN: COACH PHOTO ================= */}
+            <div className="lg:col-span-6 relative w-full h-[400px] sm:h-[480px] lg:h-full min-h-[460px] overflow-hidden bg-neutral-100">
+              <Image
+                src="/coaching_drill/Aditya_Koli_coach2.png"
+                alt="Coach Aditya Koli - Devpur Cricket Club Head Coach"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 550px"
+                className="object-cover object-[center_15%] transition-transform duration-700 hover:scale-[1.02]"
+              />
+
+              {/* Floating Trophy Badge in bottom left */}
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 px-4 py-3 flex items-center gap-3.5 shadow-xl z-10">
+                <div className="w-10 h-10 rounded-lg bg-[#F0A04B]/20 border border-[#F0A04B]/40 flex items-center justify-center shrink-0">
+                  <Trophy className="w-5 h-5 text-[#F0A04B]" />
                 </div>
-              ))}
-
-
+                <div className="flex flex-col text-left">
+                  <span className="font-headline font-bold text-white text-sm sm:text-base tracking-wide leading-tight">
+                    Head Coach
+                  </span>
+                  <span className="text-white/70 text-xs font-medium leading-tight mt-0.5">
+                    Devpur Cricket Club
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Right: Coach Summary & Philosophy */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange font-mono text-xs font-bold uppercase tracking-wider">
-                <span>Head Coach Profile</span>
+            {/* ================= RIGHT COLUMN: DETAILS & QUOTE ================= */}
+            <div className="lg:col-span-6 p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 flex flex-col justify-center text-left relative overflow-hidden bg-white">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
+                <span className="font-body text-[#F0A04B] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
+                  HEAD COACH
+                </span>
+                <span className="w-8 sm:w-10 h-px bg-[#D7833D]" aria-hidden="true" />
               </div>
 
-              <h3 className="font-headline text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground leading-tight">
+              {/* Coach Name */}
+              <h3 className="font-display-serif font-black uppercase text-3xl sm:text-4xl lg:text-[44px] tracking-tight text-[#111827] leading-[1.05] mb-1.5 sm:mb-2">
                 ADITYA KOLI
               </h3>
 
-              <p className="text-xs sm:text-sm font-mono font-bold uppercase text-brand-copper tracking-wider">
-                Cricket Coach &middot; Devpur Cricket Club
+              {/* Subtitle */}
+              <p className="font-body text-[#4B5563] text-sm sm:text-[15px] font-medium mb-6 sm:mb-8">
+                Head Coach, Devpur Cricket Club
               </p>
-            </div>
 
-            <div className="space-y-3">
-              <h4 className="font-headline text-xl sm:text-2xl font-bold text-foreground">
-                Developing Players Beyond the Basics.
-              </h4>
-
-              <p className="text-sm sm:text-base text-foreground-soft leading-relaxed font-body">
-                At DCC, Aditya Koli guides our players through structured cricket practice focused on technical improvement, fitness, discipline and match preparation. His approach combines skill development with practical match situations, helping players understand their game, identify areas for improvement and build confidence over time.
-              </p>
-            </div>
-
-            {/* Core Coaching Focus & Regimen */}
-            <div className="pt-4 border-t border-border/70 space-y-3">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground">
-                  Main Focus on
-                </span>
+              {/* Quote Block with Left Accent Line */}
+              <div className="border-l-2 border-[#D7833D] pl-4 sm:pl-5 py-1 mb-7 sm:mb-9 max-w-md">
+                <p className="font-body text-[#4B5563] text-sm sm:text-[15px] leading-relaxed">
+                  “The best coaching builds skill, confidence, and character together. Every player deserves the chance to find their game.”
+                </p>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 text-xs font-mono">
-                {[
-                  { label: "Batting Development", isHighlight: false },
-                  { label: "Bowling Development", isHighlight: false },
-                  { label: "Fielding", isHighlight: false },
-                  { label: "Fitness & Conditioning", isHighlight: false },
-                  { label: "Match Preparation", isHighlight: false },
-                  { label: "3 Net Sessions Weekly", isHighlight: true },
-                ].map((item) => {
-
-                  return (
-                    <div
-                      key={item.label}
-                      className={`flex items-center gap-2 px-2.5 py-2 sm:px-3 sm:py-2.5 rounded-md border transition-all duration-150 shadow-2xs ${item.isHighlight
-                          ? "bg-brand-orange/10 border-brand-orange/30 text-brand-orange font-bold hover:bg-brand-orange/15"
-                          : "bg-surface-soft border-border/80 font-semibold text-foreground hover:border-brand-orange/40 hover:bg-muted/50"
-                        }`}
-                    >
-                      <span className="leading-snug text-[11px] sm:text-xs">
-                        {item.label}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 4 Core Pillars Header */}
-        <div className="mb-8">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-orange block">
-            Systematic Training Focus
-          </span>
-          <h3 className="font-headline text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-foreground">
-            Core Coaching Mandate &amp; Practice Pillars
-          </h3>
-        </div>
-
-        {/* 4 Core Pillars - Mobile Auto-Slider (Every 3s) */}
-        <div className="block md:hidden">
-          <div className="overflow-hidden rounded-2xl border border-border/80 bg-surface shadow-sm">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${mobilePillarIdx * 100}%)` }}
-            >
-              {pillars.map((item) => (
-                <div key={item.step} className="w-full shrink-0">
-                  <div className="flex flex-col">
-                    {/* Image */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-stone-900">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        sizes="100vw"
-                      />
-                      
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-4 space-y-2">
-                      <h4 className="font-headline text-lg font-bold uppercase tracking-wide text-foreground">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs font-semibold text-brand-copper">
-                        {item.subtitle}
-                      </p>
-
-                      {/* Bottom Tag */}
-                      <div className="pt-3 border-t border-border/80 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                        <span>{item.tag}</span>
-                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Slider Dots Indicator */}
-          <div className="flex items-center justify-center gap-2 mt-4">
-            {pillars.map((item, idx) => (
-              <button
-                key={item.step}
-                onClick={() => setMobilePillarIdx(idx)}
-                aria-label={`Go to Pillar ${item.step}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${mobilePillarIdx === idx
-                    ? "w-6 bg-brand-orange"
-                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* 4 Core Pillars - Desktop & Tablet Normal Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {pillars.map((item) => (
-            <div
-              key={item.step}
-              className="group rounded-2xl bg-surface border border-border/80 hover:border-brand-orange/60 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
-            >
-              {/* Image */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-stone-900">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md text-[10.5px] font-mono font-bold uppercase tracking-wider text-white border border-white/10">
-                  Pillar {item.step}
-                </span>
+              {/* CTA Button */}
+              <div className="relative z-10">
+                <Link
+                  href="/cricket"
+                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-medium text-sm sm:text-[15px] shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 group w-fit cursor-pointer"
+                >
+                  <span>Coach Responsibilities</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
 
-              {/* Content */}
-              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
-                <div>
-                  <h4 className="font-headline text-lg sm:text-xl font-bold uppercase tracking-wide text-foreground group-hover:text-brand-orange transition-colors">
-                    {item.title}
-                  </h4>
-                  <span className="text-xs font-semibold text-brand-copper">
-                    {item.subtitle}
-                  </span>
-                </div>
+              {/* Decorative Stumps Watermark Sketch in bottom right */}
+              <div className="absolute -bottom-4 -right-4 pointer-events-none select-none text-[#111827]/10 w-44 h-44">
+                <CricketStumpsWatermark className="w-full h-full" />
+              </div>
 
-                {/* Bottom Tag */}
-                <div className="pt-3 border-t border-border/80 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                  <span>{item.tag}</span>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange" />
+              {/* Decorative Dot Grid Matrix in bottom right */}
+              <div className="absolute bottom-9 right-7 pointer-events-none select-none">
+                <div
+                  className="grid grid-cols-6 gap-2 opacity-35"
+                  aria-hidden="true"
+                >
+                  {Array.from({ length: 24 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="w-1.5 h-1.5 rounded-full bg-[#D7833D]"
+                    />
+                  ))}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* CTA Banner */}
-        <div className="mt-12 sm:mt-14 text-center">
-          <Link
-            href="/cricket"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#EA4326] hover:bg-[#D9381E] text-white font-headline text-sm sm:text-base font-bold uppercase tracking-wider shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer group"
-          >
-            <span>Explore Our Coaching Approach</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
-          <p className="text-xs text-muted-foreground mt-2.5 font-mono">
-            3-Day Weekly Net Practice @ Matunga Ground • Pre-Season to Tournament Knockouts
-          </p>
+          </div>
         </div>
       </Container>
+
+      {/* Decorative Bottom-Left Angled Copper Line matching screenshot */}
+      <div
+        className="absolute bottom-0 left-0 w-80 sm:w-96 h-12 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 380 48" fill="none" className="w-full h-full">
+          <path d="M0 48 L140 28 L380 48" stroke="#D7833D" strokeWidth="2.5" />
+        </svg>
+      </div>
     </section>
   );
 }

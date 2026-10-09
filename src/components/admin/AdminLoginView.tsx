@@ -70,7 +70,7 @@ export function AdminLoginView() {
 
       {infoMessage && (
         <div className="mb-3 p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-start gap-2 animate-fade-in">
-          <CheckCircle2 className="w-4 h-4 text-[#C2581A] shrink-0 mt-0.5" />
+          <CheckCircle2 className="w-4 h-4 text-[#B96623] shrink-0 mt-0.5" />
           <span>{infoMessage}</span>
         </div>
       )}
@@ -93,7 +93,7 @@ export function AdminLoginView() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               required
-              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-4 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
+              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-4 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#B96623]/20 focus:border-[#B96623] transition-[border-color,box-shadow] shadow-2xs"
             />
           </div>
         </div>
@@ -115,7 +115,7 @@ export function AdminLoginView() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
-              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-10 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C2581A]/20 focus:border-[#C2581A] transition-[border-color,box-shadow] shadow-2xs"
+              className="w-full bg-white border border-stone-200/90 rounded-xl pl-10 pr-10 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#B96623]/20 focus:border-[#B96623] transition-[border-color,box-shadow] shadow-2xs"
             />
             <button
               type="button"
@@ -135,7 +135,7 @@ export function AdminLoginView() {
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-4 h-4 rounded border-stone-300 text-[#C2581A] focus:ring-[#C2581A] accent-[#C2581A]"
+              className="w-4 h-4 rounded border-stone-300 text-[#B96623] focus:ring-[#B96623] accent-[#B96623]"
             />
             <span>Remember me</span>
           </label>
@@ -143,7 +143,7 @@ export function AdminLoginView() {
           <button
             type="button"
             onClick={handleForgotPassword}
-            className="font-semibold text-[#C2581A] hover:underline cursor-pointer focus:outline-none"
+            className="font-semibold text-[#B96623] hover:underline cursor-pointer focus:outline-none"
           >
             Forgot password?
           </button>
@@ -153,7 +153,7 @@ export function AdminLoginView() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-2.5 px-6 rounded-xl bg-gradient-to-r from-[#B95015] via-[#C85D1B] to-[#D56F27] hover:from-[#A84510] hover:to-[#C25B18] active:scale-[0.99] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#C85D1B]/20 transition-[opacity,transform,background-color] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+          className="w-full py-2.5 px-6 rounded-xl bg-gradient-to-r from-[#B96623] via-[#B96623] to-[#D7833D] hover:from-[#B96623] hover:to-[#B96623] active:scale-[0.99] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#B96623]/20 transition-[opacity,transform,background-color] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
@@ -180,9 +180,9 @@ export function AdminLoginView() {
       <button
         type="button"
         onClick={handleQuickSecureAccess}
-        className="w-full py-2.5 px-4 rounded-xl border border-stone-300 hover:border-[#C2581A]/60 bg-white hover:bg-stone-50 active:bg-stone-100 text-stone-800 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2.5 transition-[border-color,background-color] shadow-2xs cursor-pointer group"
+        className="w-full py-2.5 px-4 rounded-xl border border-stone-300 hover:border-[#B96623]/60 bg-white hover:bg-stone-50 active:bg-stone-100 text-stone-800 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2.5 transition-[border-color,background-color] shadow-2xs cursor-pointer group"
       >
-        <Shield className="w-4 h-4 text-[#C2581A] transition-transform group-hover:scale-110" />
+        <Shield className="w-4 h-4 text-[#B96623] transition-transform group-hover:scale-110" />
         <span>Secure Admin Access</span>
       </button>
 
@@ -202,9 +202,9 @@ export function AdminLoginView() {
   );
 
   return (
-    <div className="min-h-dvh w-full bg-[#0B101D] text-stone-900 selection:bg-[#EA6E18]/20 selection:text-[#EA6E18] flex items-center justify-center p-2 sm:p-3 md:p-4 relative overflow-hidden">
+    <div className="min-h-dvh w-full bg-[#0B101D] text-stone-900 selection:bg-[#D7833D]/20 selection:text-[#D7833D] flex items-center justify-center p-2 sm:p-3 md:p-4 relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C2581A]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#B96623]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#182C4E]/40 rounded-full blur-3xl pointer-events-none" />
 
       {/* ===================== MOBILE (< md) ===================== */}
@@ -225,7 +225,7 @@ export function AdminLoginView() {
           <div className="w-full flex justify-between items-center px-1 mb-2">
             <Link
               href="/"
-              className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-stone-700 bg-white/80 backdrop-blur-xs px-2.5 py-1 rounded-full shadow-2xs border border-white/60 hover:text-[#C2581A] transition-colors"
+              className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-stone-700 bg-white/80 backdrop-blur-xs px-2.5 py-1 rounded-full shadow-2xs border border-white/60 hover:text-[#B96623] transition-colors"
             >
               <ArrowLeft className="w-3 h-3" />
               <span>Public Site</span>
@@ -248,7 +248,7 @@ export function AdminLoginView() {
           <span className="font-headline font-black text-2xl tracking-wider text-[#0F1E36] leading-none mt-2">
             DEVPUR
           </span>
-          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#C2581A] mt-0.5">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#B96623] mt-0.5">
             CRICKET CLUB
           </span>
         </div>
@@ -256,7 +256,7 @@ export function AdminLoginView() {
         <div className="relative z-10 w-full max-w-[360px] bg-white rounded-3xl shadow-2xl p-5 sm:p-6 border border-white/80 my-auto animate-fade-in">
           <div className="text-center mb-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-black text-[#0F1E36] tracking-tight">
-              Admin <span className="text-[#C2581A]">Login</span>
+              Admin <span className="text-[#B96623]">Login</span>
             </h2>
             <p className="text-[11px] sm:text-xs text-stone-500 mt-1 leading-relaxed">
               Welcome back! Please login to your admin account to continue.
@@ -305,7 +305,7 @@ export function AdminLoginView() {
                 <span className="font-headline font-black text-lg xl:text-xl tracking-wide text-[#0F1E36] leading-none">
                   DEVPUR
                 </span>
-                <span className="text-[10px] xl:text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#C2581A] leading-tight mt-0.5">
+                <span className="text-[10px] xl:text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#B96623] leading-tight mt-0.5">
                   CRICKET CLUB
                 </span>
               </div>
@@ -328,7 +328,7 @@ export function AdminLoginView() {
               <span className="block text-2xl xl:text-4xl font-black text-[#0F1E36]">
                 Manage. Organize.
               </span>
-              <span className="block text-2xl xl:text-4xl font-black text-[#C2581A] mt-1">
+              <span className="block text-2xl xl:text-4xl font-black text-[#B96623] mt-1">
                 Grow the Club.
               </span>
             </h1>
@@ -360,7 +360,7 @@ export function AdminLoginView() {
           <div className="w-full flex justify-between items-center z-10 shrink-0">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-stone-500 hover:text-[#C2581A] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-stone-500 hover:text-[#B96623] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Public Site</span>
@@ -385,7 +385,7 @@ export function AdminLoginView() {
               </div>
 
               <h2 className="font-headline text-xl xl:text-2xl font-black text-[#0F1E36] tracking-tight mt-1.5">
-                Admin <span className="text-[#C2581A]">Login</span>
+                Admin <span className="text-[#B96623]">Login</span>
               </h2>
               <p className="text-[11px] xl:text-xs text-stone-500 mt-0.5 max-w-xs leading-relaxed">
                 Welcome back! Please login to your admin account to continue.

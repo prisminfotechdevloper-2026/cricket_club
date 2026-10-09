@@ -25,7 +25,7 @@ import {
   Network,
 } from "lucide-react";
 import { Container } from "../common/Container";
-import { HomeSponsorsSection } from "../home/HomeSponsorsSection";
+import { HomePartnersBehindSection } from "../home/HomePartnersBehindSection";
 
 type CategoryId =
   | "overview"
@@ -100,7 +100,7 @@ function ChapterHeader({
 }) {
   return (
     <div className="border-b border-border pb-4 space-y-1">
-      <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+      <div className="flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-wider text-[#D7833D]">
         <span>{chapter}</span>
         <span>•</span>
         <span>{tag}</span>
@@ -136,7 +136,7 @@ function StoryPhotoBanner({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
       <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm">
-        <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+        <span className="font-headline font-bold uppercase tracking-wider text-[#D7833D]">
           {badge}
         </span>
         <p className="text-white/90">{caption}</p>
@@ -286,7 +286,7 @@ export function ClubHistoryView() {
                   aria-selected={isActive}
                   className={`shrink-0 min-w-max inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-headline font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-150 cursor-pointer select-none ${
                     isActive
-                      ? "bg-[#EA4326] text-white shadow-md shadow-[#EA4326]/20 font-extrabold ring-1 ring-[#EA4326]"
+                      ? "bg-[#D7833D] text-white shadow-md shadow-[#D7833D]/20 font-extrabold ring-1 ring-[#D7833D]"
                       : "bg-card border border-border/80 text-foreground-soft hover:bg-muted/80 hover:text-foreground active:scale-95"
                   }`}
                 >
@@ -299,7 +299,7 @@ export function ClubHistoryView() {
                   </span>
                   <Icon
                     className={`w-3.5 h-3.5 shrink-0 ${
-                      isActive ? "text-white" : "text-[#EA4326]"
+                      isActive ? "text-white" : "text-[#D7833D]"
                     }`}
                   />
                   <span className="shrink-0">{cat.shortTitle}</span>
@@ -342,7 +342,7 @@ export function ClubHistoryView() {
                       setActiveCategory(nextCategory.id);
                       window.scrollTo({ top: 220, behavior: "smooth" });
                     }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#EA4326] hover:bg-[#D9381E] text-white font-headline font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#D7833D] hover:bg-[#C27332] text-white font-headline font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
                   >
                     <span>Read Next Chapter</span>
                     <ArrowRight className="w-4 h-4" />
@@ -355,7 +355,7 @@ export function ClubHistoryView() {
             <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-4">
                 <div className="border-b border-border pb-3">
-                  <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+                  <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#D7833D]">
                     History Navigation
                   </span>
                   <h2 className="font-headline text-xl font-extrabold uppercase text-foreground">
@@ -378,7 +378,7 @@ export function ClubHistoryView() {
                         aria-selected={isActive}
                         className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-[background-color,color,box-shadow] duration-150 cursor-pointer group ${
                           isActive
-                            ? "bg-[#EA4326] text-white shadow-md shadow-[#EA4326]/20 font-semibold"
+                            ? "bg-[#D7833D] text-white shadow-md shadow-[#D7833D]/20 font-semibold"
                             : "bg-transparent text-foreground hover:bg-muted/70 hover:text-foreground"
                         }`}
                       >
@@ -394,7 +394,7 @@ export function ClubHistoryView() {
                           </span>
                           <Icon
                             className={`w-4 h-4 shrink-0 ${
-                              isActive ? "text-white" : "text-[#EA4326]"
+                              isActive ? "text-white" : "text-[#D7833D]"
                             }`}
                           />
                           <span className="font-headline text-base tracking-wide truncate">
@@ -427,7 +427,7 @@ export function ClubHistoryView() {
 
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start gap-3">
-                    <Calendar className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                    <Calendar className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
                     <div>
                       <span className="block font-semibold text-foreground">
                         Founded In
@@ -439,7 +439,7 @@ export function ClubHistoryView() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
                     <div>
                       <span className="block font-semibold text-foreground">
                         Home Ground
@@ -451,7 +451,7 @@ export function ClubHistoryView() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <Users className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                    <Users className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
                     <div>
                       <span className="block font-semibold text-foreground">
                         Community
@@ -463,7 +463,7 @@ export function ClubHistoryView() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <Award className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                    <Award className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
                     <div>
                       <span className="block font-semibold text-foreground">
                         Active Roster
@@ -478,7 +478,7 @@ export function ClubHistoryView() {
 
               {/* Official Motto Banner */}
               <div className="rounded-xl p-5 bg-gradient-to-br from-[#12161F] to-[#0A0D14] text-white border border-border/60 space-y-2">
-                <span className="text-[11px] font-headline uppercase font-bold tracking-widest text-[#EA4326]">
+                <span className="text-[11px] font-headline uppercase font-bold tracking-widest text-[#D7833D]">
                   Club Identity
                 </span>
                 <p className="font-headline text-lg font-extrabold uppercase leading-snug">
@@ -495,8 +495,8 @@ export function ClubHistoryView() {
         </Container>
       </section>
 
-      {/* Official Club Sponsors Showcase (5 on desktop, 1 on mobile with 2.5s auto-slide) */}
-      <HomeSponsorsSection />
+      {/* Partners Behind DCC (Same unified sponsors component as Landing Page) */}
+      <HomePartnersBehindSection />
     </div>
   );
 }
@@ -523,11 +523,11 @@ function OverviewStorySection() {
       {/* Narrative Intro Note */}
       <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
-          <div className="w-9 h-9 rounded-lg bg-[#EA4326]/10 text-[#EA4326] flex items-center justify-center font-bold">
+          <div className="w-9 h-9 rounded-lg bg-[#D7833D]/10 text-[#D7833D] flex items-center justify-center font-bold">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+            <span className="text-xs uppercase font-headline font-bold text-[#D7833D] tracking-wider">
               The Origin Thought
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
@@ -549,11 +549,11 @@ function OverviewStorySection() {
             But as education, work and responsibilities came in, cricket slowly became something we had to leave behind.
           </p>
 
-          <div className="bg-muted/40 border-l-4 border-[#EA4326] p-4 rounded-r-lg my-2">
+          <div className="bg-muted/40 border-l-4 border-[#D7833D] p-4 rounded-r-lg my-2">
             <p className="text-xs font-headline uppercase font-bold text-muted-foreground tracking-wider mb-1">
               Then, years later, the thought came back:
             </p>
-            <p className="font-headline text-xl sm:text-2xl font-extrabold text-[#EA4326] italic">
+            <p className="font-headline text-xl sm:text-2xl font-extrabold text-[#D7833D] italic">
               &ldquo;Why did we ever stop playing?&rdquo;
             </p>
           </div>
@@ -594,11 +594,11 @@ function OverviewStorySection() {
             That is how Devpur Cricket Club took shape.
           </p>
 
-          <div className="bg-gradient-to-r from-[#EA4326]/10 via-[#EA4326]/5 to-transparent border border-[#EA4326]/20 rounded-xl p-5 my-2">
+          <div className="bg-gradient-to-r from-[#D7833D]/10 via-[#D7833D]/5 to-transparent border border-[#D7833D]/20 rounded-xl p-5 my-2">
             <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider mb-1.5">
               Founded in 2013, the club grew around one simple idea:
             </span>
-            <p className="font-headline text-xl sm:text-2xl font-extrabold uppercase text-[#EA4326] tracking-wider">
+            <p className="font-headline text-xl sm:text-2xl font-extrabold uppercase text-[#D7833D] tracking-wider">
               Come together. Play together. Grow together.
             </p>
           </div>
@@ -638,19 +638,19 @@ function OverviewStorySection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
               <span className="text-sm font-medium text-foreground">A match brought players together.</span>
             </div>
             <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
               <span className="text-sm font-medium text-foreground">A practice session built friendships.</span>
             </div>
             <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
               <span className="text-sm font-medium text-foreground">A tournament created new connections.</span>
             </div>
             <div className="flex items-start gap-2.5 p-3.5 rounded-lg bg-muted/40 border border-border/60">
-              <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
               <span className="text-sm font-medium text-foreground">And every season left behind another memory.</span>
             </div>
           </div>
@@ -719,23 +719,23 @@ function OverviewStorySection() {
 
           <ul className="space-y-2 text-sm text-foreground/90 pl-1">
             <li className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#D7833D] shrink-0" />
               <span>It is the discipline.</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#D7833D] shrink-0" />
               <span>The routine.</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#D7833D] shrink-0" />
               <span>The friendships.</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#D7833D] shrink-0" />
               <span>The conversations after practice.</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA4326] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#D7833D] shrink-0" />
               <span>The feeling of belonging somewhere.</span>
             </li>
           </ul>
@@ -767,7 +767,7 @@ function OverviewStorySection() {
             <p>&ldquo;What if we could take this even further?&rdquo;</p>
             <p>&ldquo;What if someone who once thought cricket had passed them by could find another opportunity?&rdquo;</p>
             <p>&ldquo;What if a player from our community could move from a local ground to a bigger stage?&rdquo;</p>
-            <p className="font-semibold text-[#EA4326] not-italic">
+            <p className="font-semibold text-[#D7833D] not-italic">
               &ldquo;What if the club could become a bridge between where we started and where we wanted to go?&rdquo;
             </p>
           </div>
@@ -811,7 +811,7 @@ function OverviewStorySection() {
             <p className="font-headline text-base sm:text-lg font-bold uppercase text-foreground">
               But our biggest achievement is something you cannot measure on a scorecard.
             </p>
-            <p className="text-base font-semibold text-[#EA4326]">
+            <p className="text-base font-semibold text-[#D7833D]">
               It is the number of people we have brought together.
             </p>
           </div>
@@ -850,7 +850,7 @@ function OverviewStorySection() {
               <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider">
                 Medium
               </span>
-              <p className="font-headline text-base font-extrabold uppercase text-[#EA4326] mt-1">
+              <p className="font-headline text-base font-extrabold uppercase text-[#D7833D] mt-1">
                 Cricket is our medium.
               </p>
             </div>
@@ -866,7 +866,7 @@ function OverviewStorySection() {
               <span className="block text-xs uppercase font-headline font-bold text-muted-foreground tracking-wider">
                 Purpose
               </span>
-              <p className="font-headline text-base font-extrabold uppercase text-[#EA4326] mt-1">
+              <p className="font-headline text-base font-extrabold uppercase text-[#D7833D] mt-1">
                 Connection is our purpose.
               </p>
             </div>
@@ -881,11 +881,11 @@ function OverviewStorySection() {
       {/* Part 08: Our Mission */}
       <div className="bg-card border border-border rounded-xl p-6 sm:p-7 shadow-sm space-y-4">
         <div className="flex items-center gap-3 border-b border-border pb-3">
-          <div className="w-9 h-9 rounded-lg bg-[#EA4326]/10 text-[#EA4326] flex items-center justify-center font-bold">
+          <div className="w-9 h-9 rounded-lg bg-[#D7833D]/10 text-[#D7833D] flex items-center justify-center font-bold">
             <Award className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+            <span className="text-xs uppercase font-headline font-bold text-[#D7833D] tracking-wider">
               Core Purpose
             </span>
             <h3 className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground">
@@ -895,7 +895,7 @@ function OverviewStorySection() {
         </div>
 
         <div className="space-y-4 text-foreground/90 font-body text-base leading-relaxed">
-          <div className="text-center py-4 px-6 rounded-xl bg-gradient-to-r from-[#EA4326] to-[#D9381E] text-white shadow-md">
+          <div className="text-center py-4 px-6 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] text-white shadow-md">
             <span className="block text-xs uppercase tracking-widest font-headline font-bold opacity-80 mb-1">
               The DCC Creed
             </span>
@@ -913,7 +913,7 @@ function OverviewStorySection() {
           </div>
 
           <div className="pt-3 border-t border-border text-foreground font-headline font-bold uppercase space-y-1">
-            <p className="text-xl text-[#EA4326]">This is Devpur Cricket Club.</p>
+            <p className="text-xl text-[#D7833D]">This is Devpur Cricket Club.</p>
             <p className="text-sm sm:text-base text-muted-foreground font-body font-normal not-italic">
               Not just a team. Not just a cricket club. A community that found its way back to the game.
             </p>
@@ -922,11 +922,11 @@ function OverviewStorySection() {
       </div>
 
       {/* Part 09: Powerful Closing Line */}
-      <blockquote className="border-l-4 border-[#EA4326] pl-6 py-5 bg-muted/40 rounded-r-xl space-y-2 shadow-sm">
+      <blockquote className="border-l-4 border-[#D7833D] pl-6 py-5 bg-muted/40 rounded-r-xl space-y-2 shadow-sm">
         <p className="font-headline text-xl sm:text-2xl font-bold uppercase text-foreground leading-snug">
           &ldquo;Some of us missed the cricket we could not play when we were younger. So we built a place where we could play it together.&rdquo;
         </p>
-        <span className="block text-xs uppercase font-headline font-bold tracking-wider text-[#EA4326]">
+        <span className="block text-xs uppercase font-headline font-bold tracking-wider text-[#D7833D]">
           — Devpur Cricket Club
         </span>
       </blockquote>
@@ -983,9 +983,9 @@ function VisionStorySection() {
         {pillars.map((p) => (
           <div
             key={p.num}
-            className="bg-card border border-border rounded-xl p-5 space-y-2 hover:border-[#EA4326]/50 transition-colors"
+            className="bg-card border border-border rounded-xl p-5 space-y-2 hover:border-[#D7833D]/50 transition-colors"
           >
-            <span className="font-mono text-xs font-bold text-[#EA4326] px-2 py-0.5 rounded bg-[#EA4326]/10 inline-block">
+            <span className="font-mono text-xs font-bold text-[#D7833D] px-2 py-0.5 rounded bg-[#D7833D]/10 inline-block">
               Pillar {p.num}
             </span>
             <h3 className="font-headline text-lg font-bold uppercase text-foreground">
@@ -1043,7 +1043,7 @@ function TrainingStorySection() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-card border border-border rounded-xl p-4 space-y-1.5">
-          <Clock className="w-5 h-5 text-[#EA4326]" />
+          <Clock className="w-5 h-5 text-[#D7833D]" />
           <h3 className="font-headline text-base font-bold uppercase text-foreground">
             Morning Schedule
           </h3>
@@ -1053,7 +1053,7 @@ function TrainingStorySection() {
         </div>
 
         <div className="bg-card border border-border rounded-xl p-4 space-y-1.5">
-          <Target className="w-5 h-5 text-[#EA4326]" />
+          <Target className="w-5 h-5 text-[#D7833D]" />
           <h3 className="font-headline text-base font-bold uppercase text-foreground">
             Skill Stations
           </h3>
@@ -1063,7 +1063,7 @@ function TrainingStorySection() {
         </div>
 
         <div className="bg-card border border-border rounded-xl p-4 space-y-1.5">
-          <Shield className="w-5 h-5 text-[#EA4326]" />
+          <Shield className="w-5 h-5 text-[#D7833D]" />
           <h3 className="font-headline text-base font-bold uppercase text-foreground">
             Coach Guidance
           </h3>
@@ -1168,21 +1168,21 @@ function BrotherhoodStorySection() {
         </h3>
         <ul className="space-y-2.5 text-sm text-muted-foreground">
           <li className="flex items-start gap-2.5">
-            <Heart className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+            <Heart className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
             <span>
               <strong>Zero Ego Culture:</strong> From 18-year-old debutants to
               veteran seniors, everyone sits on the same bench as equals.
             </span>
           </li>
           <li className="flex items-start gap-2.5">
-            <Heart className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+            <Heart className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
             <span>
               <strong>Local &amp; Outstation Journeys:</strong> Train travels with bats, kit
               bags, and late-night singing create lifetime memories.
             </span>
           </li>
           <li className="flex items-start gap-2.5">
-            <Heart className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+            <Heart className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
             <span>
               <strong>Community Support:</strong> Standing together in family
               celebrations and supporting every village cause.
@@ -1445,7 +1445,7 @@ function TrophyCarousel() {
 
           {/* Slide Counter & Category Pill (Directly on top corners of image) */}
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-            <span className="px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#EA4326] border border-white/10 shadow-sm transition-opacity duration-300">
+            <span className="px-2.5 py-1 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#D7833D] border border-white/10 shadow-sm transition-opacity duration-300">
               {activeSlide.category}
             </span>
             <span className="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-black/75 backdrop-blur-md text-white/90 border border-white/10 shadow-sm">
@@ -1459,7 +1459,7 @@ function TrophyCarousel() {
             onClick={prevSlide}
             disabled={isAnimating}
             aria-label="Previous Achievement"
-            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
+            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#D7833D] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
           </button>
@@ -1470,7 +1470,7 @@ function TrophyCarousel() {
             onClick={nextSlide}
             disabled={isAnimating}
             aria-label="Next Achievement"
-            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-[#D7833D] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 z-30 cursor-pointer disabled:opacity-70"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
           </button>
@@ -1493,7 +1493,7 @@ function TrophyCarousel() {
             aria-label={`Go to slide ${idx + 1}`}
             className={`transition-[width,background-color] duration-300 cursor-pointer rounded-full ${
               displayIdx === idx
-                ? "w-8 h-2.5 bg-[#EA4326]"
+                ? "w-8 h-2.5 bg-[#D7833D]"
                 : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
             }`}
           />
@@ -1504,8 +1504,8 @@ function TrophyCarousel() {
       <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-sm space-y-3 transition-all duration-300">
         <div className="flex items-center justify-between gap-3 border-b border-border pb-2.5">
           <div className="flex items-center gap-2">
-            <Trophy className="w-4 h-4 text-[#EA4326]" />
-            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+            <Trophy className="w-4 h-4 text-[#D7833D]" />
+            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#D7833D]">
               {activeSlide.category}
             </span>
           </div>
@@ -1537,7 +1537,7 @@ function TrophyCarousel() {
               onClick={() => goToSlide(idx)}
               className={`relative aspect-[3/4] rounded-lg overflow-hidden border-2 bg-muted/30 transition-[transform,opacity,border-color] duration-200 cursor-pointer ${
                 isSelected
-                  ? "border-[#EA4326] scale-[1.03] shadow-md ring-2 ring-[#EA4326]/30 opacity-100"
+                  ? "border-[#D7833D] scale-[1.03] shadow-md ring-2 ring-[#D7833D]/30 opacity-100"
                   : "border-border/60 opacity-60 hover:opacity-100 hover:border-foreground/40"
               }`}
             >
@@ -1661,7 +1661,7 @@ function MilestoneTimelineSlider() {
                 onClick={() => setCurrentIdx(idx)}
                 className={`flex-1 min-w-[95px] sm:min-w-[115px] py-2 sm:py-2.5 px-2.5 rounded-lg text-center transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#EA4326] text-white shadow-md font-bold"
+                    ? "bg-[#D7833D] text-white shadow-md font-bold"
                     : "bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -1683,7 +1683,7 @@ function MilestoneTimelineSlider() {
         <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
           <div className="space-y-1">
             <div className="flex items-center gap-3">
-              <span className="font-headline text-3xl sm:text-4xl font-extrabold text-[#EA4326] tracking-tight">
+              <span className="font-headline text-3xl sm:text-4xl font-extrabold text-[#D7833D] tracking-tight">
                 {active.year}
               </span>
               <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border">
@@ -1700,7 +1700,7 @@ function MilestoneTimelineSlider() {
               type="button"
               onClick={prevMilestone}
               aria-label="Previous Milestone"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#D7833D] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -1708,7 +1708,7 @@ function MilestoneTimelineSlider() {
               type="button"
               onClick={nextMilestone}
               aria-label="Next Milestone"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#EA4326] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-[#D7833D] hover:text-white text-foreground flex items-center justify-center border border-border transition-colors cursor-pointer"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -1727,13 +1727,13 @@ function MilestoneTimelineSlider() {
 
         {/* Key Highlights */}
         <div className="bg-muted/40 border border-border/80 rounded-xl p-4 sm:p-5 space-y-2.5">
-          <span className="block text-xs uppercase font-headline font-bold text-[#EA4326] tracking-wider">
+          <span className="block text-xs uppercase font-headline font-bold text-[#D7833D] tracking-wider">
             Era Highlights &amp; Accomplishments
           </span>
           <ul className="space-y-2 text-sm text-foreground/90">
             {active.highlights.map((h) => (
               <li key={h} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#EA4326] mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#D7833D] mt-0.5 shrink-0" />
                 <span>{h}</span>
               </li>
             ))}
@@ -1758,7 +1758,7 @@ function MilestoneTimelineSlider() {
               type="button"
               onClick={prevMilestone}
               aria-label="Previous Milestone"
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#D7833D] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -1767,13 +1767,13 @@ function MilestoneTimelineSlider() {
               type="button"
               onClick={nextMilestone}
               aria-label="Next Milestone"
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#EA4326] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#D7833D] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform hover:scale-105 active:scale-95 cursor-pointer z-10"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <div className="absolute bottom-3 left-3 right-3 text-white text-xs sm:text-sm font-medium">
-              <span className="font-headline font-bold uppercase tracking-wider text-[#EA4326] mr-2">
+              <span className="font-headline font-bold uppercase tracking-wider text-[#D7833D] mr-2">
                 {active.year} Archive
               </span>
               <span className="text-white/90">{active.imgCaption}</span>
@@ -1792,7 +1792,7 @@ function MilestoneTimelineSlider() {
                 aria-label={`Jump to ${m.year}`}
                 className={`transition-all duration-200 cursor-pointer rounded-full ${
                   currentIdx === idx
-                    ? "w-8 h-2.5 bg-[#EA4326]"
+                    ? "w-8 h-2.5 bg-[#D7833D]"
                     : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
                 }`}
               />
@@ -1827,7 +1827,7 @@ function HonorsStorySection() {
           onClick={() => setActiveTab("trophies")}
           className={`flex-1 py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
             activeTab === "trophies"
-              ? "bg-[#EA4326] text-white shadow-md"
+              ? "bg-[#D7833D] text-white shadow-md"
               : "text-muted-foreground hover:text-foreground hover:bg-muted"
           }`}
         >
@@ -1840,7 +1840,7 @@ function HonorsStorySection() {
           onClick={() => setActiveTab("milestones")}
           className={`flex-1 py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-headline font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
             activeTab === "milestones"
-              ? "bg-[#EA4326] text-white shadow-md"
+              ? "bg-[#D7833D] text-white shadow-md"
               : "text-muted-foreground hover:text-foreground hover:bg-muted"
           }`}
         >
@@ -1925,7 +1925,7 @@ function HonorsStorySection() {
           <MilestoneTimelineSlider />
 
           <div className="bg-card border border-border rounded-xl p-5 space-y-2">
-            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#EA4326]">
+            <span className="text-xs font-headline font-bold uppercase tracking-wider text-[#D7833D]">
               Milestone Legacy
             </span>
             <p className="text-sm text-foreground/90 font-body leading-relaxed">

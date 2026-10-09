@@ -12,16 +12,17 @@
 @theme {
   --color-brand-black: #090A0C;
   --color-brand-charcoal: #1B1D22;
-  --color-brand-orange: #EA6E18;
-  --color-brand-orange-light: #FFA53B;
-  --color-brand-orange-dark: #C2520E;
-  --color-brand-gold: #F89928;
-  --color-brand-gold-light: #FFCA80;
-  --color-brand-copper: #D96214;
-  --color-brand-copper-dark: #A84508;
+  --color-brand-orange: #F0A04B;
+  --color-brand-orange-hover: #D7833D;
+  --color-brand-orange-light: #F6BE82;
+  --color-brand-orange-dark: #C16A35;
+  --color-brand-gold: #F0A04B;
+  --color-brand-gold-light: #F6BE82;
+  --color-brand-copper: #C16A35;
+  --color-brand-copper-hover: #D7833D;
   --color-brand-peach: #FCE1C2;
   --color-brand-maroon: #7A201B;
-  --color-brand-red: #8B111B;
+  --color-brand-red: #F0A04B;
 
   --color-background: #F6F5F3;
   --color-surface: #FFFFFF;
@@ -35,6 +36,24 @@
 
   --font-headline: "Barlow Condensed", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
+  --font-display-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-script-signature: "Caveat", "Dancing Script", "Brush Script MT", cursive;
+}
+
+@utility font-display-serif {
+  font-family: var(--font-display-serif);
+}
+
+@utility font-script-signature {
+  font-family: var(--font-script-signature);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :root {
@@ -49,15 +68,17 @@
 
   --brand-black: #090A0C;
   --brand-charcoal: #1B1D22;
-  --brand-orange: #EA6E18;
-  --brand-orange-light: #FFA53B;
-  --brand-orange-dark: #C2520E;
-  --brand-gold: #F89928;
-  --brand-gold-light: #FFCA80;
-  --brand-copper: #D96214;
+  --brand-orange: #F0A04B;
+  --brand-orange-hover: #D7833D;
+  --brand-orange-light: #F6BE82;
+  --brand-orange-dark: #C16A35;
+  --brand-gold: #F0A04B;
+  --brand-gold-light: #F6BE82;
+  --brand-copper: #C16A35;
+  --brand-copper-hover: #D7833D;
   --brand-peach: #FCE1C2;
   --brand-maroon: #7A201B;
-  --brand-red: #8B111B;
+  --brand-red: #F0A04B;
 
   --shadow-sm: 0 2px 8px rgba(9, 10, 12, 0.04);
   --shadow-md: 0 8px 24px rgba(9, 10, 12, 0.06);

@@ -55,7 +55,7 @@ function SponsorFormInner({
       <div className="relative w-full max-w-xl bg-white border border-[#E8E3DD] rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between pb-4 border-b border-[#E8E3DD] mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#EA6E18]">
+            <div className="p-2.5 rounded-xl bg-[#D7833D]/10 border border-[#D7833D]/25 text-[#D7833D]">
               <Handshake className="w-5 h-5" />
             </div>
             <div>
@@ -87,7 +87,7 @@ function SponsorFormInner({
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
               placeholder="e.g. Nilkanth Green / Kutch Kraft"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
@@ -108,7 +108,7 @@ function SponsorFormInner({
                   };
                   setFormData((prev) => ({ ...prev, tier: t, tierLabel: labelMap[t] }));
                 }}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-semibold cursor-pointer"
               >
                 <option value="principal">Principal Title Partner</option>
                 <option value="associate">Associate Club Partner</option>
@@ -126,7 +126,7 @@ function SponsorFormInner({
                 value={formData.jerseyPlacement}
                 onChange={(e) => setFormData((prev) => ({ ...prev, jerseyPlacement: e.target.value }))}
                 placeholder="Front Chest / Sleeve / Collar"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
@@ -141,7 +141,7 @@ function SponsorFormInner({
                 value={formData.annualContribution}
                 onChange={(e) => setFormData((prev) => ({ ...prev, annualContribution: e.target.value }))}
                 placeholder="₹60,000 / Year"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-headline font-bold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-headline font-bold"
               />
             </div>
 
@@ -154,7 +154,7 @@ function SponsorFormInner({
                 value={formData.tenure}
                 onChange={(e) => setFormData((prev) => ({ ...prev, tenure: e.target.value }))}
                 placeholder="3 Seasons (2026–27 to 2028–29)"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-semibold"
               />
             </div>
           </div>
@@ -166,7 +166,7 @@ function SponsorFormInner({
             <select
               value={formData.logo}
               onChange={(e) => setFormData((prev) => ({ ...prev, logo: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-semibold cursor-pointer"
             >
               <option value="/sponsors/gala-diamond.png">Gala Diamond (/sponsors/gala-diamond.png)</option>
               <option value="/sponsors/devpur-mahajan.png">Devpur Mahajan (/sponsors/devpur-mahajan.png)</option>
@@ -186,7 +186,7 @@ function SponsorFormInner({
               rows={2}
               value={formData.description}
               onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
@@ -200,7 +200,7 @@ function SponsorFormInner({
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#C27332] transition-opacity cursor-pointer shadow-md shadow-[#D7833D]/20"
             >
               {initialSponsor ? "Save MOU Updates" : "Onboard Sponsor"}
             </button>

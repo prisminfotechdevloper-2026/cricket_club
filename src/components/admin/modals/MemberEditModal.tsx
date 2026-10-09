@@ -100,7 +100,7 @@ function MemberFormInner({
       <div className="relative w-full max-w-xl bg-white border border-[#E8E3DD] rounded-3xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between pb-4 border-b border-[#E8E3DD] mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#EA6E18]">
+            <div className="p-2.5 rounded-xl bg-[#D7833D]/10 border border-[#D7833D]/25 text-[#D7833D]">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
@@ -133,7 +133,7 @@ function MemberFormInner({
                 value={formData.name}
                 onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                 placeholder="e.g. Yash Haria"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
@@ -146,7 +146,7 @@ function MemberFormInner({
                 required
                 value={formData.jerseyNumber}
                 onChange={(e) => setFormData((prev) => ({ ...prev, jerseyNumber: Number(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-headline font-bold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-headline font-bold"
               />
             </div>
           </div>
@@ -159,7 +159,7 @@ function MemberFormInner({
               <select
                 value={formData.role}
                 onChange={(e) => setFormData((prev) => ({ ...prev, role: e.target.value as PlayerRole }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-semibold cursor-pointer"
               >
                 {ROLES.map((r) => (
                   <option key={r} value={r}>
@@ -177,7 +177,7 @@ function MemberFormInner({
                 type="number"
                 value={formData.joiningYear}
                 onChange={(e) => setFormData((prev) => ({ ...prev, joiningYear: Number(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-semibold"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-semibold"
               />
             </div>
           </div>
@@ -192,7 +192,7 @@ function MemberFormInner({
                 value={formData.battingStyle}
                 onChange={(e) => setFormData((prev) => ({ ...prev, battingStyle: e.target.value }))}
                 placeholder="Right-hand bat"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
 
@@ -205,13 +205,13 @@ function MemberFormInner({
                 value={formData.bowlingStyle}
                 onChange={(e) => setFormData((prev) => ({ ...prev, bowlingStyle: e.target.value }))}
                 placeholder="Right-arm medium fast"
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
               />
             </div>
           </div>
 
           <div className="p-4 rounded-2xl bg-[#F6F5F3] border border-[#E8E3DD] space-y-3">
-            <span className="text-xs font-headline font-bold text-[#EA6E18] uppercase tracking-wider block">
+            <span className="text-xs font-headline font-bold text-[#D7833D] uppercase tracking-wider block">
               Club Career Statistics
             </span>
             <div className="grid grid-cols-4 gap-2">
@@ -221,7 +221,7 @@ function MemberFormInner({
                   type="number"
                   value={formData.matches}
                   onChange={(e) => setFormData((prev) => ({ ...prev, matches: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -230,7 +230,7 @@ function MemberFormInner({
                   type="number"
                   value={formData.runs}
                   onChange={(e) => setFormData((prev) => ({ ...prev, runs: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -239,7 +239,7 @@ function MemberFormInner({
                   type="number"
                   value={formData.wickets}
                   onChange={(e) => setFormData((prev) => ({ ...prev, wickets: Number(e.target.value) }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
               <div>
@@ -248,7 +248,7 @@ function MemberFormInner({
                   type="text"
                   value={formData.highestScore}
                   onChange={(e) => setFormData((prev) => ({ ...prev, highestScore: e.target.value }))}
-                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#EA6E18] outline-hidden"
+                  className="w-full px-2.5 py-2 rounded-lg bg-white border border-stone-200 text-stone-900 text-xs font-semibold focus:border-[#D7833D] outline-hidden"
                 />
               </div>
             </div>
@@ -262,7 +262,7 @@ function MemberFormInner({
               rows={3}
               value={formData.bio}
               onChange={(e) => setFormData((prev) => ({ ...prev, bio: e.target.value }))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#EA6E18] focus:bg-white outline-hidden font-medium transition-colors"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
@@ -276,7 +276,7 @@ function MemberFormInner({
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#D96214] transition-opacity cursor-pointer shadow-md shadow-[#EA6E18]/20"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] text-white font-headline text-base font-bold uppercase tracking-wider hover:from-[#C27332] transition-opacity cursor-pointer shadow-md shadow-[#D7833D]/20"
             >
               {initialPlayer ? "Save Member Details" : "Add to Squad"}
             </button>

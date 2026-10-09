@@ -47,11 +47,11 @@ export function DashboardOverview() {
     <div className="space-y-6">
       {/* Top Banner / Club Welcome */}
       <div className="p-6 sm:p-7 rounded-3xl bg-white border border-[#E8E3DD] relative overflow-hidden shadow-sm">
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial from-[#EA6E18]/10 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial from-[#D7833D]/10 to-transparent pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/10 border border-[#EA6E18]/25 text-[#C2520E] text-xs font-headline font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#EA6E18]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D7833D]/10 border border-[#D7833D]/25 text-[#B96623] text-xs font-headline font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#D7833D]" />
               <span>Devpur Gaam Committee Dashboard</span>
             </div>
             <h2 className="font-headline text-3xl sm:text-4xl font-bold text-[#090A0C] tracking-tight">
@@ -65,7 +65,7 @@ export function DashboardOverview() {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
               onClick={() => setIsMatchModalOpen(true)}
-              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#EA6E18] to-[#D96214] hover:from-[#C85D1B] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 shadow-md shadow-[#EA6E18]/20"
+              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#B96623] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 shadow-md shadow-[#D7833D]/20"
             >
               <Plus className="w-4 h-4" />
               <span>Schedule Fixture</span>
@@ -74,7 +74,7 @@ export function DashboardOverview() {
               onClick={() => setIsMemberModalOpen(true)}
               className="px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-800 font-headline text-sm font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-2 shadow-2xs"
             >
-              <Plus className="w-4 h-4 text-[#EA6E18]" />
+              <Plus className="w-4 h-4 text-[#D7833D]" />
               <span>Enroll Member</span>
             </button>
           </div>
@@ -86,11 +86,11 @@ export function DashboardOverview() {
         {/* Card 1: Members */}
         <div
           onClick={() => setActiveTab("members")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#EA6E18]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Active Members</span>
-            <div className="p-2 rounded-xl bg-[#EA6E18]/10 text-[#EA6E18] group-hover:scale-110 transition-transform">
+            <div className="p-2 rounded-xl bg-[#D7833D]/10 text-[#D7833D] group-hover:scale-110 transition-transform">
               <Users className="w-4 h-4" />
             </div>
           </div>
@@ -108,17 +108,17 @@ export function DashboardOverview() {
         {/* Card 2: Matches */}
         <div
           onClick={() => setActiveTab("matches")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#EA6E18]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Matches &amp; Tournaments</span>
-            <div className="p-2 rounded-xl bg-[#F89928]/15 text-[#D96214] group-hover:scale-110 transition-transform">
+            <div className="p-2 rounded-xl bg-[#EAA05E]/15 text-[#C27332] group-hover:scale-110 transition-transform">
               <Trophy className="w-4 h-4" />
             </div>
           </div>
           <div className="flex items-baseline justify-between">
             <span className="font-headline text-4xl font-bold text-[#090A0C]">25+</span>
-            <span className="text-xs text-[#D96214] font-semibold">Leather-ball/Yr</span>
+            <span className="text-xs text-[#C27332] font-semibold">Leather-ball/Yr</span>
           </div>
           <p className="text-xs text-stone-500 mt-2 font-medium">
             {matches.length} fixtures scheduled / archived
@@ -128,11 +128,11 @@ export function DashboardOverview() {
         {/* Card 3: Sponsors MOU */}
         <div
           onClick={() => setActiveTab("sponsors")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#EA6E18]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Sponsorship MOU</span>
-            <div className="p-2 rounded-xl bg-[#EA6E18]/10 text-[#EA6E18] group-hover:scale-110 transition-transform">
+            <div className="p-2 rounded-xl bg-[#D7833D]/10 text-[#D7833D] group-hover:scale-110 transition-transform">
               <Handshake className="w-4 h-4" />
             </div>
           </div>
@@ -148,7 +148,7 @@ export function DashboardOverview() {
         {/* Card 4: Practice Sessions */}
         <div
           onClick={() => setActiveTab("training")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#EA6E18]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Net Practice</span>
@@ -168,7 +168,7 @@ export function DashboardOverview() {
 
       {/* Featured Live / Upcoming Match Control Bar */}
       {liveMatch && (
-        <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EA6E18]/30 shadow-sm relative overflow-hidden">
+        <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#D7833D]/30 shadow-sm relative overflow-hidden">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export function DashboardOverview() {
                     <Radio className="w-3.5 h-3.5" /> LIVE MATCHDAY STATUS
                   </span>
                 ) : (
-                  <span className="px-2.5 py-1 rounded-full bg-[#EA6E18]/10 text-[#C2520E] border border-[#EA6E18]/20 text-xs font-headline font-bold uppercase tracking-wider">
+                  <span className="px-2.5 py-1 rounded-full bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/20 text-xs font-headline font-bold uppercase tracking-wider">
                     FEATURED FIXTURE
                   </span>
                 )}
@@ -189,7 +189,7 @@ export function DashboardOverview() {
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-1">
                 <div>
                   <span className="text-xs text-stone-500 block uppercase font-semibold">DCC Score</span>
-                  <span className="font-headline text-3xl font-bold text-[#EA6E18]">
+                  <span className="font-headline text-3xl font-bold text-[#D7833D]">
                     {liveMatch.dccScore || "172/4"}
                   </span>
                   <span className="text-xs text-stone-500 ml-1.5 font-medium">
@@ -213,10 +213,10 @@ export function DashboardOverview() {
               </div>
 
               <p className="text-xs text-stone-600 flex items-center gap-2 font-medium">
-                <MapPin className="w-3.5 h-3.5 text-[#EA6E18]" />
+                <MapPin className="w-3.5 h-3.5 text-[#D7833D]" />
                 <span>{liveMatch.venue}</span>
                 <span className="text-stone-300">•</span>
-                <Clock className="w-3.5 h-3.5 text-[#D96214]" />
+                <Clock className="w-3.5 h-3.5 text-[#C27332]" />
                 <span>{liveMatch.date} ({liveMatch.time})</span>
               </p>
             </div>
@@ -247,14 +247,14 @@ export function DashboardOverview() {
         <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-2xs space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[#E8E3DD]">
             <div className="flex items-center gap-2">
-              <Handshake className="w-5 h-5 text-[#EA6E18]" />
+              <Handshake className="w-5 h-5 text-[#D7833D]" />
               <h3 className="font-headline text-xl font-bold text-[#090A0C] tracking-tight">
                 2026–2029 SPONSORSHIP MOU TRACKER
               </h3>
             </div>
             <button
               onClick={() => setActiveTab("sponsors")}
-              className="text-xs font-headline text-[#EA6E18] font-bold hover:underline uppercase tracking-wide cursor-pointer"
+              className="text-xs font-headline text-[#D7833D] font-bold hover:underline uppercase tracking-wide cursor-pointer"
             >
               View All ({sponsors.length})
             </button>
@@ -300,14 +300,14 @@ export function DashboardOverview() {
         <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-2xs space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-[#E8E3DD]">
             <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#D96214]" />
+              <Calendar className="w-5 h-5 text-[#C27332]" />
               <h3 className="font-headline text-xl font-bold text-[#090A0C] tracking-tight">
                 MATUNGA GROUND PRACTICE NETS
               </h3>
             </div>
             <button
               onClick={() => setActiveTab("training")}
-              className="text-xs font-headline text-[#D96214] font-bold hover:underline uppercase tracking-wide cursor-pointer"
+              className="text-xs font-headline text-[#C27332] font-bold hover:underline uppercase tracking-wide cursor-pointer"
             >
               Session Logs
             </button>
@@ -319,12 +319,12 @@ export function DashboardOverview() {
 
           <div className="grid grid-cols-3 gap-2.5 text-center">
             <div className="p-3 rounded-xl bg-stone-50 border border-stone-200">
-              <span className="text-sm font-headline text-[#EA6E18] block font-bold uppercase tracking-wider">TUE</span>
+              <span className="text-sm font-headline text-[#D7833D] block font-bold uppercase tracking-wider">TUE</span>
               <span className="text-sm font-semibold text-stone-900 block mt-1">Batting Drills</span>
               <span className="text-[11px] text-stone-500 font-medium">6:30 – 9:00 AM</span>
             </div>
             <div className="p-3 rounded-xl bg-stone-50 border border-stone-200">
-              <span className="text-sm font-headline text-[#D96214] block font-bold uppercase tracking-wider">THU</span>
+              <span className="text-sm font-headline text-[#C27332] block font-bold uppercase tracking-wider">THU</span>
               <span className="text-sm font-semibold text-stone-900 block mt-1">Bowling &amp; Nets</span>
               <span className="text-[11px] text-stone-500 font-medium">6:30 – 9:00 AM</span>
             </div>
@@ -344,7 +344,7 @@ export function DashboardOverview() {
 
           <div className="pt-2 flex items-center justify-between text-xs text-stone-500 border-t border-stone-200 font-medium">
             <span>Matunga Gymkhana Turf Nets</span>
-            <span className="text-[#C2520E] font-semibold">Season 2026–27 Scheduled</span>
+            <span className="text-[#B96623] font-semibold">Season 2026–27 Scheduled</span>
           </div>
         </div>
       </div>

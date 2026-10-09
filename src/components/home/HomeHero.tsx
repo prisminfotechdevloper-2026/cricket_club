@@ -50,7 +50,7 @@ export function HomeHero() {
             <div className="pt-2 sm:pt-3">
               <Link
                 href="/history"
-                className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-md bg-[#EA4326] hover:bg-[#D9381E] active:scale-[0.98] text-white font-headline text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider shadow-lg shadow-black/30 hover:shadow-xl transition-[transform,background-color,box-shadow] duration-150 cursor-pointer group"
+                className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-md bg-[#F0A04B] hover:bg-[#D7833D] active:scale-[0.98] text-white font-headline text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider shadow-lg shadow-black/30 hover:shadow-xl transition-[transform,background-color,box-shadow] duration-150 cursor-pointer group"
               >
                 <span>KNOW MORE</span>
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] transition-transform duration-150 group-hover:translate-x-1" />

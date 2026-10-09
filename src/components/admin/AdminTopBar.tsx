@@ -54,8 +54,8 @@ export function AdminTopBar({ onOpenMobileMenu }: AdminTopBarProps) {
       {/* Right Actions */}
       <div className="flex items-center gap-3">
         {/* Gaam Motto Pill */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-[#EA6E18]/10 border border-[#EA6E18]/20 text-[#C2520E] text-[11px] font-bold">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#EA6E18]" />
+        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-[#D7833D]/10 border border-[#D7833D]/20 text-[#B96623] text-[11px] font-bold">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#D7833D]" />
           <span>Proudly Representing Devpur Gaam</span>
         </div>
 
@@ -66,7 +66,7 @@ export function AdminTopBar({ onOpenMobileMenu }: AdminTopBarProps) {
           className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-700 hover:text-stone-900 text-xs font-semibold flex items-center gap-2 transition-colors shadow-2xs"
           title="Visit Public Website"
         >
-          <Globe className="w-4 h-4 text-[#EA6E18]" />
+          <Globe className="w-4 h-4 text-[#D7833D]" />
           <span className="hidden sm:inline">View Site</span>
         </Link>
 
