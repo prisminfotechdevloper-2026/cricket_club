@@ -3,106 +3,264 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Heart, Sparkles, Users } from "lucide-react";
 import { Container } from "../common/Container";
 
-/* Reusable narrative text and CTA buttons block */
-function StoryAndActionButtons() {
-  return (
-    <>
-      {/* Narrative Body Text */}
-      <p className="font-body text-[#525763] text-sm sm:text-[15px] md:text-base leading-[1.78] max-w-xl">
-        The passion for cricket has always been alive in our KVO community.
-        Year after year, the Kutchi Visa Oswal (KVO) Cricket Tournaments
-        brought KUTCHI COMMUNITY together through the spirit of
-        competition, recreation and a shared love for the game. Watching this
-        spirit come alive sparked a thought in the minds of two friends from
-        Devpur Gaam.
-      </p>
-
-      {/* Call To Action Buttons */}
-      <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-[#f39a3b] hover:bg-[#f39a3b] active:scale-[0.98] text-white font-body font-semibold text-sm sm:text-base shadow-md shadow-[#f39a3b]/25 hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 group cursor-pointer"
-        >
-          <span>Join Devpur</span>
-          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-        </Link>
-
-      
-      </div>
-    </>
-  );
-}
+const SIX_IMPACTS = [
+  {
+    number: "01",
+    title: "Connecting Youth Across Gaams",
+    description: "Helped Devpur youth connect with the 52 and 42 gaams of KVO.",
+  },
+  {
+    number: "02",
+    title: "Uniting Generations",
+    description: "Brought different generations together around a common purpose.",
+  },
+  {
+    number: "03",
+    title: "From Friends to Family",
+    description: "Turned connections into friendships, and friendships into family.",
+  },
+  {
+    number: "04",
+    title: "Community Upliftment",
+    description: "Lifted the community as a whole.",
+  },
+  {
+    number: "05",
+    title: "Growth & Opportunity",
+    description: "Opened more business and career opportunities across the gaam and the KVO community.",
+  },
+  {
+    number: "06",
+    title: "Heritage & Principles",
+    description: "Shared our culture and Jain principles.",
+  },
+];
 
 export function HistoryHero() {
   return (
-    <section
-      aria-label="Club Overview - Our Story"
-      className="relative w-full overflow-hidden bg-[#FAF7F2] py-5 sm:py-6 md:py-7 lg:py-7 border-b border-[#EAE3D6]"
+    <article
+      aria-label="Our Story - Devpur Cricket Club"
+      className="relative w-full overflow-hidden bg-[#FAF7F2] py-8 sm:py-12 md:py-16 border-b border-[#EAE3D6]"
     >
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-14 items-center">
-          {/* =====================================================================
-              LEFT COLUMN: STORY & PURPOSE NARRATIVE
-              On mobile: Displays Eyebrow + Main Headline first.
-              On desktop (lg+): Displays Eyebrow + Headline + Narrative + CTA Buttons.
-              ===================================================================== */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
-            {/* Eyebrow / Category Tag */}
-            <div className="inline-flex items-center gap-2">
-              <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#f39a3b]">
-                CLUB OVERVIEW — OUR STORY
-              </span>
-            </div>
+      {/* Soft warm background glow */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-32 left-1/4 w-[560px] h-[360px] rounded-full bg-[#f39a3b]/5 blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-[480px] h-[380px] rounded-full bg-[#EAE3D6]/40 blur-3xl" />
+      </div>
 
-            {/* Main Headline: Modern Athletic Cricket Display */}
-            <h1 className="font-headline text-[34px] sm:text-[46px] md:text-[52px] lg:text-[56px] xl:text-[62px] font-extrabold uppercase tracking-tight leading-[1.05]">
-              <span className="block text-[#0F172A]">Every Team Has a</span>
-              <span className="block text-[#0F172A]">Beginning. Ours Began</span>
-              <span className="block text-[#f39a3b]">With a Conversation.</span>
-            </h1>
-
-            {/* Desktop Only: Story Narrative & CTA Buttons */}
-            <div className="hidden lg:flex flex-col space-y-5 sm:space-y-6">
-              <StoryAndActionButtons />
-            </div>
+      <Container className="relative z-10 max-w-5xl">
+        {/* =====================================================================
+            01. HERO HEADER: Eyebrow + H1 + Hero Image + Action Hook
+            ===================================================================== */}
+        <header className="flex flex-col space-y-6 sm:space-y-8">
+          {/* Eyebrow & Category */}
+          <div className="inline-flex items-center gap-3">
+            <span className="font-body font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-[#f39a3b]">
+              Our Story
+            </span>
+            <span className="w-10 h-px bg-[#f39a3b]" aria-hidden="true" />
+            <span className="text-xs text-stone-500 font-medium">Est. 2013</span>
           </div>
 
-          {/* =====================================================================
-              RIGHT COLUMN: LAYERED ARTISTIC PHOTO FRAME & SCRIPT RIBBON
-              On mobile: Displays right after the headline, followed by the narrative & buttons.
-              ===================================================================== */}
-          <div className="lg:col-span-6 xl:col-span-6 relative flex flex-col items-center justify-center pt-3 sm:pt-5 lg:pt-0">
-            <div className="relative w-full max-w-[560px] lg:max-w-none">
-              {/* Main Photo Card Container (Clean image presentation without orange background border) */}
-              <div className="relative z-10 w-full rounded-2xl sm:rounded-[28px] overflow-hidden bg-white shadow-xl border border-stone-200">
-                <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full overflow-hidden bg-[#EAE3D6]">
-                  <Image
-                    src="/history/image.png"
-                    alt="Devpur Cricket Club Team on the Maidan"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover object-[center_35%] transition-transform duration-700 ease-out hover:scale-103"
-                  />
-                  {/* Subtle warm sun flare / vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+          {/* H1 Headline (Exactly as specified in story.md) */}
+          <h1 className="font-headline text-[32px] sm:text-[44px] md:text-[52px] lg:text-[58px] font-extrabold tracking-tight leading-[1.08] text-[#0F172A] max-w-4xl">
+            Every team has a beginning. Ours began{" "}
+            <span className="text-[#f39a3b]">with a conversation.</span>
+          </h1>
+
+          {/* Hero Image Container: 16:9 / 16:10 format with descriptive alt */}
+          <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white shadow-xl sm:shadow-2xl border border-stone-200/90 group">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-[#EAE3D6]">
+              <Image
+                src="/history/image.png"
+                alt="Devpur Cricket Club team members in traditional cricket whites on the maidan"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1080px"
+                className="object-cover object-[center_32%] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+
+              {/* Verified Team Tag */}
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 bg-black/80 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-white/20 text-white text-xs font-semibold shadow-md">
+                Devpur Cricket Club • Matunga Ground
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* =====================================================================
+            02. CHAPTER 1: Where it started + The Historic Quote
+            ===================================================================== */}
+        <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+            <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
+              Where it started
+            </h2>
+          </div>
+
+          <div className="space-y-5 text-stone-700 text-base sm:text-[17px] md:text-lg leading-[1.78] max-w-3xl">
+            <p>
+              The passion for cricket has always been alive in our KVO community.
+              Year after year, the Kutchi Visa Oswal (KVO) Cricket Tournaments
+              brought the Kutchi community together through competition, recreation
+              and a shared love for the game. Watching that spirit, two friends
+              from Devpur Gaam started talking.
+            </p>
+
+            {/* Heart-Touching Blockquote Container */}
+            <blockquote className="my-8 sm:my-10 rounded-2xl sm:rounded-3xl bg-white p-6 sm:p-8 md:p-10 border border-[#EAE3D6] shadow-md relative overflow-hidden">
+              <span
+                className="font-headline text-7xl sm:text-8xl md:text-9xl font-black text-[#f39a3b]/15 absolute -top-4 -left-1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                “
+              </span>
+              <div className="relative z-10 pl-4 sm:pl-6 border-l-4 border-[#f39a3b]">
+                <p className="font-headline text-lg sm:text-xl md:text-2xl font-bold text-[#0F172A] leading-snug tracking-tight">
+                  “When cricket can bring so many people together, why can&apos;t we build a Devpur Gaam team of our own and bring Devpur&apos;s youngsters together?”
+                </p>
+                <cite className="block font-body text-xs sm:text-sm font-semibold text-[#f39a3b] uppercase tracking-wider mt-3 not-italic">
+                  — The conversation between two friends from Devpur Gaam
+                </cite>
+              </div>
+            </blockquote>
+
+            <p>
+              A casual conversation became an idea worth pursuing: one team, one
+              identity, one shared passion for the youth of Devpur.
+            </p>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            03. CHAPTER 2: More than tournaments
+            ===================================================================== */}
+        <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+            <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
+              More than tournaments
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-5 text-stone-700 text-base sm:text-[17px] md:text-lg leading-[1.78]">
+              <p>
+                The vision was bigger than playing matches. Meet, connect and
+                discover the talent within our community; revive friendships, build
+                new bonds, bring Devpur families closer, strengthen belonging among
+                Devpurians.
+              </p>
+              <p>
+                A team that gives youth a reason to come together, a platform to
+                show potential, and memories for years. The conversation became a
+                vision, and the vision became Devpur Cricket Club.
+              </p>
+            </div>
+
+            {/* Core Pillars Mini-Callout */}
+            <div className="lg:col-span-4 bg-white rounded-2xl p-6 border border-[#EAE3D6] shadow-sm flex flex-col space-y-3.5">
+              <span className="font-body text-xs font-bold uppercase tracking-wider text-[#f39a3b]">
+                The Foundational Pillars
+              </span>
+              <div className="flex items-center gap-3 text-stone-800 font-semibold text-sm">
+                <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+                <span>One Team</span>
+              </div>
+              <div className="flex items-center gap-3 text-stone-800 font-semibold text-sm">
+                <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+                <span>One Identity</span>
+              </div>
+              <div className="flex items-center gap-3 text-stone-800 font-semibold text-sm">
+                <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+                <span>One Shared Passion</span>
+              </div>
+              <div className="pt-2 border-t border-stone-100 text-xs text-stone-500">
+                Created for the youth and families of Devpur Gaam.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            04. CHAPTER 3: What the club has done so far (The Six Impact Points)
+            ===================================================================== */}
+        <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
+            <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
+              What the club has done so far
+            </h2>
+          </div>
+          <p className="text-stone-600 text-sm sm:text-base mb-8 max-w-2xl">
+            Since the very first match, Devpur Cricket Club has served as a catalyst for community unity, youth growth, and enduring bonds.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {SIX_IMPACTS.map((item) => (
+              <div
+                key={item.number}
+                className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EAE3D6] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-headline font-black text-xl text-[#f39a3b]">
+                      {item.number}
+                    </span>
+                    <span className="w-6 h-6 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-4 h-4 stroke-[2.2]" />
+                    </span>
+                  </div>
+                  <h3 className="font-headline font-bold text-base sm:text-lg text-[#0F172A] mb-1.5 group-hover:text-[#f39a3b] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="font-body text-stone-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Overlapping Handwritten Script Badge / Tape (Bottom-Right) */}
-             
+        {/* =====================================================================
+            05. CLOSING BLOCK: Roots, People & Pride
+            ===================================================================== */}
+        <section className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl bg-white p-7 sm:p-10 md:p-12 border border-[#EAE3D6] shadow-md text-left">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="max-w-2xl space-y-3">
+              <span className="font-body text-xs font-bold uppercase tracking-widest text-[#f39a3b]">
+                Closing
+              </span>
+              <p className="font-headline text-xl sm:text-2xl md:text-[26px] font-bold text-[#0F172A] leading-snug">
+                Devpur Cricket Club is not just about the game. It is about our roots, our people and the pride of Devpur Gaam. This is where our story began, and it is only the beginning.
+              </p>
             </div>
 
-            {/* Mobile Only: Story Narrative & CTA Buttons (Ordered right after the Hero Image) */}
-            <div className="flex lg:hidden flex-col space-y-5 pt-8 sm:pt-9 w-full text-left">
-              <StoryAndActionButtons />
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#f39a3b] hover:bg-[#d8842c] active:scale-[0.98] text-white font-body font-semibold text-sm shadow-md shadow-[#f39a3b]/25 hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 cursor-pointer"
+              >
+                <span>Join Devpur</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+
+              <Link
+                href="/members"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white hover:bg-stone-50 border border-[#EAE3D6] text-stone-800 font-body font-semibold text-sm transition-[background-color,border-color] duration-200 cursor-pointer"
+              >
+                Meet Our Squad
+              </Link>
             </div>
           </div>
-        </div>
+        </section>
       </Container>
-    </section>
+    </article>
   );
 }

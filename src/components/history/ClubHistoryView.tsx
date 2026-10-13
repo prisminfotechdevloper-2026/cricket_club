@@ -8,7 +8,6 @@ import {
   HistoryRoadmapTab,
 } from "./HistoryJourneyTimelineSection";
 import { HistoryHero } from "./HistoryHero";
-import { HistoryConversationSection } from "./HistoryConversationSection";
 import { HistoryVisionSection } from "./HistoryVisionSection";
 import { HistoryVisionMediumSection } from "./HistoryVisionMediumSection";
 import { HistoryMilestonesSection } from "./HistoryMilestonesSection";
@@ -104,11 +103,10 @@ export function ClubHistoryView() {
           02. DYNAMIC CONTENT AREA ACCORDING TO SELECTED POINTER
           ========================================================================= */}
       <div className="transition-opacity duration-300">
-        {/* POINTER 1: OUR STORY (Hero Section + The Conversation) */}
+        {/* POINTER 1: OUR STORY (Single Unified Story Component) */}
         {activeTab === "our-story" && (
           <div className="animate-in fade-in duration-300">
             <HistoryHero />
-            <HistoryConversationSection />
           </div>
         )}
 
