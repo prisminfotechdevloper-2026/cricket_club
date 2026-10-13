@@ -14,96 +14,41 @@ import {
 } from "lucide-react";
 import { Container } from "../common/Container";
 
-interface VisionPoint {
-  id: string;
-  title: string;
-  description: React.ReactNode;
-  icon: React.ElementType;
-}
-
-const VISION_POINTS: VisionPoint[] = [
+const SIX_IMPACTS = [
   {
-    id: "connect-youth",
-    title: "Connect youth and gaams",
-    description: (
-      <>
-        Cricket tournaments and fixtures are a bridge for{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          Devpur youth to connect with all 52–42 gaams
-        </strong>{" "}
-        of KVO.
-      </>
-    ),
+    id: "connecting-youth",
+    title: "Connecting Youth Across Gaams",
+    description: "Helped Devpur youth connect with the 52 and 42 gaams of KVO.",
     icon: Users,
   },
   {
-    id: "align-generations",
-    title: "Align generations",
-    description: (
-      <>
-        Veterans and youth come together on the field around{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          a common motive and shared passion
-        </strong>
-        .
-      </>
-    ),
+    id: "uniting-generations",
+    title: "Uniting Generations",
+    description: "Brought different generations together around a common purpose.",
     icon: Handshake,
   },
   {
-    id: "pitch-to-family",
-    title: "From pitch to family",
-    description: (
-      <>
-        On-field connections become{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          deep friendships, and friendships become an extended family
-        </strong>
-        .
-      </>
-    ),
+    id: "friends-to-family",
+    title: "From Friends to Family",
+    description: "Turned connections into friendships, and friendships into family.",
     icon: Heart,
   },
   {
-    id: "uplift-community",
-    title: "Uplift the community",
-    description: (
-      <>
-        Our cricketing journey and club spirit drive{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          the growth of the Devpur community as a whole
-        </strong>
-        .
-      </>
-    ),
+    id: "community-upliftment",
+    title: "Community Upliftment",
+    description: "Lifted the community as a whole.",
     icon: TrendingUp,
   },
   {
-    id: "business-career",
-    title: "Business and career networking",
-    description: (
-      <>
-        Match days and tournaments create{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          more business and career opportunities
-        </strong>{" "}
-        across the gaam and the wider KVO community.
-      </>
-    ),
+    id: "growth-opportunity",
+    title: "Growth & Opportunity",
+    description: "Opened more business and career opportunities across the gaam and the KVO community.",
     icon: Briefcase,
   },
   {
-    id: "culture-values",
-    title: "Culture and values",
-    description: (
-      <>
-        Jain principles,{" "}
-        <strong className="font-semibold text-[#0F172A]">
-          ethics, mutual respect and cultural sharing
-        </strong>{" "}
-        in every practice and match.
-      </>
-    ),
+    id: "heritage-principles",
+    title: "Heritage & Principles",
+    description: "Shared our culture and Jain principles.",
     icon: Sparkles,
   },
 ];
@@ -258,21 +203,18 @@ export function HistoryHero() {
         </section>
 
         {/* =====================================================================
-            04. CHAPTER 3: Our vision: cricket as our medium
+            04. CHAPTER 3: What the club has done so far
             ===================================================================== */}
         <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-6 sm:mb-8">
             <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
             <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
-              Our vision: cricket as our medium
+              What the club has done so far
             </h2>
           </div>
-          <p className="font-body text-stone-600 text-base sm:text-[17px] mb-8 sm:mb-10 max-w-2xl leading-relaxed">
-            For us, cricket is not just about the score. It is how we bring the Devpur community together.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {VISION_POINTS.map((item) => {
+            {SIX_IMPACTS.map((item) => {
               const Icon = item.icon;
               return (
                 <div
