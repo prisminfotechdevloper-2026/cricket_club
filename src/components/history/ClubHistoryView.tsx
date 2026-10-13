@@ -6,6 +6,7 @@ import { HistoryConversationSection } from "./HistoryConversationSection";
 import { HistoryVisionSection } from "./HistoryVisionSection";
 import { HistoryVisionMediumSection } from "./HistoryVisionMediumSection";
 import { HistoryJourneyTimelineSection } from "./HistoryJourneyTimelineSection";
+import { HistoryBankDetailsSection } from "./HistoryBankDetailsSection";
 import { HomePartnersBehindSection } from "../home/HomePartnersBehindSection";
 
 export function ClubHistoryView() {
@@ -28,6 +29,9 @@ export function ClubHistoryView() {
 
       {/* 06. Partners Behind DCC (Sponsors Section) */}
       <HomePartnersBehindSection />
+
+      {/* 07. Bank Details Section (Matching UI Reference) */}
+      <HistoryBankDetailsSection />
     </div>
   );
 }

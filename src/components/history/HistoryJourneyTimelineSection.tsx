@@ -140,7 +140,7 @@ export function HistoryJourneyTimelineSection() {
     <section
       id="history-journey"
       aria-label="The Journey of Devpur Cricket Club"
-      className="relative w-full overflow-hidden bg-[#0E131B] py-10 sm:py-12 border-b border-white/5"
+      className="relative w-full overflow-hidden bg-[#0E131B] py-4 sm:py-5 border-b border-white/5"
     >
       {/* Background: atmospheric stadium floodlights with deep dark gradients */}
       <div
