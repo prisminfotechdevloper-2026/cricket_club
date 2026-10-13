@@ -183,7 +183,7 @@ export function SiteFooter() {
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-stone-100 text-stone-700 text-xs font-mono font-bold border border-stone-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-                    KVO RANK #10 • 2× RUNNERS-UP
+                    KVO RANK #10 • 5× RUNNERS-UP
                   </span>
                 </div>
               </div>

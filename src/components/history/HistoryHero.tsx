@@ -3,39 +3,53 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Heart, Sparkles, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Handshake,
+  Heart,
+  TrendingUp,
+  Briefcase,
+  Sparkles,
+} from "lucide-react";
 import { Container } from "../common/Container";
 
 const SIX_IMPACTS = [
   {
-    number: "01",
+    id: "connecting-youth",
     title: "Connecting Youth Across Gaams",
     description: "Helped Devpur youth connect with the 52 and 42 gaams of KVO.",
+    icon: Users,
   },
   {
-    number: "02",
+    id: "uniting-generations",
     title: "Uniting Generations",
     description: "Brought different generations together around a common purpose.",
+    icon: Handshake,
   },
   {
-    number: "03",
+    id: "friends-to-family",
     title: "From Friends to Family",
     description: "Turned connections into friendships, and friendships into family.",
+    icon: Heart,
   },
   {
-    number: "04",
+    id: "community-upliftment",
     title: "Community Upliftment",
     description: "Lifted the community as a whole.",
+    icon: TrendingUp,
   },
   {
-    number: "05",
+    id: "growth-opportunity",
     title: "Growth & Opportunity",
     description: "Opened more business and career opportunities across the gaam and the KVO community.",
+    icon: Briefcase,
   },
   {
-    number: "06",
+    id: "heritage-principles",
     title: "Heritage & Principles",
     description: "Shared our culture and Jain principles.",
+    icon: Sparkles,
   },
 ];
 
@@ -191,40 +205,37 @@ export function HistoryHero() {
             04. CHAPTER 3: What the club has done so far (The Six Impact Points)
             ===================================================================== */}
         <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-6 sm:mb-8">
             <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
             <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
               What the club has done so far
             </h2>
           </div>
-          <p className="text-stone-600 text-sm sm:text-base mb-8 max-w-2xl">
-            Since the very first match, Devpur Cricket Club has served as a catalyst for community unity, youth growth, and enduring bonds.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {SIX_IMPACTS.map((item) => (
-              <div
-                key={item.number}
-                className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EAE3D6] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-headline font-black text-xl text-[#f39a3b]">
-                      {item.number}
-                    </span>
-                    <span className="w-6 h-6 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 stroke-[2.2]" />
-                    </span>
+            {SIX_IMPACTS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EAE3D6] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <span className="w-7 h-7 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] flex items-center justify-center shrink-0">
+                        <Icon className="w-3.5 h-3.5 stroke-[2.2]" />
+                      </span>
+                    </div>
+                    <h3 className="font-headline font-bold text-base sm:text-lg text-[#0F172A] mb-1.5 group-hover:text-[#f39a3b] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-stone-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="font-headline font-bold text-base sm:text-lg text-[#0F172A] mb-1.5 group-hover:text-[#f39a3b] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="font-body text-stone-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -233,29 +244,19 @@ export function HistoryHero() {
             ===================================================================== */}
         <section className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl bg-white p-7 sm:p-10 md:p-12 border border-[#EAE3D6] shadow-md text-left">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="max-w-2xl space-y-3">
-              <span className="font-body text-xs font-bold uppercase tracking-widest text-[#f39a3b]">
-                Closing
-              </span>
+            <div className="max-w-2xl">
               <p className="font-headline text-xl sm:text-2xl md:text-[26px] font-bold text-[#0F172A] leading-snug">
                 Devpur Cricket Club is not just about the game. It is about our roots, our people and the pride of Devpur Gaam. This is where our story began, and it is only the beginning.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+            <div className="shrink-0">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#f39a3b] hover:bg-[#d8842c] active:scale-[0.98] text-white font-body font-semibold text-sm shadow-md shadow-[#f39a3b]/25 hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 cursor-pointer"
               >
                 <span>Join Devpur</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                href="/members"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white hover:bg-stone-50 border border-[#EAE3D6] text-stone-800 font-body font-semibold text-sm transition-[background-color,border-color] duration-200 cursor-pointer"
-              >
-                Meet Our Squad
               </Link>
             </div>
           </div>

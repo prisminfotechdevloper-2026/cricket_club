@@ -44,7 +44,7 @@ const ROADMAP_POINTERS: RoadmapPointer[] = [
     tabLabel: "Our Vision",
     subtitle: "Cricket as Our Medium",
     descriptionLines: [
-      "Uniting 52–42 KVO gaams,",
+      "Uniting 52 and 42 KVO gaams,",
       "aligning generations & values.",
     ],
     Icon: Compass,
