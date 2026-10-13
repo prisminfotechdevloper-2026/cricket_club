@@ -3,55 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Users,
-  Handshake,
-  Heart,
-  TrendingUp,
-  Briefcase,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "../common/Container";
-
-const SIX_IMPACTS = [
-  {
-    id: "connecting-youth",
-    title: "Connecting Youth Across Gaams",
-    description: "Helped Devpur youth connect with the 52 and 42 gaams of KVO.",
-    icon: Users,
-  },
-  {
-    id: "uniting-generations",
-    title: "Uniting Generations",
-    description: "Brought different generations together around a common purpose.",
-    icon: Handshake,
-  },
-  {
-    id: "friends-to-family",
-    title: "From Friends to Family",
-    description: "Turned connections into friendships, and friendships into family.",
-    icon: Heart,
-  },
-  {
-    id: "community-upliftment",
-    title: "Community Upliftment",
-    description: "Lifted the community as a whole.",
-    icon: TrendingUp,
-  },
-  {
-    id: "growth-opportunity",
-    title: "Growth & Opportunity",
-    description: "Opened more business and career opportunities across the gaam and the KVO community.",
-    icon: Briefcase,
-  },
-  {
-    id: "heritage-principles",
-    title: "Heritage & Principles",
-    description: "Shared our culture and Jain principles.",
-    icon: Sparkles,
-  },
-];
 
 export function HistoryHero() {
   return (
@@ -202,43 +155,7 @@ export function HistoryHero() {
           </div>
         </section>
 
-        {/* =====================================================================
-            04. CHAPTER 3: What the club has done so far
-            ===================================================================== */}
-        <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
-          <div className="flex items-center gap-2 mb-6 sm:mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
-            <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
-              What the club has done so far
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {SIX_IMPACTS.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.id}
-                  className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EAE3D6] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
-                >
-                  <div>
-                    <div className="flex items-center mb-3">
-                      <span className="w-7 h-7 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] flex items-center justify-center shrink-0">
-                        <Icon className="w-3.5 h-3.5 stroke-[2.2]" />
-                      </span>
-                    </div>
-                    <h3 className="font-headline font-bold text-base sm:text-lg text-[#0F172A] mb-1.5 group-hover:text-[#f39a3b] transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="font-body text-stone-600 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
 
         {/* =====================================================================
             05. CLOSING BLOCK: Roots, People & Pride
