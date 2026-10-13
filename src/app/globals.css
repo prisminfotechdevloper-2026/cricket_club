@@ -20,17 +20,17 @@
 @theme {
   --color-brand-black: #090A0C;
   --color-brand-charcoal: #1B1D22;
-  --color-brand-orange: #F0A04B;
-  --color-brand-orange-hover: #D7833D;
+  --color-brand-orange: #f39a3b;
+  --color-brand-orange-hover: #d8842c;
   --color-brand-orange-light: #F6BE82;
-  --color-brand-orange-dark: #C16A35;
-  --color-brand-gold: #F0A04B;
+  --color-brand-orange-dark: #d8842c;
+  --color-brand-gold: #f39a3b;
   --color-brand-gold-light: #F6BE82;
-  --color-brand-copper: #C16A35;
-  --color-brand-copper-hover: #D7833D;
+  --color-brand-copper: #f39a3b;
+  --color-brand-copper-hover: #d8842c;
   --color-brand-peach: #FCE1C2;
   --color-brand-maroon: #7A201B;
-  --color-brand-red: #F0A04B;
+  --color-brand-red: #f39a3b;
 
   --color-background: #F6F5F3;
   --color-surface: #FFFFFF;
@@ -109,17 +109,17 @@
 
   --brand-black: #090A0C;
   --brand-charcoal: #1B1D22;
-  --brand-orange: #F0A04B;
-  --brand-orange-hover: #D7833D;
+  --brand-orange: #f39a3b;
+  --brand-orange-hover: #d8842c;
   --brand-orange-light: #F6BE82;
-  --brand-orange-dark: #C16A35;
-  --brand-gold: #F0A04B;
+  --brand-orange-dark: #d8842c;
+  --brand-gold: #f39a3b;
   --brand-gold-light: #F6BE82;
-  --brand-copper: #C16A35;
-  --brand-copper-hover: #D7833D;
+  --brand-copper: #f39a3b;
+  --brand-copper-hover: #d8842c;
   --brand-peach: #FCE1C2;
   --brand-maroon: #7A201B;
-  --brand-red: #F0A04B;
+  --brand-red: #f39a3b;
 
   --shadow-sm: 0 2px 8px rgba(9, 10, 12, 0.04);
   --shadow-md: 0 8px 24px rgba(9, 10, 12, 0.06);
@@ -198,7 +198,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #CF7647;
+  background: #f39a3b;
 }
 
 /* Container Shell */
@@ -234,7 +234,7 @@
 }
 
 .sports-card:hover {
-  border-color: #CF7647;
+  border-color: #f39a3b;
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(9, 10, 12, 0.08);
 }

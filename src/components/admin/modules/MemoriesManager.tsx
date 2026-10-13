@@ -42,7 +42,7 @@ export function MemoriesManager() {
         </div>
         <button
           onClick={() => setIsAddOpen(!isAddOpen)}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#C27332] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#D7833D]/20"
+          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#f39a3b] to-[#f39a3b] hover:from-[#f39a3b] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer flex items-center gap-2 self-start sm:self-auto shadow-md shadow-[#f39a3b]/20"
         >
           <Plus className="w-4 h-4" />
           <span>Upload Memory</span>
@@ -55,8 +55,8 @@ export function MemoriesManager() {
           onSubmit={handleAdd}
           className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-xl space-y-4 max-w-xl"
         >
-          <div className="flex items-center gap-2 text-xs font-headline font-bold text-[#D7833D] uppercase tracking-wider">
-            <Camera className="w-4 h-4 text-[#D7833D]" />
+          <div className="flex items-center gap-2 text-xs font-headline font-bold text-[#f39a3b] uppercase tracking-wider">
+            <Camera className="w-4 h-4 text-[#f39a3b]" />
             <span>ARCHIVE NEW MOMENT</span>
           </div>
 
@@ -70,7 +70,7 @@ export function MemoriesManager() {
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               placeholder="e.g. Post-match dinner celebration with Devpur Gaam members"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium transition-colors"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 placeholder:text-stone-400 text-sm focus:border-[#f39a3b] focus:bg-white outline-hidden font-medium transition-colors"
             />
           </div>
 
@@ -82,7 +82,7 @@ export function MemoriesManager() {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as GalleryCategory)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#f39a3b] focus:bg-white outline-hidden font-medium cursor-pointer"
               >
                 <option value="celebrations">Celebrations &amp; Trophies</option>
                 <option value="match-day">Match Day Action</option>
@@ -98,7 +98,7 @@ export function MemoriesManager() {
               <select
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#D7833D] focus:bg-white outline-hidden font-medium cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:border-[#f39a3b] focus:bg-white outline-hidden font-medium cursor-pointer"
               >
                 <option value="/images/winning_time_with_group.png">Silverware Celebration</option>
                 <option value="/images/team_group_11.png">Team Squad On Pitch</option>
@@ -118,7 +118,7 @@ export function MemoriesManager() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#D7833D] to-[#C27332] hover:from-[#C27332] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer shadow-md shadow-[#D7833D]/20"
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#f39a3b] to-[#f39a3b] hover:from-[#f39a3b] text-white font-headline text-sm font-bold uppercase tracking-wider transition-opacity cursor-pointer shadow-md shadow-[#f39a3b]/20"
             >
               Save to Archives
             </button>
@@ -131,7 +131,7 @@ export function MemoriesManager() {
         {galleryItems.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl bg-white border border-[#E8E3DD] shadow-xs overflow-hidden group hover:border-[#D7833D]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col justify-between"
+            className="rounded-2xl bg-white border border-[#E8E3DD] shadow-xs overflow-hidden group hover:border-[#f39a3b]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col justify-between"
           >
             <div className="relative aspect-video w-full bg-stone-100">
               <Image
@@ -141,7 +141,7 @@ export function MemoriesManager() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-md bg-white/90 backdrop-blur-xs text-xs font-headline font-bold uppercase tracking-wider text-[#B96623] border border-stone-200 shadow-2xs">
+              <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-md bg-white/90 backdrop-blur-xs text-xs font-headline font-bold uppercase tracking-wider text-[#f39a3b] border border-stone-200 shadow-2xs">
                 {item.category}
               </div>
             </div>

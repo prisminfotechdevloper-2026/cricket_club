@@ -174,7 +174,7 @@ export function HomeHistoryTimelineStrip() {
           {/* Heading */}
           <h2 className="font-headline font-extrabold uppercase text-[22px] sm:text-[28px] lg:text-[35px] leading-tight tracking-tight mb-8 sm:mb-9 max-w-5xl">
             <span className="text-white">A History Shaped by the </span>
-            <span className="text-[#F0A04B]">People Who Play It.</span>
+            <span className="text-[#f39a3b]">People Who Play It.</span>
           </h2>
 
           {/* Timeline track */}
@@ -199,7 +199,7 @@ export function HomeHistoryTimelineStrip() {
                   <div className="relative h-4" aria-hidden="true">
                     {/* line segment (first starts at dot 1, last ends at dot 2) */}
                     <div
-                      className="absolute top-1/2 h-px -translate-y-1/2 bg-[#C16A35]/35"
+                      className="absolute top-1/2 h-px -translate-y-1/2 bg-[#f39a3b]/35"
                       style={{
                         left: isFirst ? DOT1.replace(/_/g, " ") : 0,
                         right: isLast ? undefined : 0,
@@ -208,12 +208,12 @@ export function HomeHistoryTimelineStrip() {
                     />
                     {/* big dot */}
                     <span
-                      className="absolute top-1/2 w-[14px] h-[14px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F0A04B] shadow-[0_0_10px_rgba(240,160,75,0.55)]"
+                      className="absolute top-1/2 w-[14px] h-[14px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f39a3b] shadow-[0_0_10px_rgba(243, 154, 59,0.55)]"
                       style={{ left: DOT1.replace(/_/g, " ") }}
                     />
                     {/* small dot */}
                     <span
-                      className="absolute top-1/2 w-[11px] h-[11px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F0A04B] shadow-[0_0_8px_rgba(240,160,75,0.45)]"
+                      className="absolute top-1/2 w-[11px] h-[11px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f39a3b] shadow-[0_0_8px_rgba(243, 154, 59,0.45)]"
                       style={{ left: DOT2.replace(/_/g, " ") }}
                     />
                   </div>
@@ -223,18 +223,18 @@ export function HomeHistoryTimelineStrip() {
                     {/* short vertical divider */}
                     {!isFirst && (
                       <span
-                        className="absolute left-0 top-0 h-[92px] w-px bg-[#C16A35]/25"
+                        className="absolute left-0 top-0 h-[92px] w-px bg-[#f39a3b]/25"
                         aria-hidden="true"
                       />
                     )}
 
                     <div className="flex items-start gap-3">
-                      <div className="text-[#F0A04B] shrink-0 -mt-0.5">
+                      <div className="text-[#f39a3b] shrink-0 -mt-0.5">
                         <Icon className={ICON_CLASS} />
                       </div>
 
                       <div className="flex flex-col text-left">
-                        <h3 className="font-body text-[#F0A04B] font-semibold text-[13.5px] sm:text-[14px] leading-[1.55]">
+                        <h3 className="font-body text-[#f39a3b] font-semibold text-[13.5px] sm:text-[14px] leading-[1.55]">
                           {titleLines.map((line) => (
                             <span key={line} className="block whitespace-nowrap">
                               {line}
@@ -264,7 +264,7 @@ export function HomeHistoryTimelineStrip() {
                   type="button"
                   onClick={() => scrollByCard(-1)}
                   aria-label="Previous milestone"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#f39a3b]/60 text-[#f39a3b] hover:bg-[#f39a3b] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
                 >
                   <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>Prev</span>
@@ -277,7 +277,7 @@ export function HomeHistoryTimelineStrip() {
                 <span
                   key={milestone.year}
                   className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
-                    activeIndex === i ? "w-6 bg-[#F0A04B]" : "w-1.5 bg-neutral-700"
+                    activeIndex === i ? "w-6 bg-[#f39a3b]" : "w-1.5 bg-neutral-700"
                   }`}
                   aria-hidden="true"
                 />
@@ -290,7 +290,7 @@ export function HomeHistoryTimelineStrip() {
                   type="button"
                   onClick={() => scrollByCard(1)}
                   aria-label="Next milestone"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#f39a3b]/60 text-[#f39a3b] hover:bg-[#f39a3b] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
                 >
                   <span>Next</span>
                   <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />

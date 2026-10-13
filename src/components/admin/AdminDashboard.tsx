@@ -41,7 +41,7 @@ export function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F6F5F3] text-[#0B0B0D] flex selection:bg-[#D7833D]/20 selection:text-[#D7833D]">
+    <div className="min-h-screen bg-[#F6F5F3] text-[#0B0B0D] flex selection:bg-[#f39a3b]/20 selection:text-[#f39a3b]">
       {/* Desktop Sidebar */}
       <div className="hidden lg:block shrink-0 sticky top-0 h-screen">
         <AdminSidebar />

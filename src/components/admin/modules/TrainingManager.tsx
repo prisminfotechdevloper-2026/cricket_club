@@ -36,12 +36,12 @@ export function TrainingManager() {
       {coach && (
         <div className="p-6 rounded-3xl bg-white border border-[#E8E3DD] shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-stone-100 border border-[#D7833D]/30 flex items-center justify-center font-headline text-3xl font-bold text-[#D7833D] shrink-0">
+            <div className="w-16 h-16 rounded-2xl bg-stone-100 border border-[#f39a3b]/30 flex items-center justify-center font-headline text-3xl font-bold text-[#f39a3b] shrink-0">
               AK
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/25 text-xs font-headline font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] border border-[#f39a3b]/25 text-xs font-headline font-bold uppercase tracking-wider">
                   HEAD PROFESSIONAL COACH
                 </span>
                 <span className="text-xs text-stone-400 font-medium">
@@ -71,11 +71,11 @@ export function TrainingManager() {
         {trainingSessions.map((session) => (
           <div
             key={session.id}
-            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/30 hover:shadow-md transition-[box-shadow,border-color] flex flex-col justify-between space-y-4"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#f39a3b]/30 hover:shadow-md transition-[box-shadow,border-color] flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#D7833D]/10 text-[#B96623] border border-[#D7833D]/25 text-xs font-headline font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#f39a3b]/10 text-[#f39a3b] border border-[#f39a3b]/25 text-xs font-headline font-bold uppercase tracking-wider">
                   {session.category}
                 </span>
                 <span className="text-xs text-stone-500 font-medium">
@@ -89,11 +89,11 @@ export function TrainingManager() {
 
               <div className="space-y-1.5 text-xs text-stone-600 font-medium">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-[#D7833D]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#f39a3b]" />
                   <span>{session.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-[#B96623]" />
+                  <Clock className="w-3.5 h-3.5 text-[#f39a3b]" />
                   <span>{session.time}</span>
                 </div>
                 <div className="flex items-center gap-2">

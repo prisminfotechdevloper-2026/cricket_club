@@ -35,10 +35,10 @@ export function HomeHero() {
         {/* Content Container */}
         <Container className="relative z-10 w-full py-8 sm:py-10">
           <div className="max-w-3xl lg:max-w-4xl space-y-3 sm:space-y-4 text-left">
-            {/* Main Headline: Exactly matching Image 2 in 2 lines with Barlow Condensed */}
-            <h1 className="font-condensed text-4xl sm:text-5xl md:text-6xl lg:text-[66px] xl:text-[72px] font-extrabold text-white uppercase tracking-tight leading-[0.98] drop-shadow-md">
-              CRICKET BRINGS US TOGETHER <br className="hidden sm:inline" />
-              THE CLUB MAKES US FAMILY.
+            {/* Main Headline: Passion & Brotherhood with our signature orange accent */}
+            <h1 className="font-condensed text-4xl sm:text-5xl md:text-6xl lg:text-[66px] xl:text-[72px] font-extrabold uppercase tracking-tight leading-[0.98] drop-shadow-md">
+              <span className="text-white">CRICKET BRINGS US TOGETHER</span> <br className="hidden sm:inline" />
+              <span className="text-[#f39a3b]">THE CLUB MAKES US FAMILY.</span>
             </h1>
 
             {/* Subtext: Purpose & Vision */}
@@ -50,7 +50,7 @@ export function HomeHero() {
             <div className="pt-2 sm:pt-3">
               <Link
                 href="/history"
-                className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-md bg-[#F0A04B] hover:bg-[#D7833D] active:scale-[0.98] text-white font-condensed text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider shadow-lg shadow-black/30 hover:shadow-xl transition-[transform,background-color,box-shadow] duration-150 cursor-pointer group"
+                className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-md bg-[#f39a3b] hover:bg-[#d8842c] active:scale-[0.98] text-white font-condensed text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider shadow-lg shadow-black/30 hover:shadow-xl transition-[transform,background-color,box-shadow] duration-150 cursor-pointer group"
               >
                 <span>KNOW MORE</span>
                 <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] transition-transform duration-150 group-hover:translate-x-1" />

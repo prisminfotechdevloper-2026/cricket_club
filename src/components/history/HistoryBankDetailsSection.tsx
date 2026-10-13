@@ -57,7 +57,7 @@ export function HistoryBankDetailsSection() {
         <div className="flex flex-col items-start w-full text-left">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 mb-1">
-            <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#E59837]">
+            <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#f39a3b]">
               BANK DETAILS
             </span>
           </div>
@@ -99,7 +99,7 @@ export function HistoryBankDetailsSection() {
                           onClick={() => handleCopy(item.label, item.value)}
                           title={`Copy ${item.label}`}
                           aria-label={`Copy ${item.label}`}
-                          className="inline-flex items-center justify-center p-1 rounded-md text-[#94A3B8] hover:text-[#E59837] hover:bg-[#FDF6E9] active:scale-90 transition-[color,background-color,transform] cursor-pointer shrink-0"
+                          className="inline-flex items-center justify-center p-1 rounded-md text-[#94A3B8] hover:text-[#f39a3b] hover:bg-[#FDF6E9] active:scale-90 transition-[color,background-color,transform] cursor-pointer shrink-0"
                         >
                           {isCopied ? (
                             <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" />

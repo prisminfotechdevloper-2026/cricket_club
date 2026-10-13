@@ -4,8 +4,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { HomePartnersBehindSection } from "@/components/home/HomePartnersBehindSection";
 import { HomeStoryShowcase } from "@/components/home/HomeStoryShowcase";
 import { HomeHistoryTimelineStrip } from "@/components/home/HomeHistoryTimelineStrip";
-import { HomeCoachingSection } from "@/components/home/HomeCoachingSection";
-
+ 
 export const metadata: Metadata = {
   title: "Devpur Cricket Club | Representing Devpur Gaam • Est. 2013",
   description:
@@ -33,8 +32,7 @@ export default function HomePage() {
       {/* Section 02 — Our Story Showcase (Matching Exact UI Reference) */}
       <HomeStoryShowcase />
 
-      {/* Section 03 — Professional Coaching & Player Development Mandate */}
-      <HomeCoachingSection />
+    
     </div>
   );
 }

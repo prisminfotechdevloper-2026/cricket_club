@@ -129,50 +129,109 @@ function LotusValuesIcon({ className }: { className?: string }) {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* The 6 Vision Points Data                                            */
-/* ------------------------------------------------------------------ */
-const VISION_CARDS = [
+interface VisionCard {
+  id: string;
+  title: string;
+  content: React.ReactNode;
+  Icon: React.ElementType;
+}
+
+const VISION_CARDS: VisionCard[] = [
   {
     id: "connecting-youth",
     title: "Connecting Youth & Gaams",
-    description:
-      "Using cricket tournaments and fixtures as a bridge to help Devpur youth connect with all 52–42 gaams of the KVO community.",
+    content: (
+      <>
+        Cricket tournaments bring{" "}
+        <span className="font-semibold text-[#f39a3b]">Devpur youth</span>{" "}
+        together and connect them with{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          different gaams across the KVO community
+        </span>
+        .
+      </>
+    ),
     Icon: YouthGaamsIcon,
   },
   {
     id: "aligning-generations",
     title: "Aligning Generations",
-    description:
-      "Bringing different age groups together on the cricket field, aligning veterans and youth around a common motive.",
+    content: (
+      <>
+        Bringing{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          young and senior generations
+        </span>{" "}
+        together through a{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          shared passion for cricket
+        </span>
+        .
+      </>
+    ),
     Icon: HandshakeIcon,
   },
   {
     id: "pitch-to-family",
     title: "From Pitch to Family",
-    description:
-      "Transforming on-field match connections into deep friendships, and those friendships into an extended family.",
+    content: (
+      <>
+        Turning cricket connections into{" "}
+        <span className="font-semibold text-[#f39a3b]">lasting friendships</span>{" "}
+        and a{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          stronger community bond
+        </span>
+        .
+      </>
+    ),
     Icon: PitchHeartIcon,
   },
   {
     id: "community-upliftment",
     title: "Community Upliftment",
-    description:
-      "Leveraging our collective cricketing journey and club spirit to drive the overall growth and upliftment of the Devpur community.",
+    content: (
+      <>
+        Using{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          cricket and club spirit
+        </span>{" "}
+        to support the{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          growth and development of Devpur
+        </span>
+        .
+      </>
+    ),
     Icon: UpliftmentChartIcon,
   },
   {
     id: "business-networking",
     title: "Business & Career Networking",
-    description:
-      "Creating organic networking channels for more business and career opportunities amongst the gaam and the wider KVO community.",
+    content: (
+      <>
+        Creating{" "}
+        <span className="font-semibold text-[#f39a3b]">
+          business and career opportunities
+        </span>{" "}
+        by connecting people across the Devpur and wider{" "}
+        <span className="font-semibold text-[#f39a3b]">KVO community</span>.
+      </>
+    ),
     Icon: NetworkingNodesIcon,
   },
   {
     id: "cultural-sharing",
     title: "Cultural Sharing & Values",
-    description:
-      "Infusing our game with Jain principles, embedding ethics, mutual respect, and cultural sharing into every practice session and match.",
+    content: (
+      <>
+        Promoting{" "}
+        <span className="font-semibold text-[#f39a3b]">Jain principles</span>,{" "}
+        <span className="font-semibold text-[#f39a3b]">ethics</span> and{" "}
+        <span className="font-semibold text-[#f39a3b]">mutual respect</span>{" "}
+        through cricket, practice sessions and matches.
+      </>
+    ),
     Icon: LotusValuesIcon,
   },
 ];
@@ -248,7 +307,7 @@ export function HistoryVisionMediumSection() {
         <div className="flex flex-col items-start w-full">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 mb-2.5 sm:mb-3">
-            <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.24em] uppercase text-[#F0A04B]">
+            <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.24em] uppercase text-[#f39a3b]">
               OUR VISION
             </span>
           </div>
@@ -259,7 +318,7 @@ export function HistoryVisionMediumSection() {
               Our Vision: Cricket as Our Medium
             </h2>
             <span
-              className="inline-block w-14 sm:w-20 h-[3px] bg-[#F0A04B] rounded-full self-center mt-1"
+              className="inline-block w-14 sm:w-20 h-[3px] bg-[#f39a3b] rounded-full self-center mt-1"
               aria-hidden="true"
             />
           </div>
@@ -283,25 +342,25 @@ export function HistoryVisionMediumSection() {
             role="region"
             aria-label="Vision Cards Carousel"
           >
-            {VISION_CARDS.map(({ id, title, description, Icon }) => (
+            {VISION_CARDS.map(({ id, title, content, Icon }) => (
               <div
                 key={id}
                 className="relative snap-start shrink-0 w-full min-w-full lg:min-w-0 lg:w-auto"
               >
-                <div className="w-full h-full rounded-2xl bg-[#0F1626]/60 backdrop-blur-md border border-white/12 hover:border-[#F0A04B]/60 transition-colors duration-300 p-5 sm:p-6 shadow-xl flex flex-col justify-start group">
+                <div className="w-full h-full rounded-2xl bg-[#0F1626]/60 backdrop-blur-md border border-white/12 hover:border-[#f39a3b]/60 transition-colors duration-300 p-5 sm:p-6 shadow-xl flex flex-col justify-start group">
                   <div className="flex items-start gap-4">
                     {/* Golden Circular Badge with SVG Icon */}
-                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#182133] border border-[#F0A04B]/35 flex items-center justify-center text-[#F0A04B] shrink-0 shadow-[0_0_14px_rgba(240,160,75,0.2)] group-hover:scale-105 group-hover:border-[#F0A04B]/70 transition-[transform,border-color] duration-300">
+                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#182133] border border-[#f39a3b]/35 flex items-center justify-center text-[#f39a3b] shrink-0 shadow-[0_0_14px_rgba(243, 154, 59,0.2)] group-hover:scale-105 group-hover:border-[#f39a3b]/70 transition-[transform,border-color] duration-300">
                       <Icon className="w-6 h-6 stroke-[1.9]" />
                     </div>
 
                     {/* Title & Description */}
                     <div className="flex flex-col text-left">
-                      <h3 className="font-headline font-bold uppercase text-white text-[16px] sm:text-[17px] md:text-[18px] tracking-wide leading-snug group-hover:text-[#F0A04B] transition-colors">
+                      <h3 className="font-headline font-bold uppercase text-white text-[16px] sm:text-[17px] md:text-[18px] tracking-wide leading-snug group-hover:text-[#f39a3b] transition-colors">
                         {title}
                       </h3>
                       <p className="font-body text-[#94A3B8] text-xs sm:text-[13px] leading-[1.65] mt-2">
-                        {description}
+                        {content}
                       </p>
                     </div>
                   </div>
@@ -329,7 +388,7 @@ export function HistoryVisionMediumSection() {
                   }}
                   aria-label={`Jump to vision card ${i + 1}`}
                   className={`h-1.5 rounded-full transition-[width,background-color] duration-300 cursor-pointer ${
-                    activeIndex === i ? "w-6 bg-[#F0A04B]" : "w-1.5 bg-neutral-700"
+                    activeIndex === i ? "w-6 bg-[#f39a3b]" : "w-1.5 bg-neutral-700"
                   }`}
                 />
               ))}
@@ -342,7 +401,7 @@ export function HistoryVisionMediumSection() {
                   type="button"
                   onClick={() => scrollByCard(-1)}
                   aria-label="Previous card"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#f39a3b]/60 text-[#f39a3b] hover:bg-[#f39a3b] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>PREV</span>
@@ -354,7 +413,7 @@ export function HistoryVisionMediumSection() {
                   type="button"
                   onClick={() => scrollByCard(1)}
                   aria-label="Next card"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#f39a3b]/60 text-[#f39a3b] hover:bg-[#f39a3b] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <span>NEXT</span>
                   <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />

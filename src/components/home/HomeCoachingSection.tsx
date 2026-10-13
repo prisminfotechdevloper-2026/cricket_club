@@ -78,10 +78,10 @@ export function HomeCoachingSection() {
         <div className="text-left max-w-4xl mb-8 sm:mb-12">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-3 mb-2 sm:mb-2.5">
-            <span className="font-body text-[#F0A04B] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
+            <span className="font-body text-[#f39a3b] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
               THE PEOPLE BEHIND THE PLAY
             </span>
-            <span className="w-8 sm:w-10 h-px bg-[#D7833D]" aria-hidden="true" />
+            <span className="w-8 sm:w-10 h-px bg-[#f39a3b]" aria-hidden="true" />
           </div>
 
           {/* Headline */}
@@ -90,7 +90,7 @@ export function HomeCoachingSection() {
             className="font-headline font-extrabold uppercase text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight leading-[1.08] mt-2"
           >
             <span className="block text-white">MEET THE COACH BEHIND</span>
-            <span className="block text-[#F0A04B]">OUR NEXT GENERATION</span>
+            <span className="block text-[#f39a3b]">OUR NEXT GENERATION</span>
           </h2>
         </div>
 
@@ -103,7 +103,7 @@ export function HomeCoachingSection() {
           {/* Left accent flap behind the card */}
           <div
             aria-hidden="true"
-            className="absolute -left-2.5 sm:-left-3.5 top-6 bottom-6 w-12 sm:w-16 bg-[#D7833D] rounded-2xl sm:rounded-3xl -rotate-1 pointer-events-none"
+            className="absolute -left-2.5 sm:-left-3.5 top-6 bottom-6 w-12 sm:w-16 bg-[#f39a3b] rounded-2xl sm:rounded-3xl -rotate-1 pointer-events-none"
           />
 
           {/* Main White Card Container */}
@@ -121,8 +121,8 @@ export function HomeCoachingSection() {
 
               {/* Floating Trophy Badge in bottom left */}
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 px-4 py-3 flex items-center gap-3.5 shadow-xl z-10">
-                <div className="w-10 h-10 rounded-lg bg-[#F0A04B]/20 border border-[#F0A04B]/40 flex items-center justify-center shrink-0">
-                  <Trophy className="w-5 h-5 text-[#F0A04B]" />
+                <div className="w-10 h-10 rounded-lg bg-[#f39a3b]/20 border border-[#f39a3b]/40 flex items-center justify-center shrink-0">
+                  <Trophy className="w-5 h-5 text-[#f39a3b]" />
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="font-headline font-bold text-white text-sm sm:text-base tracking-wide leading-tight">
@@ -139,15 +139,15 @@ export function HomeCoachingSection() {
             <div className="lg:col-span-6 p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 flex flex-col justify-center text-left relative overflow-hidden bg-white">
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
-                <span className="font-body text-[#F0A04B] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
+                <span className="font-body text-[#f39a3b] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
                   HEAD COACH
                 </span>
-                <span className="w-8 sm:w-10 h-px bg-[#D7833D]" aria-hidden="true" />
+                <span className="w-8 sm:w-10 h-px bg-[#f39a3b]" aria-hidden="true" />
               </div>
 
               {/* Coach Name */}
               <h3 className="font-headline font-extrabold uppercase text-3xl sm:text-4xl lg:text-[44px] tracking-tight text-[#111827] leading-[1.05] mb-1.5 sm:mb-2">
-                ADITYA KOLI
+                ADITYA <span className="text-[#f39a3b]">KOLI</span>
               </h3>
 
               {/* Subtitle */}
@@ -156,7 +156,7 @@ export function HomeCoachingSection() {
               </p>
 
               {/* Quote Block with Left Accent Line */}
-              <div className="border-l-2 border-[#D7833D] pl-4 sm:pl-5 py-1 mb-7 sm:mb-9 max-w-md">
+              <div className="border-l-2 border-[#f39a3b] pl-4 sm:pl-5 py-1 mb-7 sm:mb-9 max-w-md">
                 <p className="font-body text-[#4B5563] text-sm sm:text-[15px] leading-relaxed">
                   “The best coaching builds skill, confidence, and character together. Every player deserves the chance to find their game.”
                 </p>
@@ -166,7 +166,7 @@ export function HomeCoachingSection() {
               <div className="relative z-10">
                 <Link
                   href="/cricket"
-                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-medium text-sm sm:text-[15px] shadow-md hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 active:scale-95 group w-fit cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#f39a3b] hover:bg-[#d8842c] text-white font-medium text-sm sm:text-[15px] shadow-md hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 active:scale-95 group w-fit cursor-pointer"
                 >
                   <span>Coach Responsibilities</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -187,7 +187,7 @@ export function HomeCoachingSection() {
                   {Array.from({ length: 24 }).map((_, i) => (
                     <span
                       key={i}
-                      className="w-1.5 h-1.5 rounded-full bg-[#D7833D]"
+                      className="w-1.5 h-1.5 rounded-full bg-[#f39a3b]"
                     />
                   ))}
                 </div>
@@ -203,7 +203,7 @@ export function HomeCoachingSection() {
         aria-hidden="true"
       >
         <svg viewBox="0 0 380 48" fill="none" className="w-full h-full">
-          <path d="M0 48 L140 28 L380 48" stroke="#D7833D" strokeWidth="2.5" />
+          <path d="M0 48 L140 28 L380 48" stroke="#f39a3b" strokeWidth="2.5" />
         </svg>
       </div>
     </section>

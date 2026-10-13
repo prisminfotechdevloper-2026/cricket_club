@@ -22,22 +22,22 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
             <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
             <Link href="/blog" className="hover:text-stone-900 transition-colors">Cricket Blog</Link>
             <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
-            <span className="text-[#D7833D] font-semibold">{post.categoryLabel}</span>
+            <span className="text-[#f39a3b] font-semibold">{post.categoryLabel}</span>
           </div>
 
           <div className="max-w-4xl">
             {/* Category and Read Details */}
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono mb-4">
-              <span className="px-3 py-1 rounded-full font-bold bg-[#D7833D] text-white uppercase tracking-wider shadow-2xs">
+              <span className="px-3 py-1 rounded-full font-bold bg-[#f39a3b] text-white uppercase tracking-wider shadow-2xs">
                 {post.categoryLabel}
               </span>
               <span className="flex items-center gap-1.5 text-stone-600">
-                <Calendar className="w-3.5 h-3.5 text-[#D7833D]" />
+                <Calendar className="w-3.5 h-3.5 text-[#f39a3b]" />
                 {post.publishedAt}
               </span>
               <span className="text-stone-400">•</span>
               <span className="flex items-center gap-1.5 text-stone-600">
-                <Clock className="w-3.5 h-3.5 text-[#D7833D]" />
+                <Clock className="w-3.5 h-3.5 text-[#f39a3b]" />
                 {post.readTime}
               </span>
             </div>
@@ -61,7 +61,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
 
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-stone-700 hover:text-[#D7833D] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-stone-700 hover:text-[#f39a3b] transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Back to All Stories</span>
@@ -87,7 +87,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
           </div>
 
           {/* Excerpt Lead */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border-l-4 border-[#D7833D] border-stone-200 shadow-2xs mb-10">
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border-l-4 border-[#f39a3b] border-stone-200 shadow-2xs mb-10">
             <p className="text-lg sm:text-xl font-medium text-stone-800 font-body italic leading-relaxed">
               &ldquo;{post.excerpt}&rdquo;
             </p>
@@ -103,8 +103,8 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
 
             {/* Tactical Takeaways / Match Insights Card (Warm Light Theme) */}
             {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-              <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-[#FFF8F0] border border-[#D7833D]/30 space-y-4">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#D7833D]">
+              <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-[#FFF8F0] border border-[#f39a3b]/30 space-y-4">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f39a3b]">
                   <BookOpen className="w-4 h-4" />
                   <span>Coach&apos;s Practice Advice</span>
                 </div>
@@ -114,7 +114,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
                 <ul className="space-y-3 pt-2">
                   {post.keyTakeaways.map((takeaway, idx) => (
                     <li key={takeaway} className="flex items-start gap-3 text-sm sm:text-base text-stone-800">
-                      <span className="w-5 h-5 rounded-full bg-[#D7833D] text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-full bg-[#f39a3b] text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5">
                         {idx + 1}
                       </span>
                       <span>{takeaway}</span>
@@ -148,7 +148,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
                 <h3 className="font-headline text-2xl font-bold text-stone-900">
                   More From the Journal
                 </h3>
-                <Link href="/blog" className="text-xs font-mono font-bold text-[#D7833D] hover:underline">
+                <Link href="/blog" className="text-xs font-mono font-bold text-[#f39a3b] hover:underline">
                   All Stories →
                 </Link>
               </div>
@@ -171,11 +171,11 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
                         />
                       </div>
                       <div className="text-[11px] font-mono text-stone-400 mb-1">{related.categoryLabel}</div>
-                      <h4 className="font-headline text-base font-bold text-stone-900 group-hover:text-[#D7833D] transition-colors line-clamp-2">
+                      <h4 className="font-headline text-base font-bold text-stone-900 group-hover:text-[#f39a3b] transition-colors line-clamp-2">
                         {related.title}
                       </h4>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-stone-100 text-xs font-bold text-[#D7833D] flex items-center justify-between">
+                    <div className="mt-4 pt-3 border-t border-stone-100 text-xs font-bold text-[#f39a3b] flex items-center justify-between">
                       <span>Read Story</span>
                       <span>→</span>
                     </div>

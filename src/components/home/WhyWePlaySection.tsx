@@ -58,7 +58,7 @@ const PILLARS: PillarData[] = [
       "Bridging rural heritage with modern Mumbai sports life",
       "Uniting senior patrons, youth, and families under one banner",
     ],
-    badgeColor: "from-[#F0A04B] to-[#D7833D]",
+    badgeColor: "from-[#f39a3b] to-[#f39a3b]",
   },
   {
     id: "discipline",
@@ -81,7 +81,7 @@ const PILLARS: PillarData[] = [
       "Workload management and match situation practice",
       "Punctuality, team spirit, and commitment across seasons",
     ],
-    badgeColor: "from-[#F0A04B] to-[#D7833D]",
+    badgeColor: "from-[#f39a3b] to-[#f39a3b]",
   },
   {
     id: "brotherhood",
@@ -104,7 +104,7 @@ const PILLARS: PillarData[] = [
       "Annual club dinners, get-togethers & victory parties",
       "Western Railway train commute camaraderie across tours",
     ],
-    badgeColor: "from-[#8B111B] to-[#D7833D]",
+    badgeColor: "from-[#8B111B] to-[#f39a3b]",
   },
   {
     id: "fitness",
@@ -127,7 +127,7 @@ const PILLARS: PillarData[] = [
       "Rotational core power for clean strokeplay and bowling pace",
       "Injury prevention and recovery routines for working adults",
     ],
-    badgeColor: "from-[#F0A04B] to-[#D7833D]",
+    badgeColor: "from-[#f39a3b] to-[#f39a3b]",
   },
   {
     id: "network",
@@ -150,7 +150,7 @@ const PILLARS: PillarData[] = [
       "Opportunities for meaningful connections and collaborations",
       "Shared values founded on sportsmanship and mutual respect",
     ],
-    badgeColor: "from-[#1B1D22] to-[#CF7647]",
+    badgeColor: "from-[#1B1D22] to-[#f39a3b]",
   },
   {
     id: "growth",
@@ -173,7 +173,7 @@ const PILLARS: PillarData[] = [
       "Progression opportunities into prestigious KVO tournaments",
       "Technical batting and bowling evolution under pressure",
     ],
-    badgeColor: "from-[#D7833D] to-[#8B111B]",
+    badgeColor: "from-[#f39a3b] to-[#8B111B]",
   },
 ];
 
@@ -580,7 +580,7 @@ export function WhyWePlaySection() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-2xl bg-amber-500/15 flex items-center justify-center text-[#EAA05E]">
+                  <div className="w-10 h-10 rounded-2xl bg-amber-500/15 flex items-center justify-center text-[#f39a3b]">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <span className="font-mono text-xs font-bold text-stone-400">
@@ -592,7 +592,7 @@ export function WhyWePlaySection() {
                   <h4 className="font-headline text-2xl font-black text-brand-black uppercase group-hover:text-brand-copper transition-colors">
                     The 3-Day Net Rhythm
                   </h4>
-                  <p className="text-xs font-bold text-[#F0A04B] uppercase">
+                  <p className="text-xs font-bold text-[#f39a3b] uppercase">
                     Matunga Ground Turf Nets
                   </p>
                 </div>
@@ -791,7 +791,7 @@ export function WhyWePlaySection() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-2xl bg-[#F0A04B]/15 flex items-center justify-center text-[#F0A04B]">
+                  <div className="w-10 h-10 rounded-2xl bg-[#f39a3b]/15 flex items-center justify-center text-[#f39a3b]">
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <span className="font-mono text-xs font-bold text-stone-400">
@@ -803,7 +803,7 @@ export function WhyWePlaySection() {
                   <h4 className="font-headline text-2xl font-black text-brand-black uppercase group-hover:text-brand-copper transition-colors">
                     Higher Doors
                   </h4>
-                  <p className="text-xs font-bold text-[#F0A04B] uppercase">
+                  <p className="text-xs font-bold text-[#f39a3b] uppercase">
                     25+ Tournament Fixtures
                   </p>
                 </div>

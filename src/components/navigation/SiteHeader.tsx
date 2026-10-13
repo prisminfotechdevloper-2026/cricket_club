@@ -140,7 +140,7 @@ export function SiteHeader() {
                     href={link.href}
                     className={`px-3.5 py-2 text-sm rounded-full transition-all duration-150 cursor-pointer ${
                       active
-                        ? "bg-[#D7833D] text-white font-bold shadow-sm"
+                        ? "bg-[#f39a3b] text-white font-bold shadow-sm"
                         : "text-stone-700 hover:text-stone-950 font-semibold hover:bg-black/5"
                     }`}
                   >
@@ -156,7 +156,7 @@ export function SiteHeader() {
                 href="/contact"
                 className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-150 shadow-sm ${
                   isLinkActive("/contact")
-                    ? "bg-[#D7833D] text-white"
+                    ? "bg-[#f39a3b] text-white"
                     : "bg-[#111A2E] text-white hover:bg-black hover:scale-105"
                 }`}
               >
@@ -178,7 +178,7 @@ export function SiteHeader() {
                   <span
                     className={`h-0.5 w-5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
                       isOpen
-                        ? "translate-y-[7px] rotate-45 bg-[#D7833D]"
+                        ? "translate-y-[7px] rotate-45 bg-[#f39a3b]"
                         : "bg-current translate-y-0 rotate-0"
                     }`}
                   />
@@ -192,7 +192,7 @@ export function SiteHeader() {
                   <span
                     className={`h-0.5 w-5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
                       isOpen
-                        ? "-translate-y-[7px] -rotate-45 bg-[#D7833D]"
+                        ? "-translate-y-[7px] -rotate-45 bg-[#f39a3b]"
                         : "bg-current translate-y-0 rotate-0"
                     }`}
                   />
@@ -204,7 +204,7 @@ export function SiteHeader() {
 
         {/* Live Running Sports Ticker */}
         <div className="bg-[#0D131F] text-stone-200 border-t border-white/[0.08] py-1.5 overflow-hidden flex items-center text-xs font-mono select-none">
-          <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#F0A04B] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
+          <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-4 py-0.5 bg-[#f39a3b] text-white font-black uppercase text-[10px] tracking-widest rounded-r-full shadow-sm z-10 mr-3">
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
             <span>DCC PULSE</span>
           </div>
@@ -217,7 +217,7 @@ export function SiteHeader() {
                     href="/score-board"
                     className="inline-flex items-center gap-2 hover:text-white transition-colors"
                   >
-                    <span className="w-2 h-2 rounded-full bg-[#D7833D] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#f39a3b] animate-pulse" />
                     <span className="text-white font-bold">MATCH CENTER:</span>
                     <span>Follow DCC live fixtures, scores &amp; season results</span>
                   </Link>
@@ -226,7 +226,7 @@ export function SiteHeader() {
                     href="/cricket"
                     className="inline-flex items-center gap-2 hover:text-white transition-colors"
                   >
-                    <span className="text-[#D7833D] font-bold">TURF NETS:</span>
+                    <span className="text-[#f39a3b] font-bold">TURF NETS:</span>
                     <span>Mon • Wed • Fri 7:00 AM @ Matunga Ground with Coach Aditya Koli</span>
                   </Link>
                   <span className="text-stone-600">/</span>
@@ -234,7 +234,7 @@ export function SiteHeader() {
                     href="/history"
                     className="inline-flex items-center gap-2 hover:text-white transition-colors"
                   >
-                    <span className="text-[#D7833D] font-bold">HERITAGE:</span>
+                    <span className="text-[#f39a3b] font-bold">HERITAGE:</span>
                     <span>50+ Dedicated Members Proudly Representing Devpur Gaam</span>
                   </Link>
                   <span className="text-stone-600">/</span>
@@ -330,14 +330,14 @@ export function SiteHeader() {
                       onClick={() => setIsOpen(false)}
                       className={`flex items-center justify-between p-3.5 rounded-2xl transition-all duration-150 cursor-pointer ${
                         active
-                          ? "bg-[#D7833D] text-white font-bold shadow-md"
+                          ? "bg-[#f39a3b] text-white font-bold shadow-md"
                           : "bg-surface-soft hover:bg-stone-100 text-stone-800 font-semibold"
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <Icon
                           className={`w-5 h-5 ${
-                            active ? "text-white" : "text-[#F0A04B]"
+                            active ? "text-white" : "text-[#f39a3b]"
                           }`}
                         />
                         <span className="font-headline text-base tracking-wide">
@@ -359,12 +359,12 @@ export function SiteHeader() {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center justify-between p-3.5 rounded-2xl transition-all duration-150 cursor-pointer ${
                     isLinkActive("/contact")
-                      ? "bg-[#D7833D] text-white font-bold shadow-md"
+                      ? "bg-[#f39a3b] text-white font-bold shadow-md"
                       : "bg-stone-900 hover:bg-black text-white font-semibold"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-[#F0A04B]" />
+                    <Phone className="w-5 h-5 text-[#f39a3b]" />
                     <span className="font-headline text-base tracking-wide">
                       Contact &amp; Support
                     </span>
@@ -376,11 +376,11 @@ export function SiteHeader() {
               {/* Drawer Footer Info */}
               <div className="shrink-0 p-4 sm:p-6 border-t border-border bg-surface-soft space-y-2 text-xs text-stone-600">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[#F0A04B] shrink-0" />
+                  <MapPin className="w-4 h-4 text-[#f39a3b] shrink-0" />
                   <span>Matunga Gymkhana Pavilion, Mumbai</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#F0A04B] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#f39a3b] shrink-0" />
                   <span>contact@devpurcricketclub.com</span>
                 </div>
               </div>

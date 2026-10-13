@@ -161,18 +161,18 @@ export function HomePartnersBehindSection() {
               EYEBROW / OVERLINE: — SUPPORTED BY OUR COMMUNITY —
               ===================================================================== */}
           <div className="inline-flex items-center gap-3 mb-2 sm:mb-2.5">
-            <span className="w-8 sm:w-10 h-px bg-[#C16A35]" aria-hidden="true" />
-            <span className="font-body text-[#F0A04B] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
+            <span className="w-8 sm:w-10 h-px bg-[#f39a3b]" aria-hidden="true" />
+            <span className="font-body text-[#f39a3b] font-bold text-xs sm:text-[13px] tracking-[0.2em] uppercase">
               SUPPORTED BY OUR COMMUNITY
             </span>
-            <span className="w-8 sm:w-10 h-px bg-[#C16A35]" aria-hidden="true" />
+            <span className="w-8 sm:w-10 h-px bg-[#f39a3b]" aria-hidden="true" />
           </div>
 
           {/* =====================================================================
               MAIN HEADLINE: PARTNERS BEHIND DCC
               ===================================================================== */}
           <h2 className="font-headline font-extrabold uppercase text-2xl sm:text-3xl md:text-[36px] tracking-tight text-[#111827] leading-tight mb-2">
-            PARTNERS BEHIND DCC
+            PARTNERS BEHIND <span className="text-[#f39a3b]">DCC</span>
           </h2>
 
           {/* =====================================================================
@@ -214,7 +214,7 @@ export function HomePartnersBehindSection() {
                   key={sponsor.uniqueKey}
                   className="shrink-0 snap-start w-full sm:w-1/2 md:w-1/5 lg:w-1/6 px-1.5 sm:px-2 md:px-2.5"
                 >
-                  <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-[#C16A35]/50 transition-[box-shadow,border-color] duration-300 h-28 sm:h-32 lg:h-32 flex items-center justify-center p-3.5 sm:p-4 group/card">
+                  <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-[#f39a3b]/50 transition-[box-shadow,border-color] duration-300 h-28 sm:h-32 lg:h-32 flex items-center justify-center p-3.5 sm:p-4 group/card">
                     <div className="relative w-full h-full flex items-center justify-center">
                       <Image
                         src={sponsor.logo}
@@ -246,8 +246,8 @@ export function HomePartnersBehindSection() {
                 aria-label={`View sponsor ${i + 1}: ${sponsor.name}`}
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   activeDot === i
-                    ? "w-6 bg-[#F0A04B] shadow-xs"
-                    : "w-2 bg-[#E5E7EB] hover:bg-[#D7833D]/60"
+                    ? "w-6 bg-[#f39a3b] shadow-xs"
+                    : "w-2 bg-[#E5E7EB] hover:bg-[#f39a3b]/60"
                 }`}
               />
             ))}
