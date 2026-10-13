@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, BookOpen, Flame, Newspaper, ChevronRight } from "lucide-react";
 import { Container } from "@/components/common/Container";
-import { getAllBlogPosts, getBlogPostsByCategory } from "@/lib/data/blogs";
+import { getBlogPostsByCategory } from "@/lib/data/blogs";
 import { BlogCategory } from "@/lib/types/content";
 
 export const metadata: Metadata = {
@@ -144,7 +144,7 @@ export default async function BlogPage({
                             <span className="font-mono text-[#F0A04B] font-bold flex items-center gap-1">
                               <BookOpen className="w-3.5 h-3.5" /> Core Takeaway:
                             </span>
-                            <p className="italic font-medium">"{featuredPost.keyTakeaways[0]}"</p>
+                            <p className="italic font-medium">&ldquo;{featuredPost.keyTakeaways[0]}&rdquo;</p>
                           </div>
                         )}
                       </div>

@@ -152,6 +152,7 @@ export function HistoryJourneyTimelineSection() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-right opacity-25 grayscale sm:opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0E131B] via-[#0E131B]/85 to-[#0E131B]/20" />
@@ -230,15 +231,15 @@ export function HistoryJourneyTimelineSection() {
 
                       <div className="flex flex-col text-left">
                         <h3 className="font-body text-[#F0A04B] font-semibold text-[13.5px] sm:text-[14px] leading-[1.55]">
-                          {titleLines.map((line, i) => (
-                            <span key={i} className="block whitespace-nowrap">
+                          {titleLines.map((line) => (
+                            <span key={line} className="block whitespace-nowrap">
                               {line}
                             </span>
                           ))}
                         </h3>
                         <p className="font-body text-[#E5E7EB]/85 text-[12.5px] sm:text-[13px] leading-[1.6] mt-1">
-                          {descriptionLines.map((line, i) => (
-                            <span key={i} className="block whitespace-nowrap">
+                          {descriptionLines.map((line) => (
+                            <span key={line} className="block whitespace-nowrap">
                               {line}
                             </span>
                           ))}
@@ -255,9 +256,9 @@ export function HistoryJourneyTimelineSection() {
           <div className="flex items-center justify-between w-full pt-5 md:hidden min-h-[44px]">
             {/* Dots indicator */}
             <div className="flex items-center gap-1.5">
-              {JOURNEY_STEPS.map((_, i) => (
+              {JOURNEY_STEPS.map((step, i) => (
                 <button
-                  key={i}
+                  key={step.step}
                   type="button"
                   onClick={() => {
                     const el = scrollRef.current;
@@ -267,7 +268,7 @@ export function HistoryJourneyTimelineSection() {
                     el.scrollTo({ left: i * amount, behavior: "smooth" });
                   }}
                   aria-label={`Go to step ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`h-1.5 rounded-full transition-[width,background-color] duration-300 cursor-pointer ${
                     activeIndex === i ? "w-6 bg-[#F0A04B]" : "w-1.5 bg-neutral-700"
                   }`}
                 />
@@ -281,7 +282,7 @@ export function HistoryJourneyTimelineSection() {
                   type="button"
                   onClick={() => scrollByCard(-1)}
                   aria-label="Previous step"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>PREV</span>
@@ -293,7 +294,7 @@ export function HistoryJourneyTimelineSection() {
                   type="button"
                   onClick={() => scrollByCard(1)}
                   aria-label="Next step"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <span>NEXT</span>
                   <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />

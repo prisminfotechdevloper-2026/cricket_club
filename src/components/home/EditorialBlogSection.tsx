@@ -97,7 +97,7 @@ export function EditorialBlogSection() {
                       Coach Tip:
                     </span>
                     <span className="italic line-clamp-1 max-w-[70%] text-stone-300">
-                      "{featuredPost.keyTakeaways[0]}"
+                      &ldquo;{featuredPost.keyTakeaways[0]}&rdquo;
                     </span>
                   </div>
                 )}

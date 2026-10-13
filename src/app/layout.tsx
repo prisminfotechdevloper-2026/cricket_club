@@ -2,12 +2,26 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/navigation/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Barlow_Condensed, Montserrat, Manrope } from "next/font/google";
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-bricolage",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -43,22 +57,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth antialiased ${bricolageGrotesque.variable}`}
+      className={`scroll-smooth antialiased ${barlowCondensed.variable} ${montserrat.variable} ${manrope.variable}`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700;800&family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      <head />
       <body className="min-h-screen flex flex-col bg-background text-foreground font-body">
         <SiteHeader />
         <main className="flex-1 flex flex-col">{children}</main>

@@ -24,7 +24,7 @@ function StoryAndActionButtons() {
       <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-[0.98] text-white font-body font-semibold text-sm sm:text-base shadow-md shadow-[#E59837]/25 hover:shadow-lg transition-all duration-200 group cursor-pointer"
+          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-[0.98] text-white font-body font-semibold text-sm sm:text-base shadow-md shadow-[#E59837]/25 hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 group cursor-pointer"
         >
           <span>Join Devpur</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -57,8 +57,8 @@ export function HistoryHero() {
               </span>
             </div>
 
-            {/* Main Headline: Elegant High-Contrast Serif */}
-            <h1 className="font-serif text-[34px] sm:text-[46px] md:text-[52px] lg:text-[54px] xl:text-[60px] font-bold tracking-[-0.015em] leading-[1.12]">
+            {/* Main Headline: Modern Athletic Cricket Display */}
+            <h1 className="font-headline text-[34px] sm:text-[46px] md:text-[52px] lg:text-[56px] xl:text-[62px] font-extrabold uppercase tracking-tight leading-[1.05]">
               <span className="block text-[#0F172A]">Every Team Has a</span>
               <span className="block text-[#0F172A]">Beginning. Ours Began</span>
               <span className="block text-[#E59837]">With a Conversation.</span>

@@ -45,7 +45,7 @@ export function TournamentsManager() {
         {tournaments.map((t) => (
           <div
             key={t.id}
-            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/30 hover:shadow-md transition-all space-y-4"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/30 hover:shadow-md transition-[box-shadow,border-color] space-y-4"
           >
             <div className="flex items-start justify-between gap-3">
               <div>

@@ -61,6 +61,7 @@ export function HomeCoachingSection() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-right-top sm:object-right opacity-65"
         />
         {/* High-contrast dark gradients for seamless text visibility */}
@@ -165,7 +166,7 @@ export function HomeCoachingSection() {
               <div className="relative z-10">
                 <Link
                   href="/cricket"
-                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-medium text-sm sm:text-[15px] shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 group w-fit cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-medium text-sm sm:text-[15px] shadow-md hover:shadow-lg transition-[background-color,box-shadow,transform] duration-200 active:scale-95 group w-fit cursor-pointer"
                 >
                   <span>Coach Responsibilities</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

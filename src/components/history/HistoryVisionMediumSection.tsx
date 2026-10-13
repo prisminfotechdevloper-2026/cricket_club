@@ -236,6 +236,7 @@ export function HistoryVisionMediumSection() {
           alt="Cricket stadium night floodlights background"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center opacity-75 sm:opacity-80"
         />
         {/* Minimal dark overlay to ensure stadium details, floodlights & green pitch show clearly */}
@@ -254,7 +255,7 @@ export function HistoryVisionMediumSection() {
 
           {/* Heading with horizontal golden accent line */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-            <h2 className="font-serif text-[26px] sm:text-[34px] md:text-[40px] lg:text-[44px] font-bold tracking-tight text-white leading-[1.18]">
+            <h2 className="font-headline text-[26px] sm:text-[34px] md:text-[40px] lg:text-[44px] font-extrabold uppercase tracking-tight text-white leading-[1.08]">
               Our Vision: Cricket as Our Medium
             </h2>
             <span
@@ -287,16 +288,16 @@ export function HistoryVisionMediumSection() {
                 key={id}
                 className="relative snap-start shrink-0 w-full min-w-full lg:min-w-0 lg:w-auto"
               >
-                <div className="w-full h-full rounded-2xl bg-[#0F1626]/60 backdrop-blur-md border border-white/12 hover:border-[#F0A04B]/60 transition-all duration-300 p-5 sm:p-6 shadow-xl flex flex-col justify-start group">
+                <div className="w-full h-full rounded-2xl bg-[#0F1626]/60 backdrop-blur-md border border-white/12 hover:border-[#F0A04B]/60 transition-colors duration-300 p-5 sm:p-6 shadow-xl flex flex-col justify-start group">
                   <div className="flex items-start gap-4">
                     {/* Golden Circular Badge with SVG Icon */}
-                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#182133] border border-[#F0A04B]/35 flex items-center justify-center text-[#F0A04B] shrink-0 shadow-[0_0_14px_rgba(240,160,75,0.2)] group-hover:scale-105 group-hover:border-[#F0A04B]/70 transition-all duration-300">
+                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#182133] border border-[#F0A04B]/35 flex items-center justify-center text-[#F0A04B] shrink-0 shadow-[0_0_14px_rgba(240,160,75,0.2)] group-hover:scale-105 group-hover:border-[#F0A04B]/70 transition-[transform,border-color] duration-300">
                       <Icon className="w-6 h-6 stroke-[1.9]" />
                     </div>
 
                     {/* Title & Description */}
                     <div className="flex flex-col text-left">
-                      <h3 className="font-serif font-bold text-white text-[15px] sm:text-base md:text-[17px] leading-snug group-hover:text-[#F0A04B] transition-colors">
+                      <h3 className="font-headline font-bold uppercase text-white text-[16px] sm:text-[17px] md:text-[18px] tracking-wide leading-snug group-hover:text-[#F0A04B] transition-colors">
                         {title}
                       </h3>
                       <p className="font-body text-[#94A3B8] text-xs sm:text-[13px] leading-[1.65] mt-2">
@@ -317,9 +318,9 @@ export function HistoryVisionMediumSection() {
           <div className="flex items-center justify-between w-full pt-6 lg:hidden min-h-[44px]">
             {/* Dots indicator */}
             <div className="flex items-center gap-1.5">
-              {VISION_CARDS.map((_, i) => (
+              {VISION_CARDS.map((card, i) => (
                 <button
-                  key={i}
+                  key={card.id}
                   type="button"
                   onClick={() => {
                     const el = scrollRef.current;
@@ -327,7 +328,7 @@ export function HistoryVisionMediumSection() {
                     el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
                   }}
                   aria-label={`Jump to vision card ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`h-1.5 rounded-full transition-[width,background-color] duration-300 cursor-pointer ${
                     activeIndex === i ? "w-6 bg-[#F0A04B]" : "w-1.5 bg-neutral-700"
                   }`}
                 />
@@ -341,7 +342,7 @@ export function HistoryVisionMediumSection() {
                   type="button"
                   onClick={() => scrollByCard(-1)}
                   aria-label="Previous card"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>PREV</span>
@@ -353,7 +354,7 @@ export function HistoryVisionMediumSection() {
                   type="button"
                   onClick={() => scrollByCard(1)}
                   aria-label="Next card"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   <span>NEXT</span>
                   <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />

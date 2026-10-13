@@ -50,8 +50,10 @@ export function AdminDashboard() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
-          <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-drawer-backdrop"
+          <button
+            type="button"
+            aria-label="Close menu backdrop"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-drawer-backdrop border-0 cursor-default"
             onClick={() => setMobileMenuOpen(false)}
           />
           <div className="relative z-10 animate-drawer-slide-in h-full shadow-2xl">

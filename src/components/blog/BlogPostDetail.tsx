@@ -89,7 +89,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
           {/* Excerpt Lead */}
           <div className="p-6 sm:p-8 rounded-2xl bg-white border-l-4 border-[#D7833D] border-stone-200 shadow-2xs mb-10">
             <p className="text-lg sm:text-xl font-medium text-stone-800 font-body italic leading-relaxed">
-              "{post.excerpt}"
+              &ldquo;{post.excerpt}&rdquo;
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export function BlogPostDetail({ post, relatedPosts }: BlogPostDetailProps) {
               <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-[#FFF8F0] border border-[#D7833D]/30 space-y-4">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#D7833D]">
                   <BookOpen className="w-4 h-4" />
-                  <span>Coach's Practice Advice</span>
+                  <span>Coach&apos;s Practice Advice</span>
                 </div>
                 <h3 className="font-headline text-xl font-bold text-stone-900">
                   Key Takeaways for Club Cricketers

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback, ReactNode } from "react";
 import { Match, Player, Tournament, Coach } from "@/lib/types/cricket";
 import { Sponsor, TrainingSession, Season, GalleryItem } from "@/lib/types/content";
 import {
@@ -145,15 +145,40 @@ export function AdminProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Helper to persist state
-  const persist = (key: string, data: unknown) => {
+  const persist = useCallback((key: string, data: unknown) => {
     try {
       localStorage.setItem(key, JSON.stringify(data));
     } catch {
       // ignore quota errors
     }
-  };
+  }, []);
 
-  const login = (email: string, pass: string) => {
+  // Synchronize state changes to localStorage outside of state updaters
+  useEffect(() => {
+    if (!isLoading) {
+      persist(STORAGE_KEYS.MATCHES, matches);
+    }
+  }, [matches, isLoading, persist]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      persist(STORAGE_KEYS.PLAYERS, players);
+    }
+  }, [players, isLoading, persist]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      persist(STORAGE_KEYS.SPONSORS, sponsors);
+    }
+  }, [sponsors, isLoading, persist]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      persist(STORAGE_KEYS.INQUIRIES, inquiries);
+    }
+  }, [inquiries, isLoading, persist]);
+
+  const login = useCallback((email: string, pass: string) => {
     const verification = verifyDummyCredentials(email, pass);
     if (!verification.valid || !verification.user) {
       return { success: false, error: verification.error || "Authentication failed" };
@@ -161,38 +186,32 @@ export function AdminProvider({ children }: { children: ReactNode }) {
     const newSession = saveSession(verification.user);
     setSession(newSession);
     return { success: true };
-  };
+  }, []);
 
-  const logout = () => {
+  const logout = useCallback(() => {
     removeSession();
     setSession(null);
-  };
+  }, []);
 
   // Actions: Matches
-  const createMatch = (data: Omit<Match, "id">): Match => {
+  const createMatch = useCallback((data: Omit<Match, "id">): Match => {
     const newMatch: Match = {
       ...data,
       id: `match-${Date.now()}`,
     };
-    const updated = [newMatch, ...matches];
-    setMatches(updated);
-    persist(STORAGE_KEYS.MATCHES, updated);
+    setMatches((prev) => [newMatch, ...prev]);
     return newMatch;
-  };
+  }, []);
 
-  const updateMatch = (id: string, data: Partial<Match>) => {
-    const updated = matches.map((m) => (m.id === id ? { ...m, ...data } : m));
-    setMatches(updated);
-    persist(STORAGE_KEYS.MATCHES, updated);
-  };
+  const updateMatch = useCallback((id: string, data: Partial<Match>) => {
+    setMatches((prev) => prev.map((m) => (m.id === id ? { ...m, ...data } : m)));
+  }, []);
 
-  const deleteMatch = (id: string) => {
-    const updated = matches.filter((m) => m.id !== id);
-    setMatches(updated);
-    persist(STORAGE_KEYS.MATCHES, updated);
-  };
+  const deleteMatch = useCallback((id: string) => {
+    setMatches((prev) => prev.filter((m) => m.id !== id));
+  }, []);
 
-  const updateLiveScore = (
+  const updateLiveScore = useCallback((
     id: string,
     dccScore: string,
     dccOvers: string,
@@ -200,142 +219,168 @@ export function AdminProvider({ children }: { children: ReactNode }) {
     opponentOvers?: string,
     result?: string
   ) => {
-    const updated = matches.map((m) => {
-      if (m.id !== id) return m;
-      return {
-        ...m,
-        status: (result ? "completed" : "live") as Match["status"],
-        dccScore,
-        dccOvers,
-        ...(opponentScore !== undefined && { opponentScore }),
-        ...(opponentOvers !== undefined && { opponentOvers }),
-        ...(result !== undefined && { result }),
-      };
-    });
-    setMatches(updated);
-    persist(STORAGE_KEYS.MATCHES, updated);
-  };
+    setMatches((prev) =>
+      prev.map((m) => {
+        if (m.id !== id) return m;
+        return {
+          ...m,
+          status: (result ? "completed" : "live") as Match["status"],
+          dccScore,
+          dccOvers,
+          ...(opponentScore !== undefined && { opponentScore }),
+          ...(opponentOvers !== undefined && { opponentOvers }),
+          ...(result !== undefined && { result }),
+        };
+      })
+    );
+  }, []);
 
   // Actions: Players
-  const createPlayer = (data: Omit<Player, "id">): Player => {
+  const createPlayer = useCallback((data: Omit<Player, "id">): Player => {
     const newPlayer: Player = {
       ...data,
       id: `player-${Date.now()}`,
     };
-    const updated = [newPlayer, ...players];
-    setPlayers(updated);
-    persist(STORAGE_KEYS.PLAYERS, updated);
+    setPlayers((prev) => [newPlayer, ...prev]);
     return newPlayer;
-  };
+  }, []);
 
-  const updatePlayer = (id: string, data: Partial<Player>) => {
-    const updated = players.map((p) => (p.id === id ? { ...p, ...data } : p));
-    setPlayers(updated);
-    persist(STORAGE_KEYS.PLAYERS, updated);
-  };
+  const updatePlayer = useCallback((id: string, data: Partial<Player>) => {
+    setPlayers((prev) => prev.map((p) => (p.id === id ? { ...p, ...data } : p)));
+  }, []);
 
-  const deletePlayer = (id: string) => {
-    const updated = players.filter((p) => p.id !== id);
-    setPlayers(updated);
-    persist(STORAGE_KEYS.PLAYERS, updated);
-  };
+  const deletePlayer = useCallback((id: string) => {
+    setPlayers((prev) => prev.filter((p) => p.id !== id));
+  }, []);
 
   // Actions: Sponsors
-  const createSponsor = (data: Omit<Sponsor, "id">): Sponsor => {
+  const createSponsor = useCallback((data: Omit<Sponsor, "id">): Sponsor => {
     const newSponsor: Sponsor = {
       ...data,
       id: `sponsor-${Date.now()}`,
     };
-    const updated = [...sponsors, newSponsor];
-    setSponsors(updated);
-    persist(STORAGE_KEYS.SPONSORS, updated);
+    setSponsors((prev) => [...prev, newSponsor]);
     return newSponsor;
-  };
+  }, []);
 
-  const updateSponsor = (id: string, data: Partial<Sponsor>) => {
-    const updated = sponsors.map((s) => (s.id === id ? { ...s, ...data } : s));
-    setSponsors(updated);
-    persist(STORAGE_KEYS.SPONSORS, updated);
-  };
+  const updateSponsor = useCallback((id: string, data: Partial<Sponsor>) => {
+    setSponsors((prev) => prev.map((s) => (s.id === id ? { ...s, ...data } : s)));
+  }, []);
 
-  const deleteSponsor = (id: string) => {
-    const updated = sponsors.filter((s) => s.id !== id);
-    setSponsors(updated);
-    persist(STORAGE_KEYS.SPONSORS, updated);
-  };
+  const deleteSponsor = useCallback((id: string) => {
+    setSponsors((prev) => prev.filter((s) => s.id !== id));
+  }, []);
 
   // Actions: Gallery
-  const addGalleryItem = (item: GalleryItem) => {
-    setGalleryItems([item, ...galleryItems]);
-  };
+  const addGalleryItem = useCallback((item: GalleryItem) => {
+    setGalleryItems((prev) => [item, ...prev]);
+  }, []);
 
   // Actions: Inquiries
-  const updateInquiryStatus = (id: string, status: AdminInquiry["status"]) => {
-    const updated = inquiries.map((inq) => (inq.id === id ? { ...inq, status } : inq));
-    setInquiries(updated);
-    persist(STORAGE_KEYS.INQUIRIES, updated);
-  };
+  const updateInquiryStatus = useCallback((id: string, status: AdminInquiry["status"]) => {
+    setInquiries((prev) => prev.map((inq) => (inq.id === id ? { ...inq, status } : inq)));
+  }, []);
 
   // Reset to demo defaults
-  const resetDemoData = () => {
+  const resetDemoData = useCallback(() => {
     setMatches(initialMatches);
     setPlayers(initialPlayers);
     setSponsors(initialSponsors);
     setGalleryItems(initialGalleryItems);
     setInquiries(INITIAL_MOCK_INQUIRIES);
-    localStorage.removeItem(STORAGE_KEYS.MATCHES);
-    localStorage.removeItem(STORAGE_KEYS.PLAYERS);
-    localStorage.removeItem(STORAGE_KEYS.SPONSORS);
-    localStorage.removeItem(STORAGE_KEYS.INQUIRIES);
-  };
+    try {
+      localStorage.removeItem(STORAGE_KEYS.MATCHES);
+      localStorage.removeItem(STORAGE_KEYS.PLAYERS);
+      localStorage.removeItem(STORAGE_KEYS.SPONSORS);
+      localStorage.removeItem(STORAGE_KEYS.INQUIRIES);
+    } catch {
+      // ignore
+    }
+  }, []);
 
-  const metrics: DashboardOverviewMetrics = {
-    totalMembers: players.length,
-    activeMatches: matches.length,
-    totalTournaments: tournaments.length,
-    totalSponsors: sponsors.length,
-    totalSponsorshipValue: "₹1,80,000 (3-Yr MOU)",
-    currentSeason: "2026–27",
-    kvoRank: 10,
-    trophiesCount: 2,
-    weeklyPracticeNets: "3 Days / Wk @ Matunga",
-  };
+  const metrics = useMemo<DashboardOverviewMetrics>(
+    () => ({
+      totalMembers: players.length,
+      activeMatches: matches.length,
+      totalTournaments: tournaments.length,
+      totalSponsors: sponsors.length,
+      totalSponsorshipValue: "₹1,80,000 (3-Yr MOU)",
+      currentSeason: "2026–27",
+      kvoRank: 10,
+      trophiesCount: 2,
+      weeklyPracticeNets: "3 Days / Wk @ Matunga",
+    }),
+    [players.length, matches.length, tournaments.length, sponsors.length]
+  );
+
+  const contextValue = useMemo(
+    () => ({
+      session,
+      isAuthenticated: !!session,
+      isLoading,
+      activeTab,
+      setActiveTab,
+      login,
+      logout,
+      matches,
+      players,
+      sponsors,
+      coaches,
+      trainingSessions,
+      tournaments,
+      seasons,
+      galleryItems,
+      inquiries,
+      metrics,
+      createMatch,
+      updateMatch,
+      deleteMatch,
+      updateLiveScore,
+      createPlayer,
+      updatePlayer,
+      deletePlayer,
+      createSponsor,
+      updateSponsor,
+      deleteSponsor,
+      addGalleryItem,
+      updateInquiryStatus,
+      resetDemoData,
+    }),
+    [
+      session,
+      isLoading,
+      activeTab,
+      setActiveTab,
+      login,
+      logout,
+      matches,
+      players,
+      sponsors,
+      coaches,
+      trainingSessions,
+      tournaments,
+      seasons,
+      galleryItems,
+      inquiries,
+      metrics,
+      createMatch,
+      updateMatch,
+      deleteMatch,
+      updateLiveScore,
+      createPlayer,
+      updatePlayer,
+      deletePlayer,
+      createSponsor,
+      updateSponsor,
+      deleteSponsor,
+      addGalleryItem,
+      updateInquiryStatus,
+      resetDemoData,
+    ]
+  );
 
   return (
-    <AdminContext.Provider
-      value={{
-        session,
-        isAuthenticated: !!session,
-        isLoading,
-        activeTab,
-        setActiveTab,
-        login,
-        logout,
-        matches,
-        players,
-        sponsors,
-        coaches,
-        trainingSessions,
-        tournaments,
-        seasons,
-        galleryItems,
-        inquiries,
-        metrics,
-        createMatch,
-        updateMatch,
-        deleteMatch,
-        updateLiveScore,
-        createPlayer,
-        updatePlayer,
-        deletePlayer,
-        createSponsor,
-        updateSponsor,
-        deleteSponsor,
-        addGalleryItem,
-        updateInquiryStatus,
-        resetDemoData,
-      }}
-    >
+    <AdminContext.Provider value={contextValue}>
       {children}
     </AdminContext.Provider>
   );

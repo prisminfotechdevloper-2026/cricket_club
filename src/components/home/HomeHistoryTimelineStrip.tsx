@@ -162,6 +162,7 @@ export function HomeHistoryTimelineStrip() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-right opacity-30 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0E131B] via-[#0E131B]/85 to-[#0E131B]/10" />
@@ -234,15 +235,15 @@ export function HomeHistoryTimelineStrip() {
 
                       <div className="flex flex-col text-left">
                         <h3 className="font-body text-[#F0A04B] font-semibold text-[13.5px] sm:text-[14px] leading-[1.55]">
-                          {titleLines.map((line, i) => (
-                            <span key={i} className="block whitespace-nowrap">
+                          {titleLines.map((line) => (
+                            <span key={line} className="block whitespace-nowrap">
                               {line}
                             </span>
                           ))}
                         </h3>
                         <p className="font-body text-[#E5E7EB]/85 text-[12.5px] sm:text-[13px] leading-[1.6] mt-1">
-                          {descriptionLines.map((line, i) => (
-                            <span key={i} className="block whitespace-nowrap">
+                          {descriptionLines.map((line) => (
+                            <span key={line} className="block whitespace-nowrap">
                               {line}
                             </span>
                           ))}
@@ -263,7 +264,7 @@ export function HomeHistoryTimelineStrip() {
                   type="button"
                   onClick={() => scrollByCard(-1)}
                   aria-label="Previous milestone"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-[11px] font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
                 >
                   <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
                   <span>Prev</span>
@@ -272,10 +273,10 @@ export function HomeHistoryTimelineStrip() {
             </div>
 
             <div className="flex items-center gap-1.5">
-              {MILESTONES.map((_, i) => (
+              {MILESTONES.map((milestone, i) => (
                 <span
-                  key={i}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  key={milestone.year}
+                  className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
                     activeIndex === i ? "w-6 bg-[#F0A04B]" : "w-1.5 bg-neutral-700"
                   }`}
                   aria-hidden="true"
@@ -289,7 +290,7 @@ export function HomeHistoryTimelineStrip() {
                   type="button"
                   onClick={() => scrollByCard(1)}
                   aria-label="Next milestone"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-all text-[11px] font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0D121F]/90 border border-[#C16A35]/60 text-[#F0A04B] hover:bg-[#D7833D] hover:text-white active:scale-95 transition-[background-color,color,transform] text-[11px] font-bold uppercase tracking-wider"
                 >
                   <span>Next</span>
                   <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />

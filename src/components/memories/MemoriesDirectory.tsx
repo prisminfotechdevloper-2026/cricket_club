@@ -302,7 +302,7 @@ export function MemoriesDirectory({ albums }: MemoriesDirectoryProps) {
                           : "text-white/60 group-hover:text-white"
                       }`}
                     >
-                      {slide.index} // {slide.tag}
+                      {slide.index} {"//"} {slide.tag}
                     </span>
                   </div>
                 </button>

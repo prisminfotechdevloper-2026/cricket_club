@@ -136,7 +136,7 @@ export function MatchesManager() {
             return (
               <div
                 key={m.id}
-                className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5"
+                className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col lg:flex-row lg:items-center justify-between gap-5"
               >
                 {/* Left match summary */}
                 <div className="space-y-2">

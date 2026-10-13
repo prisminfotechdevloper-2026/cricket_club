@@ -192,7 +192,7 @@ export function CricketDevelopmentRoadmap() {
                   return (
                     <div
                       key={pillar.id}
-                      className="rounded-3xl bg-surface border border-border/90 hover:border-brand-orange/60 transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md group"
+                      className="rounded-3xl bg-surface border border-border/90 hover:border-brand-orange/60 transition-[border-color,box-shadow] duration-200 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md group"
                     >
                       {/* Card Header */}
                       <div className="p-5 sm:p-6 border-b border-border/70 space-y-2.5">
@@ -279,9 +279,9 @@ export function CricketDevelopmentRoadmap() {
                 { title: "Core Strength", desc: "Torso rotation & balance" },
                 { title: "Mobility", desc: "Joint health & flex" },
                 { title: "Active Recovery", desc: "Post-match cool downs" },
-              ].map((item, idx) => (
+              ].map((item) => (
                 <div
-                  key={idx}
+                  key={item.title}
                   className="p-3 rounded-xl bg-surface-soft border border-border/80 flex flex-col justify-between"
                 >
                   <span className="font-bold text-foreground">{item.title}</span>

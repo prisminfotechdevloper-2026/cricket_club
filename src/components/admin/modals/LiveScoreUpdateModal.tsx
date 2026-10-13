@@ -24,12 +24,12 @@ export function LiveScoreUpdateModal({
   match,
   onUpdate,
 }: LiveScoreUpdateModalProps) {
-  const [dccRuns, setDccRuns] = useState(match?.dccScore?.split("/")[0] || "172");
-  const [dccWickets, setDccWickets] = useState(match?.dccScore?.split("/")[1] || "4");
+  const [dccRuns, setDccRuns] = useState(() => match?.dccScore?.split("/")[0] || "172");
+  const [dccWickets, setDccWickets] = useState(() => match?.dccScore?.split("/")[1] || "4");
   const [dccOvers, setDccOvers] = useState(match?.dccOvers || "18.3");
 
-  const [oppRuns, setOppRuns] = useState(match?.opponentScore?.split("/")[0] || "168");
-  const [oppWickets, setOppWickets] = useState(match?.opponentScore?.split("/")[1] || "8");
+  const [oppRuns, setOppRuns] = useState(() => match?.opponentScore?.split("/")[0] || "168");
+  const [oppWickets, setOppWickets] = useState(() => match?.opponentScore?.split("/")[1] || "8");
   const [oppOvers, setOppOvers] = useState(match?.opponentOvers || "20.0");
 
   const [resultSummary, setResultSummary] = useState(match?.result || "");

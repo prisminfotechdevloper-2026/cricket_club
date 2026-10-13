@@ -71,7 +71,7 @@ const VISION_SLIDES = [
 export function HistoryVisionSection() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [mobileOverlayOpen, setMobileOverlayOpen] = useState(false);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const touchStartXRef = React.useRef<number | null>(null);
 
   const goToSlide = useCallback((index: number) => {
     setActiveSlide(index);
@@ -79,18 +79,18 @@ export function HistoryVisionSection() {
   }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
+    touchStartXRef.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
     if (diff > 50 && activeSlide < VISION_SLIDES.length - 1) {
       goToSlide(activeSlide + 1);
     } else if (diff < -50 && activeSlide > 0) {
       goToSlide(activeSlide - 1);
     }
-    setTouchStartX(null);
+    touchStartXRef.current = null;
   };
 
   return (
@@ -111,7 +111,7 @@ export function HistoryVisionSection() {
             <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#E59837]">
               {VISION_SLIDES[activeSlide].eyebrow}
             </span>
-            <h2 className="font-serif text-[26px] sm:text-[34px] lg:text-[40px] font-bold tracking-tight leading-[1.18] text-[#0F172A]">
+            <h2 className="font-headline text-[26px] sm:text-[34px] lg:text-[40px] font-extrabold uppercase tracking-tight leading-[1.08] text-[#0F172A]">
               {VISION_SLIDES[activeSlide].headline}
             </h2>
           </div>
@@ -140,7 +140,7 @@ export function HistoryVisionSection() {
                 type="button"
                 onClick={() => goToSlide(Math.max(0, activeSlide - 1))}
                 disabled={activeSlide === 0}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-[background-color,opacity,transform] text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
                 aria-label="Previous slide"
               >
                 <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -152,7 +152,7 @@ export function HistoryVisionSection() {
                   goToSlide(Math.min(VISION_SLIDES.length - 1, activeSlide + 1))
                 }
                 disabled={activeSlide === VISION_SLIDES.length - 1}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-[background-color,opacity,transform] text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
                 aria-label="Next slide"
               >
                 <span className="hidden sm:inline">NEXT</span>
@@ -309,7 +309,7 @@ export function HistoryVisionSection() {
                                 type="button"
                                 onClick={() => setMobileOverlayOpen(true)}
                                 aria-label="Slide to View Match Story and Stats"
-                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                               >
                                 <span>Story & Feats</span>
                                 <ChevronRight className="w-4 h-4 stroke-[2.5]" />
@@ -365,7 +365,7 @@ export function HistoryVisionSection() {
                                 type="button"
                                 onClick={() => setMobileOverlayOpen(false)}
                                 aria-label="Back to Ball Photo"
-                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                               >
                                 <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
                                 <span>View Ball</span>
@@ -394,7 +394,7 @@ export function HistoryVisionSection() {
                                 type="button"
                                 onClick={() => setMobileOverlayOpen(true)}
                                 aria-label="Slide to View Team Photo"
-                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                               >
                                 <span>View Photo</span>
                                 <ChevronRight className="w-4 h-4 stroke-[2.5]" />
@@ -430,7 +430,7 @@ export function HistoryVisionSection() {
                                 type="button"
                                 onClick={() => setMobileOverlayOpen(false)}
                                 aria-label="Back to Vision Text"
-                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                               >
                                 <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
                                 <span>Read Vision</span>

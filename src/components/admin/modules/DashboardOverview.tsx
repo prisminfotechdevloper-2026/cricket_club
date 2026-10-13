@@ -84,9 +84,10 @@ export function DashboardOverview() {
       {/* KPI Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: Members */}
-        <div
+        <button
+          type="button"
           onClick={() => setActiveTab("members")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="text-left p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-[border-color,box-shadow] shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Active Members</span>
@@ -103,12 +104,13 @@ export function DashboardOverview() {
           <p className="text-xs text-stone-500 mt-2 font-medium">
             {players.length} members cataloged on active roster
           </p>
-        </div>
+        </button>
 
         {/* Card 2: Matches */}
-        <div
+        <button
+          type="button"
           onClick={() => setActiveTab("matches")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="text-left p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-[border-color,box-shadow] shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Matches &amp; Tournaments</span>
@@ -123,12 +125,13 @@ export function DashboardOverview() {
           <p className="text-xs text-stone-500 mt-2 font-medium">
             {matches.length} fixtures scheduled / archived
           </p>
-        </div>
+        </button>
 
         {/* Card 3: Sponsors MOU */}
-        <div
+        <button
+          type="button"
           onClick={() => setActiveTab("sponsors")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="text-left p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-[border-color,box-shadow] shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Sponsorship MOU</span>
@@ -143,12 +146,13 @@ export function DashboardOverview() {
           <p className="text-xs text-stone-500 mt-2 font-medium">
             ₹60,000 / Yr • ₹1,80,000 3-Yr Term
           </p>
-        </div>
+        </button>
 
         {/* Card 4: Practice Sessions */}
-        <div
+        <button
+          type="button"
           onClick={() => setActiveTab("training")}
-          className="p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-all shadow-2xs hover:shadow-md cursor-pointer group"
+          className="text-left p-5 rounded-2xl bg-white border border-[#E8E3DD] hover:border-[#D7833D]/40 transition-[border-color,box-shadow] shadow-2xs hover:shadow-md cursor-pointer group"
         >
           <div className="flex items-center justify-between text-stone-500 mb-3">
             <span className="text-xs font-headline font-bold uppercase tracking-wider">Net Practice</span>
@@ -163,7 +167,7 @@ export function DashboardOverview() {
           <p className="text-xs text-stone-500 mt-2 font-medium">
             Head Coach: Aditya Koli (Kanga B Div)
           </p>
-        </div>
+        </button>
       </div>
 
       {/* Featured Live / Upcoming Match Control Bar */}

@@ -69,6 +69,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
               src="/logo/dcc-logo.png"
               alt="DCC Crest"
               fill
+              sizes="44px"
               className="object-contain p-0.5"
             />
           </div>

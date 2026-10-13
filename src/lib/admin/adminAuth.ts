@@ -46,8 +46,12 @@ export function getStoredSession(): AdminSession | null {
 }
 
 export function saveSession(user: AdminUser = DEFAULT_ADMIN_USER): AdminSession {
+  const randomPart =
+    typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+      ? crypto.randomUUID()
+      : `${Date.now()}`;
   const session: AdminSession = {
-    token: `dcc_dummy_token_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+    token: `dcc_token_${Date.now()}_${randomPart}`,
     user,
     expiresAt: Date.now() + 7 * 24 * 60 * 60 * 1000, // 7 days dummy expiration
   };

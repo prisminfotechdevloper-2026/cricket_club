@@ -14,7 +14,7 @@ function DesktopQuoteAndFollowup() {
         <div className="flex items-start gap-3 sm:gap-4">
           {/* Large Stylized Double Quote Mark */}
           <span
-            className="font-serif text-4xl sm:text-5xl md:text-6xl font-black text-[#E59837] leading-none shrink-0 select-none -mt-1 sm:-mt-2"
+            className="font-headline text-5xl sm:text-6xl md:text-7xl font-black text-[#E59837] leading-none shrink-0 select-none -mt-1 sm:-mt-2"
             aria-hidden="true"
           >
             “
@@ -65,7 +65,7 @@ export function HistoryConversationSection() {
                 THE CONVERSATION
               </span>
             </div>
-            <h2 className="font-serif text-[30px] sm:text-[40px] font-bold tracking-[-0.015em] leading-[1.15] text-[#0F172A]">
+            <h2 className="font-headline text-[26px] sm:text-[34px] font-extrabold uppercase tracking-tight leading-[1.1] text-[#0F172A]">
               When Cricket Can Bring So Many People Together?
             </h2>
           </div>
@@ -108,7 +108,7 @@ export function HistoryConversationSection() {
                       Clicking this slides the content OVER the image (right-to-left)
                       ============================================================= */}
                   <div
-                    className={`lg:hidden absolute bottom-3.5 right-3.5 z-20 transition-all duration-300 ${
+                    className={`lg:hidden absolute bottom-3.5 right-3.5 z-20 transition-[opacity,transform] duration-300 ${
                       isOverlayOpen
                         ? "opacity-0 pointer-events-none scale-75"
                         : "opacity-100 pointer-events-auto scale-100"
@@ -118,7 +118,7 @@ export function HistoryConversationSection() {
                       type="button"
                       onClick={() => setIsOverlayOpen(true)}
                       aria-label="Slide to Read Conversation (Right to Left)"
-                      className="w-11 h-11 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-all cursor-pointer"
+                      className="w-11 h-11 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                     >
                       <ChevronRight className="w-5 h-5 stroke-[2.5]" />
                     </button>
@@ -143,7 +143,7 @@ export function HistoryConversationSection() {
                       <div className="rounded-xl sm:rounded-2xl bg-[#FDF6E9] border border-[#F5E6CC] p-4 shadow-xs">
                         <div className="flex items-start gap-3">
                           <span
-                            className="font-serif text-3xl sm:text-4xl font-black text-[#E59837] leading-none shrink-0 select-none -mt-1"
+                            className="font-headline text-4xl sm:text-5xl font-black text-[#E59837] leading-none shrink-0 select-none -mt-1"
                             aria-hidden="true"
                           >
                             “
@@ -177,7 +177,7 @@ export function HistoryConversationSection() {
                         type="button"
                         onClick={() => setIsOverlayOpen(false)}
                         aria-label="Back to Photo (Left to Right)"
-                        className="w-11 h-11 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-all cursor-pointer"
+                        className="w-11 h-11 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-[background-color,transform] cursor-pointer"
                       >
                         <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
                       </button>
@@ -200,8 +200,8 @@ export function HistoryConversationSection() {
               </span>
             </div>
 
-            {/* Main Headline: Serif Typography */}
-            <h2 className="font-serif text-[34px] sm:text-[42px] md:text-[46px] lg:text-[48px] xl:text-[52px] font-bold tracking-[-0.015em] leading-[1.15] text-[#0F172A]">
+            {/* Main Headline: Modern Cricket Typography */}
+            <h2 className="font-headline text-[30px] sm:text-[38px] md:text-[44px] lg:text-[46px] xl:text-[50px] font-extrabold uppercase tracking-tight leading-[1.08] text-[#0F172A]">
               When Cricket Can Bring So Many People Together?
             </h2>
 

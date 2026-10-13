@@ -36,7 +36,7 @@ export function SectionHeading({
             </span>
           </div>
         )}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-black leading-none">
+        <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-brand-black leading-none">
           {title}
         </h2>
         {description && (

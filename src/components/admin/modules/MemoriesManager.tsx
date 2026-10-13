@@ -131,13 +131,14 @@ export function MemoriesManager() {
         {galleryItems.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl bg-white border border-[#E8E3DD] shadow-xs overflow-hidden group hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col justify-between"
+            className="rounded-2xl bg-white border border-[#E8E3DD] shadow-xs overflow-hidden group hover:border-[#D7833D]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col justify-between"
           >
             <div className="relative aspect-video w-full bg-stone-100">
               <Image
                 src={item.url}
                 alt={item.caption}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-md bg-white/90 backdrop-blur-xs text-xs font-headline font-bold uppercase tracking-wider text-[#B96623] border border-stone-200 shadow-2xs">

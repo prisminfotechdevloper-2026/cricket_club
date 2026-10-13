@@ -40,7 +40,7 @@ export function HomeStoryShowcase() {
               <span className="w-9 h-px bg-[#C16A35]" aria-hidden="true" />
             </div>
 
-            {/* Heading — Modern athletic cricket font (Bricolage Grotesque) */}
+            {/* Heading — Modern athletic cricket font (Barlow Condensed / Oswald) */}
             <h2 className="font-headline font-extrabold uppercase text-[34px] sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px] leading-[1.08] tracking-tight">
               <span className="block text-[#111827]">A Club Built on</span>
               <span className="block text-[#111827]">Cricket</span>
@@ -61,7 +61,7 @@ export function HomeStoryShowcase() {
               <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/members"
-                  className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white text-[13px] font-semibold shadow-[0_8px_18px_-6px_rgba(240,160,75,0.6)] transition-all active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white text-[13px] font-semibold shadow-[0_8px_18px_-6px_rgba(240,160,75,0.6)] transition-[background-color,transform,box-shadow] active:scale-[0.98]"
                 >
                   <span>Meet our community</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -69,7 +69,7 @@ export function HomeStoryShowcase() {
 
                 <Link
                   href="/history"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-[#111827] text-[13px] font-semibold shadow-[0_4px_14px_-4px_rgba(0,0,0,0.12)] hover:shadow-md transition-all active:scale-[0.98]"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-[#111827] text-[13px] font-semibold shadow-[0_4px_14px_-4px_rgba(0,0,0,0.12)] hover:shadow-md transition-[background-color,transform,box-shadow] active:scale-[0.98]"
                 >
                   Explore our journey
                 </Link>
@@ -78,9 +78,9 @@ export function HomeStoryShowcase() {
               {/* Members */}
               <div className="flex items-center gap-3.5 pt-2">
                 <div className="flex items-center -space-x-3">
-                  {AVATARS.map((src, i) => (
+                  {AVATARS.map((src) => (
                     <div
-                      key={i}
+                      key={src}
                       className="relative w-10 h-10 rounded-full border-2 border-white overflow-hidden shrink-0 shadow-sm"
                     >
                       <Image src={src} alt="DCC Squad Member" fill sizes="40px" className="object-cover object-top" />
@@ -155,7 +155,7 @@ export function HomeStoryShowcase() {
             <div className="flex lg:hidden flex-col gap-3.5 w-full max-w-[480px]">
               <Link
                 href="/members"
-                className="w-full h-[52px] flex items-center justify-center gap-2.5 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-semibold text-[15px] shadow-[0_6px_20px_-4px_rgba(240,160,75,0.5)] transition-all active:scale-[0.98]"
+                className="w-full h-[52px] flex items-center justify-center gap-2.5 rounded-full bg-[#F0A04B] hover:bg-[#D7833D] text-white font-semibold text-[15px] shadow-[0_6px_20px_-4px_rgba(240,160,75,0.5)] transition-[background-color,transform,box-shadow] active:scale-[0.98]"
               >
                 <span>Meet our community</span>
                 <ArrowRight className="w-4 h-4" />
@@ -163,7 +163,7 @@ export function HomeStoryShowcase() {
 
               <Link
                 href="/history"
-                className="w-full h-[52px] flex items-center justify-center rounded-full bg-white hover:bg-neutral-50 text-[#0F172A] border border-[#E5E7EB] font-semibold text-[15px] shadow-sm transition-all active:scale-[0.98]"
+                className="w-full h-[52px] flex items-center justify-center rounded-full bg-white hover:bg-neutral-50 text-[#0F172A] border border-[#E5E7EB] font-semibold text-[15px] shadow-sm transition-[background-color,transform,box-shadow] active:scale-[0.98]"
               >
                 Explore our journey
               </Link>

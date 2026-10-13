@@ -71,7 +71,7 @@ export function TrainingManager() {
         {trainingSessions.map((session) => (
           <div
             key={session.id}
-            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/30 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/30 hover:shadow-md transition-[box-shadow,border-color] flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
@@ -111,9 +111,9 @@ export function TrainingManager() {
                   Key Technical Focus
                 </span>
                 <div className="flex flex-wrap gap-1.5">
-                  {session.keyFocus?.map((focus, i) => (
+                  {session.keyFocus?.map((focus) => (
                     <span
-                      key={i}
+                      key={focus}
                       className="px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700"
                     >
                       {focus}

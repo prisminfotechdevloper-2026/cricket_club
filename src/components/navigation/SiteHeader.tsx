@@ -54,10 +54,12 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile drawer on route change
+  // Close mobile drawer on back/forward route navigation
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    const handlePop = () => setIsOpen(false);
+    window.addEventListener("popstate", handlePop);
+    return () => window.removeEventListener("popstate", handlePop);
+  }, []);
 
   // Lock body scroll and listen for Escape key when mobile menu is open
   useEffect(() => {
@@ -168,7 +170,7 @@ export function SiteHeader() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="relative p-2 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] active:scale-95 transition-all flex items-center justify-center w-10 h-10 cursor-pointer"
+                className="relative p-2 rounded-xl border border-border text-brand-black hover:bg-black/[0.04] active:scale-95 transition-colors flex items-center justify-center w-10 h-10 cursor-pointer"
                 aria-expanded={isOpen}
                 aria-label={isOpen ? "Close main menu" : "Open main menu"}
               >

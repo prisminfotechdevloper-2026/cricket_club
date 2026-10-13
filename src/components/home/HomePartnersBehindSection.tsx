@@ -46,7 +46,11 @@ const SPONSORS_LIST = [
 ];
 
 // Repeat 3 times to create a continuous, infinite looping scroll experience
-const CAROUSEL_ITEMS = [...SPONSORS_LIST, ...SPONSORS_LIST, ...SPONSORS_LIST];
+const CAROUSEL_ITEMS = [
+  ...SPONSORS_LIST.map((s) => ({ ...s, uniqueKey: `set1-${s.id}` })),
+  ...SPONSORS_LIST.map((s) => ({ ...s, uniqueKey: `set2-${s.id}` })),
+  ...SPONSORS_LIST.map((s) => ({ ...s, uniqueKey: `set3-${s.id}` })),
+];
 
 export function HomePartnersBehindSection() {
   const [activeDot, setActiveDot] = useState(0);
@@ -207,10 +211,10 @@ export function HomePartnersBehindSection() {
             >
               {CAROUSEL_ITEMS.map((sponsor, index) => (
                 <div
-                  key={`${sponsor.id}-${index}`}
+                  key={sponsor.uniqueKey}
                   className="shrink-0 snap-start w-full sm:w-1/2 md:w-1/5 lg:w-1/6 px-1.5 sm:px-2 md:px-2.5"
                 >
-                  <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-[#C16A35]/50 transition-all duration-300 h-28 sm:h-32 lg:h-32 flex items-center justify-center p-3.5 sm:p-4 group/card">
+                  <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-[#C16A35]/50 transition-[box-shadow,border-color] duration-300 h-28 sm:h-32 lg:h-32 flex items-center justify-center p-3.5 sm:p-4 group/card">
                     <div className="relative w-full h-full flex items-center justify-center">
                       <Image
                         src={sponsor.logo}

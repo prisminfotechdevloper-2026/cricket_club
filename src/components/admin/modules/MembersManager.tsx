@@ -101,7 +101,7 @@ export function MembersManager() {
           filteredPlayers.map((player) => (
             <div
               key={player.id}
-              className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col justify-between group"
+              className="p-5 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col justify-between group"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">

@@ -82,7 +82,7 @@ export function SponsorsManager() {
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.id}
-            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-all flex flex-col justify-between group"
+            className="p-6 rounded-2xl bg-white border border-[#E8E3DD] shadow-xs hover:border-[#D7833D]/40 hover:shadow-md transition-[border-color,box-shadow] flex flex-col justify-between group"
           >
             <div className="space-y-4">
               {/* Logo & Actions row */}
@@ -92,6 +92,7 @@ export function SponsorsManager() {
                     src={sponsor.logo}
                     alt={sponsor.name}
                     fill
+                    sizes="112px"
                     className="object-contain p-2"
                   />
                 </div>
@@ -147,8 +148,8 @@ export function SponsorsManager() {
                 <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">
                   Deliverable Highlights
                 </span>
-                {sponsor.visibilityScope?.map((v, idx) => (
-                  <div key={idx} className="flex items-start gap-1.5 text-stone-700 text-xs font-medium">
+                {sponsor.visibilityScope?.map((v) => (
+                  <div key={v} className="flex items-start gap-1.5 text-stone-700 text-xs font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{v}</span>
                   </div>
