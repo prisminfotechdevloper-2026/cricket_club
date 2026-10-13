@@ -101,63 +101,75 @@ export function HistoryVisionSection() {
     >
       <Container>
         {/* =====================================================================
-            TOP ROW-WISE SLIDE NAVIGATION (TABS + PREV/NEXT BUTTONS)
-            Allows sliding horizontally between Part 1 (Vision) & Part 2 (Winning Ball)
+            SECTION HEADER + TABS ALIGNED AFTER / ALONGSIDE HEADER
+            Header (Eyebrow + Heading) comes FIRST!
+            Then Tabs ("01. CLUB VISION" / "02. SANTNEET CUP GLORY") are ALIGNED AFTER THE HEADER!
             ===================================================================== */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8 pb-4 border-b border-[#EAE3D6]">
-          {/* Tab Navigation Pills */}
-          <div className="flex items-center gap-2">
-            {VISION_SLIDES.map((slide, idx) => (
-              <button
-                key={slide.id}
-                type="button"
-                onClick={() => goToSlide(idx)}
-                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all cursor-pointer ${
-                  activeSlide === idx
-                    ? "bg-[#E59837] text-white shadow-md scale-102"
-                    : "bg-white/90 border border-[#EAE3D6] text-[#64748B] hover:text-[#0F172A] hover:bg-white"
-                }`}
-              >
-                {slide.tabLabel}
-              </button>
-            ))}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-5 border-b border-[#EAE3D6]">
+          {/* Eyebrow & Headline for active slide */}
+          <div className="flex flex-col space-y-1.5 sm:space-y-2 text-left">
+            <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#E59837]">
+              {VISION_SLIDES[activeSlide].eyebrow}
+            </span>
+            <h2 className="font-serif text-[26px] sm:text-[34px] lg:text-[40px] font-bold tracking-tight leading-[1.18] text-[#0F172A]">
+              {VISION_SLIDES[activeSlide].headline}
+            </h2>
           </div>
 
-          {/* Prev / Next Slide Navigation Buttons */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => goToSlide(Math.max(0, activeSlide - 1))}
-              disabled={activeSlide === 0}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
-              <span className="hidden sm:inline">PREV</span>
-            </button>
-            <button
-              type="button"
-              onClick={() =>
-                goToSlide(Math.min(VISION_SLIDES.length - 1, activeSlide + 1))
-              }
-              disabled={activeSlide === VISION_SLIDES.length - 1}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
-              aria-label="Next slide"
-            >
-              <span className="hidden sm:inline">NEXT</span>
-              <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
-            </button>
+          {/* Tab Navigation Pills & Next/Prev Controls ALIGNED AFTER / ALONGSIDE HEADER */}
+          <div className="flex flex-wrap items-center justify-between sm:justify-end gap-2.5 sm:gap-3 shrink-0">
+            <div className="flex items-center gap-2">
+              {VISION_SLIDES.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => goToSlide(idx)}
+                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all cursor-pointer ${
+                    activeSlide === idx
+                      ? "bg-[#E59837] text-white shadow-md scale-102"
+                      : "bg-white/90 border border-[#EAE3D6] text-[#64748B] hover:text-[#0F172A] hover:bg-white"
+                  }`}
+                >
+                  {slide.tabLabel}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => goToSlide(Math.max(0, activeSlide - 1))}
+                disabled={activeSlide === 0}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
+                <span className="hidden sm:inline">PREV</span>
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  goToSlide(Math.min(VISION_SLIDES.length - 1, activeSlide + 1))
+                }
+                disabled={activeSlide === VISION_SLIDES.length - 1}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#EAE3D6] text-[#0F172A] disabled:opacity-35 hover:bg-[#FAF7F2] active:scale-95 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer disabled:cursor-not-allowed shadow-xs"
+                aria-label="Next slide"
+              >
+                <span className="hidden sm:inline">NEXT</span>
+                <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+              </button>
+            </div>
           </div>
         </div>
 
         {/* =====================================================================
             ROW-WISE SLIDER CONTAINER:
             Uses CSS translateX so only 1 slide is in viewport at a time.
-            Zero bleed/mixing between slides, with ample vertical headroom so
-            top and bottom decorative frames are never clipped or cropped.
+            Zero bleed/mixing between slides: Each slide is clipped by overflow-hidden!
+            Ample vertical headroom so decorative frames are never cut or cropped.
             ===================================================================== */}
         <div
-          className="w-full overflow-hidden pt-5 pb-6 sm:pt-7 sm:pb-8"
+          className="w-full overflow-hidden pt-2 pb-6 sm:pt-4 sm:pb-8"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -168,27 +180,17 @@ export function HistoryVisionSection() {
             {VISION_SLIDES.map((slide, sIdx) => (
               <div
                 key={slide.id}
-                className="w-full min-w-full shrink-0 box-border px-1 sm:px-3"
+                className="w-full min-w-full shrink-0 overflow-hidden box-border px-1 sm:px-3 py-2 sm:py-3"
               >
                 {/* =============================================================
                     DESKTOP LAYOUT (lg+): 2-Column Side-by-Side
-                    Left: Eyebrow + Headline + Narrative + Badges
+                    Left: Narrative Details + Stat Badges
                     Right: Layered Artistic Photo Card
                     ============================================================= */}
                 <div className="hidden lg:grid lg:grid-cols-12 gap-10 xl:gap-14 items-center">
                   {/* Left Column: Narrative Details */}
                   <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center space-y-4 text-left">
-                    <div className="inline-flex items-center gap-2">
-                      <span className="font-body font-bold text-xs sm:text-[13px] tracking-[0.22em] uppercase text-[#E59837]">
-                        {slide.eyebrow}
-                      </span>
-                    </div>
-
-                    <h2 className="font-serif text-[32px] sm:text-[38px] xl:text-[44px] font-bold tracking-tight leading-[1.18] text-[#0F172A]">
-                      {slide.headline}
-                    </h2>
-
-                    <p className="font-body text-[#525763] text-sm sm:text-[15px] leading-[1.8] font-normal">
+                    <p className="font-body text-[#525763] text-sm sm:text-base leading-[1.8] font-normal">
                       {slide.narrative}
                     </p>
 
@@ -221,17 +223,17 @@ export function HistoryVisionSection() {
                   </div>
 
                   {/* Right Column: Layered Artistic Photo Card with Prominent Amber Frame */}
-                  <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center pt-5 pb-5 px-3 sm:px-6">
+                  <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center pt-4 pb-4 px-3 sm:px-6">
                     <div className="relative w-full max-w-[540px] xl:max-w-[580px]">
                       {/* Back Layer: Warm Amber / Ochre Offset Decorative Frame (Matching Ball Photo Frame) */}
                       <div
-                        className="absolute -top-3.5 -right-3.5 sm:-top-4 sm:-right-4.5 w-[97%] sm:w-[98%] h-[88%] sm:h-[90%] rounded-2xl sm:rounded-[32px] bg-[#EFA748] transform rotate-1 sm:rotate-1.5 transition-transform duration-300 pointer-events-none"
+                        className="absolute -top-3.5 right-0 sm:right-1 w-[97%] sm:w-[98%] h-[88%] sm:h-[90%] rounded-2xl sm:rounded-[32px] bg-[#EFA748] transform rotate-1 sm:rotate-1.5 transition-transform duration-300 pointer-events-none"
                         aria-hidden="true"
                       />
 
                       {/* Decorative Warm Watercolor Accent at Bottom-Left */}
                       <div
-                        className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-32 sm:w-44 h-24 sm:h-32 rounded-3xl bg-[#EFA748]/75 blur-xs -rotate-6 pointer-events-none"
+                        className="absolute -bottom-3 left-0 sm:left-1 w-32 sm:w-44 h-24 sm:h-32 rounded-3xl bg-[#EFA748]/75 blur-xs -rotate-6 pointer-events-none"
                         aria-hidden="true"
                       />
 
@@ -259,111 +261,184 @@ export function HistoryVisionSection() {
 
                 {/* =============================================================
                     MOBILE LAYOUT (< lg): Interactive Mobile Card Slider
-                    Header is outside at the top.
-                    Inside card: Text narrative & stats, with button to slide photo over!
+                    For Slide 1 (Vision): Text narrative on front -> Photo slides in
+                    For Slide 2 (Match Ball): Ball photo on front -> Text narrative & stats slide in!
                     ============================================================= */}
-                <div className="block lg:hidden w-full px-1 pt-1 pb-4">
-                  {/* Header outside the card */}
-                  <div className="flex flex-col space-y-2 text-left mb-4 sm:mb-5">
-                    <span className="font-body font-bold text-xs tracking-[0.22em] uppercase text-[#E59837]">
-                      {slide.eyebrow}
-                    </span>
-                    <h2 className="font-serif text-[26px] sm:text-[32px] font-bold tracking-tight leading-[1.18] text-[#0F172A]">
-                      {slide.headline}
-                    </h2>
-                  </div>
-
-                  <div className="relative w-full max-w-[560px] mx-auto pt-5 pb-5 px-3 sm:px-4">
-                    {/* Back Frame: Exact match to Screenshot 2 */}
+                <div className="block lg:hidden w-full px-1 pb-2">
+                  <div className="relative w-full max-w-[560px] mx-auto pt-4 pb-4 px-3 sm:px-4">
+                    {/* Back Frame: Anchored cleanly inside wrapper with right-0, zero horizontal bleed */}
                     <div
-                      className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-[97%] sm:w-[98%] h-[88%] sm:h-[90%] rounded-2xl sm:rounded-[32px] bg-[#EFA748] transform rotate-1 sm:rotate-1.5 pointer-events-none"
+                      className="absolute -top-3.5 right-0 sm:right-1 w-[96%] sm:w-[97%] h-[88%] sm:h-[90%] rounded-2xl sm:rounded-[32px] bg-[#EFA748] transform rotate-1 pointer-events-none"
                       aria-hidden="true"
                     />
 
                     {/* Decorative Warm Accent at Bottom-Left */}
                     <div
-                      className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-28 sm:w-36 h-20 sm:h-28 rounded-3xl bg-[#EFA748]/75 blur-xs -rotate-6 pointer-events-none"
+                      className="absolute -bottom-3 left-0 sm:left-1 w-28 sm:w-36 h-20 sm:h-28 rounded-3xl bg-[#EFA748]/75 blur-xs -rotate-6 pointer-events-none"
                       aria-hidden="true"
                     />
 
                     {/* Interactive Card Shell */}
-                    <div className="relative z-10 w-full min-h-[320px] sm:min-h-[360px] rounded-2xl sm:rounded-[28px] overflow-hidden bg-white shadow-2xl border-2 sm:border-4 border-white">
-                      {/* Default View: Text + Stats */}
-                      <div className="p-5 sm:p-6 flex flex-col justify-between min-h-[320px] sm:min-h-[360px] text-left bg-[#FAF7F2]">
-                        <div className="space-y-3 pb-12">
-                          <p className="font-body text-[#525763] text-xs sm:text-[13.5px] leading-[1.75] font-normal">
-                            {slide.narrative}
-                          </p>
+                    <div className="relative z-10 w-full min-h-[340px] sm:min-h-[380px] rounded-2xl sm:rounded-[28px] overflow-hidden bg-white shadow-2xl border-2 sm:border-4 border-white">
+                      {slide.id === "tournament-triumph" || sIdx === 1 ? (
+                        /* -----------------------------------------------------
+                           SLIDE 2 (MATCH BALL / SANTNEET CUP GLORY):
+                           FRONT: Ball photo shown first!
+                           SLIDER OVERLAY: Text narrative & match feats slide in!
+                           ----------------------------------------------------- */
+                        <>
+                          {/* FRONT VIEW: Match Ball Photo */}
+                          <div className="relative w-full min-h-[340px] sm:min-h-[380px] bg-[#EAE3D6] overflow-hidden">
+                            <Image
+                              src={slide.imageSrc}
+                              alt={slide.imageAlt}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 600px"
+                              className="object-cover object-center"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none" />
 
-                          {/* Match Feats Badges for Tournament Slide */}
-                          {slide.badges && (
-                            <div className="pt-2">
-                              <div className="grid grid-cols-2 gap-2">
-                                {slide.badges.slice(2).map((b) => (
-                                  <div
-                                    key={b.label}
-                                    className="bg-white border border-[#EAE3D6] rounded-lg p-2 text-left shadow-xs"
-                                  >
-                                    <span className="text-[10px] font-semibold uppercase text-[#D97724] block">
-                                      {b.label}
-                                    </span>
-                                    <span className="text-xs font-bold text-[#0F172A] block mt-0.5">
-                                      {b.value}
+                            {/* Badge overlay on ball photo */}
+                            <div className="absolute top-3.5 left-3.5 z-20 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white text-[11px] font-semibold">
+                              {slide.cardBadge}
+                            </div>
+
+                            {/* CTA Button at Bottom-Right to Slide to Match Story & Stats */}
+                            <div className="absolute bottom-3.5 right-3.5 z-20">
+                              <button
+                                type="button"
+                                onClick={() => setMobileOverlayOpen(true)}
+                                aria-label="Slide to View Match Story and Stats"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                              >
+                                <span>Story & Feats</span>
+                                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* SLIDER OVERLAY: Text Narrative & Match Badges Slide In Over Photo */}
+                          <div
+                            className={`absolute inset-0 z-30 bg-[#FAF7F2] overflow-hidden transform transition-transform duration-400 ease-out ${
+                              mobileOverlayOpen && activeSlide === sIdx
+                                ? "translate-x-0 pointer-events-auto"
+                                : "translate-x-full pointer-events-none"
+                            }`}
+                          >
+                            {/* Inner Scrollable Container: Content scrolls independently! */}
+                            <div className="w-full h-full overflow-y-auto p-5 sm:p-6 pb-20 text-left space-y-3">
+                              <p className="font-body text-[#525763] text-xs sm:text-[13.5px] leading-[1.75] font-normal">
+                                {slide.narrative}
+                              </p>
+
+                              {/* Match Feats Badges */}
+                              {slide.badges && (
+                                <div className="pt-2">
+                                  <div className="flex items-center gap-1.5 mb-2">
+                                    <Trophy className="w-3.5 h-3.5 text-[#E59837]" />
+                                    <span className="font-body font-bold text-[11px] uppercase tracking-wider text-[#D97724]">
+                                      Match Feats Inscribed:
                                     </span>
                                   </div>
-                                ))}
-                              </div>
+                                  <div className="grid grid-cols-2 gap-2">
+                                    {slide.badges.slice(2).map((b) => (
+                                      <div
+                                        key={b.label}
+                                        className="bg-white border border-[#EAE3D6] rounded-lg p-2 text-left shadow-xs"
+                                      >
+                                        <span className="text-[10px] font-semibold uppercase text-[#D97724] block">
+                                          {b.label}
+                                        </span>
+                                        <span className="text-xs font-bold text-[#0F172A] block mt-0.5">
+                                          {b.value}
+                                        </span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
                             </div>
-                          )}
-                        </div>
 
-                        {/* Right Arrow Button at Bottom-Right to Slide Photo Over */}
-                        <div className="absolute bottom-3.5 right-3.5 z-20">
-                          <button
-                            type="button"
-                            onClick={() => setMobileOverlayOpen(true)}
-                            aria-label="Slide to View Match Photo"
-                            className="w-10 h-10 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-all cursor-pointer"
+                            {/* FIXED Back Button at Bottom-Right: Never scrolls with content! */}
+                            <div className="absolute bottom-3.5 right-3.5 z-40 pointer-events-auto">
+                              <button
+                                type="button"
+                                onClick={() => setMobileOverlayOpen(false)}
+                                aria-label="Back to Ball Photo"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                              >
+                                <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+                                <span>View Ball</span>
+                              </button>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        /* -----------------------------------------------------
+                           SLIDE 1 (CLUB VISION):
+                           FRONT: Narrative text
+                           SLIDER OVERLAY: Team sunset photo slides in!
+                           ----------------------------------------------------- */
+                        <>
+                          {/* FRONT VIEW: Narrative Text */}
+                          <div className="p-5 sm:p-6 flex flex-col justify-between min-h-[340px] sm:min-h-[380px] text-left bg-[#FAF7F2]">
+                            <div className="space-y-3 pb-12">
+                              <p className="font-body text-[#525763] text-xs sm:text-[13.5px] leading-[1.75] font-normal">
+                                {slide.narrative}
+                              </p>
+                            </div>
+
+                            {/* Button at Bottom-Right to Slide Photo Over */}
+                            <div className="absolute bottom-3.5 right-3.5 z-20">
+                              <button
+                                type="button"
+                                onClick={() => setMobileOverlayOpen(true)}
+                                aria-label="Slide to View Team Photo"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                              >
+                                <span>View Photo</span>
+                                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* SLIDER OVERLAY: Team Photo Slides In Over Text */}
+                          <div
+                            className={`absolute inset-0 z-30 bg-[#EAE3D6] overflow-hidden transform transition-transform duration-400 ease-out ${
+                              mobileOverlayOpen && activeSlide === sIdx
+                                ? "translate-x-0 pointer-events-auto"
+                                : "translate-x-full pointer-events-none"
+                            }`}
                           >
-                            <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-                          </button>
-                        </div>
-                      </div>
+                            <Image
+                              src={slide.imageSrc}
+                              alt={slide.imageAlt}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 600px"
+                              className="object-cover object-center"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                      {/* Overlapping Image: Slides in over the text */}
-                      <div
-                        className={`absolute inset-0 z-30 bg-[#EAE3D6] overflow-hidden transform transition-transform duration-400 ease-out ${
-                          mobileOverlayOpen && activeSlide === sIdx
-                            ? "translate-x-0 pointer-events-auto"
-                            : "translate-x-full pointer-events-none"
-                        }`}
-                      >
-                        <Image
-                          src={slide.imageSrc}
-                          alt={slide.imageAlt}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 600px"
-                          className="object-cover object-center"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                            {/* Badge overlay on image */}
+                            <div className="absolute top-3.5 left-3.5 z-40 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white text-[11px] font-semibold">
+                              {slide.cardBadge}
+                            </div>
 
-                        {/* Badge overlay on image */}
-                        <div className="absolute top-3.5 left-3.5 z-40 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white text-[11px] font-semibold">
-                          {slide.cardBadge}
-                        </div>
-
-                        {/* Left Arrow Button to Slide Back to Text */}
-                        <div className="absolute bottom-3.5 left-3.5 z-40">
-                          <button
-                            type="button"
-                            onClick={() => setMobileOverlayOpen(false)}
-                            aria-label="Back to Narrative Text"
-                            className="w-10 h-10 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white flex items-center justify-center shadow-xl border-2 border-white transition-all cursor-pointer"
-                          >
-                            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-                          </button>
-                        </div>
-                      </div>
+                            {/* Left Button to Slide Back to Text */}
+                            <div className="absolute bottom-3.5 left-3.5 z-40">
+                              <button
+                                type="button"
+                                onClick={() => setMobileOverlayOpen(false)}
+                                aria-label="Back to Vision Text"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E59837] hover:bg-[#D48529] active:scale-90 text-white text-xs font-bold uppercase tracking-wider shadow-xl border-2 border-white transition-all cursor-pointer"
+                              >
+                                <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+                                <span>Read Vision</span>
+                              </button>
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -164,14 +164,7 @@ export function SiteHeader() {
             </div>
 
             {/* Mobile Menu Toggle Button */}
-            <div className="flex items-center gap-2 lg:hidden">
-              <Link
-                href="/contact"
-                className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#D7833D] text-white shadow-xs"
-              >
-                Contact
-              </Link>
-
+            <div className="flex items-center lg:hidden">
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
