@@ -14,41 +14,96 @@ import {
 } from "lucide-react";
 import { Container } from "../common/Container";
 
-const SIX_IMPACTS = [
+interface VisionPoint {
+  id: string;
+  title: string;
+  description: React.ReactNode;
+  icon: React.ElementType;
+}
+
+const VISION_POINTS: VisionPoint[] = [
   {
-    id: "connecting-youth",
-    title: "Connecting Youth Across Gaams",
-    description: "Helped Devpur youth connect with the 52 and 42 gaams of KVO.",
+    id: "connect-youth",
+    title: "Connect youth and gaams",
+    description: (
+      <>
+        Cricket tournaments and fixtures are a bridge for{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          Devpur youth to connect with all 52–42 gaams
+        </strong>{" "}
+        of KVO.
+      </>
+    ),
     icon: Users,
   },
   {
-    id: "uniting-generations",
-    title: "Uniting Generations",
-    description: "Brought different generations together around a common purpose.",
+    id: "align-generations",
+    title: "Align generations",
+    description: (
+      <>
+        Veterans and youth come together on the field around{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          a common motive and shared passion
+        </strong>
+        .
+      </>
+    ),
     icon: Handshake,
   },
   {
-    id: "friends-to-family",
-    title: "From Friends to Family",
-    description: "Turned connections into friendships, and friendships into family.",
+    id: "pitch-to-family",
+    title: "From pitch to family",
+    description: (
+      <>
+        On-field connections become{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          deep friendships, and friendships become an extended family
+        </strong>
+        .
+      </>
+    ),
     icon: Heart,
   },
   {
-    id: "community-upliftment",
-    title: "Community Upliftment",
-    description: "Lifted the community as a whole.",
+    id: "uplift-community",
+    title: "Uplift the community",
+    description: (
+      <>
+        Our cricketing journey and club spirit drive{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          the growth of the Devpur community as a whole
+        </strong>
+        .
+      </>
+    ),
     icon: TrendingUp,
   },
   {
-    id: "growth-opportunity",
-    title: "Growth & Opportunity",
-    description: "Opened more business and career opportunities across the gaam and the KVO community.",
+    id: "business-career",
+    title: "Business and career networking",
+    description: (
+      <>
+        Match days and tournaments create{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          more business and career opportunities
+        </strong>{" "}
+        across the gaam and the wider KVO community.
+      </>
+    ),
     icon: Briefcase,
   },
   {
-    id: "heritage-principles",
-    title: "Heritage & Principles",
-    description: "Shared our culture and Jain principles.",
+    id: "culture-values",
+    title: "Culture and values",
+    description: (
+      <>
+        Jain principles,{" "}
+        <strong className="font-semibold text-[#0F172A]">
+          ethics, mutual respect and cultural sharing
+        </strong>{" "}
+        in every practice and match.
+      </>
+    ),
     icon: Sparkles,
   },
 ];
@@ -165,15 +220,16 @@ export function HistoryHero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-5 text-stone-700 text-base sm:text-[17px] md:text-lg leading-[1.78]">
               <p>
-                The vision was bigger than playing matches. Meet, connect and
-                discover the talent within our community; revive friendships, build
-                new bonds, bring Devpur families closer, strengthen belonging among
-                Devpurians.
+                The vision was bigger than playing matches. We wanted the
+                youngsters of Devpur to meet, connect and discover the talent
+                within our community, to revive friendships, build new bonds and
+                bring Devpur families closer. We imagined a team that gives our
+                youth a reason to come together, a platform to show their
+                potential, and memories to carry for years.
               </p>
               <p>
-                A team that gives youth a reason to come together, a platform to
-                show potential, and memories for years. The conversation became a
-                vision, and the vision became Devpur Cricket Club.
+                So the conversation became a vision, and the vision became
+                Devpur Cricket Club.
               </p>
             </div>
 
@@ -202,18 +258,21 @@ export function HistoryHero() {
         </section>
 
         {/* =====================================================================
-            04. CHAPTER 3: What the club has done so far (The Six Impact Points)
+            04. CHAPTER 3: Our vision: cricket as our medium
             ===================================================================== */}
         <section className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#EAE3D6]">
-          <div className="flex items-center gap-2 mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-[#f39a3b]" />
             <h2 className="font-headline text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0F172A] tracking-tight">
-              What the club has done so far
+              Our vision: cricket as our medium
             </h2>
           </div>
+          <p className="font-body text-stone-600 text-base sm:text-[17px] mb-8 sm:mb-10 max-w-2xl leading-relaxed">
+            For us, cricket is not just about the score. It is how we bring the Devpur community together.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {SIX_IMPACTS.map((item) => {
+            {VISION_POINTS.map((item) => {
               const Icon = item.icon;
               return (
                 <div
