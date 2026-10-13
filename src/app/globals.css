@@ -1,6 +1,15 @@
+@import "@fontsource/bricolage-grotesque/400.css";
+@import "@fontsource/bricolage-grotesque/500.css";
+@import "@fontsource/bricolage-grotesque/600.css";
+@import "@fontsource/bricolage-grotesque/700.css";
+@import "@fontsource/bricolage-grotesque/800.css";
 @import "@fontsource/barlow-condensed/600.css";
 @import "@fontsource/barlow-condensed/700.css";
 @import "@fontsource/barlow-condensed/800.css";
+@import "@fontsource/barlow-condensed/900.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/800.css";
 @import "@fontsource/manrope/400.css";
 @import "@fontsource/manrope/500.css";
 @import "@fontsource/manrope/600.css";
@@ -34,14 +43,42 @@
   --color-border-subtle: #E8E3DD;
   --color-border-strong: #D6CEC5;
 
-  --font-headline: "Barlow Condensed", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-condensed: "Barlow Condensed", system-ui, sans-serif;
+  --font-headline: "Bricolage Grotesque", var(--font-bricolage), system-ui, sans-serif;
+  --font-bricolage: "Bricolage Grotesque", var(--font-bricolage), system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", var(--font-bricolage), system-ui, sans-serif;
+  --font-display-serif: "Playfair Display", Georgia, serif;
   --font-body: "Manrope", system-ui, sans-serif;
-  --font-display-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-script-signature: "Caveat", "Dancing Script", "Brush Script MT", cursive;
 }
 
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-script {
+  font-family: var(--font-script-signature);
+}
+
+@utility font-condensed {
+  font-family: var(--font-condensed);
+}
+
+@utility font-headline {
+  font-family: var(--font-headline);
+}
+
+@utility font-bricolage {
+  font-family: var(--font-bricolage);
+}
+
 @utility font-display-serif {
-  font-family: var(--font-display-serif);
+  font-family: var(--font-headline);
+}
+
+@utility font-display {
+  font-family: var(--font-headline);
 }
 
 @utility font-script-signature {
@@ -120,9 +157,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Barlow Condensed", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Bricolage Grotesque", var(--font-bricolage), system-ui, sans-serif;
     color: inherit;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   a {
@@ -216,8 +253,8 @@
 
 /* Numeric cricket display */
 .stat-number {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
+  font-family: "Bricolage Grotesque", var(--font-bricolage), sans-serif;
+  font-weight: 800;
   line-height: 1;
 }
 

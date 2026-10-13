@@ -40,8 +40,8 @@ export function HomeStoryShowcase() {
               <span className="w-9 h-px bg-[#C16A35]" aria-hidden="true" />
             </div>
 
-            {/* Heading — Clean, modern sans-serif font family (no roman/serif feel) */}
-            <h2 className="font-body font-extrabold uppercase text-[34px] sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px] leading-[1.08] tracking-tight">
+            {/* Heading — Modern athletic cricket font (Bricolage Grotesque) */}
+            <h2 className="font-headline font-extrabold uppercase text-[34px] sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px] leading-[1.08] tracking-tight">
               <span className="block text-[#111827]">A Club Built on</span>
               <span className="block text-[#111827]">Cricket</span>
               <span className="block text-[#F0A04B]">Strengthened</span>

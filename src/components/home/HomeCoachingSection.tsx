@@ -86,7 +86,7 @@ export function HomeCoachingSection() {
           {/* Headline */}
           <h2
             id="coaching-development-title"
-            className="font-display-serif font-black uppercase text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight leading-[1.08] mt-2"
+            className="font-headline font-extrabold uppercase text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight leading-[1.08] mt-2"
           >
             <span className="block text-white">MEET THE COACH BEHIND</span>
             <span className="block text-[#F0A04B]">OUR NEXT GENERATION</span>
@@ -145,7 +145,7 @@ export function HomeCoachingSection() {
               </div>
 
               {/* Coach Name */}
-              <h3 className="font-display-serif font-black uppercase text-3xl sm:text-4xl lg:text-[44px] tracking-tight text-[#111827] leading-[1.05] mb-1.5 sm:mb-2">
+              <h3 className="font-headline font-extrabold uppercase text-3xl sm:text-4xl lg:text-[44px] tracking-tight text-[#111827] leading-[1.05] mb-1.5 sm:mb-2">
                 ADITYA KOLI
               </h3>
 

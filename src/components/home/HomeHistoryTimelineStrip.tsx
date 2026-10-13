@@ -171,7 +171,7 @@ export function HomeHistoryTimelineStrip() {
       <Container className="relative z-10">
         <div className="flex flex-col items-start w-full">
           {/* Heading */}
-          <h2 className="font-display-serif font-bold uppercase text-[22px] sm:text-[28px] lg:text-[35px] leading-tight tracking-normal mb-8 sm:mb-9 max-w-5xl">
+          <h2 className="font-headline font-extrabold uppercase text-[22px] sm:text-[28px] lg:text-[35px] leading-tight tracking-tight mb-8 sm:mb-9 max-w-5xl">
             <span className="text-white">A History Shaped by the </span>
             <span className="text-[#F0A04B]">People Who Play It.</span>
           </h2>

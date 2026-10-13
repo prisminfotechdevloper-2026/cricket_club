@@ -167,7 +167,7 @@ export function HomePartnersBehindSection() {
           {/* =====================================================================
               MAIN HEADLINE: PARTNERS BEHIND DCC
               ===================================================================== */}
-          <h2 className="font-display-serif font-black uppercase text-2xl sm:text-3xl md:text-[36px] tracking-wide text-[#111827] leading-tight mb-2">
+          <h2 className="font-headline font-extrabold uppercase text-2xl sm:text-3xl md:text-[36px] tracking-tight text-[#111827] leading-tight mb-2">
             PARTNERS BEHIND DCC
           </h2>
 
